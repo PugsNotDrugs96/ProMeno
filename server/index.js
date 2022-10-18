@@ -1,31 +1,26 @@
-const express = require("express");
-const https = require("https");
+import express from "express";
+import fetchPosts from "./api/wp-api.js";
 
 const app = express();
-app.use(express.urlencoded({extended: true}));
+const PORT = 5000;
 
-app.get("/", function(req, res){
+app.use(express.urlencoded({ extended: true }));
 
+app.get("/posts", async function (_, res) {
+  const posts = await fetchPosts();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader("Content-Type", "application/json");
+  res.status(201).json(posts);
 });
 
-app.post("/", function(req, res){
+app.post("/", function (req, res) {});
 
+app.put("/", function (req, res) {});
+
+app.patch("/", function (req, res) {});
+
+app.delete("/", function (req, res) {});
+
+app.listen(PORT, function () {
+  console.log("Server is now running on port " + PORT);
 });
-
-app.put("/", function(req, res){
-
-});
-
-app.patch("/", function(req, res){
-
-});
-
-app.delete("/", function(req, res){
-
-});
-
-
-
-app.listen(3000, function(){
-    console.log("Server is now running on port 3001");
-})
