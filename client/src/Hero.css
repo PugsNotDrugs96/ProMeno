@@ -3,9 +3,13 @@ body, html {
   }
 
 .container {
+  background-color: rgba(255, 255, 255, 0.614);
+}
+
+.background {
     background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 50%; 
 }
