@@ -14,7 +14,7 @@ function Hero() {
             className="d-block mx-auto mb-4e shadow-lg rounded mb-5"
           ></Image>
           <h1 className="display-5 fw-bold">Välkommen till ProMeno</h1>
-          <h2 className="display-8">Lär dig om din hälsa</h2>
+          <h2 className="display-8">Din app om klimakteriet</h2>
           <div className="col-lg-6 mx-auto">
             <p className="lead mb-4 mt-4">
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -27,13 +27,13 @@ function Hero() {
                 variant="primary"
                 className="btn btn-primary btn-lg px-4 gap-3"
               >
-                Primary
+                Om oss
               </Button>
               <Button
                 variant="outline-secondary"
                 className="btn btn-outline-secondary btn-lg px-4"
               >
-                Secondary
+                Länkar
               </Button>
             </div>
           </div>
