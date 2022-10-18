@@ -6,7 +6,7 @@ import Logo from "./assets/logo.png";
 function Hero() {
   return (
     <main className="Hero">
-      <div class="text-center">
+      <div class="px-4 py-5 my-5 text-center">
         <Image src={Logo} class="d-block mx-auto mb-4"></Image>
         <h1 class="display-5 fw-bold">Välkommen till ProMeno</h1>
         <h2 class="display-8">Lär dig om din hälsa</h2>
