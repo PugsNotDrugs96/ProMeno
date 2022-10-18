@@ -7,7 +7,7 @@ import "./Hero.css";
 function Hero() {
   return (
     <div className="background pt-2 shadow">
-      <div class="containerHero">
+      <div class="container">
         <div className="px-4 py-4 my-5 text-center">
           <Image
             src={Logo}
