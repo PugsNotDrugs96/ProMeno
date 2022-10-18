@@ -8,7 +8,7 @@ function Hero() {
   return (
     <div className="background pt-4">
       <div class="container">
-        <div className="px-4 py-5 my-5 text-center">
+        <div className="px-4 py-4 my-5 text-center">
           <Image
             src={Logo}
             className="d-block mx-auto mb-4e shadow-lg rounded mb-5"
@@ -18,9 +18,7 @@ function Hero() {
           <div className="col-lg-6 mx-auto">
             <p className="lead mb-4 mt-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
               <Button
