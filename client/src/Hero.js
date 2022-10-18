@@ -7,7 +7,6 @@ import "./Hero.css";
 function Hero() {
   return (
     <div className="background">
-      <div class="bg-image"></div>
       <div class="container">
         <div className="px-4 py-5 my-5 text-center">
           <Image src={Logo} className="d-block mx-auto mb-4"></Image>

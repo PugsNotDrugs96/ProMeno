@@ -2,19 +2,14 @@ body, html {
     height: 100%;
   }
 
-.bg-image {
-    background-image: url('./assets/start-page-hero.jpeg');
+.background {
+    background-image: url('./assets/blur-photo.com_1666099067.jpg');
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(6px);
-    -webkit-filter: blur(6px);
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.621);
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  background-color: rgba(255, 255, 255, 0.681);
 }
