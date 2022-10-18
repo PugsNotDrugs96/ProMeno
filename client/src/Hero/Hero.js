@@ -24,8 +24,8 @@ function Hero() {
             </p>
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
               <Button
-                variant="primary"
-                className="btn btn-primary btn-lg px-4 gap-3"
+                variant="success"
+                className="btn btn-success btn-lg px-4 gap-3"
               >
                 Om oss
               </Button>
