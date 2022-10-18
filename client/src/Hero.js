@@ -11,7 +11,7 @@ function Hero() {
         <div className="px-4 py-5 my-5 text-center">
           <Image
             src={Logo}
-            className="d-block mx-auto mb-4 shadow-lg p-3 mb-5 bg-white rounded"
+            className="d-block mx-auto mb-4e shadow-lg rounded mb-5"
           ></Image>
           <h1 className="display-5 fw-bold">Välkommen till ProMeno</h1>
           <h2 className="display-8">Lär dig om din hälsa</h2>
