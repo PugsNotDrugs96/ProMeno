@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
-import Logo from "./assets/logo.jpeg";
+import Logo from "../assets/logo.jpeg";
 import "./Hero.css";
 
 function Hero() {
@@ -17,10 +17,10 @@ function Hero() {
           <h2 className="display-8">Din app om klimakteriet</h2>
           <div className="col-lg-6 mx-auto">
             <p className="lead mb-4 mt-4">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
             </p>
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
               <Button

@@ -3,7 +3,7 @@ body, html {
   }
 
 .background {
-    background-image: url('./assets/blur-photo.com_1666099067.jpg');
+    background-image: url('../assets/hero-background-blurred.jpg');
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
