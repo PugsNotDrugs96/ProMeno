@@ -2,12 +2,13 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import Logo from "./assets/logo.png";
+import "./Hero.css";
 
 function Hero() {
   return (
-    <div className="container">
+    <div class="container">
       <div className="px-4 py-5 my-5 text-center">
-        <Image src={Logo} class="d-block mx-auto mb-4"></Image>
+        <Image src={Logo} className="d-block mx-auto mb-4"></Image>
         <h1 className="display-5 fw-bold">Välkommen till ProMeno</h1>
         <h2 className="display-8">Lär dig om din hälsa</h2>
         <div className="col-lg-6 mx-auto">
@@ -18,7 +19,10 @@ function Hero() {
             and scrambled it to make a type specimen book.
           </p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <Button variant="primary" className="btn btn-primary btn-lg px-4 gap-3">
+            <Button
+              variant="primary"
+              className="btn btn-primary btn-lg px-4 gap-3"
+            >
               Primary
             </Button>
             <Button
