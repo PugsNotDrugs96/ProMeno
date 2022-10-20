@@ -1,35 +1,80 @@
+import React,{useState} from "react"
 import "../styles/Navbar.css"
 
 const Navbar = () => {
+    const [toggle1, setToggle1] = useState(false);
+    const [toggle2, setToggle2] = useState(false);
+
+    const handleClick1 = () => {
+        if(toggle2){
+            setToggle2(!toggle2)
+        }
+        setToggle1(!toggle1)
+    }
+    const handleClick2 = () => {
+        if(toggle1){
+            setToggle1(!toggle1)
+        }
+        setToggle2(!toggle2)
+    }
+
     return (
-        <nav className="navbar navbar-expand-sm bg-light">
-            <div className="container">
-                <ul className="nav navbar-nav mx-auto mb-1">
-                        <li className="nav-item dropdown col-xs-6">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Symptom
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href='#'>Another another action </a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li className="nav-item dropdown col-xs-6">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Behandlingar
-                            </a>
-                            <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Another another action </a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
+        <div className="container">
+            <div className="navbar navbar-expand-sm">
+                <ul className="navbar-nav mx-auto">
+                    <li className="nav-item category-main">
+                        <a className="nav-link dropdown-toggle mx-auto" onClick={handleClick1} href="/" role="button" data-bs-toggle="collapse" aria-expanded="false">
+                        Symptom
+                        </a>
+                    </li>
+                    <li className="nav-item category-main">
+                        <a className="nav-link dropdown-toggle mx-auto" onClick={handleClick2} href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Behandlingar
+                        </a>
+                    </li>
                 </ul>
             </div>
-        </nav>
+                {toggle1 && (
+                <ul className="navbar-nav align-items-center">
+                    <div className="navbar navbar-expand-sm">
+                        <div className="row">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <li className="category-second"><a className="category-second" href="/">Symptom 1</a></li>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <li className="category-second"><a className="category-second" href="/">Symptom 2</a></li>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <li className="category-second"><a className="category-second" href="/">Symptom 3</a></li>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <li className="category-second"><a className="category-second" href="/">Symptom 4</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+                )}
+                {toggle2 && (
+                    <ul className="navbar-nav align-items-center">
+                    <div className="navbar navbar-expand-sm">
+                        <div className="row">
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <li className="category-second"><a className="category-second" href="/">Behandling 1</a></li>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <li className="category-second"><a className="category-second" href="/">Behandling 2</a></li>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <li className="category-second"><a className="category-second" href="/">Behandling 3</a></li>
+                            </div>
+                            <div className="col-lg-3 col-md-4 col-sm-6">
+                                <li className="category-second"><a className="category-second" href="/">Behandling 4</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </ul>
+                )}
+        </div>
     );
 };
 
