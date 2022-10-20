@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-/bootstrap
+/.bootstrap
 
 # testing
 /coverage
