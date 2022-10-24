@@ -9,6 +9,15 @@ export async function fetchPosts() {
   return response.data;
 }
 
+export async function fetchPostById(id) {
+  const response = await axios
+    .get(`https://promeno.se/wp-json/wp/v2/posts/${id}`)
+    .catch((err) => {
+      console.log("Error: ", err.message);
+    });
+  return response.data;
+}
+
 export async function fetchThemes() {
   const response = await axios
     .get("https://promeno.se/wp-json/wp/v2/themes")

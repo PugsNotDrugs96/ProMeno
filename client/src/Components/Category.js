@@ -2,8 +2,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
-import { getCategories } from "./api";
+import { getCategories } from "../api";
 
+/*
+This is an example class to render many categories from WP
+*/
 const Category = () => {
   const [categories, setCategories] = useState(null);
 
@@ -16,8 +19,6 @@ const Category = () => {
   }, []);
 
   if (!categories) return null;
-
-  console.log(categories);
 
   return (
     <Container>

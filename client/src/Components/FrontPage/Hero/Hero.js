@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
-import Logo from "../assets/logo.jpeg";
+import Logo from "../../../assets/logo.jpeg";
 import "./Hero.css";
 
 function Hero() {

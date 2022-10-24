@@ -1,5 +1,10 @@
 import express from "express";
-import { fetchPosts, fetchThemes, fetchCategories } from "./api/wp-api.js";
+import {
+  fetchPosts,
+  fetchThemes,
+  fetchCategories,
+  fetchPostById,
+} from "./api/wp-api.js";
 
 const app = express();
 const PORT = 5000;
@@ -11,6 +16,14 @@ app.get("/posts", async function (_, res) {
   res.header("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
   res.status(201).json(posts);
+});
+
+app.get("/posts/:id", async function (req, res) {
+  const id = req.params.id;
+  const post = await fetchPostById(id);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader("Content-Type", "application/json");
+  res.status(201).json(post);
 });
 
 app.get("/themes", async function (_, res) {

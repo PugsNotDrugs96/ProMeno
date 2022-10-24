@@ -4,6 +4,9 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import { getPosts } from "./api";
 
+/*
+This is an example class to render many posts from WP
+*/
 const Page = () => {
   const [posts, setPosts] = useState(null);
 
