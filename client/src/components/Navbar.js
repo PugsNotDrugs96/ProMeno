@@ -11,6 +11,7 @@ const Navbar = () => {
         }
         setToggle1(!toggle1)
     }
+
     const handleClick2 = () => {
         if(toggle1){
             setToggle1(!toggle1)
@@ -28,7 +29,7 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li className="nav-item category-main">
-                        <a className="nav-link dropdown-toggle mx-auto" onClick={handleClick2} href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a className="nav-link dropdown-toggle mx-auto" onClick={handleClick2} href="/" role="button" data-bs-toggle="collapse" aria-expanded="false">
                             Behandlingar
                         </a>
                     </li>

@@ -1,6 +1,8 @@
 import "../styles/Header.css"
 
-function Header() {
+function Header(props) {
+    //const [isLoggedIn, setIsLoggedIn] = useState(props.loggedInStatus); 
+
     return (
         <div className="container">
             <header className="d-flex flex-wrap align-items-center justify-content-between py-3 mb-1 border-bottom">
@@ -10,10 +12,27 @@ function Header() {
                     </svg>
                     <span className="fs-4 m-2">ProMeno</span>
                 </a>
+                {!props.isLoggedIn && (
                 <div className="text-end">
                     <button type="button" className="btn btn-outline-primary me-2">Logga in</button>
                     <button type="button" className="btn btn-primary">Registrera</button>
                 </div>
+                )}
+                {props.isLoggedIn && (
+                <div className="text-end">
+                    <div className="btn-group">
+                        <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Konto
+                            <img src="../images/person.svg" alt="profile-logo"></img>
+                        </button>
+                        <ul className="dropdown-menu">
+                            <li><a className="dropdown-item" href="/">Profil</a></li>
+                            <li><hr className="dropdown-divider"/></li>
+                            <li><a className="dropdown-item" href="/">Logga ut</a></li>
+                        </ul>
+                    </div>
+                </div>
+                )}
             </header>
         </div>
     );
