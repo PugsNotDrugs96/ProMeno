@@ -1,16 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import { getPosts } from "./api";
 
 const Page = () => {
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios("http://localhost:5000/posts");
-      setPosts(response.data);
+      const posts = await getPosts();
+      setPosts(posts);
     }
     fetchData();
   }, []);

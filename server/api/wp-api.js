@@ -15,6 +15,14 @@ export async function fetchThemes() {
     .catch((err) => {
       console.log("Error: ", err.message);
     });
-  console.log("response!", response);
+  return response.data;
+}
+
+export async function fetchCategories() {
+  const response = await axios
+    .get("https://promeno.se/wp-json/wp/v2/categories")
+    .catch((err) => {
+      console.log("Error: ", err.message);
+    });
   return response.data;
 }
