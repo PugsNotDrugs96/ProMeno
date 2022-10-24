@@ -1,8 +1,4 @@
-import getPosts from "./api";
-
-async function App() {
-  const posts = await getPosts();
-  console.log(posts);
+function App() {
   return <div className="App"></div>;
 }
 
