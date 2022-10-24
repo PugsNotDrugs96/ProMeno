@@ -1,6 +1,6 @@
 import axios from "axios";
 
-async function fetchPosts() {
+export async function fetchPosts() {
   const response = await axios
     .get("https://promeno.se/wp-json/wp/v2/posts")
     .catch((err) => {
@@ -9,4 +9,12 @@ async function fetchPosts() {
   return response.data;
 }
 
-export default fetchPosts;
+export async function fetchThemes() {
+  const response = await axios
+    .get("https://promeno.se/wp-json/wp/v2/themes")
+    .catch((err) => {
+      console.log("Error: ", err.message);
+    });
+  console.log("response!", response);
+  return response.data;
+}

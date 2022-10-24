@@ -1,5 +1,5 @@
 import express from "express";
-import fetchPosts from "./api/wp-api.js";
+import { fetchPosts, fetchThemes } from "./api/wp-api.js";
 
 const app = express();
 const PORT = 5000;
@@ -11,6 +11,14 @@ app.get("/posts", async function (_, res) {
   res.header("Access-Control-Allow-Origin", "*");
   res.setHeader("Content-Type", "application/json");
   res.status(201).json(posts);
+});
+
+app.get("/themes", async function (_, res) {
+  console.log("here!!");
+  const themes = await fetchThemes();
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader("Content-Type", "application/json");
+  res.status(201).json(themes);
 });
 
 app.post("/", function (req, res) {});
