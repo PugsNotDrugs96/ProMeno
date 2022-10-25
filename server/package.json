@@ -1,6 +1,7 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "type": "module",
   "description": "This is the server side of the ProMenu application",
   "main": "index.js",
   "scripts": {
@@ -9,6 +10,7 @@
   "author": "Alex Bergenholtz, Felicia Bergflo,  Frida Jacobsson, Julia Ahrling, Nima Tahmidi, Qassem Aburas",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.1.3",
     "express": "^4.18.2"
   }
 }
