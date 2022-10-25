@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import NotLoggedInPage from "./components/not-logged-in-page/NotLoggedInPage";
-import LoggedInPage from "./components/logged-in-page/LoggerInPage";
+import LoggedInPage from "./components/logged-in-page/LoggedInPage";
 import Auth from "./components/not-logged-in-page/Auth";
 import Register from "./components/not-logged-in-page/Register";
 

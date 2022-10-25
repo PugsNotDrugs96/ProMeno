@@ -2,11 +2,7 @@ import React from "react";
 import Hero from "../hero/Hero";
 
 function NotLoggedInPage() {
-  return (
-    <div>
-      <Hero />
-    </div>
-  );
+  return <Hero isLoggedIn={false} />;
 }
 
 export default NotLoggedInPage;
