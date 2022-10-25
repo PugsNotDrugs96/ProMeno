@@ -1,7 +1,8 @@
 import React from "react";
-import Hero from "./Hero/Hero";
+import Hero from "../hero/Hero";
 import Content from "./Content";
-const StartPage = () => {
+
+const LoggedInPage = () => {
   return (
     <>
       <Hero />
@@ -9,4 +10,4 @@ const StartPage = () => {
     </>
   );
 };
-export default StartPage;
+export default LoggedInPage;
