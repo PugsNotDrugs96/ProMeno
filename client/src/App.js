@@ -13,14 +13,18 @@ function App() {
     <div className="App">
       <Header isLoggedIn={true} />
       <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="" element={<NotLoggedInPage />} />
-          <Route path="/home" element={<LoggedInPage />} />
-          <Route path="/Auth" element={<Auth />} />
-          <Route path="/Register" element={<Register />} />
-        </Routes>
-      </BrowserRouter>
+      <div className="background pt-2 shadow">
+        <div className="container">
+          <BrowserRouter>
+            <Routes>
+              <Route path="" element={<NotLoggedInPage />} />
+              <Route path="/home" element={<LoggedInPage />} />
+              <Route path="/Auth" element={<Auth />} />
+              <Route path="/Register" element={<Register />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </div>
     </div>
   );
 }

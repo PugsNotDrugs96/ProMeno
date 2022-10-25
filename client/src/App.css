@@ -1,6 +1,6 @@
 
 .App {
-  background-color: rgb(230, 195, 220);
+  background-color: rgb(255, 255, 255);
 }
   
   .Auth-form-container {
@@ -45,7 +45,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(230, 195, 220);
+    background-color: rgb(255, 255, 255);
   }
   .greeting{
     margin: 0;
@@ -85,15 +85,18 @@
     transform: translateX(-50%) translateY(-50%);  
   }
   
-  @media (min-width: 100px) {
-    .div_Homepage {
-    }
-  }
-  @media (max-width: 600px) {
-    .div_Homepage {
-      width: 200px;
-      font-size: 11px;
-      size: auto;   
-      align-items: center;
-    }
-  }
+  .background {
+    background-image: url('assets/hero-background-blurred.jpg');
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.681);
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.681);
+}
