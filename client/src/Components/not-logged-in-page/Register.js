@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-export default function (props) {
-  let [authMode, setAuthMode] = useState("register")
+function Register(props) {
+  let [authMode, setAuthMode] = useState("register");
 
-    return (
-        <div className="Auth-form-container">
+  return (
+    <div className="Auth-form-container">
       <form className="Auth-form">
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign up</h3>
@@ -43,5 +43,7 @@ export default function (props) {
         </div>
       </form>
     </div>
-    )
-  }
+  );
+}
+
+export default Register;

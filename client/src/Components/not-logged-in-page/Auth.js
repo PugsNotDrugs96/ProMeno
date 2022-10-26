@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
-export default function (props) {
-  let [authMode, setAuthMode] = useState("signin")
+function Auth(props) {
+  let [authMode, setAuthMode] = useState("signin");
 
   const changeAuthMode = () => {
-    setAuthMode(authMode === "signin" ? "signup" : "signin")
-  }
+    setAuthMode(authMode === "signin" ? "signup" : "signin");
+  };
 
   if (authMode === "signin") {
     return (
@@ -46,7 +46,7 @@ export default function (props) {
           </div>
         </form>
       </div>
-    )
+    );
   }
 
   return (
@@ -95,5 +95,7 @@ export default function (props) {
         </div>
       </form>
     </div>
-  )
+  );
 }
+
+export default Auth;
