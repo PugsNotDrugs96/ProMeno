@@ -1,12 +1,12 @@
-import Navbar from "./components/navbar/Navbar";
-import Header from "./components/header/Header";
+import Navbar from "./Components/navbar/Navbar";
+import Header from "./Components/header/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import NotLoggedInPage from "./components/not-logged-in-page/NotLoggedInPage";
-import LoggedInPage from "./components/logged-in-page/LoggedInPage";
-import Auth from "./components/not-logged-in-page/Auth";
-import Register from "./components/not-logged-in-page/Register";
+import NotLoggedInPage from "./Components/not-logged-in-page/NotLoggedInPage";
+import LoggedInPage from "./Components/logged-in-page/LoggedInPage";
+import Auth from "./Components/not-logged-in-page/Auth";
+import Register from "./Components/not-logged-in-page/Register";
 
 function App() {
   return (
