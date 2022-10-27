@@ -1,14 +1,15 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
+import "./Profile.css";
 
 function Profile() {
     const userEmail = "user@email.com";
 
     return (
-        <div className="px-4 py-4 my-5 text-center">
+        <div className="pt-5 pb-4 mt-3 text-center">
             <h2 className="fw-bold">Profil</h2>
             <h4 className="fw-light fst-italic mb-5">{userEmail}</h4>
-            <div className="d-grid gap-2">
+            <div className="d-grid gap-3 profileContainer">
                 <Button variant="primary" size="lg">
                     Ändra lösenord
                 </Button>
