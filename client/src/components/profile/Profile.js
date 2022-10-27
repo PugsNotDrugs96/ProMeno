@@ -11,10 +11,10 @@ function Profile() {
     </Tooltip>);
 
     return (
-        <div className="pt-5 pb-4 mt-3 text-center">
-            <h2 className="fw-bold">Profil</h2>
+        <div className="py-5 text-center">
+            <h1 className="fw-bold">Profil</h1>
             <h4 className="fw-light fst-italic mb-5">{userEmail}</h4>
-            <div className="d-grid gap-3 profileContainer">
+            <div className="pt-4 d-grid gap-3 profileContainer">
                 <Button variant="primary" size="lg">
                     Ändra lösenord
                 </Button>

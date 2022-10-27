@@ -13,10 +13,10 @@ function Hero(props) {
     : "Forskningsstudie om klimakteriet";
 
   return (
-    <div className="pt-5 pb-4 mt-3 text-center">
+    <div className="py-5 text-center">
       <Image
         src={Logo}
-        className="d-block mx-auto mb-4e shadow-lg rounded mb-5"
+        className="d-block mx-auto shadow-lg rounded mb-4"
       ></Image>
       <h1 className="display-5 fw-bold">{title}</h1>
       <h2 className="display-8">{subtitle}</h2>
