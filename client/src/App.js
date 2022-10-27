@@ -14,8 +14,8 @@ function App() {
     <div className="App">
       <Header isLoggedIn={true} />
       <Navbar />
-      <div className="background pt-2 shadow">
-        <div className="container">
+      <div className="background">
+        <div className="container shadow">
           <BrowserRouter>
             <Routes>
               <Route path="" element={<NotLoggedInPage />} />

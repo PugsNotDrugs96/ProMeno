@@ -95,4 +95,18 @@
 
 .container {
   background-color: rgba(255, 255, 255, 0.681);
+  height: 100%;
+}
+
+/* Responsiveness */
+@media screen and (min-width: 1000px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container {
+    width: 900px;
+  }
 }
