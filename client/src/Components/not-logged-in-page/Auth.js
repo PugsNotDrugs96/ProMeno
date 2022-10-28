@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Register from "./Register";
 
 function Auth(props) {
   let [authMode, setAuthMode] = useState("signin");
@@ -9,39 +10,39 @@ function Auth(props) {
 
   if (authMode === "signin") {
     return (
-      <div className="Auth-form-container">
+      <div className="Auth-form-container col-md-5 mx-auto col-lg-5">
         <form className="Auth-form">
           <div className="Auth-form-content">
-            <h3 className="Auth-form-title">Sign In</h3>
+            <h3 className="Auth-form-title">Logga in</h3>
             <div className="text-center">
-              Not registered yet?{" "}
+              Inte registrerad ännu? {" "}
               <span className="link-primary" onClick={changeAuthMode}>
-                Sign Up
+                Registrera här!
               </span>
             </div>
             <div className="form-group mt-3">
-              <label>Email address</label>
+              <label>E-post adress</label>
               <input
                 type="email"
                 className="form-control mt-1"
-                placeholder="Enter email"
+                placeholder="Ange ditt e-mail"
               />
             </div>
             <div className="form-group mt-3">
-              <label>Password</label>
+              <label>Lösenord</label>
               <input
                 type="password"
                 className="form-control mt-1"
-                placeholder="Enter password"
+                placeholder="Ange ditt lösenord"
               />
             </div>
             <div className="d-grid gap-2 mt-3">
               <button type="submit" className="btn btn-primary">
-                Submit
+                Skicka
               </button>
             </div>
             <p className="text-center mt-2">
-              Forgot <a href="#">password?</a>
+              Glömt <a href="#">lösenord?</a>
             </p>
           </div>
         </form>
@@ -50,48 +51,17 @@ function Auth(props) {
   }
 
   return (
-    <div className="Auth-form-container">
+    <div className="Auth-form-container ">
       <form className="Auth-form">
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign up</h3>
+          <h3 className="Auth-form-title">Registrera dig</h3>
           <div className="text-center">
-            Already registered?{" "}
+            Redan registrerad?{"  "}
             <span className="link-primary" onClick={changeAuthMode}>
-              Sign In
+              Logga in
             </span>
           </div>
-          <div className="form-group mt-3">
-            <label>Full Name</label>
-            <input
-              type="email"
-              className="form-control mt-1"
-              placeholder="e.g Jane Doe"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <label>Email address</label>
-            <input
-              type="email"
-              className="form-control mt-1"
-              placeholder="Email Address"
-            />
-          </div>
-          <div className="form-group mt-3">
-            <label>Password</label>
-            <input
-              type="password"
-              className="form-control mt-1"
-              placeholder="Password"
-            />
-          </div>
-          <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </div>
-          <p className="text-center mt-2">
-            Forgot <a href="#">password?</a>
-          </p>
+            <Register/>
         </div>
       </form>
     </div>
