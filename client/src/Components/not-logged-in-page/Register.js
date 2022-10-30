@@ -24,7 +24,10 @@ function Register(props) {
         <form className="p-4 p-md-5 border rounded-3 bg-light">
         <h3 className="text-center">Steg 2</h3>
           <div className="form-floating mb-3">
-            <input type="email" className="form-control" id="e-post" name="e-post" value={message} placeholder="Skriv e-postadress här.." onChange={handleChange}/>
+            <input type="email" className="form-control"
+            id="e-post" name="e-post" value={message} 
+            placeholder="Skriv e-postadress här.."
+            onChange={handleChange}/>
             <label for="floatingInput">E-post</label>
           </div>
           <button className="w-100 btn btn-lg btn-primary" type="submit" onClick={handleClick}>Registrera</button>
@@ -39,7 +42,7 @@ function Register(props) {
   return (
     <div className="container">
       <div className="col-md-5 mx-auto col-lg-5">
-        <form className="p-4 p-md-5 border rounded-3 bg-light">
+        <form className="p-4 p-md-5 border rounded-3 bg-light" >
         <h3 className="text-center">Steg 1</h3>
           <div className="form-floating mb-3">
             <input type="text" className="form-control" id="regCode" name="regCode" value={message} placeholder="Skriv registreringskoden här.." onChange={handleChange}/>
