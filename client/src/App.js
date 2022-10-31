@@ -7,12 +7,16 @@ import NotLoggedInPage from "./components/not-logged-in-page/NotLoggedInPage";
 import LoggedInPage from "./components/logged-in-page/LoggedInPage";
 import Auth from "./components/not-logged-in-page/Auth";
 import Register from "./components/not-logged-in-page/Register";
+import {getCategories} from "./api"
 
 function App() {
+
+  const getAllCategories = () => {return getCategories;}
+  
   return (
     <div className="App">
       <Header isLoggedIn={true} />
-      <Navbar />
+      <Navbar categories = {getAllCategories} />
       <div className="background pt-2 shadow">
         <div className="container">
           <BrowserRouter>
