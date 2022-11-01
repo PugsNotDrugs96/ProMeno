@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function fetchPosts() {
   const response = await axios
-    .get("https://promeno.se/wp-json/wp/v2/posts")
+    .get("https://data.promeno.se/wp-json/wp/v2/posts")
     .catch((err) => {
       console.log("Error: ", err.message);
     });
@@ -11,7 +11,7 @@ export async function fetchPosts() {
 
 export async function fetchPostById(id) {
   const response = await axios
-    .get(`https://promeno.se/wp-json/wp/v2/posts/${id}`)
+    .get(`https://data.promeno.se/wp-json/wp/v2/posts/${id}`)
     .catch((err) => {
       console.log("Error: ", err.message);
     });
@@ -20,7 +20,7 @@ export async function fetchPostById(id) {
 
 export async function fetchThemes() {
   const response = await axios
-    .get("https://promeno.se/wp-json/wp/v2/themes")
+    .get("https://data.promeno.se/wp-json/wp/v2/themes")
     .catch((err) => {
       console.log("Error: ", err.message);
     });
@@ -29,7 +29,7 @@ export async function fetchThemes() {
 
 export async function fetchCategories() {
   const response = await axios
-    .get("https://promeno.se/wp-json/wp/v2/categories")
+    .get("https://data.promeno.se/wp-json/wp/v2/categories")
     .catch((err) => {
       console.log("Error: ", err.message);
     });
