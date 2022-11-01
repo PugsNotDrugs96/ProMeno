@@ -18,8 +18,8 @@ function App() {
         <div className="container shadow">
           <BrowserRouter>
             <Routes>
-              <Route path="" element={<NotLoggedInPage />} />
-              <Route path="/home" element={<LoggedInPage />} />
+              <Route path="/" element={<NotLoggedInPage />} />
+              <Route path="/home" element={<LoggedInPage />} /> {/*man ska inte kunna gå in på inloggat läge direkt från URL */}
               <Route path="/Auth" element={<Auth />} />
               <Route path="/Register" element={<Register />} />
               <Route path="/Profile" element={<Profile />} />
