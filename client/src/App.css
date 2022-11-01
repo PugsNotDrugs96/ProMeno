@@ -85,18 +85,28 @@
     transform: translateX(-50%) translateY(-50%);  
   }
   
-  .background {
-    background-image: url('assets/hero-background-blurred.jpg');
-    height: 600px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.background {
+  background-image: url('assets/hero-background-blurred.jpg');
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .container {
   background-color: rgba(255, 255, 255, 0.681);
+  height: 100%;
 }
 
-.container {
-  background-color: rgba(255, 255, 255, 0.681);
+/* Responsiveness */
+@media screen and (min-width: 990px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container {
+    width: 900px;
+  }
 }
