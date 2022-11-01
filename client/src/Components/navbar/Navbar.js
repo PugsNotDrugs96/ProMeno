@@ -4,6 +4,9 @@ import { getCategories } from "../../api";
 
 const Navbar = () => {
   const [categories, setCategories] = useState([]);
+  const [toggle, setToggle] = useState(false);
+  const [toggledCategory, setToggledCategory] = useState("");
+  const [childOfMain, setChildOfMain] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -16,10 +19,28 @@ const Navbar = () => {
   if (!categories) return null;
 
   const mainCategories = categories.filter((category) => !category.parent);
-
   const childCategories = categories.filter((category) => category.parent);
 
-  console.log(mainCategories);
+
+  const handleToggle = (parentID, toggledName) => {
+    if(toggledCategory === toggledName){
+      setToggledCategory("")
+      setToggle(false);
+    } else {
+      setToggledCategory(toggledName);
+      setToggle(true);
+    }
+
+
+    let childOfMainCategories = [];
+
+    childCategories.forEach((element) => {
+      if (element.parent === parentID) {
+        childOfMainCategories.push(element);
+      }
+    })
+    setChildOfMain(childOfMainCategories);
+  }
 
   return (
     <div className="container">
@@ -29,6 +50,7 @@ const Navbar = () => {
             <li className="nav-item category-main">
               <a
                 className="nav-link dropdown-toggle mx-auto"
+                onClick={() => handleToggle(item.id, item.name)}
                 href="/"
                 role="button"
                 data-bs-toggle="collapse"
@@ -40,6 +62,23 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
+      {toggle && (
+        <ul className="navbar-nav align-items-center">
+          <div className="navbar navbar-expand-sm">
+            <div className="row">
+              {childOfMain.map(element => (
+                <div className="col-lg-3 col-md-4 col-sm-6">
+                <li className="category-second">
+                  <a className="category-second" href="/">
+                    {element.name}
+                  </a>
+                </li>
+              </div>
+              ))}
+            </div>
+          </div>
+        </ul>
+      )}
     </div>
   );
 };
