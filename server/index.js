@@ -5,11 +5,19 @@ import {
   fetchCategories,
   fetchPostById,
 } from "./api/wp-api.js";
+import cors from "cors";
+import corsOptions from "./config/corsOptions.js";
+import registerRouter from "./routes/register.js";
+import loginRouter from "./routes/auth.js";
 
 const app = express();
 const PORT = 5000;
 
 app.use(express.urlencoded({ extended: true }));
+app.use(cors(corsOptions));
+
+app.use("/register", registerRouter);
+app.use("/auth", loginRouter);
 
 app.get("/posts", async function (_, res) {
   const posts = await fetchPosts();
