@@ -1,0 +1,17 @@
+@media screen and (min-width: 767px) {
+    .profileContainer {
+        padding: 0px 100px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .profileContainer {
+        padding: 0px 140px;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .profileContainer {
+        padding: 0px 190px;
+    }
+}
