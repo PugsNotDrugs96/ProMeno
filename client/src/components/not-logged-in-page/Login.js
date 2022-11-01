@@ -5,7 +5,7 @@ import AuthContext from "../../context/AuthProvider";
 import axios from "../api/axios";
 
 function Login() {
-  const LOGIN_URL = "/auth";
+  const LOGIN_URL = "/register";
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
@@ -32,6 +32,8 @@ function Login() {
         {
           headers: {
             "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": true,
             withCredentials: true,
           },
         }
@@ -94,7 +96,7 @@ function Login() {
                   value={user}
                   required
                 />
-                <label for="floatingInput">E-post</label>
+                <label htmlFor="floatingInput">E-post</label>
               </div>
               <div className="form-floating mb-3">
                 <input
@@ -105,7 +107,7 @@ function Login() {
                   value={pwd}
                   required
                 />
-                <label for="floatingInput">Lösenord</label>
+                <label htmlFor="floatingInput">Lösenord</label>
               </div>
               <button className="w-100 btn btn-lg btn-primary">Logga in</button>
               {/*  <p className="text-center mt-2">

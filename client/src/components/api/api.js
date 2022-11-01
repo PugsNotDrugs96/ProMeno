@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../api/axios";
 
 export async function getPosts() {
   const response = await axios("http://localhost:5000/posts");

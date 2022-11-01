@@ -32,7 +32,7 @@ function Register(props) {
                 placeholder="Skriv e-postadress här.."
                 onChange={handleChange}
               />
-              <label for="floatingInput">E-post</label>
+              <label htmlFor="floatingInput">E-post</label>
             </div>
             <button
               className="w-100 btn btn-lg btn-primary"
@@ -67,7 +67,7 @@ function Register(props) {
               placeholder="Skriv registreringskoden här.."
               onChange={handleChange}
             />
-            <label for="floatingInput">Registreringskod</label>
+            <label htmlFor="floatingInput">Registreringskod</label>
           </div>
           <button
             className="w-100 btn btn-lg btn-primary"
