@@ -61,7 +61,7 @@ function Auth(props) {
             <button className="w-100 btn btn-lg btn-primary" type="submit" onClick={handleClick}>Skicka</button>
 
             <p className="text-center mt-2">
-              Glömt <a href="#">lösenord?</a>
+              Glömt <a href="/">lösenord?</a>
             </p>
         </form>
         </div>

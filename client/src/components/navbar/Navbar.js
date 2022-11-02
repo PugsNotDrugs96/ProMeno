@@ -1,122 +1,80 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/Navbar.css";
+import { getCategories } from "../../api";
 
 const Navbar = () => {
-  const [toggle1, setToggle1] = useState(false);
-  const [toggle2, setToggle2] = useState(false);
+  const [categories, setCategories] = useState([]);
+  const [toggle, setToggle] = useState(false);
+  const [toggledCategory, setToggledCategory] = useState("");
+  const [childOfMain, setChildOfMain] = useState("");
 
-  const handleClick1 = () => {
-    if (toggle2) {
-      setToggle2(!toggle2);
+  useEffect(() => {
+    async function fetchData() {
+      const categories = await getCategories();
+      setCategories(categories);
     }
-    setToggle1(!toggle1);
-  };
+    fetchData();
+  }, []);
 
-  const handleClick2 = () => {
-    if (toggle1) {
-      setToggle1(!toggle1);
+  if (!categories) return null;
+
+  const mainCategories = categories.filter((category) => !category.parent);
+  const childCategories = categories.filter((category) => category.parent);
+
+
+  const handleToggle = (parentID, toggledName) => {
+    if(toggledCategory === toggledName){
+      setToggledCategory("")
+      setToggle(false);
+    } else {
+      setToggledCategory(toggledName);
+      setToggle(true);
     }
-    setToggle2(!toggle2);
-  };
+
+
+    let childOfMainCategories = [];
+
+    childCategories.forEach((element) => {
+      if (element.parent === parentID) {
+        childOfMainCategories.push(element);
+      }
+    })
+    setChildOfMain(childOfMainCategories);
+  }
 
   return (
     <div className="container">
       <div className="navbar navbar-expand-sm">
         <ul className="navbar-nav mx-auto">
-          <li className="nav-item category-main">
-            <a
-              className="nav-link dropdown-toggle mx-auto"
-              onClick={handleClick1}
-              href="/"
-              role="button"
-              data-bs-toggle="collapse"
-              aria-expanded="false"
-            >
-              Symptom
-            </a>
-          </li>
-          <li className="nav-item category-main">
-            <a
-              className="nav-link dropdown-toggle mx-auto"
-              onClick={handleClick2}
-              href="/"
-              role="button"
-              data-bs-toggle="collapse"
-              aria-expanded="false"
-            >
-              Behandlingar
-            </a>
-          </li>
+          {mainCategories.map((item) => (
+            <li className="nav-item category-main">
+              <a
+                className="nav-link dropdown-toggle mx-auto"
+                onClick={() => handleToggle(item.id, item.name)}
+                href="/"
+                role="button"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
-      {toggle1 && (
+      {toggle && (
         <ul className="navbar-nav align-items-center">
           <div className="navbar navbar-expand-sm">
             <div className="row">
-              <div className="col-lg-3 col-md-4 col-sm-6">
+              {childOfMain.map(element => (
+                <div className="col-lg-3 col-md-4 col-sm-6">
                 <li className="category-second">
                   <a className="category-second" href="/">
-                    Symptom 1
+                    {element.name}
                   </a>
                 </li>
               </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/">
-                    Symptom 2
-                  </a>
-                </li>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/">
-                    Symptom 3
-                  </a>
-                </li>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/">
-                    Symptom 4
-                  </a>
-                </li>
-              </div>
-            </div>
-          </div>
-        </ul>
-      )}
-      {toggle2 && (
-        <ul className="navbar-nav align-items-center">
-          <div className="navbar navbar-expand-sm">
-            <div className="row">
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/">
-                    Behandling 1
-                  </a>
-                </li>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/">
-                    Behandling 2
-                  </a>
-                </li>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/">
-                    Behandling 3
-                  </a>
-                </li>
-              </div>
-              <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/">
-                    Behandling 4
-                  </a>
-                </li>
-              </div>
+              ))}
             </div>
           </div>
         </ul>
