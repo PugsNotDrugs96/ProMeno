@@ -2,18 +2,17 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import LoggedInPage from "../logged-in-page/LoggedInPage";
 import AuthContext from "../../context/AuthProvider";
-import axios from "../api/axios";
+import { loginUser } from "../../api/api";
 
-function Login() {
-  const LOGIN_URL = "/register";
+function Auth() {
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
-  const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false); //when this is true, we should navigate to logged-in-page.
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -21,35 +20,23 @@ function Login() {
 
   useEffect(() => {
     setErrMsg("");
-  }, [user, pwd]);
+  }, [email, password]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        LOGIN_URL,
-        JSON.stringify({ user, pwd }),
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": true,
-            withCredentials: true,
-          },
-        }
-      );
-      console.log(JSON.stringify(response?.data));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data?.roles;
-      setAuth({ user, pwd, roles, accessToken });
-      setUser("");
-      setPwd("");
-      setSuccess(true);
+      const response = await loginUser(email, password);
+      if (response.status === 200) {
+        setAuth({ email, password });
+        setEmail("");
+        setPassword("");
+        setSuccess(true);
+      }
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Inget svar från servern");
       } else if (err.response?.status === 400) {
-        setErrMsg("Fel uppgifter");
+        setErrMsg("Fel e-postadress eller lösenord, försök igen.");
       } else if (err.response?.status === 401) {
         setErrMsg("Inte autentiserad");
       } else {
@@ -65,13 +52,6 @@ function Login() {
         <LoggedInPage />
       ) : (
         <div className="container ">
-          <p
-            ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"}
-            aria-live="assertive"
-          >
-            {errMsg}
-          </p>
           <div className="col-md-5 mx-auto col-lg-5">
             <form
               onSubmit={handleSubmit}
@@ -92,8 +72,8 @@ function Login() {
                   className="form-control"
                   id="email"
                   name="email"
-                  onChange={(e) => setUser(e.target.value)}
-                  value={user}
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
                   required
                 />
                 <label htmlFor="floatingInput">E-post</label>
@@ -103,16 +83,25 @@ function Login() {
                   type="password"
                   id="password"
                   className="form-control"
-                  onChange={(e) => setPwd(e.target.value)}
-                  value={pwd}
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
                   required
                 />
                 <label htmlFor="floatingInput">Lösenord</label>
               </div>
               <button className="w-100 btn btn-lg btn-primary">Logga in</button>
-              {/*  <p className="text-center mt-2">
-              Glömt <a href="#">lösenord?</a>
-            </p> */}
+              <p className="text-center mt-2">
+                Glömt <a href="/">lösenord?</a>
+              </p>
+              <p
+                ref={errRef}
+                className={
+                  errMsg ? "errmsg text-danger text-center mt-2" : "offscreen"
+                }
+                aria-live="assertive"
+              >
+                {errMsg}
+              </p>
             </form>
           </div>
         </div>
@@ -121,4 +110,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Auth;
