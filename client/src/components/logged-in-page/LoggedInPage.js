@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../Hero/Hero";
+import Hero from "../hero/Hero";
 import Content from "./Content";
 
 const LoggedInPage = () => {
