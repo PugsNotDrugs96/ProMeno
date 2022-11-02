@@ -49,7 +49,7 @@ function Header(props) {
               </button>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <a className="dropdown-item" href="/Profile">
                     Profil
                   </a>
                 </li>
