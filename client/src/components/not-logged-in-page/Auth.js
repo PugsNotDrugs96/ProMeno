@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
-import LoggedInPage from "../logged-in-page/LoggedInPage";
-import AuthContext from "../../context/AuthProvider";
 import { loginUser } from "../../api/api";
+import AuthContext from "../../AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function Auth() {
   const { setAuth } = useContext(AuthContext);
+  let navigate = useNavigate();
   const userRef = useRef();
   const errRef = useRef();
 
@@ -27,7 +28,7 @@ function Auth() {
     try {
       const response = await loginUser(email, password);
       if (response.status === 200) {
-        setAuth({ email, password });
+        setAuth(email, password);
         setEmail("");
         setPassword("");
         setSuccess(true);
@@ -49,7 +50,7 @@ function Auth() {
   return (
     <>
       {success ? (
-        <LoggedInPage />
+        navigate("/home")
       ) : (
         <div className="container ">
           <div className="col-md-5 mx-auto col-lg-5">
@@ -91,7 +92,7 @@ function Auth() {
               </div>
               <button className="w-100 btn btn-lg btn-primary">Logga in</button>
               <p className="text-center mt-2">
-                Glömt <a href="/">lösenord?</a>
+                Glömt <Link to="/">lösenord?</Link>
               </p>
               <p
                 ref={errRef}

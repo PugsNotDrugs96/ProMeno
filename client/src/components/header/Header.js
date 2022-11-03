@@ -1,4 +1,5 @@
 import "../../styles/Header.css";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   //const [isLoggedIn, setIsLoggedIn] = useState(props.loggedInStatus);
@@ -6,8 +7,8 @@ function Header(props) {
   return (
     <div className="container">
       <header className="d-flex flex-wrap align-items-center justify-content-between py-3 mb-1 border-bottom">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="d-flex align-items-center col-md-3 mb-2 text-dark text-decoration-none"
         >
           <svg
@@ -24,7 +25,7 @@ function Header(props) {
             />
           </svg>
           <span className="fs-4 m-2">ProMeno</span>
-        </a>
+        </Link>
         {!props.isLoggedIn && (
           <div className="text-end">
             <button type="button" className="btn btn-outline-primary me-2">
@@ -49,17 +50,17 @@ function Header(props) {
               </button>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/Profile">
+                  <Link className="dropdown-item" to="/Profile">
                     Profil
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/">
+                  <Link className="dropdown-item" to="/">
                     Logga ut
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
