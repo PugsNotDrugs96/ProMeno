@@ -7,7 +7,6 @@ import "./Profile.css";
 
 function Profile() {
   const { auth } = useContext(AuthContext);
-  const userEmail = "user@email.com";
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Det här går inte att ångra!
@@ -17,7 +16,7 @@ function Profile() {
   return (
     <div className="py-5 text-center">
       <h1 className="fw-bold">Profil</h1>
-      <h4 className="fw-light fst-italic mb-5">{userEmail}</h4>
+      <h4 className="fw-light fst-italic mb-5">{auth}</h4>
       <div className="pt-4 d-grid gap-3 profileContainer">
         <Button variant="primary" size="lg">
           Ändra lösenord
