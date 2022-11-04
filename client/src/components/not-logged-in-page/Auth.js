@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import { loginUser } from "../../api/api";
-import AuthContext from "../../AuthContext";
+import LoginContext from "../../UserContext";
 import { useNavigate } from "react-router-dom";
 
 function Auth() {
-  const { setAuth } = useContext(AuthContext);
+  const { setUser } = useContext(LoginContext);
   let navigate = useNavigate();
   const userRef = useRef();
   const errRef = useRef();
@@ -28,7 +28,7 @@ function Auth() {
     try {
       const response = await loginUser(email, password);
       if (response.status === 200) {
-        setAuth(email, password);
+        setUser(email, password);
         setEmail("");
         setPassword("");
         setSuccess(true);

@@ -8,13 +8,13 @@ import LoggedInPage from "./components/logged-in-page/LoggedInPage";
 import Auth from "./components/not-logged-in-page/Auth";
 import Register from "./components/not-logged-in-page/Register";
 import Profile from "./components/profile/Profile";
-import { AuthProvider } from "./AuthContext";
+import { UserProvider } from "./UserContext";
 import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
+      <UserProvider>
         <div className="App">
           <Header isLoggedIn={true} />
           <Navbar />
@@ -44,7 +44,7 @@ function App() {
             </div>
           </div>
         </div>
-      </AuthProvider>
+      </UserProvider>
     </BrowserRouter>
   );
 }
