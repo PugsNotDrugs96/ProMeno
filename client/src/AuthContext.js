@@ -6,7 +6,7 @@ const AuthContext = createContext({
 });
 
 export const AuthProvider = ({ children }) => {
-  const [auth, setAuth] = useState("init value");
+  const [auth, setAuth] = useState(null);
 
   return (
     <AuthContext.Provider value={{ auth, setAuth }}>

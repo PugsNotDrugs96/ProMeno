@@ -9,6 +9,7 @@ import Auth from "./components/not-logged-in-page/Auth";
 import Register from "./components/not-logged-in-page/Register";
 import Profile from "./components/profile/Profile";
 import { AuthProvider } from "./AuthContext";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
@@ -21,12 +22,24 @@ function App() {
             <div className="container shadow">
               <Routes>
                 <Route path="/" element={<NotLoggedInPage />} />
-                <Route path="/home" element={<LoggedInPage />} />{" "}
-                {/*man ska inte kunna gå in på inloggat läge direkt från URL */}
+                <Route
+                  path="/home"
+                  element={
+                    <ProtectedRoute>
+                      <LoggedInPage />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="/login" element={<Auth />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/Profile" element={<Profile />} />
-                <Route path="/header" element={<Header />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <ProtectedRoute>
+                      <Profile />
+                    </ProtectedRoute>
+                  }
+                />
               </Routes>
             </div>
           </div>
