@@ -5,16 +5,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import NotLoggedInPage from "./components/not-logged-in-page/NotLoggedInPage";
 import LoggedInPage from "./components/logged-in-page/LoggedInPage";
-import Auth from "./components/not-logged-in-page/Auth";
+import Login from "./components/not-logged-in-page/Login";
 import Register from "./components/not-logged-in-page/Register";
 import Profile from "./components/profile/Profile";
-import { AuthProvider } from "./AuthContext";
+import { UserProvider } from "./UserContext";
 import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
+      <UserProvider>
         <div className="App">
           <Header isLoggedIn={true} />
           <Navbar />
@@ -30,7 +30,7 @@ function App() {
                     </ProtectedRoute>
                   }
                 />
-                <Route path="/login" element={<Auth />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route
                   path="/profile"
@@ -44,7 +44,7 @@ function App() {
             </div>
           </div>
         </div>
-      </AuthProvider>
+      </UserProvider>
     </BrowserRouter>
   );
 }
