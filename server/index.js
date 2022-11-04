@@ -35,6 +35,20 @@ app.post("/auth", async function (req, res) {
   res.json({ success: `User ${email} is logged in!` });
 });
 
+app.post("/password/change", async function (req, res) {
+  const { email, oldPassword, newPassword } = req.body;
+  if (!email || !oldPassword || !newPassword) {
+    return res
+      .status(400)
+      .json({ message: "Email and passwords are required" });
+  }
+  const success = usersDB.changePassword(email, oldPassword, newPassword);
+  if (!success) {
+    return res.sendStatus(400);
+  }
+  res.json({ success: `Password for user ${email} is changed!` });
+});
+
 app.get("/posts", async function (_, res) {
   const posts = await fetchPosts();
   res.status(201).json(posts);

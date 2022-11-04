@@ -35,3 +35,16 @@ export async function loginUser(email, password) {
   );
   return response;
 }
+
+export async function changePassword(email, oldPassword, newPassword) {
+  const response = await axios.post(
+    "/password/change",
+    { email, oldPassword, newPassword },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
