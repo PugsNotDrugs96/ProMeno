@@ -1,0 +1,27 @@
+/* Styling content-card */
+.card {
+    border-radius: 0 !important;
+}
+
+.card-body {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-body > a {
+    text-decoration: none;
+}
+
+.card-body > figure {
+    padding: 50px 0px;
+    width: 50%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-body > figure > img {
+    width: 100%;
+    height: 100%;
+}

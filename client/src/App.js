@@ -8,6 +8,7 @@ import LoggedInPage from "./components/logged-in-page/LoggedInPage";
 import Auth from "./components/not-logged-in-page/Auth";
 import Register from "./components/not-logged-in-page/Register";
 import Profile from "./components/profile/Profile";
+import Content from "./components/logged-in-page/Content";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/Auth" element={<Auth />} />
               <Route path="/Register" element={<Register />} />
               <Route path="/Profile" element={<Profile />} />
+              <Route path="/Content" element={<Content />} />
             </Routes>
           </BrowserRouter>
         </div>

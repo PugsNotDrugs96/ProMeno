@@ -69,7 +69,7 @@ const Navbar = () => {
               {childOfMain.map(element => (
                 <div className="col-lg-3 col-md-4 col-sm-6">
                 <li className="category-second">
-                  <a className="category-second" href="/">
+                  <a className="category-second" href="/Content">
                     {element.name}
                   </a>
                 </li>
