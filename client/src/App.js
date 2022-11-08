@@ -32,6 +32,7 @@ function App() {
                   }
                 />
                 <Route path="/login" element={<Auth />} />
+                <Route path="/header" element={<Auth />} />
                 <Route path="/register" element={<Register />} />
                 <Route
                   path="/profile"

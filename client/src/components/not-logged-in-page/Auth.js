@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { loginUser } from "../../api/api";
-import LoginContext from "../../UserContext";
+import UserContext from "../../UserContext";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -9,7 +9,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function Auth() {
-  const { setUser } = useContext(LoginContext);
+  const { setUser } = useContext(UserContext);
   let navigate = useNavigate();
   const userRef = useRef();
   const errRef = useRef();
@@ -57,7 +57,6 @@ function Auth() {
       ) : (
         <Container>
           <Col>
-            {" "}
             <h1 className="text-center text-info"> Logga in</h1>{" "}
           </Col>
           <div className="text-center">
@@ -100,7 +99,6 @@ function Auth() {
                   Skicka
                 </Button>
                 <span>
-                  {" "}
                   Glömt <a href="/">lösenord?</a>
                 </span>
                 <p
