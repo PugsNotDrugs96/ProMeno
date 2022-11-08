@@ -1,15 +1,18 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { Link } from "react-router-dom";
 import { loginUser } from "../../api/api";
 import LoginContext from "../../UserContext";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-function Login() {
+function Auth() {
   const { setUser } = useContext(LoginContext);
   let navigate = useNavigate();
   const userRef = useRef();
   const errRef = useRef();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -52,63 +55,70 @@ function Login() {
       {success ? (
         navigate("/home")
       ) : (
-        <div className="container ">
-          <div className="col-md-5 mx-auto col-lg-5">
-            <form
-              onSubmit={handleSubmit}
-              className="p-4 p-md-5 border rounded-3 bg-light"
-            >
-              <h3 className="text-center">Logga in</h3>
-              <div className="text-center">
-                Inte registrerad ännu?{" "}
-                <Link to="/register" className="link-primary">
-                  Registrera här!
-                </Link>
-              </div>
-              <div className="form-floating mb-3">
-                <input
-                  type="email"
-                  ref={userRef}
-                  autoComplete="off"
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                  required
-                />
-                <label htmlFor="floatingInput">E-post</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input
-                  type="password"
-                  id="password"
-                  className="form-control"
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                  required
-                />
-                <label htmlFor="floatingInput">Lösenord</label>
-              </div>
-              <button className="w-100 btn btn-lg btn-primary">Logga in</button>
-              <p className="text-center mt-2">
-                Glömt <Link to="/">lösenord?</Link>
-              </p>
-              <p
-                ref={errRef}
-                className={
-                  errMsg ? "errmsg text-danger text-center mt-2" : "offscreen"
-                }
-                aria-live="assertive"
-              >
-                {errMsg}
-              </p>
-            </form>
+        <Container>
+          <Col>
+            {" "}
+            <h1 className="text-center text-info"> Logga in</h1>{" "}
+          </Col>
+          <div className="text-center">
+            Inte registrerad ännu?{" "}
+            <span className="link-primary">Registrera här!</span>
           </div>
-        </div>
+          <Row>
+            <Col>
+              <Form onSubmit={handleSubmit}>
+                <Form.Group
+                  className="col-md-5 mb-3"
+                  controlId="formBasicEmail"
+                >
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    ref={userRef}
+                    autoComplete="off"
+                    className="form-control"
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="col-md-5 mb-3"
+                  controlId="formBasicPassword"
+                >
+                  <Form.Label>Lösenord</Form.Label>
+                  <Form.Control
+                    type="password"
+                    className="form-control"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    required
+                  />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Skicka
+                </Button>
+                <span>
+                  {" "}
+                  Glömt <a href="/">lösenord?</a>
+                </span>
+                <p
+                  ref={errRef}
+                  className={
+                    errMsg ? "errmsg text-danger text-center mt-2" : "offscreen"
+                  }
+                  aria-live="assertive"
+                >
+                  {errMsg}
+                </p>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
       )}
     </>
   );
 }
 
-export default Login;
+export default Auth;
