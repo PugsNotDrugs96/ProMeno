@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <UserProvider>
         <div className="App">
-          <Header isLoggedIn={true} />
+          <Header />
           <Navbar />
           <div className="background">
             <div className="container shadow">

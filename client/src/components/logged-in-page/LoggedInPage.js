@@ -5,7 +5,7 @@ import Content from "./Content";
 const LoggedInPage = () => {
   return (
     <>
-      <Hero isLoggedIn={true} />
+      <Hero />
       <Content />
     </>
   );
