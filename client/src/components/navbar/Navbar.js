@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/Navbar.css";
+import "../../styles/Navbar.css"
+import ListGroup from "react-bootstrap/ListGroup"
+import Navbar from "react-bootstrap/Navbar"
+import Container from "react-bootstrap/Container"
+import Row from 'react-bootstrap/Row';
+import Col from "react-bootstrap/Col"
+import NavItem from "react-bootstrap/NavItem"
 import { getCategories } from "../../api";
 
-const Navbar = () => {
+const Navbar_bar = () => {
   const [categories, setCategories] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [toggledCategory, setToggledCategory] = useState("");
@@ -42,14 +48,17 @@ const Navbar = () => {
     setChildOfMain(childOfMainCategories);
   }
 
+  const handleSubCategoryClick = (categoryID) => {
+    /* ska implementera funktionskod */
+  }
+
   return (
     <div className="container">
-      <div className="navbar navbar-expand-sm">
-        <ul className="navbar-nav mx-auto">
+      <Navbar className="justify-content-center">
+        <ListGroup horizontal text-center>
           {mainCategories.map((item) => (
-            <li className="nav-item category-main">
-              <a
-                className="nav-link dropdown-toggle mx-auto"
+            <ListGroup.Item className="border-0">
+              <NavItem
                 onClick={() => handleToggle(item.id, item.name)}
                 href="/"
                 role="button"
@@ -57,30 +66,35 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 {item.name}
-              </a>
-            </li>
+              </NavItem>
+            </ListGroup.Item>
           ))}
-        </ul>
-      </div>
+        </ListGroup>
+      </Navbar>
       {toggle && (
-        <ul className="navbar-nav align-items-center">
-          <div className="navbar navbar-expand-sm">
-            <div className="row">
-              {childOfMain.map(element => (
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/Content">
-                    {element.name}
-                  </a>
-                </li>
-              </div>
-              ))}
-            </div>
-          </div>
-        </ul>
+        <Container>
+          <Navbar className="justify-content-center">
+            <ListGroup horizontal text-center className="justify-content-center">
+            <Row>
+                {childOfMain.map(item => (
+                  <Col xs={6} md={4} lg={3}>
+                  <ListGroup.Item size="xl" className="border-0 sub_cat_item">
+                    <NavItem 
+                      onClick={() => handleSubCategoryClick(item.id)}
+                      role="button"
+                    >
+                      {item.name}
+                    </NavItem>
+                  </ListGroup.Item>
+                  </Col>
+                ))}
+            </Row>
+            </ListGroup>
+          </Navbar>
+        </Container>
       )}
     </div>
   );
 };
 
-export default Navbar;
+export default Navbar_bar;

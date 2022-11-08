@@ -13,7 +13,7 @@ import Content from "./components/logged-in-page/Content";
 function App() {
   return (
     <div className="App">
-      <Header isLoggedIn={true} />
+      <Header isLoggedIn={false} />
       <Navbar />
       <div className="background">
         <div className="container shadow">

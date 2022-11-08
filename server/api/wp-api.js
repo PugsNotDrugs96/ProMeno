@@ -29,7 +29,7 @@ export async function fetchThemes() {
 
 export async function fetchCategories() {
   const response = await axios
-    .get("https://data.promeno.se/wp-json/wp/v2/categories")
+    .get("https://data.promeno.se/wp-json/wp/v2/categories?per_page=100")
     .catch((err) => {
       console.log("Error: ", err.message);
     });
