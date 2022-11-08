@@ -1,8 +1,10 @@
 import "../../styles/Header.css";
 import { Link } from "react-router-dom";
+import UserContext from "../../UserContext";
+import { useContext } from "react";
 
 function Header(props) {
-  //const [isLoggedIn, setIsLoggedIn] = useState(props.loggedInStatus);
+  const { user } = useContext(UserContext);
 
   return (
     <div className="container">
@@ -26,7 +28,7 @@ function Header(props) {
           </svg>
           <span className="fs-4 m-2">ProMeno</span>
         </Link>
-        {!props.isLoggedIn && (
+        {!user && (
           <div className="text-end">
             <button type="button" className="btn btn-outline-primary me-2">
               Logga in
@@ -36,7 +38,7 @@ function Header(props) {
             </button>
           </div>
         )}
-        {props.isLoggedIn && (
+        {user && (
           <div className="text-end">
             <div className="btn-group">
               <button
