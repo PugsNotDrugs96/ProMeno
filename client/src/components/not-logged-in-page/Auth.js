@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import Register from "./Register";
 
 import Button from 'react-bootstrap/Button';
@@ -34,31 +34,57 @@ function Auth(props) {
       // ska kontorlleras och skickas
 
   };
+  
+  function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+  
+  function LoadingButton() {
+    const [isLoading, setLoading] = useState(false);
+  
+    useEffect(() => {
+      if (isLoading) {
+        simulateNetworkRequest().then(() => {
+          setLoading(false);
+        });
+      }
+    }, [isLoading]);
+  
+    const handleClick = () => setLoading(true);
+  
+    return (
+      <Button
+        variant="primary"
+        disabled={isLoading}
+        onClick={!isLoading ? handleClick : null}
+      >
+        {isLoading ? 'Loggar in...' : ' Skicka'}
+      </Button>
+    );
+  }
 
   if (authMode === "signin") {
     return (
       <Container>
-          <Col> <h1 className="text-center text-info"> Logga in</h1> </Col>
+          <Col> <h1 className="text-center text-info text-black "> Logga in</h1> </Col>
           <div className="text-center">Inte registrerad ännu? {" "}
-            <span className="link-primary" onClick={changeAuthMode}>
-              Registrera här!
-            </span>
+            <span className="link-primary" onClick={changeAuthMode}>Registrera här!</span>
           </div>
-        <Row>
+        <Row >
           <Col>
-            <Form>
-              <Form.Group className="col-md-5 mb-3" controlId="formBasicEmail">
+            <Form className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"> 
+              <Form.Group controlId="formBasicEmail">
                 <Form.Label>E-post adress</Form.Label>
-                <Form.Control type="email" placeholder="Ange ditt mail" />
+                <Form.Control type="email" placeholder="Ange ditt mail.." />
               </Form.Group>
-              <Form.Group className="col-md-5 mb-3" controlId="formBasicPassword">
+              <Form.Group controlId="formBasicPassword">
                 <Form.Label>Lösenord</Form.Label>
-                <Form.Control type="password" placeholder="Ange ditt lösenord" />
+                <Form.Control type="password" placeholder="Ange ditt lösenord.." />
               </Form.Group>
-              <Button variant="primary" type="submit">
-                Skicka
-              </Button>
-              <span> Glömt <a href="/">lösenord?</a></span>
+              <div className="text-center mt-3">
+              <LoadingButton/>
+              <p> Glömt <a href="/">lösenord?</a></p>
+              </div>
             </Form>
           </Col>
         </Row>
