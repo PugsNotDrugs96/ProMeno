@@ -36,13 +36,13 @@ app.post("/auth", async function (req, res) {
 });
 
 app.post("/password/change", async function (req, res) {
-  const { email, oldPassword, newPassword } = req.body;
-  if (!email || !oldPassword || !newPassword) {
+  const { email, currentPassword, newPassword } = req.body;
+  if (!email || !currentPassword || !newPassword) {
     return res
       .status(400)
       .json({ message: "Email and passwords are required" });
   }
-  const success = usersDB.changePassword(email, oldPassword, newPassword);
+  const success = usersDB.changePassword(email, currentPassword, newPassword);
   if (!success) {
     return res.sendStatus(400);
   }
