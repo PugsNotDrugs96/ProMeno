@@ -10,6 +10,7 @@ import Register from "./components/not-logged-in-page/Register";
 import Profile from "./components/profile/Profile";
 import { UserProvider } from "./UserContext";
 import ProtectedRoute from "./ProtectedRoute";
+import ChangePasswordForm from "./components/profile/ChangePasswordForm";
 
 function App() {
   return (
@@ -37,6 +38,14 @@ function App() {
                   element={
                     <ProtectedRoute>
                       <Profile />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/password/change"
+                  element={
+                    <ProtectedRoute>
+                      <ChangePasswordForm />
                     </ProtectedRoute>
                   }
                 />
