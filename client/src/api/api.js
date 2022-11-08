@@ -36,10 +36,10 @@ export async function loginUser(email, password) {
   return response;
 }
 
-export async function changePassword(email, oldPassword, newPassword) {
+export async function changePassword(email, currentPassword, newPassword) {
   const response = await axios.post(
     "/password/change",
-    { email, oldPassword, newPassword },
+    { email, currentPassword, newPassword },
     {
       headers: {
         withCredentials: true,

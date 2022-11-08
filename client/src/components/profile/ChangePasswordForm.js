@@ -1,15 +1,19 @@
-import { Link } from "react-router-dom";
 import LoginContext from "../../UserContext";
 import React, { useContext, useRef, useEffect, useState } from "react";
 import { changePassword } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const ChangePasswordForm = () => {
   const { user } = useContext(LoginContext);
   let navigate = useNavigate();
   const userRef = useRef();
   const errRef = useRef();
-  const [oldPassword, setOldPassword] = useState("");
+  const [currentPassword, setCurrentPassword] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -21,7 +25,7 @@ const ChangePasswordForm = () => {
 
   useEffect(() => {
     setErrMsg("");
-  }, [oldPassword, password1, password2]);
+  }, [currentPassword, password1, password2]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,10 +34,10 @@ const ChangePasswordForm = () => {
       errRef.current.focus();
     } else {
       try {
-        const response = await changePassword(user, oldPassword, password1);
+        const response = await changePassword(user, currentPassword, password1);
         console.log(response);
         if (response.status === 200) {
-          setOldPassword("");
+          setCurrentPassword("");
           setPassword1("");
           setPassword2("");
           setSuccess(true);
@@ -53,70 +57,86 @@ const ChangePasswordForm = () => {
 
   useEffect(() => {
     setErrMsg("");
-  }, [password1, password2, oldPassword]);
+  }, [password1, password2, currentPassword]);
 
   return (
     <>
       {success ? (
         navigate("/profile")
       ) : (
-        <div className="container ">
-          <div className="col-md-5 mx-auto col-lg-5">
-            <form
-              onSubmit={handleSubmit}
-              className="p-4 p-md-5 border rounded-3 bg-light"
-            >
-              <h3 className="text-center">Ändra lösenord</h3>
-              <div className="text-center"></div>
-              <div className="form-floating mb-3">
-                <input
-                  type="password"
-                  id="old-password"
-                  ref={userRef}
-                  className="form-control"
-                  onChange={(e) => setOldPassword(e.target.value)}
-                  required
-                />
-                <label htmlFor="floatingInput">Gammalt lösenord</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input
-                  type="password"
-                  id="new-password1"
-                  className="form-control"
-                  onChange={(e) => setPassword1(e.target.value)}
-                  required
-                />
-                <label htmlFor="floatingInput">Nytt lösenord</label>
-              </div>
-              <div className="form-floating mb-3">
-                <input
-                  type="password"
-                  id="new-password2"
-                  className="form-control"
-                  onChange={(e) => setPassword2(e.target.value)}
-                  required
-                />
-                <label htmlFor="floatingInput">Bekräfta nytt lösenord</label>
-              </div>
-              <button className="w-100 btn btn-lg btn-primary">
-                Byt lösenord
-              </button>
-              <p className="text-center mt-2">
-                Glömt <Link to="/">lösenord?</Link>
-              </p>
-              <p
-                ref={errRef}
-                className={
-                  errMsg ? "errmsg text-danger text-center mt-2" : "offscreen"
-                }
-                aria-live="assertive"
-              >
-                {errMsg}
-              </p>
-            </form>
+        <Container>
+          <Col>
+            <h1 className="text-center text-info"> Logga in</h1>{" "}
+          </Col>
+          <div className="text-center">
+            Inte registrerad ännu?{" "}
+            <span className="link-primary">Registrera här!</span>
           </div>
-        </div>
+          <Row>
+            <Col>
+              <Form onSubmit={handleSubmit}>
+                <Form.Group
+                  className="col-md-5 mb-3"
+                  controlId="formBasicEmail"
+                >
+                  <Form.Label>Nuvarande lösenord</Form.Label>
+                  <Form.Control
+                    type="password"
+                    ref={userRef}
+                    autoComplete="off"
+                    className="form-control"
+                    name="current-password"
+                    onChange={(e) => setCurrentPassword(e.target.value)}
+                    value={currentPassword}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="col-md-5 mb-3"
+                  controlId="formBasicPassword"
+                >
+                  <Form.Label>Nytt lösenord</Form.Label>
+                  <Form.Control
+                    type="password"
+                    className="form-control"
+                    onChange={(e) => setPassword1(e.target.value)}
+                    value={password1}
+                    required
+                  />
+                </Form.Group>
+                <Form.Group
+                  className="col-md-5 mb-3"
+                  controlId="formBasicPassword"
+                >
+                  <Form.Label>Upprepa lösenord</Form.Label>
+                  <Form.Control
+                    type="password"
+                    className="form-control"
+                    onChange={(e) => setPassword2(e.target.value)}
+                    value={password2}
+                    required
+                  />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Skicka
+                </Button>
+                <span>
+                  {" "}
+                  Glömt <a href="/">lösenord?</a>
+                </span>
+                <p
+                  ref={errRef}
+                  className={
+                    errMsg ? "errmsg text-danger text-center mt-2" : "offscreen"
+                  }
+                  aria-live="assertive"
+                >
+                  {errMsg}
+                </p>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
       )}
     </>
   );

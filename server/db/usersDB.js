@@ -12,8 +12,8 @@ const usersDB = {
   validateLogin: (email, password) => {
     return users[email] === password;
   },
-  changePassword: (email, oldPassword, newPassword) => {
-    if (!usersDB.validateLogin(email, oldPassword)) return false;
+  changePassword: (email, currentPassword, newPassword) => {
+    if (!usersDB.validateLogin(email, currentPassword)) return false;
     users[email] = newPassword;
     return true;
   },
