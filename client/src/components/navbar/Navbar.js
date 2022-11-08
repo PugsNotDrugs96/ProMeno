@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/Navbar.css";
-import { getCategories } from "../../api";
+import { getCategories } from "../../api/api";
 
 const Navbar = () => {
   const [categories, setCategories] = useState([]);
@@ -21,16 +21,14 @@ const Navbar = () => {
   const mainCategories = categories.filter((category) => !category.parent);
   const childCategories = categories.filter((category) => category.parent);
 
-
   const handleToggle = (parentID, toggledName) => {
-    if(toggledCategory === toggledName){
-      setToggledCategory("")
+    if (toggledCategory === toggledName) {
+      setToggledCategory("");
       setToggle(false);
     } else {
       setToggledCategory(toggledName);
       setToggle(true);
     }
-
 
     let childOfMainCategories = [];
 
@@ -38,9 +36,9 @@ const Navbar = () => {
       if (element.parent === parentID) {
         childOfMainCategories.push(element);
       }
-    })
+    });
     setChildOfMain(childOfMainCategories);
-  }
+  };
 
   return (
     <div className="container">
@@ -66,14 +64,14 @@ const Navbar = () => {
         <ul className="navbar-nav align-items-center">
           <div className="navbar navbar-expand-sm">
             <div className="row">
-              {childOfMain.map(element => (
+              {childOfMain.map((element) => (
                 <div className="col-lg-3 col-md-4 col-sm-6">
-                <li className="category-second">
-                  <a className="category-second" href="/">
-                    {element.name}
-                  </a>
-                </li>
-              </div>
+                  <li className="category-second">
+                    <a className="category-second" href="/">
+                      {element.name}
+                    </a>
+                  </li>
+                </div>
               ))}
             </div>
           </div>
