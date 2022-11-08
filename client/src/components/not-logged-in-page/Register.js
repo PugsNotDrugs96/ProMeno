@@ -21,29 +21,10 @@ function Register(props) {
       setAuthMode("step2");
     }
   };
-
   if(authStep === "step2"){
     return (
-    //   <div className="container">
-    //   <div className="col-md-5 mx-auto col-lg-5">
-    //     <form className="p-4 p-md-5 border rounded-3 bg-light">
-    //     <h3 className="text-center">Steg 2</h3>
-    //       <div className="form-floating mb-3">
-    //         <input type="email" className="form-control"
-    //         id="e-post" name="e-post" value={message} 
-    //         placeholder="Skriv e-postadress här.."
-    //         onChange={handleChange}/>
-    //         <label for="floatingInput">E-post</label>
-    //       </div>
-    //       <button className="w-100 btn btn-lg btn-primary" type="submit" onClick={handleClick}>Registrera</button>
-    //       <hr className="my-4" />
-    //       <small className="text-muted">Genom att trycka på knappen registrera så godkänner jag villkoren för att delta i studien.</small>
-    //     </form>
-    //   </div>
-    // </div>
-
-    <Container>
-      <Col> <h1 className="text-center text-info"> Registrera dig!</h1> </Col>
+      <Container>
+      <Col> <h1 className="text-center text-info"> Registrera dig!</h1> </Col> 
       <Form>
         <h3 className="col-md-5 mb-3">Steg 2</h3>
         <Form.Group className="col-md-5 mb-3" controlId="formBasicEmail">
@@ -64,23 +45,10 @@ function Register(props) {
   }
 
   return (
-    // <div className="container">
-    //   <div className="col-md-5 mx-auto col-lg-5">
-    //     <form className="p-4 p-md-5 border rounded-3 bg-light" >
-    //     <h3 className="text-center">Steg 1</h3>
-    //       <div className="form-floating mb-3">
-    //         <input type="text" className="form-control" id="regCode" name="regCode" value={message} placeholder="Skriv registreringskoden här.." onChange={handleChange}/>
-    //         <label for="floatingInput">Registreringskod</label>
-    //       </div>
-    //       <button className="w-100 btn btn-lg btn-primary" type="submit" onClick={handleClick}>Nästa</button>
-    //     </form>
-    //   </div>
-    // </div>
-
     <Container>
       <Col> <h1 className="text-center text-info"> Registrera dig!</h1> </Col>
       <Form>
-        <h3 className="text-center mb-3">Steg 1</h3>
+        <h3 className="col-md-5 mb-3">Steg 1</h3>
         <Form.Label>Registreringskod</Form.Label>
         <Form.Group className="col-md-5 mb-3" controlId="textarea">
           <Form.Control
@@ -99,7 +67,6 @@ function Register(props) {
         </div>
       </Form>
     </Container>
-
   );
 }
 
