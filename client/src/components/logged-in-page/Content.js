@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getPostById } from "../../api";
+import { getPostById } from "../../api/api";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 

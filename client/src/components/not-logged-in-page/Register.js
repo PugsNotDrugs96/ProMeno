@@ -6,18 +6,17 @@ import Col from 'react-bootstrap/Col';
 
 
 function Register(props) {
-  const [message, setMessage] = useState(""); 
-  const [authStep, setAuthMode] = useState("step1");
+  const [message, setMessage] = useState("");
+  const [authStep, setAuthMode] = useState(1);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setMessage(event.target.value);
-  }
+  };
 
-  const handleClick = event => {
+  const handleClick = (event) => {
     event.preventDefault();
-
-    if(message === "test123"){
-      setMessage("")
+    if (message === "test123") {
+      setMessage("");
       setAuthMode("step2");
     }
   };
@@ -53,12 +52,15 @@ function Register(props) {
   if(authStep === "step2"){
     return (
       <Container>
-      <Col> <h1 className="text-center text-info text-black"> Registrera dig!</h1> </Col> 
+      <Col>
+        {" "}
+        <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
+      </Col>
       <Form  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
         <h3 className="text-center">Steg 2</h3>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>E-post adress</Form.Label>
-          <Form.Control type="email" placeholder="Ange ditt mail här.." onChange={handleChange}/>
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Ange ditt email här.." onChange={handleChange}/>
         </Form.Group>    
           <div className="text-center mx-auto mt-3">
           <LoadingButton />
@@ -66,25 +68,29 @@ function Register(props) {
               <p>Genom att trycka på knappen Registrera så godkänner jag villkoren för att delta i studien.</p> 
             </Form.Text>
           </div>
-      </Form>
-    </Container>
-    )
+        </Form>
+      </Container>
+    );
   }
 
   return (
     <Container>
-      <Col> <h1 className="text-center text-info text-black"> Registrera dig!</h1> </Col>
+      <Col>
+        {" "}
+        <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
+      </Col>
       <Form className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
         <h3 className="text-center">Steg 1</h3>
-        <Form.Label >Registreringskod</Form.Label>
+        <Form.Label>Registreringskod</Form.Label>
         <Form.Group controlId="textarea">
           <Form.Control
             as="input"
-            placeholder="Skriv registreringskoden här.." onChange={handleChange}
+            placeholder="Skriv registreringskoden här.."
+            onChange={handleChange}
           ></Form.Control>
         </Form.Group>
         <div className="text-center mx-auto mt-3 ">
-          <Button variant="primary"  type="submit" onClick={handleClick}>
+          <Button variant="primary" type="submit" onClick={handleClick}>
             Nästa 
           </Button>{' '}
           <Button href="/" variant="secondary"  type="submit">

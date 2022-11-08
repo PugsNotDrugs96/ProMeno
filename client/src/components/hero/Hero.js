@@ -2,8 +2,6 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import Logo from "../../assets/logo.jpeg";
 import "./Hero.css";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
 
 function Hero(props) {
   const isLoggedIn = props.isLoggedIn;
@@ -28,25 +26,6 @@ function Hero(props) {
           </p>
         </div>
       )}{" "}
-      <></>
-      {!isLoggedIn && (
-        <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <Link to="/auth">
-            <Button className="btn btn-success btn-lg px-4 gap-3">
-              Logga in
-            </Button>
-          </Link>
-          <Link to="/register">
-            <Button
-              variant="primary"
-              className="btn btn-success btn-lg px-4 gap-3"
-            >
-              Registrera dig
-            </Button>
-          </Link>
-        </div>
-      )}
-      <></>
     </div>
   );
 }
