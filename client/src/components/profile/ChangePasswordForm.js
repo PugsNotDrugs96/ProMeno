@@ -66,17 +66,13 @@ const ChangePasswordForm = () => {
       ) : (
         <Container>
           <Col>
-            <h1 className="text-center text-info"> Logga in</h1>{" "}
+            <h1 className="text-center text-info text-black"> Logga in</h1>{" "}
           </Col>
-          <div className="text-center">
-            Inte registrerad ännu?{" "}
-            <span className="link-primary">Registrera här!</span>
-          </div>
           <Row>
             <Col>
               <Form onSubmit={handleSubmit}>
                 <Form.Group
-                  className="col-md-5 mb-3"
+                  className="col-md-5 mx-auto col-lg-5 mb-3"
                   controlId="formBasicEmail"
                 >
                   <Form.Label>Nuvarande lösenord</Form.Label>
@@ -92,7 +88,7 @@ const ChangePasswordForm = () => {
                   />
                 </Form.Group>
                 <Form.Group
-                  className="col-md-5 mb-3"
+                  className="col-md-5 mx-auto col-lg-5 mb-3"
                   controlId="formBasicPassword"
                 >
                   <Form.Label>Nytt lösenord</Form.Label>
@@ -105,7 +101,7 @@ const ChangePasswordForm = () => {
                   />
                 </Form.Group>
                 <Form.Group
-                  className="col-md-5 mb-3"
+                  className="col-md-5 mx-auto col-lg-5 mb-3"
                   controlId="formBasicPassword"
                 >
                   <Form.Label>Upprepa lösenord</Form.Label>
@@ -117,13 +113,11 @@ const ChangePasswordForm = () => {
                     required
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <div className="text-center">
+                  <Button variant="primary" type="submit">
                   Skicka
-                </Button>
-                <span>
-                  {" "}
-                  Glömt <a href="/">lösenord?</a>
-                </span>
+                  </Button>
+                  </div>
                 <p
                   ref={errRef}
                   className={

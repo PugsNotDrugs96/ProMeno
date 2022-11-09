@@ -49,7 +49,7 @@ function Auth() {
       errRef.current.focus();
     }
   };
-
+  
   return (
     <>
       {success ? (
@@ -58,17 +58,17 @@ function Auth() {
         <Container>
           <Col>
             {" "}
-            <h1 className="text-center text-info"> Logga in</h1>{" "}
+            <h1 className="text-center text-info text-black"> Logga in</h1>{" "}
           </Col>
           <div className="text-center">
             Inte registrerad ännu?{" "}
-            <span className="link-primary">Registrera här!</span>
+            <span><a href="/register">Registrera här!</a></span>
           </div>
           <Row>
             <Col>
               <Form onSubmit={handleSubmit}>
                 <Form.Group
-                  className="col-md-5 mb-3"
+                  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                   controlId="formBasicEmail"
                 >
                   <Form.Label>Email</Form.Label>
@@ -84,7 +84,7 @@ function Auth() {
                   />
                 </Form.Group>
                 <Form.Group
-                  className="col-md-5 mb-3"
+                  className="col-md-5 mx-auto col-lg-5 mb-3"
                   controlId="formBasicPassword"
                 >
                   <Form.Label>Lösenord</Form.Label>
@@ -96,13 +96,12 @@ function Auth() {
                     required
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <div className="text-center">
+                  <Button variant="primary" type="submit">
                   Skicka
-                </Button>
-                <span>
-                  {" "}
-                  Glömt <a href="/">lösenord?</a>
-                </span>
+                  </Button>
+                  <p> Glömt <a href="/">lösenord?</a></p>
+                </div>
                 <p
                   ref={errRef}
                   className={
