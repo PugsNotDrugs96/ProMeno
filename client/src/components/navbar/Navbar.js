@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "../../styles/Navbar.css";
 import { getCategories } from "../../api/api";
 import UserContext from "../../UserContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
@@ -71,9 +72,12 @@ const Navbar = () => {
                   {childOfMain.map((element) => (
                     <div className="col-lg-3 col-md-4 col-sm-6">
                       <li className="category-second">
-                        <a className="category-second" href="/">
+                        <Link
+                          className="dropdown-item"
+                          to={`/category/${element.id}`}
+                        >
                           {element.name}
-                        </a>
+                        </Link>
                       </li>
                     </div>
                   ))}

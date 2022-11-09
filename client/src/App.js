@@ -1,5 +1,5 @@
-import Navbar from "./components/navbar/Navbar";
 import Header from "./components/header/Header";
+import Navbar from "./components/navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -11,6 +11,8 @@ import Profile from "./components/profile/Profile";
 import { UserProvider } from "./UserContext";
 import ProtectedRoute from "./ProtectedRoute";
 import ChangePasswordForm from "./components/profile/ChangePasswordForm";
+import CategoryPage from "./components/post-page/CategoryPage";
+import PostPage from "./components/post-page/PostPage";
 
 function App() {
   return (
@@ -38,6 +40,22 @@ function App() {
                   element={
                     <ProtectedRoute>
                       <Profile />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/category/:id"
+                  element={
+                    <ProtectedRoute>
+                      <CategoryPage />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/post/:id"
+                  element={
+                    <ProtectedRoute>
+                      <PostPage />
                     </ProtectedRoute>
                   }
                 />

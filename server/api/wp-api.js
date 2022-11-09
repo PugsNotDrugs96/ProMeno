@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export async function fetchPosts() {
+export async function fetchPostsByCategory(categoryId) {
   const response = await axios
-    .get("https://data.promeno.se/wp-json/wp/v2/posts")
+    .get(`https://data.promeno.se/wp-json/wp/v2/posts?cat=/${categoryId}`)
     .catch((err) => {
       console.log("Error: ", err.message);
     });

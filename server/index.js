@@ -1,9 +1,9 @@
 import express from "express";
 import {
-  fetchPosts,
   fetchThemes,
   fetchCategories,
   fetchPostById,
+  fetchPostsByCategory,
 } from "./api/wp-api.js";
 import cors from "cors";
 import bodyParser from "body-parser";
@@ -49,8 +49,9 @@ app.post("/password/change", async function (req, res) {
   res.json({ success: `Password for user ${email} is changed!` });
 });
 
-app.get("/posts", async function (_, res) {
-  const posts = await fetchPosts();
+app.get("/posts-by-category/:id", async function (req, res) {
+  const id = req.params.id;
+  const posts = await fetchPostsByCategory(id);
   res.status(201).json(posts);
 });
 
