@@ -1,4 +1,4 @@
-import LoginContext from "../../UserContext";
+import UserContext from "../../UserContext";
 import React, { useContext, useRef, useEffect, useState } from "react";
 import { changePassword } from "../../api/api";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const ChangePasswordForm = () => {
-  const { user } = useContext(LoginContext);
+  const { user } = useContext(UserContext);
   let navigate = useNavigate();
   const userRef = useRef();
   const errRef = useRef();

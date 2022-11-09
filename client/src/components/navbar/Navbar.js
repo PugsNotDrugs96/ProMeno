@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../styles/Navbar.css";
 import { getCategories } from "../../api/api";
+import UserContext from "../../UserContext";
 
 const Navbar = () => {
+  const { user } = useContext(UserContext);
   const [categories, setCategories] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [toggledCategory, setToggledCategory] = useState("");
@@ -41,43 +43,49 @@ const Navbar = () => {
   };
 
   return (
-    <div className="container">
-      <div className="navbar navbar-expand-sm">
-        <ul className="navbar-nav mx-auto">
-          {mainCategories.map((item) => (
-            <li className="nav-item category-main">
-              <a
-                className="nav-link dropdown-toggle mx-auto"
-                onClick={() => handleToggle(item.id, item.name)}
-                href="/"
-                role="button"
-                data-bs-toggle="collapse"
-                aria-expanded="false"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-      {toggle && (
-        <ul className="navbar-nav align-items-center">
+    <>
+      {user ? (
+        <div className="container">
           <div className="navbar navbar-expand-sm">
-            <div className="row">
-              {childOfMain.map((element) => (
-                <div className="col-lg-3 col-md-4 col-sm-6">
-                  <li className="category-second">
-                    <a className="category-second" href="/">
-                      {element.name}
-                    </a>
-                  </li>
-                </div>
+            <ul className="navbar-nav mx-auto">
+              {mainCategories.map((item) => (
+                <li className="nav-item category-main">
+                  <a
+                    className="nav-link dropdown-toggle mx-auto"
+                    onClick={() => handleToggle(item.id, item.name)}
+                    href="/"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                  >
+                    {item.name}
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-        </ul>
+          {toggle && (
+            <ul className="navbar-nav align-items-center">
+              <div className="navbar navbar-expand-sm">
+                <div className="row">
+                  {childOfMain.map((element) => (
+                    <div className="col-lg-3 col-md-4 col-sm-6">
+                      <li className="category-second">
+                        <a className="category-second" href="/">
+                          {element.name}
+                        </a>
+                      </li>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ul>
+          )}
+        </div>
+      ) : (
+        <></>
       )}
-    </div>
+    </>
   );
 };
 
