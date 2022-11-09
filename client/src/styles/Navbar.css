@@ -1,5 +1,7 @@
-.sub_cat_item {
-    font-size: large;
+.cat_item {
     font-weight: bold;
+}
+
+.sub_cat_item {
     margin-bottom: 1rem;
 }

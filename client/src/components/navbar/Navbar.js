@@ -53,11 +53,11 @@ const Navbar_bar = () => {
   }
 
   return (
-    <div className="container">
-      <Navbar className="justify-content-center">
+    <Container>
+      <Navbar className="justify-content-center pb-4">
         <ListGroup horizontal text-center>
           {mainCategories.map((item) => (
-            <ListGroup.Item className="border-0">
+            <ListGroup.Item className="border-0 cat_item">
               <NavItem
                 onClick={() => handleToggle(item.id, item.name)}
                 href="/"
@@ -72,28 +72,22 @@ const Navbar_bar = () => {
         </ListGroup>
       </Navbar>
       {toggle && (
-        <Container>
-          <Navbar className="justify-content-center">
-            <ListGroup horizontal text-center className="justify-content-center">
-            <Row>
-                {childOfMain.map(item => (
-                  <Col xs={6} md={4} lg={3}>
-                  <ListGroup.Item size="xl" className="border-0 sub_cat_item">
-                    <NavItem 
-                      onClick={() => handleSubCategoryClick(item.id)}
-                      role="button"
-                    >
-                      {item.name}
-                    </NavItem>
-                  </ListGroup.Item>
-                  </Col>
-                ))}
-            </Row>
-            </ListGroup>
-          </Navbar>
+        <Container className="justify-content-center">
+          <Row className="justify-content-center">
+            {childOfMain.map(item => (
+              <Col 
+                onClick={() => handleSubCategoryClick(item.id)}
+                role="button"
+                className="sub_cat_item"
+                md="auto"
+              >
+                {item.name}
+              </Col>
+            ))}
+          </Row>
         </Container>
       )}
-    </div>
+    </Container>
   );
 };
 
