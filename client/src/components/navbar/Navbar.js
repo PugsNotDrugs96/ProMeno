@@ -58,7 +58,7 @@ const Navbar_bar = () => {
         <ListGroup horizontal text-center>
           {mainCategories.map((item) => (
             <ListGroup.Item className="border-0 cat_item">
-              <NavItem
+              <NavItem className={`on_hover ${item.name === toggledCategory ? 'main_cat_selected' : ''}`}
                 onClick={() => handleToggle(item.id, item.name)}
                 href="/"
                 role="button"
@@ -78,7 +78,7 @@ const Navbar_bar = () => {
               <Col 
                 onClick={() => handleSubCategoryClick(item.id)}
                 role="button"
-                className="sub_cat_item"
+                className="sub_cat_item on_hover"
                 md="auto"
               >
                 {item.name}

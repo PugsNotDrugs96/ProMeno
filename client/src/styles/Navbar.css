@@ -5,3 +5,11 @@
 .sub_cat_item {
     margin-bottom: 1rem;
 }
+
+.main_cat_selected {
+    text-decoration: underline;
+}
+
+.on_hover:hover {
+    opacity: 70%;
+}
