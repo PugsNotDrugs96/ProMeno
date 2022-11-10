@@ -1,0 +1,102 @@
+{
+  "id": 1,
+  "date": "2022-10-28T08:49:22",
+  "date_gmt": "2022-10-28T06:49:22",
+  "guid": {
+    "rendered": "https://data.promeno.se/?p=1"
+  },
+  "modified": "2022-11-09T23:25:34",
+  "modified_gmt": "2022-11-09T22:25:34",
+  "slug": "hej-varlden",
+  "status": "publish",
+  "type": "post",
+  "link": "https://data.promeno.se/2022/10/28/hej-varlden/",
+  "title": {
+    "rendered": "Nyheter"
+  },
+  "content": {
+    "rendered": "\n<p>Efter 20 år har Läkemedelsverket uppdaterat sin behandlingsrekommendation om hormonbehandling i klimakteriet. Den riktas framför allt till allmänläkare.</p>\n\n\n\n<p>Vid dagens mammografiundersökningar går runt 25 procent av tumörerna under radarn, och många upptäcks i ett sent stadium då de är svårare att bota.</p>\n\n\n\n<p>Mycket vore därför vunnet om det gick att förutspå vilka kvinnor som kommer att insjukna närmsta tiden efter att de har varit på mammografi, så att de kan följas mer noggrant av vården.</p>\n\n\n\n<p>Kanske är det möjligt genom att analysera mammografibilderna med artificiell intelligens? Den möjligheten har undersökts av forskare vid bland annat Karolinska institutet (KI).</p>\n\n\n\n<p>De har utvecklat en AI-metod för att upptäcka tidiga tecken på cancer som läkaren inte ser med blotta ögat – och kombinerat den med 3D-mammografi som ger en mer detaljerad bild av bröstet än den vanliga 2D-varianten.</p>\n\n\n\n<p>Tanken är att metoden ska kunna användas vid mammografiundersökningarna så att dessa både kan upptäcka tumörer – och förutspå framtida risk.</p>\n\n\n\n<p>– Kan man göra de två sakerna samtidigt så är mycket vunnet, säger Mikael Eriksson, en av forskarna vid KI.</p>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Efter 20 år har Läkemedelsverket uppdaterat sin behandlingsrekommendation om hormonbehandling i klimakteriet. Den riktas framför allt till allmänläkare. Vid dagens mammografiundersökningar går runt 25 procent av tumörerna under radarn, och många upptäcks i ett sent stadium då de är svårare att bota. Mycket vore därför vunnet om det gick att förutspå vilka kvinnor som kommer [&hellip;]</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "comment_status": "open",
+  "ping_status": "open",
+  "sticky": false,
+  "template": "",
+  "format": "standard",
+  "meta": {
+    "_oct_exclude_from_cache": false
+  },
+  "categories": [1],
+  "tags": [],
+  "_links": {
+    "self": [
+      {
+        "href": "https://data.promeno.se/wp-json/wp/v2/posts/1"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=1"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 8,
+        "href": "https://data.promeno.se/wp-json/wp/v2/posts/1/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 49,
+        "href": "https://data.promeno.se/wp-json/wp/v2/posts/1/revisions/49"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=1"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "category",
+        "embeddable": true,
+        "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=1"
+      },
+      {
+        "taxonomy": "post_tag",
+        "embeddable": true,
+        "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=1"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}
