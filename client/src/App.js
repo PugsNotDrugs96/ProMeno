@@ -1,5 +1,5 @@
 import Header from "./components/header/Header";
-import Navbar from "./components/navbar/Navbar";
+import Navigation from "./components/navigation/Navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -20,7 +20,7 @@ function App() {
       <UserProvider>
         <div className="App">
           <Header />
-          <Navbar />
+          <Navigation />
           <div className="background">
             <div className="container shadow">
               <Routes>

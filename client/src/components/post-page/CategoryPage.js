@@ -10,17 +10,17 @@ import Row from "react-bootstrap/Row";
 function CategoryPage() {
   const navigate = useNavigate();
   const params = useParams();
-  const categoryId = params.id;
+  const id = params.id;
 
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
-      const posts = await getPostsByCategory(categoryId);
+      const posts = await getPostsByCategory(id);
       setPosts(posts);
     }
     fetchData();
-  }, [categoryId]);
+  }, [id]);
 
   if (!posts) return null;
 
