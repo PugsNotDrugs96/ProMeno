@@ -1,0 +1,444 @@
+[
+  {
+    "id": 22,
+    "count": 0,
+    "description": "",
+    "link": "https://data.promeno.se/category/om-klimakteriet/vad-hander-i-kroppen/",
+    "name": "Vad händer i kroppen?",
+    "slug": "vad-hander-i-kroppen",
+    "taxonomy": "category",
+    "parent": 21,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/22"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/21"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=22"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "count": 0,
+    "description": "",
+    "link": "https://data.promeno.se/category/behandling/",
+    "name": "Behandling",
+    "slug": "behandling",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=3"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "count": 2,
+    "description": "",
+    "link": "https://data.promeno.se/category/symptom/fysiska-symptom/",
+    "name": "Fysiska symptom",
+    "slug": "fysiska-symptom",
+    "taxonomy": "category",
+    "parent": 1,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/11"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/1"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=11"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "count": 0,
+    "description": "",
+    "link": "https://data.promeno.se/category/behandling/cbt/",
+    "name": "Cognitive Behavioral Therapy (CBT)",
+    "slug": "cbt",
+    "taxonomy": "category",
+    "parent": 3,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/15"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=15"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "count": 0,
+    "description": "",
+    "link": "https://data.promeno.se/category/om-klimakteriet/nar-ska-jag-soka-hjalp/",
+    "name": "När ska jag söka hjälp?",
+    "slug": "nar-ska-jag-soka-hjalp",
+    "taxonomy": "category",
+    "parent": 21,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/23"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/21"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=23"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "count": 2,
+    "description": "",
+    "link": "https://data.promeno.se/category/symptom/",
+    "name": "Symptom",
+    "slug": "symptom",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/1"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=1"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "count": 0,
+    "description": "",
+    "link": "https://data.promeno.se/category/behandling/act/",
+    "name": "Acceptance and Commitment Therapy (ACT)",
+    "slug": "act",
+    "taxonomy": "category",
+    "parent": 3,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/16"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=16"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "count": 2,
+    "description": "",
+    "link": "https://data.promeno.se/category/symptom/psykiska-symptom/",
+    "name": "Psykiska symptom",
+    "slug": "psykiska-symptom",
+    "taxonomy": "category",
+    "parent": 1,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/19"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/1"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=19"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "count": 1,
+    "description": "",
+    "link": "https://data.promeno.se/category/symptom/sexuella-symptom/",
+    "name": "Sexuella symptom",
+    "slug": "sexuella-symptom",
+    "taxonomy": "category",
+    "parent": 1,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/20"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/1"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=20"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "count": 0,
+    "description": "",
+    "link": "https://data.promeno.se/category/om-klimakteriet/",
+    "name": "Om klimakteriet",
+    "slug": "om-klimakteriet",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/21"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=21"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]

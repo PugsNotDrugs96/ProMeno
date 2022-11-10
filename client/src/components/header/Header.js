@@ -10,7 +10,7 @@ function Header(props) {
     <div className="container">
       <header className="d-flex flex-wrap align-items-center justify-content-between py-3 mb-1 border-bottom">
         <Link
-          to="/"
+          to="/home"
           className="d-flex align-items-center col-md-3 mb-2 text-dark text-decoration-none"
         >
           <svg

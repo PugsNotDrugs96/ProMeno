@@ -1,7 +1,7 @@
 import axios from "./serverConnection";
 
-export async function getPosts() {
-  const response = await axios.get("/posts", {
+export async function getPostsByCategory(id) {
+  const response = await axios.get(`/posts-by-category/${id}`, {
     headers: {
       "Content-Type": "application/json",
     },

@@ -1,0 +1,818 @@
+[
+  {
+    "id": 34,
+    "date": "2022-11-08T11:45:25",
+    "date_gmt": "2022-11-08T10:45:25",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=34"
+    },
+    "modified": "2022-11-09T23:20:50",
+    "modified_gmt": "2022-11-09T22:20:50",
+    "slug": "om-forskningsstudien",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/11/08/om-forskningsstudien/",
+    "title": {
+      "rendered": "Om forskningsstudien"
+    },
+    "content": {
+      "rendered": "\n<p>This is a collaborative interdisciplinary project using biopsychosocial perspective studying the effects of interactive mobile technology for health and wellbeing of women during menopause. </p>\n\n\n\n<p>The aim of the research project is to improve accessibility and treatment of menopausal health problems among women by developing a mobile application (mHealth) with evidence-based psychological treatment components including educational material about how menopause affect the mind and the body. Treatment components includes Cognitive Behavioral Therapy (CBT), Acceptance and Commitment Therapy (ACT), Mindfulness, and Psychoeducation.</p>\n\n\n\n<p>The aim is also to evaluate the effectiveness of the mHealth intervention using a randomized controlled trial (RCT) among women attending menopause- gynaecology- and midwifery clinics in Region Skåne.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>This is a collaborative interdisciplinary project using biopsychosocial perspective studying the effects of interactive mobile technology for health and wellbeing of women during menopause. The aim of the research project is to improve accessibility and treatment of menopausal health problems among women by developing a mobile application (mHealth) with evidence-based psychological treatment components including educational [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [1],
+    "tags": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/34"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=34"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/34/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 47,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/34/revisions/47"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=34"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=34"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=34"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "date": "2022-11-08T11:43:02",
+    "date_gmt": "2022-11-08T10:43:02",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=32"
+    },
+    "modified": "2022-11-10T08:42:35",
+    "modified_gmt": "2022-11-10T07:42:35",
+    "slug": "minskad-sexlust",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/11/08/minskad-sexlust/",
+    "title": {
+      "rendered": "Minskad sexlust"
+    },
+    "content": {
+      "rendered": "\n<p>Lust till sex kan variera från person till person, och vara olika stark i olika perioder av livet. Sexuell upphetsning kan starta i hjärnan av olika upplevelser och tankar. Upphetsningen kan också starta i kroppen genom beröring och smekningar, av dig själv eller någon annan.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Lust till sex kan variera från person till person, och vara olika stark i olika perioder av livet. Sexuell upphetsning kan starta i hjärnan av olika upplevelser och tankar. Upphetsningen kan också starta i kroppen genom beröring och smekningar, av dig själv eller någon annan.</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [20],
+    "tags": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/32"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=32"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 3,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/32/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 52,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/32/revisions/52"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=32"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=32"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=32"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "date": "2022-11-08T11:42:51",
+    "date_gmt": "2022-11-08T10:42:51",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=30"
+    },
+    "modified": "2022-11-10T08:42:51",
+    "modified_gmt": "2022-11-10T07:42:51",
+    "slug": "nedstamdhet",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/11/08/nedstamdhet/",
+    "title": {
+      "rendered": "Nedstämdhet"
+    },
+    "content": {
+      "rendered": "\n<p>Att känna sig nedstämd, håglös eller ledsen är en naturlig del av livet. Ibland förstår man varför man är nedstämd, ibland inte. Nedstämdhet går nästan alltid över av sig själv, men det kan ta tid. Det finns ofta saker du kan göra själv för att må bättre. Ibland kan du behöva hjälp.</p>\n\n\n\n<p>Den här artikeln handlar om nedstämdhet hos vuxna. Gäller&nbsp;det&nbsp;<a href=\"https://www.1177.se/Skane/barn--gravid/nar-familjelivet-ar-svart/nar-barn-mar-daligt/nar-barn-mar-psykiskt-daligt/\">barn som mår psykiskt dåligt</a>&nbsp;kan du läsa mer här. Du som är 13 till 25 år kan läsa mer om&nbsp;<a href=\"https://www.umo.se/att-ma-daligt/nedstamdhet-och-angest/nedstamdhet/\">nedstämdhet på UMO.se</a>.&nbsp;</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Att känna sig nedstämd, håglös eller ledsen är en naturlig del av livet. Ibland förstår man varför man är nedstämd, ibland inte. Nedstämdhet går nästan alltid över av sig själv, men det kan ta tid. Det finns ofta saker du kan göra själv för att må bättre. Ibland kan du behöva hjälp. Den här artikeln [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [19],
+    "tags": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/30"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=30"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/30/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 53,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/30/revisions/53"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=30"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=30"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=30"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "date": "2022-11-08T11:42:20",
+    "date_gmt": "2022-11-08T10:42:20",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=28"
+    },
+    "modified": "2022-11-10T08:43:10",
+    "modified_gmt": "2022-11-10T07:43:10",
+    "slug": "angest",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/11/08/angest/",
+    "title": {
+      "rendered": "Ångest"
+    },
+    "content": {
+      "rendered": "\n<p>Ångest är rädsla eller oro som känns i kroppen. Det är obehagligt men inte farligt att ha ångest. Det finns olika sätt att hantera ångest, och saker du kan göra själv för att må bättre. Det finns även behandling som hjälper.</p>\n\n\n\n<p>Du som är förälder eller annan viktig vuxen till ett barn eller tonåring som har ångest kan&nbsp;<a href=\"https://www.1177.se/Skane/sjukdomar--besvar/psykiska-sjukdomar-och-besvar/angest/angest-och-fobier-hos-barn-och-tonaringar/\">läsa mer här</a>. Du som själv är ung kan läsa mer om&nbsp;<a href=\"https://www.1177.se/Skane/lankbiblioteket/nationella-lankar/umo--startsida/umo---angest/\">ångest på UMO.se</a></p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Ångest är rädsla eller oro som känns i kroppen. Det är obehagligt men inte farligt att ha ångest. Det finns olika sätt att hantera ångest, och saker du kan göra själv för att må bättre. Det finns även behandling som hjälper. Du som är förälder eller annan viktig vuxen till ett barn eller tonåring som [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [19],
+    "tags": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/28"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=28"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/28/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 54,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/28/revisions/54"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=28"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=28"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=28"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "date": "2022-11-08T11:42:11",
+    "date_gmt": "2022-11-08T10:42:11",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=26"
+    },
+    "modified": "2022-11-09T23:21:06",
+    "modified_gmt": "2022-11-09T22:21:06",
+    "slug": "varmevallningar",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/11/08/varmevallningar/",
+    "title": {
+      "rendered": "Värmevallningar"
+    },
+    "content": {
+      "rendered": "\n<p>Klimakteriet upplevs på olika sätt från person till person. De flesta känner någon sorts obehag i samband med klimakteriet. Det kan vara lätta eller svårare besvär. Kontakta vården om du mår dåligt på grund av besvären. Det finns lindrande behandling att få.</p>\n\n\n\n<p>Klimakteriet är en naturlig del av åldrandet. I klimakteriet förändras kroppens hormonbalans, som gör att du kan få olika symtom. Läs mer om&nbsp;<a href=\"https://www.1177.se/Skane/liv--halsa/sa-fungerar-kroppen/klimakteriet/\">klimakteriet här.</a></p>\n\n\n\n<p>Klimakteriebesvär kallas också övergångsbesvär.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Klimakteriet upplevs på olika sätt från person till person. De flesta känner någon sorts obehag i samband med klimakteriet. Det kan vara lätta eller svårare besvär. Kontakta vården om du mår dåligt på grund av besvären. Det finns lindrande behandling att få. Klimakteriet är en naturlig del av åldrandet. I klimakteriet förändras kroppens hormonbalans, som [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [11],
+    "tags": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/26"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=26"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/26/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 48,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/26/revisions/48"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=26"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=26"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=26"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "date": "2022-11-08T11:41:44",
+    "date_gmt": "2022-11-08T10:41:44",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=24"
+    },
+    "modified": "2022-11-10T08:43:28",
+    "modified_gmt": "2022-11-10T07:43:28",
+    "slug": "somnsvarigheter",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/11/08/somnsvarigheter/",
+    "title": {
+      "rendered": "Sömnsvårigheter"
+    },
+    "content": {
+      "rendered": "\n<p>Det är vanligt med sömnsvårigheter. Oftast är det inget du behöver oroa dig för. Det är inte farligt att då och då ha en natt när du får för lite sömn. Men om du sover för lite natt efter natt, blir trött, mår dåligt och fungerar sämre i vardagen, kan du behöva hjälp med att få bättre sömn.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Det är vanligt med sömnsvårigheter. Oftast är det inget du behöver oroa dig för. Det är inte farligt att då och då ha en natt när du får för lite sömn. Men om du sover för lite natt efter natt, blir trött, mår dåligt och fungerar sämre i vardagen, kan du behöva hjälp med att [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [11],
+    "tags": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/24"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=24"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/24/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 55,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/24/revisions/55"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=24"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=24"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=24"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "date": "2022-10-30T21:32:15",
+    "date_gmt": "2022-10-30T20:32:15",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=9"
+    },
+    "modified": "2022-10-30T21:32:15",
+    "modified_gmt": "2022-10-30T20:32:15",
+    "slug": "lakemedel",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/10/30/lakemedel/",
+    "title": {
+      "rendered": "Läkemedel"
+    },
+    "content": {
+      "rendered": "\n<p>Läkemedel med östrogen lindrar om du har mycket besvär. De verkar i hela kroppen. Läkemedlen finns i olika former som tabletter, plåster eller gel.</p>\n\n\n\n<p>Du kan också behandlas med läkemedel i slidan om du endast har underlivsbesvär. Dessa läkemedel verkar bara i underlivet och inte i hela kroppen.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Läkemedel med östrogen lindrar om du har mycket besvär. De verkar i hela kroppen. Läkemedlen finns i olika former som tabletter, plåster eller gel. Du kan också behandlas med läkemedel i slidan om du endast har underlivsbesvär. Dessa läkemedel verkar bara i underlivet och inte i hela kroppen.</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [5],
+    "tags": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/9"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=9"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/9/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 10,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/9/revisions/10"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=9"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=9"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=9"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "date": "2022-10-28T08:49:22",
+    "date_gmt": "2022-10-28T06:49:22",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=1"
+    },
+    "modified": "2022-11-09T23:25:34",
+    "modified_gmt": "2022-11-09T22:25:34",
+    "slug": "hej-varlden",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/10/28/hej-varlden/",
+    "title": {
+      "rendered": "Nyheter"
+    },
+    "content": {
+      "rendered": "\n<p>Efter 20 år har Läkemedelsverket uppdaterat sin behandlingsrekommendation om hormonbehandling i klimakteriet. Den riktas framför allt till allmänläkare.</p>\n\n\n\n<p>Vid dagens mammografiundersökningar går runt 25 procent av tumörerna under radarn, och många upptäcks i ett sent stadium då de är svårare att bota.</p>\n\n\n\n<p>Mycket vore därför vunnet om det gick att förutspå vilka kvinnor som kommer att insjukna närmsta tiden efter att de har varit på mammografi, så att de kan följas mer noggrant av vården.</p>\n\n\n\n<p>Kanske är det möjligt genom att analysera mammografibilderna med artificiell intelligens? Den möjligheten har undersökts av forskare vid bland annat Karolinska institutet (KI).</p>\n\n\n\n<p>De har utvecklat en AI-metod för att upptäcka tidiga tecken på cancer som läkaren inte ser med blotta ögat – och kombinerat den med 3D-mammografi som ger en mer detaljerad bild av bröstet än den vanliga 2D-varianten.</p>\n\n\n\n<p>Tanken är att metoden ska kunna användas vid mammografiundersökningarna så att dessa både kan upptäcka tumörer – och förutspå framtida risk.</p>\n\n\n\n<p>– Kan man göra de två sakerna samtidigt så är mycket vunnet, säger Mikael Eriksson, en av forskarna vid KI.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Efter 20 år har Läkemedelsverket uppdaterat sin behandlingsrekommendation om hormonbehandling i klimakteriet. Den riktas framför allt till allmänläkare. Vid dagens mammografiundersökningar går runt 25 procent av tumörerna under radarn, och många upptäcks i ett sent stadium då de är svårare att bota. Mycket vore därför vunnet om det gick att förutspå vilka kvinnor som kommer [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [1],
+    "tags": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/1"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=1"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 8,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/1/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 49,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/1/revisions/49"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=1"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=1"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=1"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  }
+]
