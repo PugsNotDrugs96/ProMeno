@@ -17,6 +17,13 @@ const usersDB = {
     users[email] = newPassword;
     return true;
   },
+  findUser: (email) => {
+    if (email in users) {
+      console.log("here!");
+      return true;
+    }
+    return false;
+  },
 };
 
 export default usersDB;

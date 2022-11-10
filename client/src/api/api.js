@@ -23,6 +23,11 @@ export async function getCategories() {
   return response.data;
 }
 
+export async function forgotPassword(email) {
+  const response = await axios.post("/forgot", { email });
+  return response;
+}
+
 export async function loginUser(email, password) {
   const response = await axios.post(
     "/auth",

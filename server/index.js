@@ -35,6 +35,19 @@ app.post("/auth", async function (req, res) {
   res.json({ success: `User ${email} is logged in!` });
 });
 
+app.post("/forgot", async function (req, res) {
+  const { email } = req.body;
+  if (!email) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+  const userExists = usersDB.findUser(email);
+
+  if (!userExists) {
+    return res.status(400).json({ message: "Can't find user in database" });
+  }
+  res.json({ success: `User ${email} is logged in!` });
+});
+
 app.post("/password/change", async function (req, res) {
   const { email, currentPassword, newPassword } = req.body;
   if (!email || !currentPassword || !newPassword) {
