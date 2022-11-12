@@ -23,11 +23,6 @@ export async function getCategories() {
   return response.data;
 }
 
-export async function forgotPassword(email) {
-  const response = await axios.post("/forgot", { email });
-  return response;
-}
-
 export async function loginUser(email, password) {
   const response = await axios.post(
     "/auth",
@@ -43,8 +38,39 @@ export async function loginUser(email, password) {
 
 export async function changePassword(email, currentPassword, newPassword) {
   const response = await axios.post(
-    "/password/change",
+    "/change-password",
     { email, currentPassword, newPassword },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
+
+export async function getResetPasswordLink(email) {
+  const response = await axios.post("/reset-password-link", { email });
+  return response;
+}
+
+export async function validateLink(email, token) {
+  const response = await axios.post(
+    "/validate-link",
+    { email, token },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
+
+export async function resetPassword(email, newPassword) {
+  const response = await axios.post(
+    "/reset-password",
+    { email, newPassword },
     {
       headers: {
         withCredentials: true,

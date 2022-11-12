@@ -100,10 +100,10 @@ function Auth() {
                 </Form.Group>
                 <div className="text-center">
                   <Button variant="primary" type="submit">
-                    Skicka
+                    Logga in
                   </Button>
                   <p>
-                    Glömt <a href="/forgot-password">lösenord?</a>
+                    Glömt <a href="/forgot-password">lösenordet?</a>
                   </p>
                 </div>
                 <p

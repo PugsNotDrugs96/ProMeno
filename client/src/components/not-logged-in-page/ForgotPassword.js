@@ -1,18 +1,19 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import { forgotPassword } from "../../api/api";
-import UserContext from "../../UserContext";
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { getResetPasswordLink } from "../../api/api";
 
 function ForgotPassword() {
-  const { setUser } = useContext(UserContext);
+  const responseRef = useRef();
   const userRef = useRef();
   const errRef = useRef();
   const [email, setEmail] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [responseMsg, setResponseMsg] = useState("");
 
   useEffect(() => {
     userRef.current.focus();
@@ -20,28 +21,28 @@ function ForgotPassword() {
 
   useEffect(() => {
     setErrMsg("");
+    setResponseMsg("");
   }, [email]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await forgotPassword(email);
+      const response = await getResetPasswordLink(email);
       if (response.status === 200) {
-        setErrMsg(
-          "Du har fått ett mail i din inkorg för att återställa lösenordet"
+        setResponseMsg(
+          "En återställningslänk har skickats till din mailadress"
         );
+        responseRef.current.focus();
       }
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Inget svar från servern");
       } else if (err.response?.status === 400) {
-        setErrMsg(
-          "E-postadressen finns inte hos oss. Kontrollera att du skrev rätt"
-        );
+        setErrMsg("Det finns inget konto hos oss med den mailadressen");
       } else if (err.response?.status === 401) {
         setErrMsg("Inte autentiserad");
       } else {
-        setErrMsg("Inloggning lyckades inte");
+        setErrMsg("Något gick fel, försök igen eller kontakta vår support");
       }
       errRef.current.focus();
     }
@@ -50,7 +51,13 @@ function ForgotPassword() {
   return (
     <Container>
       <Col>
-        <h1 className="text-center text-info text-black"> Glömt lösenord</h1>{" "}
+        <h1 className="text-center text-info text-black">
+          Återställ ditt lösenord
+        </h1>
+        <p className="text-center text-info text-black">
+          Ange den epostadress som är kopplad till ditt konto så skickar vi en
+          återställningslänk.
+        </p>
       </Col>
       <Row>
         <Col>
@@ -74,7 +81,7 @@ function ForgotPassword() {
             </Form.Group>
             <div className="text-center">
               <Button variant="primary" type="submit">
-                Skicka
+                Återställ ditt lösenord
               </Button>
             </div>
             <p
@@ -86,6 +93,20 @@ function ForgotPassword() {
             >
               {errMsg}
             </p>
+            <p
+              ref={responseRef}
+              className={
+                responseMsg
+                  ? "responseMsg text-success text-center mt-2"
+                  : "offscreen"
+              }
+              aria-live="assertive"
+            >
+              {responseMsg}
+            </p>
+            <div className="text-center">
+              <Link to="/login">Tillbaka till inloggningen</Link>
+            </div>
           </Form>
         </Col>
       </Row>
