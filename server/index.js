@@ -3,6 +3,7 @@ import {
   fetchThemes,
   fetchCategories,
   fetchPostById,
+  fetchPostBySlug,
   fetchPostsByCategory,
 } from "./api/wp-api.js";
 import cors from "cors";
@@ -69,9 +70,15 @@ app.get("/posts-by-category/:id", async function (req, res) {
   res.status(200).json(posts);
 });
 
-app.get("/posts/:id", async function (req, res) {
+app.get("/posts-by-id/:id", async function (req, res) {
   const id = req.params.id;
   const post = await fetchPostById(id);
+  res.status(200).json(post);
+});
+
+app.get("/posts-by-slug/:slug", async function (req, res) {
+  const slug = req.params.slug;
+  const post = await fetchPostBySlug(slug);
   res.status(200).json(post);
 });
 

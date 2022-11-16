@@ -10,7 +10,16 @@ export async function getPostsByCategory(id) {
 }
 
 export async function getPostById(id) {
-  const response = await axios.get(`/posts/${id}`, {
+  const response = await axios.get(`/posts-by-id/${id}`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return response.data;
+}
+
+export async function getPostBySlug(slug) {
+  const response = await axios.get(`/posts-by-slug/${slug}`, {
     headers: {
       "Content-Type": "application/json",
     },
