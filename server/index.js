@@ -1,6 +1,4 @@
 import * as dotenv from "dotenv";
-dotenv.config();
-
 import express from "express";
 import {
   fetchThemes,
@@ -13,6 +11,7 @@ import bodyParser from "body-parser";
 import usersDB from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
+import NodeCache from "node-cache";
 
 const app = express();
 const PORT = 5000;
@@ -28,7 +27,14 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ exteded: false }));
 
+dotenv.config();
+
 const JWT_SECRET = process.env.JWT_SECRET;
+
+//"Time to live" --> How long we should save cache
+const TTL = 3600;
+
+const cache = new NodeCache({ stdTTL: TTL, checkperiod: TTL });
 
 app.post("/auth", async function (req, res) {
   const { email, password } = req.body;
@@ -88,23 +94,30 @@ app.post("/change-password", async function (req, res) {
 
 app.get("/posts-by-category/:id", async function (req, res) {
   const id = req.params.id;
-  const posts = await fetchPostsByCategory(id);
+  let posts = cache.get(`posts-${id}`);
+  if (posts) return res.status(201).json(posts);
+
+  posts = await fetchPostsByCategory(id);
+  cache.set(`posts-${id}`, posts);
   res.status(201).json(posts);
 });
 
-app.get("/posts/:id", async function (req, res) {
+app.get("/post/:id", async function (req, res) {
   const id = req.params.id;
-  const post = await fetchPostById(id);
+  let post = cache.get(`post-${id}`);
+  if (post) return res.status(201).json(post);
+
+  post = await fetchPostById(id);
+  cache.set(`post-${id}`, post);
   res.status(201).json(post);
 });
 
-app.get("/themes", async function (_, res) {
-  const themes = await fetchThemes();
-  res.status(201).json(themes);
-});
-
 app.get("/categories", async function (_, res) {
-  const categories = await fetchCategories();
+  let categories = cache.get("categories");
+  if (categories) return res.status(201).json(categories);
+
+  categories = await fetchCategories();
+  cache.set("categories", categories);
   res.status(201).json(categories);
 });
 
