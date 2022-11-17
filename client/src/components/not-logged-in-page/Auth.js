@@ -49,7 +49,7 @@ function Auth() {
       errRef.current.focus();
     }
   };
-  
+
   return (
     <>
       {success ? (
@@ -62,7 +62,9 @@ function Auth() {
           </Col>
           <div className="text-center">
             Inte registrerad ännu?{" "}
-            <span><a href="/register">Registrera här!</a></span>
+            <span>
+              <a href="/register">Registrera här!</a>
+            </span>
           </div>
           <Row>
             <Col>
@@ -98,9 +100,11 @@ function Auth() {
                 </Form.Group>
                 <div className="text-center">
                   <Button variant="primary" type="submit">
-                  Skicka
+                    Logga in
                   </Button>
-                  <p> Glömt <a href="/">lösenord?</a></p>
+                  <p>
+                    Glömt <a href="/forgot-password">lösenordet?</a>
+                  </p>
                 </div>
                 <p
                   ref={errRef}

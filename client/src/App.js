@@ -13,6 +13,8 @@ import ProtectedRoute from "./ProtectedRoute";
 import ChangePasswordForm from "./components/profile/ChangePasswordForm";
 import CategoryPage from "./components/post-page/CategoryPage";
 import PostPage from "./components/post-page/PostPage";
+import ForgotPassword from "./components/not-logged-in-page/ForgotPassword";
+import ResetPassword from "./components/not-logged-in-page/ResetPassword";
 
 function App() {
   return (
@@ -66,6 +68,15 @@ function App() {
                       <ChangePasswordForm />
                     </ProtectedRoute>
                   }
+                />
+                <Route
+                  path="/reset-password/:email/:token"
+                  element={<ResetPassword />}
+                />
+                <Route
+                  exact
+                  path="/forgot-password"
+                  element={<ForgotPassword />}
                 />
               </Routes>
             </div>
