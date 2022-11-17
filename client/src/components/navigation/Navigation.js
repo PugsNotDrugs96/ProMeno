@@ -61,8 +61,8 @@ function Navigation() {
         <Container>
           <Navbar className="justify-content-center pb-4">
             <ListGroup horizontal text-center>
-              {mainCategories.map((item) => (
-                <ListGroup.Item className="border-0 cat_item">
+              {mainCategories.map((item, index) => (
+                <ListGroup.Item className="border-0 cat_item" key={index}>
                   <NavItem
                     className={`on_hover ${
                       item.name === toggledCategory ? "main_cat_selected" : ""
@@ -82,10 +82,11 @@ function Navigation() {
           {toggle && (
             <Container className="justify-content-center">
               <Row className="justify-content-center">
-                {childOfMain.map((category) => (
+                {childOfMain.map((category, index) => (
                   <Col
                     onClick={() => handleSubCategoryClick(category.id)}
                     role="button"
+                    key={index}
                     className="sub_cat_item on_hover"
                     md="auto"
                   >
