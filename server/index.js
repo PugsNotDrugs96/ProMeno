@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import express from "express";
 import {
   fetchThemes,
@@ -7,7 +10,7 @@ import {
 } from "./api/wp-api.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import usersDB from "./db/usersDB.js";
+import {usersDB, registerUser} from "./db/usersDB.js";
 
 const app = express();
 const PORT = 5000;
@@ -34,6 +37,24 @@ app.post("/auth", async function (req, res) {
   }
   res.json({ success: `User ${email} is logged in!` });
 });
+
+app.post("/register", async function(req, res) {
+  const {key, name, email, password} = req.body;
+  if(!key || !name || !email || !password){
+    return res.sendStatus(400).json({message: "Key, name, email and password are required"});
+  }
+
+  if(key !== process.env.PROMENO_KEY){
+    res.sendStatus(401).json({message: "Unauthorized"})
+  }
+
+  const status = registerUser(name, email, password);
+  if(!status){
+    res.json({message: "Unable to register"})
+  } else{
+    res.json({success: `${name} has been successfully been registered`});
+  }
+})
 
 app.post("/password/change", async function (req, res) {
   const { email, currentPassword, newPassword } = req.body;
