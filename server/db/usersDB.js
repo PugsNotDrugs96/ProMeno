@@ -9,13 +9,20 @@ const users = {
 
 const usersDB = {
   users: users,
+  getPassword: (email) => {
+    return users[email];
+  },
   validateLogin: (email, password) => {
     return users[email] === password;
   },
-  changePassword: (email, currentPassword, newPassword) => {
-    if (!usersDB.validateLogin(email, currentPassword)) return false;
+  changePassword: (email, newPassword) => {
     users[email] = newPassword;
     return true;
+  },
+  findUser: (email) => {
+    if (email in users) return true;
+
+    return false;
   },
 };
 
