@@ -8,12 +8,9 @@ import Col from "react-bootstrap/Col";
 import NavItem from "react-bootstrap/NavItem";
 import { getCategories } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import UserContext from "../../UserContext";
-import { useContext } from "react";
 
 function Navigation() {
   const navigate = useNavigate();
-  const { user } = useContext(UserContext);
   const [categories, setCategories] = useState([]);
   const [toggle, setToggle] = useState(false);
   const [toggledCategory, setToggledCategory] = useState("");
@@ -56,51 +53,45 @@ function Navigation() {
   };
 
   return (
-    <>
-      {user ? (
-        <Container>
-          <Navbar className="justify-content-center pb-4">
-            <ListGroup horizontal text-center>
-              {mainCategories.map((item, index) => (
-                <ListGroup.Item className="border-0 cat_item" key={index}>
-                  <NavItem
-                    className={`on_hover ${
-                      item.name === toggledCategory ? "main_cat_selected" : ""
-                    }`}
-                    onClick={() => handleToggle(item.id, item.name)}
-                    href="/"
-                    role="button"
-                    data-bs-toggle="collapse"
-                    aria-expanded="false"
-                  >
-                    {item.name}
-                  </NavItem>
-                </ListGroup.Item>
-              ))}
-            </ListGroup>
-          </Navbar>
-          {toggle && (
-            <Container className="justify-content-center">
-              <Row className="justify-content-center">
-                {childOfMain.map((category, index) => (
-                  <Col
-                    onClick={() => handleSubCategoryClick(category.id)}
-                    role="button"
-                    key={index}
-                    className="sub_cat_item on_hover"
-                    md="auto"
-                  >
-                    {category.name}
-                  </Col>
-                ))}
-              </Row>
-            </Container>
-          )}
+    <Container>
+      <Navbar className="justify-content-center pb-4">
+        <ListGroup horizontal text-center>
+          {mainCategories.map((item, index) => (
+            <ListGroup.Item className="border-0 cat_item" key={index}>
+              <NavItem
+                className={`on_hover ${
+                  item.name === toggledCategory ? "main_cat_selected" : ""
+                }`}
+                onClick={() => handleToggle(item.id, item.name)}
+                href="/"
+                role="button"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+              >
+                {item.name}
+              </NavItem>
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+      </Navbar>
+      {toggle && (
+        <Container className="justify-content-center">
+          <Row className="justify-content-center">
+            {childOfMain.map((category, index) => (
+              <Col
+                onClick={() => handleSubCategoryClick(category.id)}
+                role="button"
+                key={index}
+                className="sub_cat_item on_hover"
+                md="auto"
+              >
+                {category.name}
+              </Col>
+            ))}
+          </Row>
         </Container>
-      ) : (
-        <></>
       )}
-    </>
+    </Container>
   );
 }
 
