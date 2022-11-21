@@ -11,11 +11,12 @@ import Register from "./components/not-logged-in-page/Register";
 import Profile from "./components/profile/Profile";
 import UserContext from "./UserContext";
 import ProtectedRoute from "./ProtectedRoute";
-import ChangePasswordForm from "./components/profile/ChangePasswordForm";
+import ChangePassword from "./components/profile/ChangePassword";
 import CategoryPage from "./components/post-page/CategoryPage";
 import PostPage from "./components/post-page/PostPage";
 import ForgotPassword from "./components/not-logged-in-page/ForgotPassword";
 import ResetPassword from "./components/not-logged-in-page/ResetPassword";
+import ConsentForm from "./components/ConsentForm";
 
 function App() {
   const { user } = useContext(UserContext);

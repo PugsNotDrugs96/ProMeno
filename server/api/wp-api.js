@@ -18,6 +18,15 @@ export async function fetchPostById(id) {
   return response.data;
 }
 
+export async function fetchPostBySlug(slug) {
+  const response = await axios
+    .get(`https://data.promeno.se/wp-json/wp/v2/posts?slug=${slug}`)
+    .catch((err) => {
+      console.log("Error: ", err.message);
+    });
+  return response.data;
+}
+
 export async function fetchThemes() {
   const response = await axios
     .get("https://data.promeno.se/wp-json/wp/v2/themes")

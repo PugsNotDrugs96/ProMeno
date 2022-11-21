@@ -28,7 +28,7 @@ function ForgotPassword() {
     e.preventDefault();
     try {
       const response = await getResetPasswordLink(email);
-      if (response.status === 200) {
+      if (response.status === 201) {
         setResponseMsg(
           "En återställningslänk har skickats till din mailadress"
         );
@@ -37,10 +37,8 @@ function ForgotPassword() {
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Inget svar från servern");
-      } else if (err.response?.status === 400) {
-        setErrMsg("Det finns inget konto hos oss med den mailadressen");
       } else if (err.response?.status === 401) {
-        setErrMsg("Inte autentiserad");
+        setErrMsg("Det finns inget konto hos oss med den mailadressen");
       } else {
         setErrMsg("Något gick fel, försök igen eller kontakta vår support");
       }
