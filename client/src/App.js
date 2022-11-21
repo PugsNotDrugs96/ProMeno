@@ -16,6 +16,7 @@ import CategoryPage from "./components/post-page/CategoryPage";
 import PostPage from "./components/post-page/PostPage";
 import ForgotPassword from "./components/not-logged-in-page/ForgotPassword";
 import ResetPassword from "./components/not-logged-in-page/ResetPassword";
+import DeleteAccount from "./components/DeleteAccount";
 
 function App() {
   const { user } = useContext(UserContext);
@@ -79,6 +80,14 @@ function App() {
                 exact
                 path="/forgot-password"
                 element={<ForgotPassword />}
+              />
+              <Route
+                path="/delete-account"
+                element={
+                  <ProtectedRoute>
+                    <DeleteAccount />
+                  </ProtectedRoute>
+                }
               />
             </Routes>
           </div>

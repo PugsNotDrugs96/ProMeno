@@ -1,7 +1,6 @@
 import * as dotenv from "dotenv";
 import express from "express";
 import {
-  fetchThemes,
   fetchCategories,
   fetchPostById,
   fetchPostsByCategory,
@@ -45,7 +44,7 @@ app.post("/auth", async function (req, res) {
   const isValidLogin = usersDB.validateLogin(email, password);
 
   if (!isValidLogin) {
-    return res.sendStatus(400);
+    return res.sendStatus(400).json({ message: "Not valid email or password" });
   }
   res.json({ success: `User ${email} is logged in` });
 });
@@ -210,6 +209,27 @@ app.post("/reset-password", async function (req, res) {
     res
       .status(200)
       .json({ success: `Password for user ${email} has changed!` });
+  } else {
+    return res.status(400).json({ message: "Something went wrong" });
+  }
+});
+
+app.post("/delete-account", async function (req, res) {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+
+  const isValidLogin = usersDB.validateLogin(email, password);
+
+  if (!isValidLogin) {
+    return res.status(400).json({ message: "Not valid email or password" });
+  }
+
+  if (usersDB.deleteUser(email)) {
+    return res
+      .status(200)
+      .json({ success: `Account for user ${email} is deleted!` });
   } else {
     return res.status(400).json({ message: "Something went wrong" });
   }

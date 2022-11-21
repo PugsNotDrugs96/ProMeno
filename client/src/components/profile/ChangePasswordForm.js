@@ -30,7 +30,7 @@ const ChangePasswordForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password1 !== password2) {
-      setErrMsg("Lösenorden matchar inte");
+      setErrMsg("Fel lösenord, försök igen");
       errRef.current.focus();
     } else {
       try {
@@ -114,7 +114,7 @@ const ChangePasswordForm = () => {
                 </Form.Group>
                 <div className="text-center">
                   <Button variant="primary" type="submit">
-                    Skicka
+                    Ändra lösenord
                   </Button>
                 </div>
                 <p

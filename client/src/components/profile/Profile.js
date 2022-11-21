@@ -11,7 +11,7 @@ function Profile() {
   let navigate = useNavigate();
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      Det här går inte att ångra!
+      Avregistrera dig från allt deltagande i vår forskningsstudie.
     </Tooltip>
   );
 
@@ -32,8 +32,15 @@ function Profile() {
           overlay={renderTooltip}
           delay={{ show: 100, hide: 300 }}
         >
-          <Button variant="secondary" size="lg">
-            Avregistrera från studie
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={() => {
+              navigate("/delete-account");
+            }}
+          >
+            Radera ditt konto
           </Button>
         </OverlayTrigger>
       </div>

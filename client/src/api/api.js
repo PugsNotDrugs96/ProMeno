@@ -79,3 +79,16 @@ export async function resetPassword(email, newPassword) {
   );
   return response;
 }
+
+export async function deleteAccount(email, password) {
+  const response = await axios.post(
+    "/delete-account",
+    { email, password },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
