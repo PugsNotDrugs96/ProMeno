@@ -1,9 +1,7 @@
-import * as dotenv from "dotenv";
-dotenv.config();
 import mongoose from "mongoose";
 
 const uri = process.env.DATABASE_URI;
-/* 
+
 const connectionParams = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -28,7 +26,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   password: {
-    type: password,
+    type: String,
     required: true,
   },
   isSelected: {
@@ -39,7 +37,7 @@ const userSchema = new mongoose.Schema({
   },
 }); 
 
-const User = mongoose.model("Users", userSchema); */
+const User = mongoose.model("Users", userSchema); 
 
 const users = {
   "felicia@gmail.com": "test",
@@ -69,7 +67,7 @@ const usersDB = {
   },
 };
 
-/* const registerUser = function (name, email, password) {
+ const registerUser = function (name, email, password) {
   const user = new User({
     name: `${name}`,
     email: `${email}`,
@@ -85,6 +83,6 @@ const usersDB = {
       return true;
     }
   });
-}; */
+}; 
 
-export default usersDB;
+export {usersDB, registerUser};

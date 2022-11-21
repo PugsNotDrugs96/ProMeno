@@ -10,7 +10,7 @@ import {
 } from "./api/wp-api.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import usersDB from "./db/usersDB.js";
+import {usersDB, registerUser} from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
 
@@ -45,15 +45,11 @@ app.post("/auth", async function (req, res) {
 });
 
 app.post("/register", async function (req, res) {
-  const { key, name, email, password } = req.body;
-  if (!key || !name || !email || !password) {
+  const {name, email, password } = req.body;
+  if (!name || !email || !password) {
     return res
       .sendStatus(400)
-      .json({ message: "Key, name, email and password are required" });
-  }
-
-  if (key !== process.env.PROMENO_KEY) {
-    res.sendStatus(401).json({ message: "Unauthorized" });
+      .json({ message: "name, email and password are required" });
   }
 
   const status = registerUser(name, email, password);
