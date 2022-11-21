@@ -23,7 +23,7 @@ function Profile() {
         <Button
           variant="primary"
           size="lg"
-          onClick={() => navigate("/password/change")}
+          onClick={() => navigate("/change-password")}
         >
           Ändra lösenord
         </Button>

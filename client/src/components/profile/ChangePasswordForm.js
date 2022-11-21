@@ -35,7 +35,6 @@ const ChangePasswordForm = () => {
     } else {
       try {
         const response = await changePassword(user, currentPassword, password1);
-        console.log(response);
         if (response.status === 200) {
           setCurrentPassword("");
           setPassword1("");
@@ -115,9 +114,9 @@ const ChangePasswordForm = () => {
                 </Form.Group>
                 <div className="text-center">
                   <Button variant="primary" type="submit">
-                  Skicka
+                    Skicka
                   </Button>
-                  </div>
+                </div>
                 <p
                   ref={errRef}
                   className={
