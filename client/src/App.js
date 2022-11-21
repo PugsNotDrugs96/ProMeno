@@ -68,7 +68,7 @@ function App() {
                 path="/change-password"
                 element={
                   <ProtectedRoute>
-                    <ChangePasswordForm />
+                    <ChangePassword />
                   </ProtectedRoute>
                 }
               />
@@ -81,6 +81,7 @@ function App() {
                 path="/forgot-password"
                 element={<ForgotPassword />}
               />
+              <Route exact path="/consent-form" element={<ConsentForm />} />
             </Routes>
           </div>
         </div>

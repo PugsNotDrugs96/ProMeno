@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
-
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import Modal from "react-bootstrap/Modal";
+import ConsentForm from "../ConsentForm";
 
 function Register(props) {
   const [message, setMessage] = useState("");
   const [authStep, setAuthMode] = useState(1);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => setShow(true);
 
   const handleChange = (event) => {
     setMessage(event.target.value);
@@ -24,10 +31,10 @@ function Register(props) {
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 2000));
   }
-  
+
   function LoadingButton() {
     const [isLoading, setLoading] = useState(false);
-  
+
     useEffect(() => {
       if (isLoading) {
         simulateNetworkRequest().then(() => {
@@ -35,50 +42,60 @@ function Register(props) {
         });
       }
     }, [isLoading]);
-  
+
     const handleClick = () => setLoading(true);
-  
+
     return (
       <Button
         variant="primary"
         disabled={isLoading}
         onClick={!isLoading ? handleClick : null}
       >
-        {isLoading ? 'Skickar vidare...' : ' Registrera'}
+        {isLoading ? "Skickar vidare..." : " Registrera"}
       </Button>
     );
   }
-  
-  if(authStep === "step2"){
+
+  if (authStep === "step2") {
     return (
       <Container>
-      <Col>
-        {" "}
-        <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
-      </Col>
-      <Form  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
-        <h3 className="text-center">Steg 2</h3>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Ange ditt email här.." onChange={handleChange}/>
-        </Form.Group>    
+        <Col>
+          {" "}
+          <h1 className="text-center text-info text-black">
+            {" "}
+            Registrera dig!
+          </h1>{" "}
+        </Col>
+        <Form className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
+          <h3 className="text-center">Steg 2</h3>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Ange ditt email här.."
+              onChange={handleChange}
+            />
+          </Form.Group>
           <div className="text-center mx-auto mt-3">
-          <Form.Check
-                className="checkbox-groove"
-                label={
-                  <span>
-                    Jag godkänner <a href="/consent-form">villkoren</a> för att delta i
-                    studien
-                  </span>
-                }
-                name="group1"
-              />
-              <LoadingButton />
-            <Form.Text className="text-muted">
-              <p>Genom att trycka på knappen Registrera så godkänner jag villkoren för att delta i studien.</p> 
-            </Form.Text>
+            <p>
+              Genom att registera ett konto så godkänner du våra
+              <Button onClick={handleShow} variant="link">
+                villkor
+              </Button>
+            </p>
+            <LoadingButton />
           </div>
         </Form>
+        <Modal show={show} onHide={handleClose} animation={false} size="lg">
+          <Modal.Body>
+            <ConsentForm />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Stäng
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Container>
     );
   }
@@ -87,7 +104,10 @@ function Register(props) {
     <Container>
       <Col>
         {" "}
-        <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
+        <h1 className="text-center text-info text-black">
+          {" "}
+          Registrera dig!
+        </h1>{" "}
       </Col>
       <Form className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
         <h3 className="text-center">Steg 1</h3>
@@ -101,9 +121,9 @@ function Register(props) {
         </Form.Group>
         <div className="text-center mx-auto mt-3 ">
           <Button variant="primary" type="submit" onClick={handleClick}>
-            Nästa 
-          </Button>{' '}
-          <Button href="/" variant="secondary"  type="submit">
+            Nästa
+          </Button>{" "}
+          <Button href="/" variant="secondary" type="submit">
             Tillbaka
           </Button>
         </div>
