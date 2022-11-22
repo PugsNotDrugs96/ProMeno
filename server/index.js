@@ -2,6 +2,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
+import mongoose from "mongoose";
 import {
   fetchThemes,
   fetchCategories,
@@ -10,7 +11,7 @@ import {
 } from "./api/wp-api.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import {usersDB, registerUser} from "./db/usersDB.js";
+import {usersDB, UserModel} from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
 
@@ -27,6 +28,23 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ exteded: false }));
+
+//Database URI key
+const uri = process.env.DATABASE_URI;
+
+const connectionParams = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+//connection to DB
+mongoose
+  .connect(uri, connectionParams)
+  .then(() => {
+    console.log("Successful connection to the database");
+  })
+  .catch((err) => {
+    console.log("Error: " + err);
+  });
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -52,13 +70,44 @@ app.post("/register", async function (req, res) {
       .json({ message: "name, email and password are required" });
   }
 
-  const status = registerUser(name, email, password);
-  if (!status) {
-    res.json({ message: "Unable to register" });
-  } else {
-    res.json({ success: `${name} has been successfully been registered` });
-  }
+  var userModel = new UserModel();
+  userModel.name = name;
+  userModel.email = email;
+  userModel.password = password;
+  userModel.isSelected = false;
+  userModel.isAdmin = false;
+
+  userModel.save((err) => {
+    if (err) {
+      return res.json({ message: "Unable to register" });;
+    }
+    else {
+      console.log("Successfully added user to DB");
+      return res.sendStatus(200);
+    }
+  });
 });
+
+app.get("/get-all-users-db", async function(req, res){
+  UserModel.find((err, data) =>{
+    if (err){
+      res.sendStatus(500).send(err);
+    } else {
+      res.sendStatus(200).send(data);
+    }
+  })
+});
+
+app.get("get-user-by-email-db", async function(req, res){
+  UserModel.findOne({email: req.email}, (err, data) =>{
+    if (err){
+      res.sendStatus(500).send(err);
+    } else {
+      res.sendStatus(200).send(data);
+    }
+  })
+});
+
 
 app.post("/change-password", async function (req, res) {
   const { email, currentPassword, newPassword } = req.body;
