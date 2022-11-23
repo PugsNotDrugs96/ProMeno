@@ -1,6 +1,6 @@
 
 .background {
-background-image: url('assets/hero-background-blurred.jpg');
+background-image: url('../assets/hero-background-blurred.jpg');
 height: 600px;
 background-position: center;
 background-size: cover;
