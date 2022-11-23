@@ -45,7 +45,7 @@ app.post("/auth", async function (req, res) {
   const isValidLogin = usersDB.validateLogin(email, password);
 
   if (!isValidLogin) {
-    return res.status(403).json("Not a valid login");
+    return res.status(401).json("Not a valid login");
   }
   res.status(200).json({ success: `User ${email} is logged in` });
 });
