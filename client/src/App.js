@@ -68,7 +68,7 @@ function App() {
                 path="/change-password"
                 element={
                   <ProtectedRoute>
-                    <ChangePasswordForm />
+                    <ChangePassword />
                   </ProtectedRoute>
                 }
               />
