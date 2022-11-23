@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { loginUser } from "../../api/api";
-import UserContext from "../../UserContext";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { loginUser } from "../../api/api";
+import UserContext from "../../UserContext";
 
 function Auth() {
   const { setUser } = useContext(UserContext);
@@ -39,12 +39,10 @@ function Auth() {
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Inget svar från servern");
-      } else if (err.response?.status === 400) {
-        setErrMsg("Fel e-postadress eller lösenord, försök igen.");
       } else if (err.response?.status === 401) {
-        setErrMsg("Inte autentiserad");
+        setErrMsg("Fel e-postadress eller lösenord, försök igen.");
       } else {
-        setErrMsg("Inloggning lyckades inte");
+        setErrMsg("Något gick fel, försök igen eller kontakta vår support");
       }
       errRef.current.focus();
     }

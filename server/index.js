@@ -1,19 +1,21 @@
 import * as dotenv from "dotenv";
-dotenv.config();
-
 import express from "express";
 import mongoose from "mongoose";
 import {
   fetchThemes,
   fetchCategories,
   fetchPostById,
+  fetchPostBySlug,
   fetchPostsByCategory,
 } from "./api/wp-api.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import {usersDB, UserModel} from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
-import nodemailer from "nodemailer";
+import NodeCache from "node-cache";
+//import nodemailer from "nodemailer";
+
+dotenv.config();
 
 const app = express();
 const PORT = 5000;
@@ -48,6 +50,11 @@ mongoose
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
+//"Time to live" --> How long we should save cache
+const TTL = 3600;
+
+const cache = new NodeCache({ stdTTL: TTL, checkperiod: TTL });
+
 app.post("/auth", async function (req, res) {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -57,9 +64,9 @@ app.post("/auth", async function (req, res) {
   const isValidLogin = usersDB.validateLogin(email, password);
 
   if (!isValidLogin) {
-    return res.sendStatus(400);
+    return res.status(403).json("Not a valid login");
   }
-  res.json({ success: `User ${email} is logged in` });
+  res.status(200).json({ success: `User ${email} is logged in` });
 });
 
 app.post("/register", async function (req, res) {
@@ -119,7 +126,7 @@ app.post("/change-password", async function (req, res) {
 
   const isValidLogin = usersDB.validateLogin(email, currentPassword);
   if (!isValidLogin) {
-    return res.sendStatus(400);
+    return res.status(403).json("Not a valid login");
   }
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
   if (isPasswordChanged) {
@@ -127,29 +134,36 @@ app.post("/change-password", async function (req, res) {
       .status(200)
       .json({ success: `Password for user ${email} has changed!` });
   } else {
-    return res.status(400).json({ message: "Something went wrong" });
+    return res.status(500).json({ message: "Something went wrong" });
   }
 });
 
 app.get("/posts-by-category/:id", async function (req, res) {
   const id = req.params.id;
-  const posts = await fetchPostsByCategory(id);
+  let posts = cache.get(`posts-${id}`);
+  if (posts) return res.status(201).json(posts);
+
+  posts = await fetchPostsByCategory(id);
+  cache.set(`posts-${id}`, posts);
   res.status(201).json(posts);
 });
 
-app.get("/posts/:id", async function (req, res) {
+app.get("/post/:id", async function (req, res) {
   const id = req.params.id;
-  const post = await fetchPostById(id);
+  let post = cache.get(`post-${id}`);
+  if (post) return res.status(201).json(post);
+
+  post = await fetchPostById(id);
+  cache.set(`post-${id}`, post);
   res.status(201).json(post);
 });
 
-app.get("/themes", async function (_, res) {
-  const themes = await fetchThemes();
-  res.status(201).json(themes);
-});
-
 app.get("/categories", async function (_, res) {
-  const categories = await fetchCategories();
+  let categories = cache.get("categories");
+  if (categories) return res.status(201).json(categories);
+
+  categories = await fetchCategories();
+  cache.set("categories", categories);
   res.status(201).json(categories);
 });
 
@@ -161,7 +175,7 @@ app.post("/reset-password-link", async function (req, res) {
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "User doesn't" });
+    return res.status(401).json({ message: "User doesn't exist" });
   }
   const secret = JWT_SECRET + usersDB.getPassword(email);
 
@@ -201,26 +215,26 @@ app.post("/reset-password-link", async function (req, res) {
   console.log({ info }); */
 
   res
-    .status(200)
+    .status(201)
     .json({ success: `Password reset link has been sent to email` });
 });
 
 app.post("/validate-link", async function (req, res) {
   const { email, token } = req.body;
   if (!email | !token) {
-    return res.status(400).json({ message: "Invalid link" });
+    return res.status(401).json({ message: "Invalid link" });
   }
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "Invalid link" });
+    return res.status(401).json({ message: "Invalid link" });
   }
   const secret = JWT_SECRET + usersDB.getPassword(email);
   try {
     const verify = jwt.verify(token, secret);
-    res.status(200).json({ success: `Link is verified` });
+    res.status(200).json({ success: `Link is valid` });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 });
 
@@ -233,7 +247,7 @@ app.post("/reset-password", async function (req, res) {
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "User not found" });
+    return res.status(401).json({ message: "User doesn't exist" });
   }
 
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
@@ -243,7 +257,7 @@ app.post("/reset-password", async function (req, res) {
       .status(200)
       .json({ success: `Password for user ${email} has changed!` });
   } else {
-    return res.status(400).json({ message: "Something went wrong" });
+    return res.status(500).json({ message: "Something went wrong" });
   }
 });
 

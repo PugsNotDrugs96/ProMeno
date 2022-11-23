@@ -4,8 +4,8 @@ import UserContext from "../../UserContext";
 import { useContext } from "react";
 import React from "react";
 
-function Header(props) {
-  const { user } = useContext(UserContext);
+function Header() {
+  const { user, setUser } = useContext(UserContext);
 
   return (
     <div className="container">
@@ -61,7 +61,13 @@ function Header(props) {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/">
+                  <Link
+                    className="dropdown-item"
+                    onClick={() => {
+                      setUser(null);
+                    }}
+                    to="/"
+                  >
                     Logga ut
                   </Link>
                 </li>

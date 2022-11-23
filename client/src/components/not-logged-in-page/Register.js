@@ -74,84 +74,38 @@ function Register(props) {
   }
   
   if(authStep === "step2"){
-      return (
-      <>
-      {success ? (
-        navigate("/home")
-      ) : (
-        <Container>
-        <Col>
-          {" "}
-          <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
-        </Col>
-        <Form onSubmit = {handleSubmit}>
-                  <Form.Group
-                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                    controlId="formBasicName"
-                  >
-                    <Form.Label>Namn</Form.Label>
-                    <Form.Control
-                      type="name"
-                      autoComplete="off"
-                      className="form-control"
-                      name="name"
-                      onChange={(e) => setName(e.target.value)}
-                      value={name}
-                      required
-                    />
-                  </Form.Group>
-                  <Form.Group
-                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                    controlId="formBasicEmail"
-                  >
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type="email"
-                      autoComplete="off"
-                      className="form-control"
-                      name="email"
-                      onChange={(e) => setEmail(e.target.value)}
-                      value={email}
-                      required
-                    />
-                  </Form.Group>
-                  <Form.Group
-                    className="col-md-5 mx-auto col-lg-5 mb-3"
-                    controlId="formBasicPassword"
-                  >
-                    <Form.Label>Lösenord</Form.Label>
-                    <Form.Control
-                      type="password"
-                      className="form-control"
-                      onChange={(e) => setPassword(e.target.value)}
-                      value={password}
-                      required
-                    />
-                  </Form.Group>
-                  <Form.Group
-                    className="col-md-5 mx-auto col-lg-5 mb-3"
-                    controlId="formBasicPassword"
-                  >
-                    <Form.Label>Bekräfta</Form.Label>
-                    <Form.Control
-                      type="password"
-                      className="form-control"
-                      onChange={(e) => setPasswordConfirm(e.target.value)}
-                      value={passwordConfirm}
-                      required
-                    />
-                  </Form.Group>
-                  <div className="text-center">
-                    <Button variant="primary" type="submit">
-                      Registrera
-                    </Button>
-                  </div>
-                </Form>
-        </Container>
-      )}
-    </>
-  );
-}
+    return (
+      <Container>
+      <Col>
+        {" "}
+        <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
+      </Col>
+      <Form  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
+        <h3 className="text-center">Steg 2</h3>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Ange ditt email här.." onChange={handleChange}/>
+        </Form.Group>    
+          <div className="text-center mx-auto mt-3">
+          <Form.Check
+                className="checkbox-groove"
+                label={
+                  <span>
+                    Jag godkänner <a href="/consent-form">villkoren</a> för att delta i
+                    studien
+                  </span>
+                }
+                name="group1"
+              />
+              <LoadingButton />
+            <Form.Text className="text-muted">
+              <p>Genom att trycka på knappen Registrera så godkänner jag villkoren för att delta i studien.</p> 
+            </Form.Text>
+          </div>
+        </Form>
+      </Container>
+    );
+  }
 
   return (
     <Container>
