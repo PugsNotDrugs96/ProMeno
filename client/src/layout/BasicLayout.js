@@ -12,13 +12,13 @@ function BasicLayout({ children }) {
   const { user } = useContext(UserContext);
 
   return (
-    <div className="App">
+    <>
       <Header />
       {user && <Navigation />}
       <div className="background">
         <div className="container shadow">{children}</div>
       </div>
-    </div>
+    </>
   );
 }
 
