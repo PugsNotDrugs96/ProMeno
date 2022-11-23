@@ -17,6 +17,7 @@ import PostPage from "./components/post-page/PostPage";
 import ForgotPassword from "./components/not-logged-in-page/ForgotPassword";
 import ResetPassword from "./components/not-logged-in-page/ResetPassword";
 import ConsentForm from "./components/ConsentForm";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const { user } = useContext(UserContext);
@@ -26,6 +27,7 @@ function App() {
       <div className="App">
         <Header />
         {user && <Navigation />}
+        {/* <Footer/> */}
         <div className="background">
           <div className="container shadow">
             <Routes>
