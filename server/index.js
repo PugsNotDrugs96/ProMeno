@@ -102,7 +102,7 @@ app.get("/posts-by-category/:id", async function (req, res) {
   res.status(201).json(posts);
 });
 
-app.get("/post/:id", async function (req, res) {
+app.get("/posts-by-id/:id", async function (req, res) {
   const id = req.params.id;
   let post = cache.get(`post-${id}`);
   if (post) return res.status(201).json(post);
@@ -110,6 +110,12 @@ app.get("/post/:id", async function (req, res) {
   post = await fetchPostById(id);
   cache.set(`post-${id}`, post);
   res.status(201).json(post);
+});
+
+app.get("/posts-by-slug/:slug", async function (req, res) {
+  const slug = req.params.slug;
+  const post = await fetchPostBySlug(slug);
+  res.status(200).json(post);
 });
 
 app.get("/categories", async function (_, res) {
