@@ -3,14 +3,15 @@ import express from "express";
 import {
   fetchCategories,
   fetchPostById,
+  fetchPostBySlug,
   fetchPostsByCategory,
 } from "./api/wp-api.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import usersDB from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
-import nodemailer from "nodemailer";
 import NodeCache from "node-cache";
+//import nodemailer from "nodemailer";
 
 const app = express();
 const PORT = 5000;
@@ -44,9 +45,9 @@ app.post("/auth", async function (req, res) {
   const isValidLogin = usersDB.validateLogin(email, password);
 
   if (!isValidLogin) {
-    return res.sendStatus(400).json({ message: "Not valid email or password" });
+    return res.status(403).json("Not a valid login");
   }
-  res.json({ success: `User ${email} is logged in` });
+  res.status(200).json({ success: `User ${email} is logged in` });
 });
 
 app.post("/register", async function (req, res) {
@@ -79,7 +80,7 @@ app.post("/change-password", async function (req, res) {
 
   const isValidLogin = usersDB.validateLogin(email, currentPassword);
   if (!isValidLogin) {
-    return res.sendStatus(400);
+    return res.status(403).json("Not a valid login");
   }
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
   if (isPasswordChanged) {
@@ -87,7 +88,7 @@ app.post("/change-password", async function (req, res) {
       .status(200)
       .json({ success: `Password for user ${email} has changed!` });
   } else {
-    return res.status(400).json({ message: "Something went wrong" });
+    return res.status(500).json({ message: "Something went wrong" });
   }
 });
 
@@ -128,7 +129,7 @@ app.post("/reset-password-link", async function (req, res) {
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "User doesn't" });
+    return res.status(401).json({ message: "User doesn't exist" });
   }
   const secret = JWT_SECRET + usersDB.getPassword(email);
 
@@ -168,26 +169,26 @@ app.post("/reset-password-link", async function (req, res) {
   console.log({ info }); */
 
   res
-    .status(200)
+    .status(201)
     .json({ success: `Password reset link has been sent to email` });
 });
 
 app.post("/validate-link", async function (req, res) {
   const { email, token } = req.body;
   if (!email | !token) {
-    return res.status(400).json({ message: "Invalid link" });
+    return res.status(401).json({ message: "Invalid link" });
   }
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "Invalid link" });
+    return res.status(401).json({ message: "Invalid link" });
   }
   const secret = JWT_SECRET + usersDB.getPassword(email);
   try {
     const verify = jwt.verify(token, secret);
-    res.status(200).json({ success: `Link is verified` });
+    res.status(200).json({ success: `Link is valid` });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 });
 
@@ -200,7 +201,7 @@ app.post("/reset-password", async function (req, res) {
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "User not found" });
+    return res.status(401).json({ message: "User doesn't exist" });
   }
 
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
@@ -210,7 +211,7 @@ app.post("/reset-password", async function (req, res) {
       .status(200)
       .json({ success: `Password for user ${email} has changed!` });
   } else {
-    return res.status(400).json({ message: "Something went wrong" });
+    return res.status(500).json({ message: "Something went wrong" });
   }
 });
 

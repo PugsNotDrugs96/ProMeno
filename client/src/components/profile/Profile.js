@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import UserContext from "../../UserContext";
 import "./Profile.css";
-import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const { user } = useContext(UserContext);

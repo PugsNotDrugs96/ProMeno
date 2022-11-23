@@ -63,7 +63,17 @@ function Register(props) {
           <Form.Control type="email" placeholder="Ange ditt email här.." onChange={handleChange}/>
         </Form.Group>    
           <div className="text-center mx-auto mt-3">
-          <LoadingButton />
+          <Form.Check
+                className="checkbox-groove"
+                label={
+                  <span>
+                    Jag godkänner <a href="/consent-form">villkoren</a> för att delta i
+                    studien
+                  </span>
+                }
+                name="group1"
+              />
+              <LoadingButton />
             <Form.Text className="text-muted">
               <p>Genom att trycka på knappen Registrera så godkänner jag villkoren för att delta i studien.</p> 
             </Form.Text>
