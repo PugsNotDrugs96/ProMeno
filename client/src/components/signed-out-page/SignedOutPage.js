@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Hero from "../hero/Hero";
 import Button from "react-bootstrap/Button";
 
-function NotLoggedInPage() {
+function SignedOutPage() {
   return (
     <>
       <Hero />
@@ -26,4 +26,4 @@ function NotLoggedInPage() {
   );
 }
 
-export default NotLoggedInPage;
+export default SignedOutPage;

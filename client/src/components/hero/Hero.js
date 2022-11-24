@@ -12,7 +12,7 @@ function Hero() {
     : "forskningsstudie om klimakteriet";
 
   return (
-    <div className="py-5 text-center">
+    <div className="py-5 text-center hero">
       <Image
         src={Logo}
         className="d-block mx-auto shadow-lg rounded mb-4"
