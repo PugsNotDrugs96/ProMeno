@@ -27,7 +27,6 @@ function App() {
       <div className="App">
         <Header />
         {user && <Navigation />}
-        {/* <Footer/> */}
         <div className="background">
           <div className="container shadow">
             <Routes>
@@ -87,6 +86,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer/>
     </BrowserRouter>
   );
 }

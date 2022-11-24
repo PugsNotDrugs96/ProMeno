@@ -1,39 +1,48 @@
 import React from "react";
-import { CDBFooter, CDBFooterLink, CDBBox } from 'cdbreact';
-import UserContext from "./../../UserContext";
-import { useContext } from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import ListGroup from 'react-bootstrap/ListGroup';
+import { Link } from "react-router-dom";
 
-
-
-function Footer ()  {
-   // const { user, setUser } = useContext(UserContext);
-
+function Footer() {
     return (
-        <CDBFooter className="shadow">
-        <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '90%' }}>
-            <CDBBox display="flex" justifyContent="between" className="flex-wrap">
-                <CDBBox>
-                    <p className="h5 mb-4" style={{ fontWeight: '600' }}>
-                    ProMeno
-                    </p>
-                    <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0' }}>
-                    <CDBFooterLink href="/">Om oss</CDBFooterLink>
-                    <CDBFooterLink href="/">Kontakta</CDBFooterLink>
-                    <CDBFooterLink href="/">Blog</CDBFooterLink>
-                    </CDBBox>
-                    </CDBBox>
-                <CDBBox>
-                    <p className="h5 mb-4" style={{ fontWeight: '600' }}>
-                    Hjälp
-                    </p>
-                    <CDBBox flex="column" style={{ cursor: 'pointer', padding: '0' }}>
-                    <CDBFooterLink href="/">Support</CDBFooterLink>
-                    </CDBBox>
-                </CDBBox>
-            </CDBBox>
-            <small className="text-center mt-5">&copy; ProMeno, 2022. All rights reserved.</small>
-        </CDBBox>
-        </CDBFooter>
-    );
-};
-export default Footer();
+        <div className="fixed-bottom" >
+        <Container className="pt-1 pb-1">
+            <Row>
+                <Col xs={6}>
+                    <h5 className="pb-3">ProMeno</h5>
+                    <p>Lorem ipsum dolor sit...</p>
+                </Col>
+                <Col>
+                    <h5 className="pb-1 text-muted">Info</h5>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item className="px-0 py-0">
+                            <Link to="/">Om oss</Link>  
+                        </ListGroup.Item>
+                        <ListGroup.Item className="px-0 py-0"> {/* do we need a link? or jsut redirect to email */}
+                            <Link to="/">Kontakt</Link>
+                        </ListGroup.Item>
+                    </ListGroup>
+                </Col>
+                <Col>
+                    <h5 className="pb-1 text-muted">Hjälp</h5> 
+                    <ListGroup variant="flush">
+                        <ListGroup.Item className="px-0 py-0">
+                            <Link to="/">Support</Link>
+                        </ListGroup.Item>
+                        <ListGroup.Item className="px-0 py-0">
+                            <Link to="/">Registrering</Link> {/* info about the registeration,how? what? */}
+                        </ListGroup.Item>
+                    </ListGroup>
+                </Col>
+            </Row>
+            <Container className="pt-1 text-center">
+                <small className="text-muted">© ProMeno, 2022. All rights reserved.</small>
+            </Container>
+        </Container>
+        </div>
+    )
+}
+
+export default Footer;
