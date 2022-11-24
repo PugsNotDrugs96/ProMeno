@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
 
-function Auth() {
+function Login() {
   const { setUser } = useContext(UserContext);
   let navigate = useNavigate();
   const userRef = useRef();
@@ -121,4 +121,4 @@ function Auth() {
     </>
   );
 }
-export default Auth;
+export default Login;

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Layout.css";
+import "./layout.css";
 import UserContext from "../UserContext";
 import Header from "./Header";
 import Navigation from "../components/navigation/Navigation";

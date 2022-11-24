@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
-import ConsentForm from "../ConsentForm";
+import ConsentForm from "./ConsentForm";
 
 function Register(props) {
   const [message, setMessage] = useState("");
