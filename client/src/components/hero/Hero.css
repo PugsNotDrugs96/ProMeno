@@ -1,3 +1,8 @@
 body, html {
     height: 100%;
   }
+
+.hero{
+  min-height: 600px;
+
+}
