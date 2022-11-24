@@ -1,14 +1,14 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
-import UserContext from "../UserContext";
+import UserContext from "../../UserContext";
 import Container from "react-bootstrap/esm/Container";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 import Form from "react-bootstrap/esm/Form";
 import Button from "react-bootstrap/esm/Button";
 import Modal from "react-bootstrap/Modal";
-import { deleteAccount } from "../api/api";
+import { deleteAccount } from "../../api/api";
 
-function DeleteAccount() {
+function RemoveAccount() {
   const { user, setUser } = useContext(UserContext);
   const userRef = useRef();
   const errRef = useRef();
@@ -109,4 +109,4 @@ function DeleteAccount() {
   );
 }
 
-export default DeleteAccount;
+export default RemoveAccount;
