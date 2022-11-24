@@ -1,6 +1,5 @@
-import "../../styles/Header.css";
 import { Link } from "react-router-dom";
-import UserContext from "../../UserContext";
+import UserContext from "../UserContext";
 import { useContext } from "react";
 
 function Header() {
@@ -28,16 +27,7 @@ function Header() {
           </svg>
           <span className="fs-4 m-2">ProMeno</span>
         </Link>
-        {!user && (
-          <div className="text-end">
-            <button type="button" className="btn btn-outline-primary me-2">
-              Logga in
-            </button>
-            <button type="button" className="btn btn-primary">
-              Registrera
-            </button>
-          </div>
-        )}
+
         {user && (
           <div className="text-end">
             <div className="btn-group">
