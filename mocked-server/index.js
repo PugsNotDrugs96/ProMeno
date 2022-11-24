@@ -19,7 +19,7 @@ app.post("/auth", async function (req, res) {
   res.json({ success: `User test is logged in!` });
 });
 
-app.post("/password/change", async function (req, res) {
+app.post("/change-password", async function (req, res) {
   res.json({ success: `Password for user test is changed!` });
 });
 

@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import UserContext from "../../UserContext";
 import "./Profile.css";
-import { useNavigate } from "react-router-dom";
 
 function Profile() {
   const { user } = useContext(UserContext);
   let navigate = useNavigate();
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      Det här går inte att ångra!
+      Avregistrera dig från allt deltagande i vår forskningsstudie.
     </Tooltip>
   );
 
@@ -23,7 +23,7 @@ function Profile() {
         <Button
           variant="primary"
           size="lg"
-          onClick={() => navigate("/password/change")}
+          onClick={() => navigate("/change-password")}
         >
           Ändra lösenord
         </Button>
@@ -32,8 +32,15 @@ function Profile() {
           overlay={renderTooltip}
           delay={{ show: 100, hide: 300 }}
         >
-          <Button variant="secondary" size="lg">
-            Avregistrera från studie
+          <Button
+            type="button"
+            variant="secondary"
+            size="lg"
+            onClick={() => {
+              navigate("/delete-account");
+            }}
+          >
+            Radera ditt konto
           </Button>
         </OverlayTrigger>
       </div>
