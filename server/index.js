@@ -2,7 +2,6 @@ import * as dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import {
-  fetchThemes,
   fetchCategories,
   fetchPostById,
   fetchPostBySlug,
@@ -65,7 +64,7 @@ app.post("/auth", async function (req, res) {
   const isValidLogin = usersDB.validateLogin(email, password);
 
   if (!isValidLogin) {
-    return res.status(403).json("Not a valid login");
+    return res.status(401).json("Not a valid login");
   }
   res.status(200).json({ success: `User ${email} is logged in` });
 });
@@ -148,7 +147,7 @@ app.get("/posts-by-category/:id", async function (req, res) {
   res.status(201).json(posts);
 });
 
-app.get("/post/:id", async function (req, res) {
+app.get("/posts-by-id/:id", async function (req, res) {
   const id = req.params.id;
   let post = cache.get(`post-${id}`);
   if (post) return res.status(201).json(post);
@@ -156,6 +155,12 @@ app.get("/post/:id", async function (req, res) {
   post = await fetchPostById(id);
   cache.set(`post-${id}`, post);
   res.status(201).json(post);
+});
+
+app.get("/posts-by-slug/:slug", async function (req, res) {
+  const slug = req.params.slug;
+  const post = await fetchPostBySlug(slug);
+  res.status(200).json(post);
 });
 
 app.get("/categories", async function (_, res) {
@@ -261,6 +266,27 @@ app.post("/reset-password", async function (req, res) {
   }
 });
 
-app.listen(PORT, function() {
+app.post("/delete-account", async function (req, res) {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+
+  const isValidLogin = usersDB.validateLogin(email, password);
+
+  if (!isValidLogin) {
+    return res.status(400).json({ message: "Not valid email or password" });
+  }
+
+  if (usersDB.deleteUser(email)) {
+    return res
+      .status(200)
+      .json({ success: `Account for user ${email} is deleted!` });
+  } else {
+    return res.status(400).json({ message: "Something went wrong" });
+  }
+});
+
+app.listen(PORT, function () {
   console.log("Server is now running on port " + PORT);
 });

@@ -46,8 +46,11 @@ const usersDB = {
   },
   findUser: (email) => {
     if (email in users) return true;
-
     return false;
+  },
+  deleteUser: (email) => {
+    delete users[email] in users;
+    return true;
   },
 };
 
