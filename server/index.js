@@ -8,6 +8,7 @@ import {
   fetchPostBySlug,
   fetchPostsByCategory,
 } from "./api/wp-api.js";
+import { getAllUsersDB, registerUserDB } from "./db/filtersUsersDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import {usersDB, UserModel} from "./db/usersDB.js";
@@ -72,37 +73,36 @@ app.post("/auth", async function (req, res) {
 app.post("/register", async function (req, res) {
   const {name, email, password } = req.body;
   if (!name || !email || !password) {
+    console.log("1");
     return res
-      .sendStatus(400)
-      .json({ message: "name, email and password are required" });
+      .status(400)
+      .send({ message: "name, email and password are required" });
   }
 
-  var userModel = new UserModel();
-  userModel.name = name;
-  userModel.email = email;
-  userModel.password = password;
-  userModel.isSelected = false;
-  userModel.isAdmin = false;
-
-  userModel.save((err) => {
-    if (err) {
-      return res.json({ message: "Unable to register" });;
-    }
-    else {
-      console.log("Successfully added user to DB");
-      return res.sendStatus(200);
-    }
-  });
+ await registerUserDB(name, email, password).then(result =>{
+  if (result === "500"){
+    res.status(500).send("Unable to register user to database");
+  }else if (result === "406"){
+    res.status(406).send("Email already registered");
+  } else {
+    res.status(200).send("User registered");
+  }
+ }).catch(err => {
+  console.log(err);
+  res.status(406).send({statusCode: err});
+ });
 });
 
 app.get("/get-all-users-db", async function(req, res){
-  UserModel.find((err, data) =>{
-    if (err){
-      res.sendStatus(500).send(err);
+    const data = await getAllUsersDB();
+    if(data === "error"){
+      res.sendStatus(500).send("Database error");
+    } else if(data === "Email already exist") {
+      res.sendStatus(406).send("Email already registered")
     } else {
-      res.sendStatus(200).send(data);
+      res.send(data);
     }
-  })
+
 });
 
 app.get("get-user-by-email-db", async function(req, res){
@@ -261,6 +261,6 @@ app.post("/reset-password", async function (req, res) {
   }
 });
 
-app.listen(PORT, function () {
+app.listen(PORT, function() {
   console.log("Server is now running on port " + PORT);
 });
