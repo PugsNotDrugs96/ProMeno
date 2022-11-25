@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="fixed-bottom">
       <Container className="pt-1 pb-1">
         <Row>
           <Col xs={6}>
@@ -46,7 +45,6 @@ function Footer() {
           </small>
         </Container>
       </Container>
-    </div>
   );
 }
 
