@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import NavItem from "react-bootstrap/NavItem";
 import { getCategories } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import Breadcrumbs from "./Breadcrumbs";
 
 function Navigation() {
   const navigate = useNavigate();
@@ -15,6 +16,9 @@ function Navigation() {
   const [toggle, setToggle] = useState(false);
   const [toggledCategory, setToggledCategory] = useState("");
   const [childOfMain, setChildOfMain] = useState("");
+
+  const [parentCrumb, setParentCrumb] = useState("");
+  const [childCrumb, setChildCrumb] = useState("");
 
   useEffect(() => {
     async function fetchData() {
@@ -52,6 +56,18 @@ function Navigation() {
     navigate(`/category/${id}`);
   };
 
+  const parentName = (name) => {
+    setParentCrumb(name);
+  }
+
+  const childName = (name) => {
+    setChildCrumb(name);
+  }
+
+  function resetChildCrumbData() {
+    setChildCrumb("");
+  }
+
   return (
     <Container>
       <Navbar className="justify-content-center pb-4">
@@ -62,7 +78,11 @@ function Navigation() {
                 className={`on_hover ${
                   item.name === toggledCategory ? "main_cat_selected" : ""
                 }`}
-                onClick={() => handleToggle(item.id, item.name)}
+                onClick={() => {
+                  handleToggle(item.id, item.name);
+                  parentName(item.name);
+                  resetChildCrumbData();
+                }}
                 href="/"
                 role="button"
                 data-bs-toggle="collapse"
@@ -79,7 +99,10 @@ function Navigation() {
           <Row className="justify-content-center">
             {childOfMain.map((category, index) => (
               <Col
-                onClick={() => handleSubCategoryClick(category.id)}
+                onClick={() => {
+                  handleSubCategoryClick(category.id);
+                  childName(category.name);
+                }}
                 role="button"
                 key={index}
                 className="sub_cat_item on_hover"
@@ -91,6 +114,7 @@ function Navigation() {
           </Row>
         </Container>
       )}
+      <Breadcrumbs parentName={parentCrumb} childName={childCrumb} />
     </Container>
   );
 }
