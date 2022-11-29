@@ -1,22 +1,22 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getPostById } from "../../api/api";
+import { getPostBySlug } from "../../api/api";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/esm/Container";
 
 function PostPage() {
   const params = useParams();
-  const postId = params.id;
+  const slug = params.slug;
 
   const [post, setPost] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
-      const post = await getPostById(postId);
+      const post = await getPostBySlug(slug);
       setPost(post);
     }
     fetchData();
-  }, [postId]);
+  }, [slug]);
 
   if (!post) return null;
 

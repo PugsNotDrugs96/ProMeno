@@ -2,9 +2,9 @@ import * as dotenv from "dotenv";
 import express from "express";
 import {
   fetchCategories,
-  fetchPostById,
-  fetchPostBySlug,
+  fetchPost,
   fetchPostsByCategory,
+  fetchCategoryIdBySlug,
 } from "./api/wp-api.js";
 import cors from "cors";
 import bodyParser from "body-parser";
@@ -92,30 +92,31 @@ app.post("/change-password", async function (req, res) {
   }
 });
 
-app.get("/posts-by-category/:id", async function (req, res) {
-  const id = req.params.id;
-  let posts = cache.get(`posts-${id}`);
+app.get("/posts-by-category/:slug", async function (req, res) {
+  const slug = req.params.slug;
+
+  let id = cache.get(`category-id${slug}`);
+  if (!id) {
+    id = await fetchCategoryIdBySlug(slug);
+    cache.set(`category-id-${slug}`, id);
+  }
+
+  let posts = cache.get(`posts-by-category${id}`);
   if (posts) return res.status(201).json(posts);
 
   posts = await fetchPostsByCategory(id);
-  cache.set(`posts-${id}`, posts);
+  cache.set(`posts-by-category${id}`, posts);
   res.status(201).json(posts);
 });
 
-app.get("/posts-by-id/:id", async function (req, res) {
-  const id = req.params.id;
-  let post = cache.get(`post-${id}`);
-  if (post) return res.status(201).json(post);
-
-  post = await fetchPostById(id);
-  cache.set(`post-${id}`, post);
-  res.status(201).json(post);
-});
-
-app.get("/posts-by-slug/:slug", async function (req, res) {
+app.get("/posts/:slug", async function (req, res) {
   const slug = req.params.slug;
-  const post = await fetchPostBySlug(slug);
-  res.status(200).json(post);
+  let post = cache.get(`posts-${slug}`);
+  if (post) return res.status(201).json(post[0]);
+
+  post = await fetchPost(slug);
+  cache.set(`posts-${slug}`, post);
+  res.status(200).json(post[0]);
 });
 
 app.get("/categories", async function (_, res) {
