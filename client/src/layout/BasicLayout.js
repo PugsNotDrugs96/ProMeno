@@ -19,7 +19,6 @@ function BasicLayout({ children }) {
       <div className="background">
         <div className="container shadow">{children}</div>
       </div>
-      <Footer />
     </>
   );
 }

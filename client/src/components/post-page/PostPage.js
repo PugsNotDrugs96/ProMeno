@@ -21,7 +21,7 @@ function PostPage() {
   if (!post) return null;
 
   return (
-    <Container style={{ padding: "5rem" }}>
+    <Container style={{ padding: "5rem", background: "transparent" }}>
       <Card style={{ background: "transparent", border: "none" }}>
         <Card.Title
           style={{ fontSize: "30px" }}
