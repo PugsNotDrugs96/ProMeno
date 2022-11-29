@@ -1,13 +1,14 @@
 import * as dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
+
 import {
   fetchCategories,
   fetchPostById,
   fetchPostBySlug,
   fetchPostsByCategory,
 } from "./api/wp-api.js";
-import { getAllUsersDB, registerUserDB } from "./db/filtersUsersDB.js";
+import * as usersFilters from "./db/filtersUsersDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import {usersDB, UserModel} from "./db/usersDB.js";
@@ -78,7 +79,7 @@ app.post("/register", async function (req, res) {
       .send({ message: "name, email and password are required" });
   }
 
- await registerUserDB(name, email, password).then(result =>{
+ await usersFilters.registerUserDB(name, email, password).then(result =>{
   if (result === "500"){
     res.status(500).send("Unable to register user to database");
   }else if (result === "406"){
@@ -93,25 +94,60 @@ app.post("/register", async function (req, res) {
 });
 
 app.get("/get-all-users-db", async function(req, res){
-    const data = await getAllUsersDB();
+    const data = await usersFilters.getAllUsersDB();
     if(data === "error"){
-      res.sendStatus(500).send("Database error");
+      res.status(500).send("Database error");
     } else if(data === "Email already exist") {
-      res.sendStatus(406).send("Email already registered")
+      res.status(406).send("Email already registered")
     } else {
       res.send(data);
     }
 
 });
 
-app.get("get-user-by-email-db", async function(req, res){
-  UserModel.findOne({email: req.email}, (err, data) =>{
-    if (err){
-      res.sendStatus(500).send(err);
+app.get("/get-user-by-email-db", async function(req, res){
+  const {email} = req.body;
+  const user = await usersFilters.getUserDB(email);
+
+    if(user === "Email does not exist"){
+      res.status(406).send("Email does not exist")
     } else {
-      res.sendStatus(200).send(data);
+      res.status(200).send(user);
     }
-  })
+});
+
+app.post("/update-email-db", async function (req, res){
+  const {oldEmail, newEmail} = req.body;
+  console.log("test");
+  const status = await usersFilters.updateEmailDB(oldEmail, newEmail);
+
+  if(status === "Email does not exist"){
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
+  }
+});
+
+app.post("/update-password-db", async function (req, res){
+  const {email, password} = req.body;
+  const status = await usersFilters.updatePasswordDB(email, password);
+
+  if(status === "Email does not exist"){
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
+  }
+});
+
+app.delete("/delete-user-db", async function (req, res){
+  const {email} = req.body;
+  const status = await usersFilters.deleteUserDB(email);
+
+  if(status === "400"){
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
+  }
 });
 
 
