@@ -5,8 +5,9 @@ import { getPostBySlug } from "../../api/api";
 import Container from "react-bootstrap/esm/Container";
 
 function PostPage() {
-  const params = useParams();
-  const slug = params.slug;
+  //const params = useParams();
+  //const slug = params.slug;
+  const slug = "element-testing";
 
   const [post, setPost] = useState(null);
 
@@ -21,9 +22,9 @@ function PostPage() {
   if (!post) return null;
 
   return (
-    <Container className="py-4">
-      <h1 className="text-center py-3 title" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-      <p className="px-5" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+    <Container className="postContainer py-4">
+      <h1 className="postTitle py-3 text-center" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+      <p className="postBody px-5" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
     </Container>
   );
 }

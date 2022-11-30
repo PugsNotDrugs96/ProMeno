@@ -1,15 +1,22 @@
-.title {
+/* Container */
+.postContainer {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+}
+
+/* Headings */
+.postTitle {
     font-weight: bolder;
 }
 
 /* Subheadings */
-h1, h2, h3, h4, h5, h6 {
+.postBody h1, h2, h3, h4, h5, h6 {
     padding-top: 10px;
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
 /* Body */
-p {
+.postBody {
     font-size: 17px;
     font-family: 'Times New Roman', Times, serif;
     margin-left: auto;
@@ -18,12 +25,12 @@ p {
 }
 
 /* Images & videos */
-figure {
+.postBody figure {
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-figure > img {
+.postBody figure > img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -34,7 +41,7 @@ figure > img {
     text-align: center;
 }
 
-figure > video {
+.postBody figure > video {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -46,12 +53,12 @@ figure > video {
 }
 
 /* Lists */
-ul {
+.postBody ul {
     padding-left: 14px;
     margin-top: 20px;
     margin-bottom: 15px;
 }
-li  {
+.postBody li  {
     padding-bottom: 5px;
 }
 ::marker {
@@ -59,7 +66,7 @@ li  {
 }
 
 /* Links */
-a {
+.postBody a {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 14.5px;
     font-weight: bolder;
@@ -67,23 +74,23 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
-a:hover, a:active {
+.postBody a:hover, a:active {
     color: #6bb3a3;
 }
 
 /* Quotes */
-blockquote > p {
+.postBody blockquote > p {
     padding: 20px 50px 0px 50px;
     font-style: italic;
     text-align: center;
 }
-blockquote > cite {
+.postBody blockquote > cite {
     font-size: small;
     font-style: normal;
 }
 
 /* Tables */
-table {
+.postBody table {
     margin-left: auto;
     margin-right: auto;
 }
