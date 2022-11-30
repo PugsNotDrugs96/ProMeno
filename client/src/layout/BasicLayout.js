@@ -18,7 +18,7 @@ function BasicLayout({ children }) {
       <Header />
       {user && <Navigation />}
       <div className="background">
-        <Container className="postContainer shadow">{children}</Container>
+        <Container className="contentContainer shadow">{children}</Container>
       </div>
       <Footer />
     </>
