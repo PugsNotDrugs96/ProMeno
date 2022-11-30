@@ -5,10 +5,8 @@ import { getPostBySlug } from "../../api/api";
 import Container from "react-bootstrap/esm/Container";
 
 function PostPage() {
-  //const params = useParams();
-  //const slug = params.slug;
-  const slug = "element-testing";
-
+  const params = useParams();
+  const slug = params.slug;
   const [post, setPost] = useState(null);
 
   useEffect(() => {
