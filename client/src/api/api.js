@@ -36,6 +36,19 @@ export async function loginUser(email, password) {
   return response;
 }
 
+export async function registerUser(name, email, password,) {
+  const response = await axios.post(
+    "/register",
+    { name, email, password },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
+
 export async function changePassword(email, currentPassword, newPassword) {
   const response = await axios.post(
     "/change-password",
