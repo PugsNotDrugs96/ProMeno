@@ -5,13 +5,13 @@ import HomePage from "../components/homePage/HomePage";
 import Login from "../components/login/Login";
 import Register from "../components/register/Register";
 import Profile from "../components/profile/Profile";
-import CategoryPage from "../components/post-page/CategoryPage";
 import PostPage from "../components/post-page/PostPage";
 import ChangePassword from "../components/profile/ChangePassword";
 import ResetPassword from "../components/login/ResetPassword";
 import ForgotPassword from "../components/login/ForgotPassword";
 import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
+import PostCardPage from "../components/post-card-page/PostCardPage";
 
 function Router() {
   return (
@@ -41,7 +41,7 @@ function Router() {
             path="/category/:slug"
             element={
               <ProtectedRoute>
-                <CategoryPage />
+                <PostCardPage />
               </ProtectedRoute>
             }
           />
