@@ -55,7 +55,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const TTL = 3600;
 
 const cache = new NodeCache({ stdTTL: TTL, checkperiod: TTL });
-
+/*
 app.post("/auth", async function (req, res) {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -68,7 +68,26 @@ app.post("/auth", async function (req, res) {
     return res.status(401).json("Not a valid login");
   }
   res.status(200).json({ success: `User ${email} is logged in` });
-});
+}); */
+
+app.post("/auth", async function(req, res){
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+
+  const isValidLogin = await usersFilters.validateLogin(email, password);
+
+  if (isValidLogin === "Email does not exist") {
+    res.status(401).send("Email not found");
+  } else if (isValidLogin === "Invalid password"){
+    res.status(401).send("Invalid password");
+  } else if (isValidLogin === "Database error"){
+    res.status(500).send("Database connection failed")
+  } else{
+    res.status(200).send(`User ${email} is logged in`);
+  }
+})
 
 app.post("/register", async function (req, res) {
   const {name, email, password } = req.body;

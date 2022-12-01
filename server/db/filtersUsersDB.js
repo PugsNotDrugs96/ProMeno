@@ -85,7 +85,7 @@ export async function deleteUserDB(email){
   });
 }
 
-async function validateUserPassword(email, password){
+export async function validateLogin(email, password){
   const user = await UserModel.findOne({email:email.toLowerCase()});
   if (!user) {
     return ("Email does not exist");
@@ -94,7 +94,7 @@ async function validateUserPassword(email, password){
   } else if (user.password === md5(password)){
     return ("Valid password");
   } else {
-    return ("Database error 500");
+    return ("Database error");
   }
 }
 
