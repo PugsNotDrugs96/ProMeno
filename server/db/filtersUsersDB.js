@@ -65,7 +65,7 @@ export async function updateEmailDB(oldEmail, newEmail){
 
 export async function updatePasswordDB(email, password){
   return new Promise(async (resolve, reject) => {
-    const user = await UserModel.findOneAndUpdate({email:email}, {password: md5(password)});
+    const user = await UserModel.findOneAndUpdate({email:email.toLowerCase()}, {password: md5(password)});
     if (!user) {
       resolve("Email does not exist");
     } else {
