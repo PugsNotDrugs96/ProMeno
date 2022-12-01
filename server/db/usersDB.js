@@ -1,22 +1,7 @@
 import * as dotenv from "dotenv";
 dotenv.config();
+
 import mongoose from "mongoose";
-
-const uri = process.env.DATABASE_URI;
-/* 
-const connectionParams = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
-mongoose
-  .connect(uri, connectionParams)
-  .then(() => {
-    console.log("Successful connection to the database");
-  })
-  .catch((err) => {
-    console.log("Error: " + err);
-  });
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -28,7 +13,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   password: {
-    type: password,
+    type: String,
     required: true,
   },
   isSelected: {
@@ -39,7 +24,7 @@ const userSchema = new mongoose.Schema({
   },
 }); 
 
-const User = mongoose.model("Users", userSchema); */
+const UserModel = mongoose.model("Users", userSchema); 
 
 const users = {
   "felicia@gmail.com": "test",
@@ -72,22 +57,4 @@ const usersDB = {
   },
 };
 
-/* const registerUser = function (name, email, password) {
-  const user = new User({
-    name: `${name}`,
-    email: `${email}`,
-    password: `${password}`,
-    isSelected: false,
-    isAdmin: false,
-  });
-
-  user.save((err) => {
-    if (err) return false;
-    else {
-      mongoose.connection.close();
-      return true;
-    }
-  });
-}; */
-
-export default usersDB;
+export {usersDB, UserModel};
