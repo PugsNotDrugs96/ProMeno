@@ -1,16 +1,7 @@
 import axios from "./serverConnection";
 
-export async function getPostsByCategory(categoryId) {
-  const response = await axios.get(`/posts-by-category/${categoryId}`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  return response.data;
-}
-
-export async function getPostById(id) {
-  const response = await axios.get(`/posts-by-id/${id}`, {
+export async function getPostsByCategory(slug) {
+  const response = await axios.get(`/posts-by-category/${slug}`, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -19,7 +10,7 @@ export async function getPostById(id) {
 }
 
 export async function getPostBySlug(slug) {
-  const response = await axios.get(`/posts-by-slug/${slug}`, {
+  const response = await axios.get(`/posts/${slug}`, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -36,6 +27,19 @@ export async function loginUser(email, password) {
   const response = await axios.post(
     "/auth",
     { email, password },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
+
+export async function registerUser(name, email, password,) {
+  const response = await axios.post(
+    "/register",
+    { name, email, password },
     {
       headers: {
         withCredentials: true,
