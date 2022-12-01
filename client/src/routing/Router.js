@@ -38,7 +38,7 @@ function Router() {
             }
           />
           <Route
-            path="/category/:id"
+            path="/category/:slug"
             element={
               <ProtectedRoute>
                 <CategoryPage />
@@ -46,7 +46,7 @@ function Router() {
             }
           />
           <Route
-            path="/post/:id"
+            path="/post/:slug"
             element={
               <ProtectedRoute>
                 <PostPage />

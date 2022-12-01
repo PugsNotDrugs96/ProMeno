@@ -48,8 +48,8 @@ function Navigation() {
     setChildOfMain(childOfMainCategories);
   };
 
-  const handleSubCategoryClick = (id) => {
-    navigate(`/category/${id}`);
+  const handleSubCategoryClick = (slug) => {
+    navigate(`/category/${slug}`);
   };
 
   return (
@@ -79,7 +79,7 @@ function Navigation() {
           <Row className="justify-content-center">
             {childOfMain.map((category, index) => (
               <Col
-                onClick={() => handleSubCategoryClick(category.id)}
+                onClick={() => handleSubCategoryClick(category.slug)}
                 role="button"
                 key={index}
                 className="sub_cat_item on_hover"

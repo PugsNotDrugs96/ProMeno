@@ -10,17 +10,17 @@ import Row from "react-bootstrap/Row";
 function CategoryPage() {
   const navigate = useNavigate();
   const params = useParams();
-  const id = params.id;
+  const slug = params.slug;
 
   const [posts, setPosts] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
-      const posts = await getPostsByCategory(id);
+      const posts = await getPostsByCategory(slug);
       setPosts(posts);
     }
     fetchData();
-  }, [id]);
+  }, [slug]);
 
   if (!posts) return null;
 
@@ -36,7 +36,7 @@ function CategoryPage() {
               cursor: "pointer",
             }}
             onClick={() => {
-              navigate(`/post/${post.id}`);
+              navigate(`/post/${post.slug}`);
             }}
           >
             <Card.Img variant="top" src={cardImg} />
