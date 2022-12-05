@@ -59,7 +59,7 @@ export async function updateEmailDB(oldEmail, newEmail){
       resolve("Email does not exist");
     } else {
       resolve("200") 
-  }
+    }
   })
 }
 
