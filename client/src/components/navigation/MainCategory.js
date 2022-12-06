@@ -8,6 +8,7 @@ import Col from "react-bootstrap/esm/Col";
 function MainCategory(){
     const navigate = useNavigate();
     const [categories, setCategories] = useState([]);
+    var pixels = window.innerWidth;
   
     useEffect(() => {
       async function fetchData() {
@@ -22,7 +23,7 @@ function MainCategory(){
     const mainCategories = categories.filter((category) => !category.parent);
 
     const handleClick = (item) => {
-        navigate(`/${item.slug}`);
+        navigate(`/category=${item.slug}`);
     };
 
     return (
@@ -30,7 +31,7 @@ function MainCategory(){
             {mainCategories.map((item, index) => (
                 <Row>
                     <Col>
-                        <Button className="w-75 h-75 mt-5"
+                        <Button className={` mt-5 ${pixels < 576 ? "w-90" : "w-75"} h-75`}
                         onClick={() => handleClick(item)}>
                         {item.name}
                         </Button>
