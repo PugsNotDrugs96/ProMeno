@@ -1,17 +1,22 @@
 import * as dotenv from "dotenv";
 import express from "express";
+import mongoose from "mongoose";
+
 import {
   fetchCategories,
-  fetchPostById,
-  fetchPostBySlug,
+  fetchPost,
   fetchPostsByCategory,
+  fetchCategoryIdBySlug,
 } from "./api/wp-api.js";
+import * as usersFilters from "./db/filtersUsersDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import usersDB from "./db/usersDB.js";
+import {usersDB, UserModel} from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
 import NodeCache from "node-cache";
 //import nodemailer from "nodemailer";
+
+dotenv.config();
 
 const app = express();
 const PORT = 5000;
@@ -27,7 +32,22 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ exteded: false }));
 
-dotenv.config();
+//Database URI key
+const uri = process.env.DATABASE_URI;
+
+const connectionParams = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+//connection to DB
+mongoose
+  .connect(uri, connectionParams)
+  .then(() => {
+    console.log("Successful connection to the database");
+  })
+  .catch((err) => {
+    console.log("Error: " + err);
+  });
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -35,7 +55,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const TTL = 3600;
 
 const cache = new NodeCache({ stdTTL: TTL, checkperiod: TTL });
-
+/*
 app.post("/auth", async function (req, res) {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -48,27 +68,107 @@ app.post("/auth", async function (req, res) {
     return res.status(401).json("Not a valid login");
   }
   res.status(200).json({ success: `User ${email} is logged in` });
-});
+}); */
+
+app.post("/auth", async function(req, res){
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+
+  const isValidLogin = await usersFilters.validateLogin(email, password);
+
+  if (isValidLogin === "Email does not exist") {
+    res.status(401).send("Email not found");
+  } else if (isValidLogin === "Invalid password"){
+    res.status(401).send("Invalid password");
+  } else if (isValidLogin === "Database error"){
+    res.status(500).send("Database connection failed")
+  } else{
+    res.status(200).send(`User ${email} is logged in`);
+  }
+})
 
 app.post("/register", async function (req, res) {
-  const { key, name, email, password } = req.body;
-  if (!key || !name || !email || !password) {
+  const {name, email, password } = req.body;
+  if (!name || !email || !password) {
+    console.log("1");
     return res
-      .sendStatus(400)
-      .json({ message: "Key, name, email and password are required" });
+      .status(400)
+      .send({ message: "name, email and password are required" });
   }
 
-  if (key !== process.env.PROMENO_KEY) {
-    res.sendStatus(401).json({ message: "Unauthorized" });
-  }
-
-  const status = registerUser(name, email, password);
-  if (!status) {
-    res.json({ message: "Unable to register" });
+ await usersFilters.registerUserDB(name, email, password).then(result =>{
+  if (result === "500"){
+    res.status(500).send("Unable to register user to database");
+  }else if (result === "406"){
+    res.status(406).send("Email already registered");
   } else {
-    res.json({ success: `${name} has been successfully been registered` });
+    res.status(200).send("User registered");
+  }
+ }).catch(err => {
+  console.log(err);
+  res.status(406).send({statusCode: err});
+ });
+});
+
+app.get("/get-all-users-db", async function(req, res){
+    const data = await usersFilters.getAllUsersDB();
+    if(data === "error"){
+      res.status(500).send("Database error");
+    } else if(data === "Email already exist") {
+      res.status(406).send("Email already registered")
+    } else {
+      res.send(data);
+    }
+
+});
+
+app.get("/get-user-by-email-db", async function(req, res){
+  const {email} = req.body;
+  const user = await usersFilters.getUserDB(email);
+
+    if(user === "Email does not exist"){
+      res.status(406).send("Email does not exist")
+    } else {
+      res.status(200).send(user);
+    }
+});
+
+app.post("/update-email-db", async function (req, res){
+  const {oldEmail, newEmail} = req.body;
+  console.log("test");
+  const status = await usersFilters.updateEmailDB(oldEmail, newEmail);
+
+  if(status === "Email does not exist"){
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
   }
 });
+
+app.post("/update-password-db", async function (req, res){
+  const {email, password} = req.body;
+  const status = await usersFilters.updatePasswordDB(email, password);
+
+  if(status === "Email does not exist"){
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
+  }
+});
+
+app.delete("/delete-user-db", async function (req, res){
+  const {email} = req.body;
+  const status = await usersFilters.deleteUserDB(email);
+
+  if(status === "400"){
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
+  }
+});
+
 
 app.post("/change-password", async function (req, res) {
   const { email, currentPassword, newPassword } = req.body;
@@ -92,30 +192,31 @@ app.post("/change-password", async function (req, res) {
   }
 });
 
-app.get("/posts-by-category/:id", async function (req, res) {
-  const id = req.params.id;
-  let posts = cache.get(`posts-${id}`);
+app.get("/posts-by-category/:slug", async function (req, res) {
+  const slug = req.params.slug;
+
+  let id = cache.get(`category-id${slug}`);
+  if (!id) {
+    id = await fetchCategoryIdBySlug(slug);
+    cache.set(`category-id-${slug}`, id);
+  }
+
+  let posts = cache.get(`posts-by-category${id}`);
   if (posts) return res.status(201).json(posts);
 
   posts = await fetchPostsByCategory(id);
-  cache.set(`posts-${id}`, posts);
+  cache.set(`posts-by-category${id}`, posts);
   res.status(201).json(posts);
 });
 
-app.get("/posts-by-id/:id", async function (req, res) {
-  const id = req.params.id;
-  let post = cache.get(`post-${id}`);
-  if (post) return res.status(201).json(post);
-
-  post = await fetchPostById(id);
-  cache.set(`post-${id}`, post);
-  res.status(201).json(post);
-});
-
-app.get("/posts-by-slug/:slug", async function (req, res) {
+app.get("/posts/:slug", async function (req, res) {
   const slug = req.params.slug;
-  const post = await fetchPostBySlug(slug);
-  res.status(200).json(post);
+  let post = cache.get(`posts-${slug}`);
+  if (post) return res.status(201).json(post[0]);
+
+  post = await fetchPost(slug);
+  cache.set(`posts-${slug}`, post);
+  res.status(200).json(post[0]);
 });
 
 app.get("/categories", async function (_, res) {

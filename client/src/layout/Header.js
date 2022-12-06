@@ -1,10 +1,7 @@
 import { Link } from "react-router-dom";
 import UserContext from "../UserContext";
 import { useContext } from "react";
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Image from "react-bootstrap/Image";
-import Lotus from "../assets/lotus.svg";
+import React from "react";
 
 function Header() {
   const { user, setUser } = useContext(UserContext);

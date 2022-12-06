@@ -6,9 +6,10 @@ background-size: cover;
 background-attachment: fixed;
 }
 
-.btn {
-  background-color: #2b8578;
-  border-color: #2b8578;
+.contentContainer {
+background-color: rgba(255, 255, 255, 0.681);
+height: 100vh;
+padding: 0
 }
 
 .btn a:hover {

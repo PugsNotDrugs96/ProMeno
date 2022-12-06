@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "cdbreact": "^1.5.3",
     "dotenv": "^16.0.3"
   }
 }
