@@ -38,13 +38,12 @@ function Header() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Konto
                 <img src="../images/person.svg" alt="profile-logo"></img>
               </button>
               <ul className="dropdown-menu">
                 <li>
                   <Link className="dropdown-item" to="/Profile">
-                    Profil
+                    Mina sidor
                   </Link>
                 </li>
                 <li>
