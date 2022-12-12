@@ -2,11 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
 import { useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import {Button, Container, Form, Row, Col, FloatingLabel} from 'react-bootstrap';
 
 function Auth() {
   const { setUser } = useContext(UserContext);
@@ -60,20 +56,14 @@ function Auth() {
             {" "}
             <h1 className="text-center text-info text-black"> Logga in</h1>{" "}
           </Col>
-          <div className="text-center">
-            Inte registrerad ännu?{" "}
-            <span>
-              <a href="/register">Registrera här!</a>
-            </span>
-          </div>
           <Row>
             <Col>
               <Form onSubmit={handleSubmit}>
-                <Form.Group
-                  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                  controlId="formBasicEmail"
-                >
-                  <Form.Label>Email</Form.Label>
+              <FloatingLabel
+                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                    controlId="floatingInput"
+                    label="Email address"
+                  >
                   <Form.Control
                     type="email"
                     ref={userRef}
@@ -84,12 +74,12 @@ function Auth() {
                     value={email}
                     required
                   />
-                </Form.Group>
-                <Form.Group
-                  className="col-md-5 mx-auto col-lg-5 mb-3"
-                  controlId="formBasicPassword"
-                >
-                  <Form.Label>Lösenord</Form.Label>
+                </FloatingLabel>
+                <FloatingLabel
+                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                    controlId="floatingPassword"
+                    label="Password"
+                  >
                   <Form.Control
                     type="password"
                     className="form-control"
@@ -97,14 +87,21 @@ function Auth() {
                     value={password}
                     required
                   />
-                </Form.Group>
+                </FloatingLabel>
                 <div className="text-center">
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" type="submit"  className="col-md-5 mx-auto col-lg-5 mb-3">
                     Logga in
                   </Button>
                   <p>
                     Glömt <a href="/forgot-password">lösenordet?</a>
                   </p>
+                </div>
+                <br></br>
+                <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
+                <div className="text-center">
+                  <Button href="/register" className="col-md-5 mx-auto col-lg-5 mb-3">
+                  Inte registrerad ännu? Registrera här!
+                  </Button>
                 </div>
                 <p
                   ref={errRef}

@@ -1,23 +1,36 @@
 import React, { useState, useEffect, useContext } from "react";
 import UserContext from "../../UserContext";
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
+import {Button, Container, Form, Col, FloatingLabel} from 'react-bootstrap';
 import { registerUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 
 
-function Register(props) {
+const initialState = {
+  name: "",
+  email: "",
+  password: "",
+  passwordConfirm: ""
+};
+
+function Register() {
   const { setUser } = useContext(UserContext);
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [authStep, setAuthMode] = useState(1);
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [newUser, setNewUser] = useState(initialState)
   const [success, setSuccess] = useState(false);
+  const passVerification = {
+    isLenthy: false,
+    hasUpper: false,
+    hasLower: false,
+    hasNumber: false,
+    hasSpclChr: false,
+    confirmPass: false,
+  };
+  const [passwordError, setPasswordError] = useState(passVerification)
 
 
   const handleSubmit = async (e) => {
@@ -32,12 +45,43 @@ function Register(props) {
       } 
     }
 
+    useEffect(() => {}, [newUser]);
+    
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+  
+      setNewUser({ ...newUser, [name]: value });
+  
+      if (name === "password") {
+        const isLenthy = value.length > 8;
+        const hasUpper = /[A-Z]/.test(value);
+        const hasLower = /[a-z]/.test(value);
+        const hasNumber = /[0-9]/.test(value);
+        const hasSpclChr = /[!,?,@,#,$,%,&]/.test(value);
+  
+        setPasswordError({
+          ...passwordError,
+          isLenthy,
+          hasUpper,
+          hasLower,
+          hasNumber,
+          hasSpclChr,
+        });
+      }
+///Ser till så att alla lösenord kriterier är godkända innan knappen blir klickbar (funkar inte)?
+      if(name === "confirmPass"){ 
+        setPasswordError({
+          ...passwordError,
+          confirmPass: newUser.password === value
+        })
+      }
+    };
 
-  const handleChange = (event) => {
-    setMessage(event.target.value);
-  };
+    console.log(newUser)
 
+  
   const handleClick = (event) => {
+    setMessage(event.target.value);
     event.preventDefault();
     if (message === "test123") {
       setMessage("");
@@ -85,67 +129,86 @@ function Register(props) {
           <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
         </Col>
         <Form onSubmit = {handleSubmit}>
-                  <Form.Group
+                  <FloatingLabel
                     className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                    controlId="formBasicName"
+                    controlId="floatingInput"
+                    label="Namn"
                   >
-                    <Form.Label>Namn</Form.Label>
                     <Form.Control
                       type="name"
+                      name="name"
                       autoComplete="off"
                       className="form-control"
-                      name="name"
-                      onChange={(e) => setName(e.target.value)}
-                      value={name}
+                      value={newUser.name}
+                      onChange={handleChange}
                       required
                     />
-                  </Form.Group>
-                  <Form.Group
+                  </FloatingLabel>
+                  <FloatingLabel
                     className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                    controlId="formBasicEmail"
+                    controlId="floatingInput"
+                    label="Email address"
                   >
-                    <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email"
                       autoComplete="off"
                       className="form-control"
                       name="email"
-                      onChange={(e) => setEmail(e.target.value)}
-                      value={email}
+                      value={newUser.email}
+                      onChange={handleChange}
                       required
                     />
-                  </Form.Group>
-                  <Form.Group
-                    className="col-md-5 mx-auto col-lg-5 mb-3"
-                    controlId="formBasicPassword"
+                  </FloatingLabel>
+                  <FloatingLabel
+                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                    controlId="floatingPassword"
+                    label="Password"
                   >
-                    <Form.Label>Lösenord</Form.Label>
+                    <Form.Control
+                      type="password"
+                      name="password"
+                      className="form-control"
+                      value={newUser.password}
+                      onChange={handleChange}
+                      required
+                    />
+                  </FloatingLabel>
+                  <FloatingLabel
+                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                    controlId="floatingPassword"
+                    label="Bekräfta"
+                  >
                     <Form.Control
                       type="password"
                       className="form-control"
-                      onChange={(e) => setPassword(e.target.value)}
-                      value={password}
+                      name="passwordConfirm"
+                      value={newUser.passwordConfirm}
+                      onChange={handleChange}
                       required
                     />
-                  </Form.Group>
-                  <Form.Group
-                    className="col-md-5 mx-auto col-lg-5 mb-3"
-                    controlId="formBasicPassword"
-                  >
-                    <Form.Label>Bekräfta</Form.Label>
-                    <Form.Control
-                      type="password"
-                      className="form-control"
-                      onChange={(e) => setPasswordConfirm(e.target.value)}
-                      value={passwordConfirm}
-                      required
-                    />
-                  </Form.Group>
+                  </FloatingLabel>
+                  
+                  {/*Disable funktionen bör göra så att knappen inte är klickbar, fungerar inte. Vet inte varför */}
                   <div className="text-center">
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" className="col-md-5 mx-auto col-lg-5 mb-3" disable={Object.values(passwordError).includes(false)}> 
                       Registrera
                     </Button>
                   </div>
+                 
+                  <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
+                  <Form.Group
+                    className="col-md-5 mx-auto col-lg-5 mb-3"
+                    controlId="formControll"
+                  >
+                  <ul>
+                    <li className={passwordError.isLenthy ? "text-success" : "text-danger"}> Minst 8 karaktärer </li>
+                    <li className={passwordError.hasUpper ? "text-success" : "text-danger"}>Minst en storbokstav</li>
+                    <li className={passwordError.hasLower ? "text-success" : "text-danger"}>Minst en liten bokstav</li>
+                    <li className={passwordError.hasNumber ? "text-success" : "text-danger"}>Minst en siffra</li>
+                    <li className={passwordError.hasSpclChr ? "text-success" : "text-danger"}>Minst en av specialtecken e.x ! ? @ #</li>
+                  </ul>
+                  </Form.Group>
+                  
                 </Form>
         </Container>
       )}
@@ -159,16 +222,19 @@ function Register(props) {
         {" "}
         <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
       </Col>
-      <Form className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
+      <Form>
         <h3 className="text-center">Steg 1</h3>
-        <Form.Label>Registreringskod</Form.Label>
-        <Form.Group controlId="textarea">
+        <FloatingLabel
+                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                    controlId="floatingInput"
+                    label="Registeringskod"
+                  >
           <Form.Control
             as="input"
             placeholder="Skriv registreringskoden här.."
-            onChange={handleChange}
+            onChange={handleClick}
           ></Form.Control>
-        </Form.Group>
+        </FloatingLabel>
         <div className="text-center mx-auto mt-3 ">
           <Button variant="primary" type="submit" onClick={handleClick}>
             Nästa 
