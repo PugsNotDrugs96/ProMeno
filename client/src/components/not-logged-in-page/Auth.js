@@ -98,11 +98,9 @@ function Auth() {
                 </div>
                 <br></br>
                 <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
-                <div className="text-center">
-                  <Button href="/register" className="col-md-5 mx-auto col-lg-5 mb-3">
-                  Inte registrerad ännu? Registrera här!
-                  </Button>
-                </div>
+                <Form.Text>
+                  <p className= "col-md-5 mx-auto col-lg-5 mt-3 mb-3">Inte registrerad ännu? <a href="/register">Registrera här!</a></p>
+                </Form.Text>
                 <p
                   ref={errRef}
                   className={

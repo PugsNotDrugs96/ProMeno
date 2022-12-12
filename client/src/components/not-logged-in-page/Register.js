@@ -68,7 +68,7 @@ function Register() {
           hasSpclChr,
         });
       }
-///Ser till så att alla lösenord kriterier är godkända innan knappen blir klickbar (funkar inte)?
+///If-sats som kontrollerar att password och passwordconfirm är det samma. (funkar inte)?
       if(name === "confirmPass"){ 
         setPasswordError({
           ...passwordError,
@@ -187,12 +187,18 @@ function Register() {
                       required
                     />
                   </FloatingLabel>
+                  <Form.Text>
+                    {!passwordError.confirmPass && (
+                      <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">Lösenord matchar inte!</div>
+                    )}
+                  </Form.Text>
                   
                   {/*Disable funktionen bör göra så att knappen inte är klickbar, fungerar inte. Vet inte varför */}
                   <div className="text-center">
                     <Button variant="primary" type="submit" className="col-md-5 mx-auto col-lg-5 mb-3" disable={Object.values(passwordError).includes(false)}> 
                       Registrera
                     </Button>
+                    <p >Har du redan ett konto? <a href="/login">Logga in</a></p>
                   </div>
                  
                   <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
@@ -200,6 +206,7 @@ function Register() {
                     className="col-md-5 mx-auto col-lg-5 mb-3"
                     controlId="formControll"
                   >
+                  <Form.Text>
                   <ul>
                     <li className={passwordError.isLenthy ? "text-success" : "text-danger"}> Minst 8 karaktärer </li>
                     <li className={passwordError.hasUpper ? "text-success" : "text-danger"}>Minst en storbokstav</li>
@@ -207,6 +214,7 @@ function Register() {
                     <li className={passwordError.hasNumber ? "text-success" : "text-danger"}>Minst en siffra</li>
                     <li className={passwordError.hasSpclChr ? "text-success" : "text-danger"}>Minst en av specialtecken e.x ! ? @ #</li>
                   </ul>
+                  </Form.Text>
                   </Form.Group>
                   
                 </Form>
@@ -228,11 +236,13 @@ function Register() {
                     className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                     controlId="floatingInput"
                     label="Registeringskod"
+                    
                   >
           <Form.Control
             as="input"
             placeholder="Skriv registreringskoden här.."
             onChange={handleClick}
+            required
           ></Form.Control>
         </FloatingLabel>
         <div className="text-center mx-auto mt-3 ">
