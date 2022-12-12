@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import UserContext from "../UserContext";
 import { useContext } from "react";
 import React from "react";
+import Navbar from "react-bootstrap/esm/Navbar"
+import Container from "react-bootstrap/esm/Container"
+import Image from "react-bootstrap/esm/Image"
+import Lotus from "../assets/lotus.svg"
 
 function Header() {
   const { user, setUser } = useContext(UserContext);
