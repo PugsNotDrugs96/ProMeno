@@ -4,7 +4,6 @@ import "./layout.css";
 import UserContext from "../UserContext";
 import Container from "react-bootstrap/esm/Container";
 import Header from "./Header";
-import Navigation from "../components/navigation/Navigation";
 import Footer from "../components/footer/Footer";
 
 /**
@@ -19,6 +18,7 @@ function BasicLayout({ children }) {
       <div className="background">
         <Container className="contentContainer shadow">{children}</Container>
       </div>
+      <Footer />
     </>
   );
 }
