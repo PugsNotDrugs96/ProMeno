@@ -21,8 +21,14 @@ function PostPage() {
 
   return (
     <Container className="postContainer py-4">
-      <h1 className="postTitle py-3 text-center" dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
-      <p className="postBody px-5" dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+      <h1
+        className="postTitle py-3 text-center"
+        dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+      />
+      <p
+        className="postBody px-5"
+        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+      />
     </Container>
   );
 }

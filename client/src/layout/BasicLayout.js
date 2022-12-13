@@ -20,7 +20,6 @@ function BasicLayout({ children }) {
       <div className="background">
         <Container className="contentContainer shadow">{children}</Container>
       </div>
-      <Footer />
     </>
   );
 }
