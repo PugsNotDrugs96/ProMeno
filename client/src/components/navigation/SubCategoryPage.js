@@ -31,7 +31,6 @@ function SubCategoryPage() {
   );
 
   const handleClick = (subCategorySlug) => {
-    console.log("subcategorypage" + subCategorySlug);
     navigate(`/${mainCategorySlug}/${subCategorySlug}`);
   };
 
