@@ -28,7 +28,6 @@ function PostCard(props) {
         backgroundColor: "#ce94ad",
         color: "white",
         borderRadius: "15%",
-        marginLeft: "5.5rem",
         border: "none",
       }}
       onClick={() => {
@@ -50,7 +49,7 @@ function PostCard(props) {
       <Card.Body className="text-center">
         <Card.Title
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-          style={{ fontSize: "20px" }}
+          style={{ fontSize: "25px" }}
         />
       </Card.Body>
     </Card>

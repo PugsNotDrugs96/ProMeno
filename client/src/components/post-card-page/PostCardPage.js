@@ -35,7 +35,6 @@ function PostCardPage() {
       {subCategory.description && (
         <Container
           style={{
-            textAlign: "center",
             maxWidth: "500px",
             background: "transparent",
             fontSize: "20px",

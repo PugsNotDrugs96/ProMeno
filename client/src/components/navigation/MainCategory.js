@@ -30,9 +30,10 @@ function MainCategory() {
     <div>
       {mainCategories.map((item, index) => (
         <Row>
-          <Col>
+          <Col style={{ position: "relative" }}>
             <Button
-              className={` mt-5 ${pixels < 576 ? "w-90" : "w-75"} h-75`}
+              className={`mx-5 mt-4 h-75 ${pixels < 576 ? "w-90" : "w-75"}`}
+              align="center"
               onClick={() => handleClick(item)}
             >
               {item.name}
