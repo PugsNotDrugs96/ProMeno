@@ -16,11 +16,9 @@ function BasicLayout({ children }) {
   return (
     <>
       <Header />
-      {user && <Navigation />}
       <div className="background">
         <Container className="contentContainer shadow">{children}</Container>
       </div>
-      <Footer />
     </>
   );
 }

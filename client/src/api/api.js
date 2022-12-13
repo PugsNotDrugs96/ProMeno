@@ -23,6 +23,11 @@ export async function getCategories() {
   return response.data;
 }
 
+export async function getCategoryBySlug(slug) {
+  const response = await axios.get(`/categories/${slug}`);
+  return response.data;
+}
+
 export async function loginUser(email, password) {
   const response = await axios.post(
     "/auth",

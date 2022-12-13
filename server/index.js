@@ -7,6 +7,7 @@ import {
   fetchPost,
   fetchPostsByCategory,
   fetchCategoryIdBySlug,
+  fetchCategoryBySlug,
 } from "./api/wp-api.js";
 import * as usersFilters from "./db/filtersUsersDB.js";
 import cors from "cors";
@@ -226,6 +227,16 @@ app.get("/categories", async function (_, res) {
   categories = await fetchCategories();
   cache.set("categories", categories);
   res.status(201).json(categories);
+});
+
+app.get("/categories/:slug", async function (req, res) {
+  const slug = req.params.slug;
+  let category = cache.get(`category-${slug}`);
+  if (category) return res.status(201).json(category);
+
+  category = await fetchCategoryBySlug(slug);
+  cache.set(`category-${slug}`, category);
+  res.status(201).json(category);
 });
 
 app.post("/reset-password-link", async function (req, res) {

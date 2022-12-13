@@ -18,6 +18,15 @@ export async function fetchCategories() {
   return response.data;
 }
 
+export async function fetchCategoryBySlug(slug) {
+  const response = await axios
+    .get(`https://data.promeno.se/wp-json/wp/v2/categories?slug=${slug}`)
+    .catch((err) => {
+      console.log("Error: ", err.message);
+    });
+  return response.data[0];
+}
+
 export async function fetchCategoryIdBySlug(slug) {
   const response = await axios
     .get(
