@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import UserContext from "../UserContext";
+import UserContext from "../../UserContext";
 import { useContext } from "react";
 import React from "react";
-import Navbar from "react-bootstrap/esm/Navbar";
-import Container from "react-bootstrap/esm/Container";
-import Image from "react-bootstrap/esm/Image";
-import Lotus from "../assets/lotus.svg";
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Image from "react-bootstrap/Image";
+import Lotus from "../../assets/lotus.svg";
 
 function Header() {
   const { user, setUser } = useContext(UserContext);
@@ -23,11 +23,15 @@ function Header() {
               <div className="btn-group">
                 <button
                   type="button"
-                  className="btn btn-primary dropdown-toggle"
+                  className="btn login-button dropdown-toggle"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <img src="../images/person.svg" alt="profile-logo"></img>
+                  <img
+                    id="profile-logo"
+                    src="../images/person.svg"
+                    alt="profile-logo"
+                  ></img>
                 </button>
                 <ul className="dropdown-menu">
                   <li>

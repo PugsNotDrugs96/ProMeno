@@ -12,7 +12,7 @@ import {
 import * as usersFilters from "./db/filtersUsersDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import {usersDB, UserModel} from "./db/usersDB.js";
+import { usersDB, UserModel } from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
 import NodeCache from "node-cache";
 //import nodemailer from "nodemailer";
@@ -71,7 +71,7 @@ app.post("/auth", async function (req, res) {
   res.status(200).json({ success: `User ${email} is logged in` });
 }); */
 
-app.post("/auth", async function(req, res){
+app.post("/auth", async function (req, res) {
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ message: "Email and password are required" });
@@ -81,17 +81,17 @@ app.post("/auth", async function(req, res){
 
   if (isValidLogin === "Email does not exist") {
     res.status(401).send("Email not found");
-  } else if (isValidLogin === "Invalid password"){
+  } else if (isValidLogin === "Invalid password") {
     res.status(401).send("Invalid password");
-  } else if (isValidLogin === "Database error"){
-    res.status(500).send("Database connection failed")
-  } else{
+  } else if (isValidLogin === "Database error") {
+    res.status(500).send("Database connection failed");
+  } else {
     res.status(200).send(`User ${email} is logged in`);
   }
-})
+});
 
 app.post("/register", async function (req, res) {
-  const {name, email, password } = req.body;
+  const { name, email, password } = req.body;
   if (!name || !email || !password) {
     console.log("1");
     return res
@@ -99,77 +99,78 @@ app.post("/register", async function (req, res) {
       .send({ message: "name, email and password are required" });
   }
 
- await usersFilters.registerUserDB(name, email, password).then(result =>{
-  if (result === "500"){
-    res.status(500).send("Unable to register user to database");
-  }else if (result === "406"){
+  await usersFilters
+    .registerUserDB(name, email, password)
+    .then((result) => {
+      if (result === "500") {
+        res.status(500).send("Unable to register user to database");
+      } else if (result === "406") {
+        res.status(406).send("Email already registered");
+      } else {
+        res.status(200).send("User registered");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(406).send({ statusCode: err });
+    });
+});
+
+app.get("/get-all-users-db", async function (req, res) {
+  const data = await usersFilters.getAllUsersDB();
+  if (data === "error") {
+    res.status(500).send("Database error");
+  } else if (data === "Email already exist") {
     res.status(406).send("Email already registered");
   } else {
-    res.status(200).send("User registered");
+    res.send(data);
   }
- }).catch(err => {
-  console.log(err);
-  res.status(406).send({statusCode: err});
- });
 });
 
-app.get("/get-all-users-db", async function(req, res){
-    const data = await usersFilters.getAllUsersDB();
-    if(data === "error"){
-      res.status(500).send("Database error");
-    } else if(data === "Email already exist") {
-      res.status(406).send("Email already registered")
-    } else {
-      res.send(data);
-    }
-
-});
-
-app.get("/get-user-by-email-db", async function(req, res){
-  const {email} = req.body;
+app.get("/get-user-by-email-db", async function (req, res) {
+  const { email } = req.body;
   const user = await usersFilters.getUserDB(email);
 
-    if(user === "Email does not exist"){
-      res.status(406).send("Email does not exist")
-    } else {
-      res.status(200).send(user);
-    }
+  if (user === "Email does not exist") {
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(user);
+  }
 });
 
-app.post("/update-email-db", async function (req, res){
-  const {oldEmail, newEmail} = req.body;
+app.post("/update-email-db", async function (req, res) {
+  const { oldEmail, newEmail } = req.body;
   console.log("test");
   const status = await usersFilters.updateEmailDB(oldEmail, newEmail);
 
-  if(status === "Email does not exist"){
+  if (status === "Email does not exist") {
     res.status(406).send("Email does not exist");
   } else {
     res.status(200).send(status);
   }
 });
 
-app.post("/update-password-db", async function (req, res){
-  const {email, password} = req.body;
+app.post("/update-password-db", async function (req, res) {
+  const { email, password } = req.body;
   const status = await usersFilters.updatePasswordDB(email, password);
 
-  if(status === "Email does not exist"){
+  if (status === "Email does not exist") {
     res.status(406).send("Email does not exist");
   } else {
     res.status(200).send(status);
   }
 });
 
-app.delete("/delete-user-db", async function (req, res){
-  const {email} = req.body;
+app.delete("/delete-user-db", async function (req, res) {
+  const { email } = req.body;
   const status = await usersFilters.deleteUserDB(email);
 
-  if(status === "400"){
+  if (status === "400") {
     res.status(406).send("Email does not exist");
   } else {
     res.status(200).send(status);
   }
 });
-
 
 app.post("/change-password", async function (req, res) {
   const { email, currentPassword, newPassword } = req.body;

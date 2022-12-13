@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import Image from "react-bootstrap/Image";
-import Logo from "../../assets/logo.jpeg";
 import "./Hero.css";
 import UserContext from "./../../UserContext";
 
