@@ -32,7 +32,7 @@ return (
             <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
         </ListGroup>
         <Card.Body>
-            <Card.Link href="#">Card Link</Card.Link>
+            <Card.Link href="#">Link</Card.Link>
         </Card.Body>
     </Card>
     
@@ -59,10 +59,10 @@ return (
         <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
     </ListGroup>
     <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
     </Card.Body>
     </Card>
     </CardGroup>
+
     );
 }
 

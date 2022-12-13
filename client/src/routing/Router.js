@@ -12,6 +12,7 @@ import ResetPassword from "../components/login/ResetPassword";
 import ForgotPassword from "../components/login/ForgotPassword";
 import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
+import AboutUs from "../components/footer/AboutUs"
 
 function Router() {
   return (
@@ -29,6 +30,7 @@ function Router() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route
             path="/profile"
             element={
