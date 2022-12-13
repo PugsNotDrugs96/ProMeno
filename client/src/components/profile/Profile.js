@@ -20,8 +20,8 @@ function Profile() {
     <Container
       style={{ padding: "3rem", minHeight: "600px", background: "transparent" }}
     >
-      <div style={{ paddingBottom: "1rem", textAlign: "center" }}>
-        <h1>Mina sidor</h1>
+      <div style={{ textAlign: "center" }}>
+        <h1 style={{ marginBottom: "2rem" }}>Mina sidor</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="35"
@@ -35,8 +35,11 @@ function Profile() {
             fill-rule="evenodd"
             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
           />
-        </svg>{" "}
-        <h5>Du är inloggad som: {user}</h5>{" "}
+        </svg>
+        <h4 style={{ paddingTop: "2rem" }}>Du är inloggad som:</h4>
+        <p style={{ color: "#436662", fontWeight: "bold", fontSize: "25px" }}>
+          {user}
+        </p>
         <Row xs={1} md={1} className="g-3 mt-2">
           <Container style={{ width: "20rem" }}>
             <Button
