@@ -46,8 +46,8 @@ function PostCardPage() {
       )}
       <Row xs={1} md={2} className="g-3">
         {posts.map((post, index) => (
-          <Col key={index}>
-            <PostCard index={index} post={post} class="col align-self-center" />
+          <Col key={index} className="d-flex">
+            <PostCard index={index} post={post} />
           </Col>
         ))}
       </Row>
