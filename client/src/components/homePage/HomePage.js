@@ -16,12 +16,10 @@ const HomePage = () => {
           <Hero />
         </Col>
         <Col mx-auto md={5}>
-          {user && (
-            <MainCategory />
-          )}
+          {user && <MainCategory />}
         </Col>
       </Row>
     </Container>
-  )
+  );
 };
 export default HomePage;
