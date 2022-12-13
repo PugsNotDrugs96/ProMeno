@@ -49,7 +49,7 @@ function Navigation() {
   };
 
   const handleSubCategoryClick = (slug) => {
-    navigate(`/category/${slug}`);
+    navigate(`/${slug}`);
   };
 
   return (

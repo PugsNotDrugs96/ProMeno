@@ -5,13 +5,14 @@ import HomePage from "../components/homePage/HomePage";
 import Login from "../components/login/Login";
 import Register from "../components/register/Register";
 import Profile from "../components/profile/Profile";
-import CategoryPage from "../components/post-page/CategoryPage";
 import PostPage from "../components/post-page/PostPage";
 import ChangePassword from "../components/profile/ChangePassword";
 import ResetPassword from "../components/login/ResetPassword";
 import ForgotPassword from "../components/login/ForgotPassword";
 import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
+import PostCardPage from "../components/post-card-page/PostCardPage";
+import SubCategoryPage from "../components/navigation/SubCategoryPage";
 
 function Router() {
   return (
@@ -38,15 +39,23 @@ function Router() {
             }
           />
           <Route
-            path="/category/:slug"
+            path="/:mainCategorySlug/:subCategorySlug"
             element={
               <ProtectedRoute>
-                <CategoryPage />
+                <PostCardPage />
               </ProtectedRoute>
             }
           />
           <Route
-            path="/post/:slug"
+            path="/:mainCategorySlug"
+            element={
+              <ProtectedRoute>
+                <SubCategoryPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/:mainCategorySlug/:subCategorySlug/:slug"
             element={
               <ProtectedRoute>
                 <PostPage />
