@@ -12,6 +12,7 @@ import ForgotPassword from "../components/login/ForgotPassword";
 import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
+import SubCategoryPage from "../components/navigation/SubCategoryPage";
 
 function Router() {
   return (
@@ -38,7 +39,7 @@ function Router() {
             }
           />
           <Route
-            path="/category/:slug"
+            path="/:mainCategorySlug/:subCategorySlug"
             element={
               <ProtectedRoute>
                 <PostCardPage />
@@ -46,7 +47,15 @@ function Router() {
             }
           />
           <Route
-            path="/post/:slug"
+            path="/:mainCategorySlug"
+            element={
+              <ProtectedRoute>
+                <SubCategoryPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/:mainCategorySlug/:subCategorySlug/:slug"
             element={
               <ProtectedRoute>
                 <PostPage />

@@ -8,31 +8,31 @@ import PostCard from "./PostCard";
 
 function PostCardPage() {
   const params = useParams();
-  const { slug } = params;
+  const { subCategorySlug } = params;
 
   const [posts, setPosts] = useState(null);
-  const [category, setCategory] = useState(null);
+  const [subCategory, setSubCategory] = useState(null);
 
   useEffect(() => {
     async function fetchData() {
-      const category = await getCategoryBySlug(slug);
-      const posts = await getPostsByCategory(slug);
+      const category = await getCategoryBySlug(subCategorySlug);
+      const posts = await getPostsByCategory(subCategorySlug);
       setPosts(posts);
-      setCategory(category);
+      setSubCategory(category);
     }
     fetchData();
-  }, [slug]);
+  }, [subCategorySlug]);
 
-  if (!posts || !category) return null;
+  if (!posts || !subCategory) return null;
 
   return (
     <Container
       style={{ padding: "3rem", minHeight: "600px", background: "transparent" }}
     >
       <h1 style={{ paddingBottom: "1rem", textAlign: "center" }}>
-        {category.name}
+        {subCategory.name}
       </h1>
-      {category.description && (
+      {subCategory.description && (
         <Container
           style={{
             maxWidth: "500px",
@@ -41,13 +41,18 @@ function PostCardPage() {
             marginBottom: "2rem",
           }}
         >
-          <p>{category.description}</p>
+          <p>{subCategory.description}</p>
         </Container>
       )}
       <Row xs={1} md={2} className="g-3">
         {posts.map((post, index) => (
           <Col key={index} className="d-flex">
-            <PostCard index={index} post={post} />
+            <PostCard
+              index={index}
+              post={post}
+              mainCategorySlug={params.mainCategorySlug}
+              subCategorySlug={params.subCategorySlug}
+            />
           </Col>
         ))}
       </Row>

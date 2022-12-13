@@ -23,7 +23,7 @@ function MainCategory() {
   const mainCategories = categories.filter((category) => !category.parent);
 
   const handleClick = (item) => {
-    navigate(`/category/${item.slug}`);
+    navigate(`/${item.slug}`);
   };
 
   return (

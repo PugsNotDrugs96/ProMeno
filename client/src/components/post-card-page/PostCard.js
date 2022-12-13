@@ -4,9 +4,10 @@ import cardImg from "../../assets/card-image.png";
 import { useNavigate } from "react-router-dom";
 
 function PostCard(props) {
-  const { index, post } = props;
+  const { index, post, mainCategorySlug, subCategorySlug } = props;
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(false);
+  const slug = post.slug;
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -30,7 +31,7 @@ function PostCard(props) {
         border: "none",
       }}
       onClick={() => {
-        navigate(`/post/${post.slug}`);
+        navigate(`/${mainCategorySlug}/${subCategorySlug}/${slug}`);
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
