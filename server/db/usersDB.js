@@ -22,9 +22,9 @@ const userSchema = new mongoose.Schema({
   isAdmin: {
     type: Boolean,
   },
-}); 
+});
 
-const UserModel = mongoose.model("Users", userSchema); 
+const UserModel = mongoose.model("Users", userSchema);
 
 const users = {
   "felicia@gmail.com": "test",
@@ -57,4 +57,4 @@ const usersDB = {
   },
 };
 
-export {usersDB, UserModel};
+export { usersDB, UserModel };
