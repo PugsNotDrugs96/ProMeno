@@ -52,10 +52,10 @@ function RemoveAccount() {
   return (
     <Container>
       <Col>
-        <h1 className="text-center text-info text-black">Radera konto</h1>
+        <h1 className="text-center text-info text-black">Avregistrera dig</h1>
         <div className="text-center m-10">
           <p>
-            Radera ditt konto hos ProMeno och avregistrera dig från allt
+            Ta bort ditt konto hos ProMeno och avregistrera dig från allt
             deltagande i vår forskningsstudie. Det här går inte att ångra.
           </p>
         </div>
@@ -82,7 +82,7 @@ function RemoveAccount() {
 
             <div className="text-center">
               <Button variant="danger" type="submit">
-                Jag önskar radera mitt konto.
+                Jag önskar ta bort mitt konto.
               </Button>
             </div>
             <p
@@ -98,7 +98,7 @@ function RemoveAccount() {
         </Col>
       </Row>
       <Modal show={show} onHide={handleClose} animation={false}>
-        <Modal.Body>Ditt konto har raderats</Modal.Body>
+        <Modal.Body>Du har inte längre ett konto hos oss på ProMeno</Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>
             OK
