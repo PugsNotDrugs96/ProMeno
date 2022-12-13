@@ -1,0 +1,102 @@
+/* Container */
+.postContainer {
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+}
+
+/* Headings */
+.postTitle {
+  font-weight: bolder;
+}
+
+/* Subheadings */
+.postBody h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: 10px;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+/* Body */
+.postBody {
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+/* Images & videos */
+.postBody figure {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.postBody figure > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 100%;
+}
+.wp-element-caption {
+  text-align: center;
+}
+
+.postBody figure > video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 100%;
+}
+.wp-block-media-text__content {
+  text-align: center;
+}
+
+/* Lists */
+.postBody ul {
+  padding-left: 14px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.postBody li {
+  padding-bottom: 5px;
+}
+::marker {
+  color: #38736f;
+}
+
+/* Links */
+.postBody a {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 14.5px;
+  font-weight: bolder;
+  color: #38736f;
+  text-decoration: none;
+  cursor: pointer;
+}
+.postBody a:hover,
+a:active {
+  color: #6bb3a3;
+}
+
+/* Quotes */
+.postBody blockquote > p {
+  padding: 20px 50px 0px 50px;
+  font-style: italic;
+  text-align: center;
+}
+.postBody blockquote > cite {
+  font-size: small;
+  font-style: normal;
+}
+
+/* Tables */
+.postBody table {
+  margin-left: auto;
+  margin-right: auto;
+}

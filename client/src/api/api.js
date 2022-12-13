@@ -1,7 +1,7 @@
 import axios from "./serverConnection";
 
-export async function getPostsByCategory(id) {
-  const response = await axios.get(`/posts-by-category/${id}`, {
+export async function getPostsByCategory(slug) {
+  const response = await axios.get(`/posts-by-category/${slug}`, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -9,8 +9,8 @@ export async function getPostsByCategory(id) {
   return response.data;
 }
 
-export async function getPostById(id) {
-  const response = await axios.get(`/posts/${id}`, {
+export async function getPostBySlug(slug) {
+  const response = await axios.get(`/posts/${slug}`, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -20,6 +20,11 @@ export async function getPostById(id) {
 
 export async function getCategories() {
   const response = await axios.get("/categories");
+  return response.data;
+}
+
+export async function getCategoryBySlug(slug) {
+  const response = await axios.get(`/categories/${slug}`);
   return response.data;
 }
 
@@ -36,7 +41,7 @@ export async function loginUser(email, password) {
   return response;
 }
 
-export async function registerUser(name, email, password,) {
+export async function registerUser(name, email, password) {
   const response = await axios.post(
     "/register",
     { name, email, password },
@@ -84,6 +89,19 @@ export async function resetPassword(email, newPassword) {
   const response = await axios.post(
     "/reset-password",
     { email, newPassword },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
+
+export async function deleteAccount(email, password) {
+  const response = await axios.post(
+    "/delete-account",
+    { email, password },
     {
       headers: {
         withCredentials: true,

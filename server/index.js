@@ -1,18 +1,23 @@
 import * as dotenv from "dotenv";
-dotenv.config();
-
 import express from "express";
+import mongoose from "mongoose";
+
 import {
-  fetchThemes,
   fetchCategories,
-  fetchPostById,
+  fetchPost,
   fetchPostsByCategory,
+  fetchCategoryIdBySlug,
+  fetchCategoryBySlug,
 } from "./api/wp-api.js";
+import * as usersFilters from "./db/filtersUsersDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import {usersDB, registerUser} from "./db/usersDB.js";
+import { usersDB, UserModel } from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
-import nodemailer from "nodemailer";
+import NodeCache from "node-cache";
+//import nodemailer from "nodemailer";
+
+dotenv.config();
 
 const app = express();
 const PORT = 5000;
@@ -28,8 +33,30 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ exteded: false }));
 
+//Database URI key
+const uri = process.env.DATABASE_URI;
+
+const connectionParams = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
+//connection to DB
+mongoose
+  .connect(uri, connectionParams)
+  .then(() => {
+    console.log("Successful connection to the database");
+  })
+  .catch((err) => {
+    console.log("Error: " + err);
+  });
+
 const JWT_SECRET = process.env.JWT_SECRET;
 
+//"Time to live" --> How long we should save cache
+const TTL = 3600;
+
+const cache = new NodeCache({ stdTTL: TTL, checkperiod: TTL });
+/*
 app.post("/auth", async function (req, res) {
   const { email, password } = req.body;
   if (!email || !password) {
@@ -39,24 +66,109 @@ app.post("/auth", async function (req, res) {
   const isValidLogin = usersDB.validateLogin(email, password);
 
   if (!isValidLogin) {
-    return res.sendStatus(400);
+    return res.status(401).json("Not a valid login");
   }
-  res.json({ success: `User ${email} is logged in` });
+  res.status(200).json({ success: `User ${email} is logged in` });
+}); */
+
+app.post("/auth", async function (req, res) {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+
+  const isValidLogin = await usersFilters.validateLogin(email, password);
+
+  if (isValidLogin === "Email does not exist") {
+    res.status(401).send("Email not found");
+  } else if (isValidLogin === "Invalid password") {
+    res.status(401).send("Invalid password");
+  } else if (isValidLogin === "Database error") {
+    res.status(500).send("Database connection failed");
+  } else {
+    res.status(200).send(`User ${email} is logged in`);
+  }
 });
 
 app.post("/register", async function (req, res) {
-  const {name, email, password } = req.body;
+  const { name, email, password } = req.body;
   if (!name || !email || !password) {
+    console.log("1");
     return res
-      .sendStatus(400)
-      .json({ message: "name, email and password are required" });
+      .status(400)
+      .send({ message: "name, email and password are required" });
   }
 
-  const status = registerUser(name, email, password);
-  if (!status) {
-    res.json({ message: "Unable to register" });
+  await usersFilters
+    .registerUserDB(name, email, password)
+    .then((result) => {
+      if (result === "500") {
+        res.status(500).send("Unable to register user to database");
+      } else if (result === "406") {
+        res.status(406).send("Email already registered");
+      } else {
+        res.status(200).send("User registered");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(406).send({ statusCode: err });
+    });
+});
+
+app.get("/get-all-users-db", async function (req, res) {
+  const data = await usersFilters.getAllUsersDB();
+  if (data === "error") {
+    res.status(500).send("Database error");
+  } else if (data === "Email already exist") {
+    res.status(406).send("Email already registered");
   } else {
-    res.json({ success: `${name} has been successfully been registered` });
+    res.send(data);
+  }
+});
+
+app.get("/get-user-by-email-db", async function (req, res) {
+  const { email } = req.body;
+  const user = await usersFilters.getUserDB(email);
+
+  if (user === "Email does not exist") {
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(user);
+  }
+});
+
+app.post("/update-email-db", async function (req, res) {
+  const { oldEmail, newEmail } = req.body;
+  console.log("test");
+  const status = await usersFilters.updateEmailDB(oldEmail, newEmail);
+
+  if (status === "Email does not exist") {
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
+  }
+});
+
+app.post("/update-password-db", async function (req, res) {
+  const { email, password } = req.body;
+  const status = await usersFilters.updatePasswordDB(email, password);
+
+  if (status === "Email does not exist") {
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
+  }
+});
+
+app.delete("/delete-user-db", async function (req, res) {
+  const { email } = req.body;
+  const status = await usersFilters.deleteUserDB(email);
+
+  if (status === "400") {
+    res.status(406).send("Email does not exist");
+  } else {
+    res.status(200).send(status);
   }
 });
 
@@ -70,7 +182,7 @@ app.post("/change-password", async function (req, res) {
 
   const isValidLogin = usersDB.validateLogin(email, currentPassword);
   if (!isValidLogin) {
-    return res.sendStatus(400);
+    return res.status(403).json("Not a valid login");
   }
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
   if (isPasswordChanged) {
@@ -78,30 +190,54 @@ app.post("/change-password", async function (req, res) {
       .status(200)
       .json({ success: `Password for user ${email} has changed!` });
   } else {
-    return res.status(400).json({ message: "Something went wrong" });
+    return res.status(500).json({ message: "Something went wrong" });
   }
 });
 
-app.get("/posts-by-category/:id", async function (req, res) {
-  const id = req.params.id;
-  const posts = await fetchPostsByCategory(id);
+app.get("/posts-by-category/:slug", async function (req, res) {
+  const slug = req.params.slug;
+
+  let id = cache.get(`category-id${slug}`);
+  if (!id) {
+    id = await fetchCategoryIdBySlug(slug);
+    cache.set(`category-id-${slug}`, id);
+  }
+
+  let posts = cache.get(`posts-by-category${id}`);
+  if (posts) return res.status(201).json(posts);
+
+  posts = await fetchPostsByCategory(id);
+  cache.set(`posts-by-category${id}`, posts);
   res.status(201).json(posts);
 });
 
-app.get("/posts/:id", async function (req, res) {
-  const id = req.params.id;
-  const post = await fetchPostById(id);
-  res.status(201).json(post);
-});
+app.get("/posts/:slug", async function (req, res) {
+  const slug = req.params.slug;
+  let post = cache.get(`posts-${slug}`);
+  if (post) return res.status(201).json(post[0]);
 
-app.get("/themes", async function (_, res) {
-  const themes = await fetchThemes();
-  res.status(201).json(themes);
+  post = await fetchPost(slug);
+  cache.set(`posts-${slug}`, post);
+  res.status(200).json(post[0]);
 });
 
 app.get("/categories", async function (_, res) {
-  const categories = await fetchCategories();
+  let categories = cache.get("categories");
+  if (categories) return res.status(201).json(categories);
+
+  categories = await fetchCategories();
+  cache.set("categories", categories);
   res.status(201).json(categories);
+});
+
+app.get("/categories/:slug", async function (req, res) {
+  const slug = req.params.slug;
+  let category = cache.get(`category-${slug}`);
+  if (category) return res.status(201).json(category);
+
+  category = await fetchCategoryBySlug(slug);
+  cache.set(`category-${slug}`, category);
+  res.status(201).json(category);
 });
 
 app.post("/reset-password-link", async function (req, res) {
@@ -112,7 +248,7 @@ app.post("/reset-password-link", async function (req, res) {
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "User doesn't" });
+    return res.status(401).json({ message: "User doesn't exist" });
   }
   const secret = JWT_SECRET + usersDB.getPassword(email);
 
@@ -152,26 +288,26 @@ app.post("/reset-password-link", async function (req, res) {
   console.log({ info }); */
 
   res
-    .status(200)
+    .status(201)
     .json({ success: `Password reset link has been sent to email` });
 });
 
 app.post("/validate-link", async function (req, res) {
   const { email, token } = req.body;
   if (!email | !token) {
-    return res.status(400).json({ message: "Invalid link" });
+    return res.status(401).json({ message: "Invalid link" });
   }
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "Invalid link" });
+    return res.status(401).json({ message: "Invalid link" });
   }
   const secret = JWT_SECRET + usersDB.getPassword(email);
   try {
     const verify = jwt.verify(token, secret);
-    res.status(200).json({ success: `Link is verified` });
+    res.status(200).json({ success: `Link is valid` });
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 });
 
@@ -184,7 +320,7 @@ app.post("/reset-password", async function (req, res) {
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
-    return res.status(400).json({ message: "User not found" });
+    return res.status(401).json({ message: "User doesn't exist" });
   }
 
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
@@ -193,6 +329,27 @@ app.post("/reset-password", async function (req, res) {
     res
       .status(200)
       .json({ success: `Password for user ${email} has changed!` });
+  } else {
+    return res.status(500).json({ message: "Something went wrong" });
+  }
+});
+
+app.post("/delete-account", async function (req, res) {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+
+  const isValidLogin = usersDB.validateLogin(email, password);
+
+  if (!isValidLogin) {
+    return res.status(400).json({ message: "Not valid email or password" });
+  }
+
+  if (usersDB.deleteUser(email)) {
+    return res
+      .status(200)
+      .json({ success: `Account for user ${email} is deleted!` });
   } else {
     return res.status(400).json({ message: "Something went wrong" });
   }
