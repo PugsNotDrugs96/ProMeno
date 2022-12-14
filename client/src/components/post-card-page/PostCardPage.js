@@ -31,7 +31,7 @@ function PostCardPage() {
     <Container>
       <Row>
         <Col className="catColBody">
-          <Container className="text-center mb-5">
+          <Container className="text-center">
             <h1 className="display-8 fw-bold">{subCategory.name}</h1>
             <p>{subCategory.description}</p>
           </Container>
