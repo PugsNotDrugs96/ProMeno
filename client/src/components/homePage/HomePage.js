@@ -15,7 +15,7 @@ const HomePage = () => {
         <Col>
           <Hero />
         </Col>
-        <Col>
+        <Col md={5}>
           {user && <MainCategory />}
         </Col>
       </Row>
