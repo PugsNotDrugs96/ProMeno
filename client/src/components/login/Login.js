@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import {Button, Container, Form, Row, Col, FloatingLabel} from 'react-bootstrap';
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
 
