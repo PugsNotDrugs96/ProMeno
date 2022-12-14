@@ -36,6 +36,30 @@ function SubCategoryPage() {
 
   return (
     <Container>
+      <Row>
+        <Col>
+          <Container className="text-center">
+            <h1 className="display-8 fw-bold">{category[0].name}</h1>
+            <h2>{category[0].description}</h2>
+            <p>Kort info</p>
+          </Container>
+        </Col>
+        <Col md={5}>
+          <div className="d-grid gap-2">
+            {childCategories.map((item, index) => (
+              <Button
+                onClick={() => handleClick(item.slug)}
+                size="lg"
+                className="my-2 py-3">
+                {item.name}
+              </Button>
+            ))}
+          </div>
+        </Col>
+      </Row>
+    </Container>
+    /*
+    <Container>
       <Row p-5 xs={12} md={6}>
         <Col md={7}>
           <h1>{category[0].name}</h1>
@@ -56,7 +80,7 @@ function SubCategoryPage() {
           ))}
         </Col>
       </Row>
-    </Container>
+    </Container>*/
   );
 }
 
