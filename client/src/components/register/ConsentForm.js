@@ -36,17 +36,14 @@ function ConsentForm() {
           style={{
             background: "transparent",
             border: "none",
-            margin: "0 2rem",
           }}
         >
           <Card.Title
             className="title"
-            style={{ fontSize: "30px" }}
             dangerouslySetInnerHTML={{ __html: form.title.rendered }}
           />
           <Card.Body
             className="body"
-            style={{ fontSize: "20px", padding: 0, marginTop: "2rem" }}
             dangerouslySetInnerHTML={{ __html: form.content.rendered }}
           />
         </Card>
