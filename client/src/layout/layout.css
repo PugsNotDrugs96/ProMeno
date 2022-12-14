@@ -23,7 +23,7 @@
 }
 
 .btn:hover {
-  background-color: white;
+  background-color: #669990;
   border-color: #6db2a6;
 }
 
@@ -41,3 +41,8 @@
   .container {
     width: 900px;
   }}
+
+body,
+html {
+  font-family: Roboto, Helvetica, sans-serif;
+}
