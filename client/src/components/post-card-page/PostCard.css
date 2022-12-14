@@ -1,0 +1,8 @@
+.subSubCat {
+    border: none;
+    width: 13rem;
+    height: auto;
+    background-color: #ce94ad;
+    color: white;
+    cursor: pointer;
+}

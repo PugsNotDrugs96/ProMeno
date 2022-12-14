@@ -23,9 +23,36 @@ function PostCardPage() {
     fetchData();
   }, [subCategorySlug]);
 
+  console.log(posts);
+
   if (!posts || !subCategory) return null;
 
   return (
+    <Container>
+      <Row>
+        <Col>
+          <Container className="text-center">
+            <h1 className="display-8 fw-bold">{subCategory.name}</h1>
+            <p>{subCategory.description}</p>
+          </Container>
+        </Col>
+        <Col md={5}>
+          <Row>
+            {posts.map((post, index) => (
+              <Col>
+                <PostCard
+                  index={index}
+                  post={post}
+                  mainCategorySlug={params.mainCategorySlug}
+                  subCategorySlug={params.subCategorySlug}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Col>
+      </Row>
+    </Container>
+    /*
     <Container
       style={{ padding: "3rem", minHeight: "600px", background: "transparent" }}
     >
@@ -57,6 +84,7 @@ function PostCardPage() {
         ))}
       </Row>
     </Container>
+    */
   );
 }
 

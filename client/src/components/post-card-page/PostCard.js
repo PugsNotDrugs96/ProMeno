@@ -2,6 +2,7 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import cardImg from "../../assets/card-image.png";
 import { useNavigate } from "react-router-dom";
+import "./PostCard.css";
 
 function PostCard(props) {
   const { index, post, mainCategorySlug, subCategorySlug } = props;
@@ -9,14 +10,33 @@ function PostCard(props) {
   const [isHover, setIsHover] = useState(false);
   const slug = post.slug;
 
+  /*
   const handleMouseEnter = () => {
     setIsHover(true);
   };
   const handleMouseLeave = () => {
     setIsHover(false);
   };
+  */
 
   return (
+    <Card 
+      className="my-2 subSubCat"
+      key={index}
+      onClick={() => {
+        navigate(`/${mainCategorySlug}/${subCategorySlug}/${slug}`);
+      }}
+    >
+      <Card.Img 
+        variant="top" 
+        src={post.better_featured_image?.source_url ?? cardImg} 
+      />
+      <Card.Body>
+        <Card.Title className="text-center">{post.title.rendered}</Card.Title>
+      </Card.Body>
+    </Card>
+
+    /*
     <Card
       key={index}
       style={{
@@ -53,6 +73,7 @@ function PostCard(props) {
         />
       </Card.Body>
     </Card>
+    */
   );
 }
 
