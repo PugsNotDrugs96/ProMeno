@@ -11,11 +11,11 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Row p-5 xs={12} md={6}>
-        <Col md={7}>
+      <Row>
+        <Col>
           <Hero />
         </Col>
-        <Col mx-auto md={5}>
+        <Col>
           {user && <MainCategory />}
         </Col>
       </Row>

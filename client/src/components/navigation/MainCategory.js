@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { getCategories } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/esm/Container";
 import Button from "react-bootstrap/esm/Button";
+import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+import "./Category.css";
 
 function MainCategory() {
   const navigate = useNavigate();
@@ -27,6 +30,23 @@ function MainCategory() {
   };
 
   return (
+    <Container>
+      <Row>
+        {mainCategories.map((item, index) => (
+          <Col>
+            <Button 
+            onClick={() => handleClick(item)}
+            size="lg"
+            className="test"
+            >
+              {item.name}
+            </Button>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+
+    /*
     <div>
       {mainCategories.map((item, index) => (
         <Row>
@@ -41,7 +61,7 @@ function MainCategory() {
           </Col>
         </Row>
       ))}
-    </div>
+    </div>*/
   );
 }
 
