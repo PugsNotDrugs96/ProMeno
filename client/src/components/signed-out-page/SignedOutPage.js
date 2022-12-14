@@ -1,12 +1,19 @@
 import React from "react";
 import "./signedOutPage.css";
 import Image from "react-bootstrap/esm/Image";
+import { useNavigate } from "react-router-dom";
 import heroImg from "../../assets/front-img.jpeg";
 import Button from "react-bootstrap/esm/Button";
 
 function SignedOutPage() {
+  const navigate = useNavigate();
+  const slug = "om-studien";
   const title = "ProMeno";
   const subtitle = "Vår forskningsstudie om klimakteriet";
+
+  const handleClick = () => {
+    navigate(`/page/${slug}`);
+  };
 
   return (
     <div
@@ -20,12 +27,15 @@ function SignedOutPage() {
         className="d-block mx-auto mb-4 shadow-md rounded"
         style={{ width: "330px", height: "auto", boxShadow: "1px 1px grey" }}
       />
+
       <Button
+        onClick={handleClick}
         className="btn btn-success btn-lg mb-4 gap-3"
         style={{ width: "18rem" }}
       >
         Läs mer om studien
       </Button>
+
       <div className="col-lg-10 mx-auto">
         <p className="lead mb-5">
           ProMeno är en del av ett forskningsprojekt vid Malmö universitet där
