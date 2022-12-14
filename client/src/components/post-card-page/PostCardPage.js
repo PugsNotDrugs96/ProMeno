@@ -30,14 +30,14 @@ function PostCardPage() {
   return (
     <Container>
       <Row>
-        <Col>
-          <Container className="text-center">
+        <Col className="catColBody">
+          <Container className="text-center mb-5">
             <h1 className="display-8 fw-bold">{subCategory.name}</h1>
             <p>{subCategory.description}</p>
           </Container>
         </Col>
-        <Col md={5}>
-          <Row>
+        <Col className="catColBody" lg={5}>
+          <Row align="center">
             {posts.map((post, index) => (
               <Col>
                 <PostCard
@@ -48,10 +48,13 @@ function PostCardPage() {
                 />
               </Col>
             ))}
+            <Col><div className="fillerCol"></div></Col>
           </Row>
         </Col>
       </Row>
     </Container>
+
+
     /*
     <Container
       style={{ padding: "3rem", minHeight: "600px", background: "transparent" }}
