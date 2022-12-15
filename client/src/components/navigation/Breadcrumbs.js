@@ -20,9 +20,9 @@ function Breadcrumbs() {
     return(
         <Container>
             <Breadcrumb>
-                <Breadcrumb.Item href="/home">Startsida</Breadcrumb.Item>
+                <Breadcrumb.Item active>Startsida</Breadcrumb.Item>
                 {pathnames.map((path) => (
-                    <Breadcrumb.Item>
+                    <Breadcrumb.Item active>
                         {handleTitle(path)}
                     </Breadcrumb.Item>
                 ))}
