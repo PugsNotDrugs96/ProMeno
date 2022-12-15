@@ -98,7 +98,11 @@ function Register(props) {
             <ConsentForm />
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button
+              className="btn-lg"
+              variant="secondary"
+              onClick={handleClose}
+            >
               Stäng
             </Button>
           </Modal.Footer>
