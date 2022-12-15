@@ -3,6 +3,7 @@ import "./layout.css";
 import Container from "react-bootstrap/esm/Container";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
+import GoBackBtn from "../components/navigation/GoBackBtn.js";
 
 /**
  * Takes care of overall layout and base structure for every page
@@ -12,7 +13,10 @@ function BasicLayout({ children }) {
     <>
       <Header />
       <div className="background">
-        <Container className="contentContainer shadow">{children}</Container>
+        <Container className="contentContainer shadow">
+          <GoBackBtn />
+          {children}
+        </Container>
       </div>
       <Footer />
     </>
