@@ -13,6 +13,7 @@ import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
 import SubCategoryPage from "../components/navigation/SubCategoryPage";
+import Page from "../components/Page";
 
 function Router() {
   return (
@@ -83,6 +84,7 @@ function Router() {
               </ProtectedRoute>
             }
           />
+          <Route exact path="/page/:slug" element={<Page />} />
         </Routes>
       </BasicLayout>
     </BrowserRouter>
