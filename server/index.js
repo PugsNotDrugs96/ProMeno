@@ -161,16 +161,52 @@ app.post("/update-password-db", async function (req, res) {
   }
 });
 
-app.delete("/delete-user-db", async function (req, res) {
-  const { email } = req.body;
-  const status = await usersFilters.deleteUserDB(email);
+app.post("/delete-account", async function (req, res) {
+  const { email, password } = req.body;
 
-  if (status === "400") {
-    res.status(406).send("Email does not exist");
-  } else {
-    res.status(200).send(status);
+  if (!email || !password) {
+    console.log(email + "     " + password);
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+  console.log(5);
+  const isValidLogin = await usersFilters.validateLogin(email, password);
+  
+  if (isValidLogin === "Email does not exist") {
+    res.status(401).send("Email not found");
+  } else if (isValidLogin === "Invalid password") {
+    res.status(401).send("Invalid password");
+  } else if (isValidLogin === "Database error") {
+    res.status(500).send("Database connection failed");
+  } else if (isValidLogin === "Valid password"){
+    const status = await usersFilters.deleteUserDB(email);
+    if (status === "400") {
+      res.status(406).send("Email does not exist");
+    } else {
+      res.status(200).send(status);
+    }
   }
 });
+
+/*app.post("/delete-account", async function (req, res) {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.status(400).json({ message: "Email and password are required" });
+  }
+
+  const isValidLogin = usersDB.validateLogin(email, password);
+
+  if (!isValidLogin) {
+    return res.status(400).json({ message: "Not valid email or password" });
+  }
+
+  if (usersDB.deleteUser(email)) {
+    return res
+      .status(200)
+      .json({ success: `Account for user ${email} is deleted!` });
+  } else {
+    return res.status(400).json({ message: "Something went wrong" });
+  }
+}); */
 
 app.post("/change-password", async function (req, res) {
   const { email, currentPassword, newPassword } = req.body;
@@ -180,9 +216,20 @@ app.post("/change-password", async function (req, res) {
       .json({ message: "Email and passwords are required" });
   }
 
-  const isValidLogin = usersDB.validateLogin(email, currentPassword);
-  if (!isValidLogin) {
-    return res.status(403).json("Not a valid login");
+  const isValidLogin = await usersFilters.validateLogin(email, currentPassword);
+  if (isValidLogin === "Valid password") {
+    const changePasswordStatus = await usersFilters.updatePasswordDB(email, newPassword);
+    if(changePasswordStatus === "200"){
+      return res.status(200).json("Password updated")
+    } else {
+      return res.status(500).json("Database error")
+    }
+  } else if (isValidLogin === "Email does not exist") {
+    return res.status(406).json("Email does not exist");
+  } else if (isValidLogin === "Invalid password") {
+    return res.status(406).json("Invalid current password")
+  } else if (isValidLogin === "Database error") {
+    return res.status(500).json("Database error")
   }
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
   if (isPasswordChanged) {
@@ -331,27 +378,6 @@ app.post("/reset-password", async function (req, res) {
       .json({ success: `Password for user ${email} has changed!` });
   } else {
     return res.status(500).json({ message: "Something went wrong" });
-  }
-});
-
-app.post("/delete-account", async function (req, res) {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    return res.status(400).json({ message: "Email and password are required" });
-  }
-
-  const isValidLogin = usersDB.validateLogin(email, password);
-
-  if (!isValidLogin) {
-    return res.status(400).json({ message: "Not valid email or password" });
-  }
-
-  if (usersDB.deleteUser(email)) {
-    return res
-      .status(200)
-      .json({ success: `Account for user ${email} is deleted!` });
-  } else {
-    return res.status(400).json({ message: "Something went wrong" });
   }
 });
 

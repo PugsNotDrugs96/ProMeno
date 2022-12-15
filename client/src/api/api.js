@@ -99,6 +99,7 @@ export async function resetPassword(email, newPassword) {
 }
 
 export async function deleteAccount(email, password) {
+  console.log(email + "  1   " + password);
   const response = await axios.post(
     "/delete-account",
     { email, password },
