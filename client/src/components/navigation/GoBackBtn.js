@@ -1,19 +1,23 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import "./GoBackBtn.css";
 
 function GoBack() {
     const navigate = useNavigate();
+    const location = useLocation();
     
-    console.log(navigate);
+    console.log(location.pathname);
+
     return (
         <>
-            <img
-                id="back-button"
-                src="../images/arrow-left.svg"
-                alt="go-back-button"
-                onClick={() => navigate(-1)}
-            ></img>
+            {location.pathname != "/" && 
+                <img
+                    id="back-button"
+                    src="../images/arrow-left.svg"
+                    alt="go-back-button"
+                    onClick={() => navigate(-1)}
+                ></img>
+            }
         </>
     )
 }
