@@ -36,7 +36,7 @@ function Header() {
                 <ul className="dropdown-menu">
                   <li>
                     <Link className="dropdown-item" to="/Profile">
-                      Profil
+                      Mina sidor
                     </Link>
                   </li>
                   <li>

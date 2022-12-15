@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import {Button, Container, Form, Row, Col, FloatingLabel} from "react-bootstrap"
 import { getResetPasswordLink } from "../../api/api";
 
 function ForgotPassword() {
@@ -60,11 +56,11 @@ function ForgotPassword() {
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>
-            <Form.Group
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-              controlId="formBasicEmail"
-            >
-              <Form.Label>Email</Form.Label>
+              <FloatingLabel
+                className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                controlId="floatingInput"
+                label="Email address"
+              >
               <Form.Control
                 type="email"
                 placeholder="Ange din email"
@@ -76,12 +72,13 @@ function ForgotPassword() {
                 value={email}
                 required
               />
-            </Form.Group>
+            </FloatingLabel>
             <div className="text-center">
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" className="col-md-5 mx-auto col-lg-5 mb-3">
                 Återställ ditt lösenord
               </Button>
             </div>
+            <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
             <p
               ref={errRef}
               className={
