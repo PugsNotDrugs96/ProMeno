@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import Image from "react-bootstrap/Image";
-import Logo from "../../assets/logo.jpeg";
+import Container from "react-bootstrap/esm/Container";
 import "./Hero.css";
 import UserContext from "./../../UserContext";
 
@@ -12,12 +11,12 @@ function Hero() {
     : "Forskningsstudie om klimakteriet";
 
   return (
-    <div className="pt-5 text-center hero">
+    <Container className="text-center">
       <h1 className="display-8 fw-bold">{title}</h1>
-      <h2 className="display-12">{subtitle}</h2>
-      {!user && (
-        <div className="col-lg-6 mx-auto">
-          <p className="lead mb-5 mt-4">
+      <h2>{subtitle}</h2>
+      {!user ? (
+        <div className="welcomeBody">
+          <p className="lead my-4">
             Forskningsstudien ProMeno handlar om levnadsvanor och hälsa hos
             kvinnor i klimakteriet. Studien är en del av ett forskningsprojekt
             vid Malmö Universitet där syftet är att utvärdera användningen av
@@ -40,8 +39,19 @@ function Hero() {
             promeno.se under januari-februari 2023.
           </p>
         </div>
+      ) : (
+        <div className="mainCatBody">
+          <p>
+            ProMeno är ett digitalt stöd i form av en applikation som är tänkt
+            att hjälpa kvinnor i klimakteriet att hitta relevant information om
+            symtom kopplade till klimakteriebesvär samt ge förslag på
+            behandling. Information kommer att samlas in genom formulär som
+            skickas ut med regelbunden intervall för att så småningom kunna
+            utvärdera effekten av användning.
+          </p>
+        </div>
       )}
-    </div>
+    </Container>
   );
 }
 
