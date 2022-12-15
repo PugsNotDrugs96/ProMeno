@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import { getPostBySlug } from "../../api/api";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
+import Spinner from "react-bootstrap/Spinner";
 
 function ConsentForm() {
   const [form, setForm] = useState(null);
@@ -19,18 +20,19 @@ function ConsentForm() {
     fetchData();
   }, []);
 
-  if (!form)
-    return (
-      <Alert severity="error">
-        <AlertTitle>Sidan kunde inte hittas</AlertTitle>
-        Något gick fel, försök igen
-      </Alert>
-    );
+  if (!form) return null;
+
+  if (!form.title) {
+    <Alert severity="error">
+      <AlertTitle>Sidan kunde inte hittas</AlertTitle>
+      Något gick fel, försök igen
+    </Alert>;
+  }
 
   return (
     <React.Fragment>
       {isLoading ? (
-        <p>Loading ...</p>
+        <Spinner animation="border" />
       ) : (
         <Card
           style={{
