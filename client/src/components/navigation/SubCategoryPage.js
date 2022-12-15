@@ -40,8 +40,7 @@ function SubCategoryPage() {
         <Col>
           <Container className="text-center">
             <h1 className="display-8 fw-bold">{category[0].name}</h1>
-            <h2>{category[0].description}</h2>
-            <p>Kort info</p>
+            <p>{category[0].description}</p>
           </Container>
         </Col>
         <Col md={5}>
@@ -58,29 +57,6 @@ function SubCategoryPage() {
         </Col>
       </Row>
     </Container>
-    /*
-    <Container>
-      <Row p-5 xs={12} md={6}>
-        <Col md={7}>
-          <h1>{category[0].name}</h1>
-          <h2>{category[0].description}</h2>
-        </Col>
-        <Col mx-auto md={5}>
-          {childCategories.map((item, index) => (
-            <Row>
-              <Col>
-                <Button
-                  className={` mt-5 ${pixels < 576 ? "w-90" : "w-75"} h-75`}
-                  onClick={() => handleClick(item.slug)}
-                >
-                  {item.name}
-                </Button>
-              </Col>
-            </Row>
-          ))}
-        </Col>
-      </Row>
-    </Container>*/
   );
 }
 
