@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import UserContext from "../../UserContext";
-import {Button, Container, Form, Col, FloatingLabel} from 'react-bootstrap';
+import {Button, Container, Form, Col, FloatingLabel, Image} from 'react-bootstrap';
 import { registerUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import "./Register.css";
+import Lotus from "../../assets/lotus.svg";
+
 
 
 const initialState = {
@@ -159,11 +162,13 @@ function Register() {
         navigate("/home")
       ) : (
         <Container>
-        <Col>
-          {" "}
-          <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
-        </Col>
-        <Form onSubmit={handleStepTwoSubmit}>
+        <Form onSubmit={handleStepTwoSubmit} id="form">
+          <Col>
+            {" "}
+            <h1 className="text-center text-info text-black" id="reg-text-1"> Registrera dig!</h1>{" "}
+            
+          </Col>
+          <Image src={Lotus} alt="..." id="reg-img"></Image>
           <FloatingLabel
             className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
             controlId="floatingInput"
@@ -263,7 +268,7 @@ function Register() {
     <Container>
       <Col>
         {" "}
-        <h1 className="text-center text-info text-black"> Registrera dig!</h1>{" "}
+        <h1 className="text-center text-info text-black" id="reg-text-2"> Registrera dig!</h1>{" "}
       </Col>
       <Form>
         <h3 className="text-center">Steg 1</h3>

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {Button, Container, Form, Row, Col, FloatingLabel} from 'react-bootstrap';
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
+import "./Login.css";
 
 function Login() {
   const { setUser } = useContext(UserContext);
@@ -50,13 +51,13 @@ function Login() {
         navigate("/home")
       ) : (
         <Container>
-          <Col>
-            {" "}
-            <h1 className="text-center text-info text-black"> Logga in</h1>{" "}
-          </Col>
           <Row>
             <Col>
-              <Form onSubmit={handleSubmit}>
+              <Form onSubmit={handleSubmit} id="form">
+            <Col>
+            {" "}
+            <h1 className="text-center text-info text-black" id="login-text"> Logga in</h1>{" "}
+            </Col>
               <FloatingLabel
                     className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                     controlId="floatingInput"
