@@ -40,7 +40,7 @@ function RemoveAccount() {
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Inget svar från servern");
-      } else if (err.response?.status === 400) {
+      } else if (err.response?.status === 401) {
         setErrMsg("Lösenordet stämmer inte");
       } else {
         setErrMsg("Något gick fel, försök igen");
