@@ -3,7 +3,7 @@ import SignedOutPage from "../components/signed-out-page/SignedOutPage";
 import ProtectedRoute from "./ProtectedRoute";
 import HomePage from "../components/homePage/HomePage";
 import Login from "../components/login/Login";
-import Register from "../components/register/Register";
+import Register from "../components/not-logged-in-page/Register";
 import Profile from "../components/profile/Profile";
 import PostPage from "../components/post-page/PostPage";
 import ChangePassword from "../components/profile/ChangePassword";
