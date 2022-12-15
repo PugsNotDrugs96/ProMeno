@@ -35,6 +35,7 @@ const ChangePassword = () => {
     } else {
       try {
         const response = await changePassword(user, currentPassword, password1);
+        console.log(response.status);
         if (response.status === 200) {
           setResponseMsg("Ditt lösenord har ändrats");
           responseRef.current.focus();
