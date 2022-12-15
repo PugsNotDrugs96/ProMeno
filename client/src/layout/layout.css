@@ -31,3 +31,8 @@
   background-color: #6db2a6;
   border-color: #6db2a6;
 }
+
+@media screen and (min-width: 1300px) {
+  .container {
+    width: 900px;
+  }}
