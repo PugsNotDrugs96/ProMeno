@@ -108,7 +108,12 @@ const ChangePassword = () => {
               />
             </Form.Group>
             <div className="text-center">
-              <Button variant="primary" type="submit">
+              <Button
+                variant="primary"
+                type="submit"
+                className="btn btn-success btn-lg mb-4 gap-3"
+                style={{ width: "18rem" }}
+              >
                 Ändra lösenord
               </Button>
             </div>

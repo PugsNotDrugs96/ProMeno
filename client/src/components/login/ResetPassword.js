@@ -64,12 +64,12 @@ function ResetPassword() {
           <Row>
             <Col>
               <Form onSubmit={handleSubmit}>
-              <Col>
+                <Col>
                   <h1 className="text-center text-info text-black">
                     Skapa ett nytt lösenord
                   </h1>
-              </Col>
-              
+                </Col>
+
                 <Form.Group
                   className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                   controlId="formPassword1"
@@ -103,7 +103,12 @@ function ResetPassword() {
                   />
                 </Form.Group>
                 <div className="text-center">
-                  <Button variant="primary" type="submit">
+                  <Button
+                    className="btn btn-success btn-lg mb-4 gap-3"
+                    style={{ width: "18rem" }}
+                    variant="primary"
+                    type="submit"
+                  >
                     Ändra lösenord
                   </Button>
                 </div>

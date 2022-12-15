@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import {Button, Container, Form, Row, Col, FloatingLabel} from "react-bootstrap"
+import {
+  Button,
+  Container,
+  Form,
+  Row,
+  Col,
+  FloatingLabel,
+} from "react-bootstrap";
 import { getResetPasswordLink } from "../../api/api";
 
 function ForgotPassword() {
@@ -47,20 +54,23 @@ function ForgotPassword() {
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>
-              <Col>
-                  <h1 className="text-center text-info text-black" id="forgot-pwd-text">
-                    Återställ ditt lösenord
-                  </h1>
-                  <p className="text-center text-info text-black">
-                    Ange den epostadress som är kopplad till ditt konto så skickar vi en
-                    återställningslänk.
-                  </p>
-              </Col>
-              <FloatingLabel
-                className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                controlId="floatingInput"
-                label="Email address"
+            <Col>
+              <h1
+                className="text-center text-info text-black"
+                id="forgot-pwd-text"
               >
+                Återställ ditt lösenord
+              </h1>
+              <p className="text-center text-info text-black">
+                Ange den epostadress som är kopplad till ditt konto så skickar
+                vi en återställningslänk.
+              </p>
+            </Col>
+            <FloatingLabel
+              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              controlId="floatingInput"
+              label="Email address"
+            >
               <Form.Control
                 type="email"
                 placeholder="Ange din email"
@@ -74,7 +84,12 @@ function ForgotPassword() {
               />
             </FloatingLabel>
             <div className="text-center">
-              <Button variant="primary" type="submit" className="col-md-5 mx-auto col-lg-5 mb-3">
+              <Button
+                variant="primary"
+                type="submit"
+                className="btn btn-success btn-lg mb-4 gap-3"
+                style={{ width: "18rem" }}
+              >
                 Återställ ditt lösenord
               </Button>
             </div>

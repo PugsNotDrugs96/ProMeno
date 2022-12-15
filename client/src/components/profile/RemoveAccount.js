@@ -81,7 +81,12 @@ function RemoveAccount() {
             </Form.Group>
 
             <div className="text-center">
-              <Button variant="danger" type="submit">
+              <Button
+                variant="danger"
+                type="submit"
+                className="btn btn-success btn-lg mb-4 gap-3"
+                style={{ width: "20rem" }}
+              >
                 Jag önskar ta bort mitt konto.
               </Button>
             </div>
@@ -100,7 +105,12 @@ function RemoveAccount() {
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Body>Du har inte längre ett konto hos oss på ProMeno</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            variant="primary"
+            onClick={handleClose}
+            className="btn btn-success btn-lg mb-4 gap-3"
+            style={{ width: "18rem" }}
+          >
             OK
           </Button>
         </Modal.Footer>

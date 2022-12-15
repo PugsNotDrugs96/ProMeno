@@ -1,18 +1,23 @@
 import React, { useState, useEffect, useContext } from "react";
 import UserContext from "../../UserContext";
-import {Button, Container, Form, Col, FloatingLabel, Image} from 'react-bootstrap';
+import {
+  Button,
+  Container,
+  Form,
+  Col,
+  FloatingLabel,
+  Image,
+} from "react-bootstrap";
 import { registerUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import Lotus from "../../assets/lotus.svg";
 
-
-
 const initialState = {
   name: "",
   email: "",
   password: "",
-  passwordConfirm: ""
+  passwordConfirm: "",
 };
 
 function Register() {
@@ -20,7 +25,7 @@ function Register() {
   let navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [authStep, setAuthMode] = useState(1);
-  const [newUser, setNewUser] = useState(initialState)
+  const [newUser, setNewUser] = useState(initialState);
   const [success, setSuccess] = useState(false);
   const passVerification = {
     isLenthy: false,
@@ -30,7 +35,7 @@ function Register() {
     hasSpclChr: false,
     confirmPass: false,
   };
-  const [passwordError, setPasswordError] = useState(passVerification)
+  const [passwordError, setPasswordError] = useState(passVerification);
 
   const handleStepOneClick = (event) => {
     event.preventDefault();
@@ -44,16 +49,18 @@ function Register() {
     setMessage(event.target.value);
   };
 
-
-
   const handleStepTwoSubmit = async (e) => {
     e.preventDefault();
     console.log(1111111111);
-    if(Object.values(passwordError).every(item => item === true)){
+    if (Object.values(passwordError).every((item) => item === true)) {
       console.log(22222222);
-      const response = await registerUser(newUser.name, newUser.email, newUser.password)
+      const response = await registerUser(
+        newUser.name,
+        newUser.email,
+        newUser.password
+      );
       console.log("test");
-      if(response.status === 200) {
+      if (response.status === 200) {
         console.log(response);
         setUser(newUser.email, newUser.password, newUser.passwordConfirm);
         setSuccess(true);
@@ -61,18 +68,19 @@ function Register() {
         console.log(response.data);
       }
     }
-  }
+  };
 
   //useEffect(() => {}, [newUser]);
-    
+
   const handleStepTwoChange = (e) => {
     const { name, value } = e.target;
 
     setNewUser((prevState) => {
-      return{
+      return {
         ...prevState,
-        [name]: value
-      }});
+        [name]: value,
+      };
+    });
 
     if (name === "password") {
       const isLenthy = value.length >= 8;
@@ -81,7 +89,7 @@ function Register() {
       const hasNumber = /[0-9]/.test(value);
       const hasSpclChr = /[!,?,@,#,$,%,&]/.test(value);
 
-/*       setPasswordError({
+      /*       setPasswordError({
         ...passwordError,
         isLenthy,
         hasUpper,
@@ -98,30 +106,30 @@ function Register() {
           hasLower,
           hasNumber,
           hasSpclChr,
-        }
-      })
+        };
+      });
     }
     ///If-sats som kontrollerar att password och passwordconfirm är det samma. (funkar inte)?
-    if(name === "passwordConfirm"){ 
+    if (name === "passwordConfirm") {
       /*setPasswordError({
         ...passwordError,
         confirmPass: newUser.password === value
       }) */
 
-      if(e.target.value === newUser.password){
+      if (e.target.value === newUser.password) {
         setPasswordError((prevState) => {
           return {
             ...prevState,
-            confirmPass: true
-          }
-        })
+            confirmPass: true,
+          };
+        });
       } else {
         setPasswordError((prevState) => {
           return {
             ...prevState,
-            confirmPass: false
-          }
-        })
+            confirmPass: false,
+          };
+        });
       }
     }
   };
@@ -129,11 +137,11 @@ function Register() {
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 2000));
   }
-  
+
   //Vad ska detta användas till? Hälsningar Alex
   function LoadingButton() {
     const [isLoading, setLoading] = useState(false);
-  
+
     useEffect(() => {
       if (isLoading) {
         simulateNetworkRequest().then(() => {
@@ -141,142 +149,201 @@ function Register() {
         });
       }
     }, [isLoading]);
-  
+
     const handleClick = () => setLoading(true);
-  
+
     return (
       <Button
         variant="primary"
+        className="btn btn-success btn-lg mb-4 gap-3"
+        style={{ width: "18rem" }}
         disabled={isLoading}
         onClick={!isLoading ? handleClick : null}
       >
-        {isLoading ? 'Skickar vidare...' : ' Registrera'}
+        {isLoading ? "Skickar vidare..." : " Registrera"}
       </Button>
     );
   }
-  
-  if(authStep === "step2"){
-      return (
+
+  if (authStep === "step2") {
+    return (
       <>
-      {success ? (
-        navigate("/home")
-      ) : (
-        <Container className="test">
-        <Form onSubmit={handleStepTwoSubmit} id="form">
-          <Col>
-            {" "}
-            <h1 className="text-center text-info text-black" id="reg-text-1"> Registrera dig!</h1>{" "}
-            
-          </Col>
-          <Image src={Lotus} alt="..." width="100" length="100" className="rounded mx-auto d-block"></Image>
-          <FloatingLabel
-            className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-            controlId="floatingInput"
-            label="Namn"
-          >
-            <Form.Control
-              type="name"
-              name="name"
-              autoComplete="off"
-              className="form-control"
-              value={newUser.name}
-              onChange={handleStepTwoChange}
-              required
-            />
-          </FloatingLabel>
-          <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-              controlId="floatingInput"
-              label="Email address"
-            >
-              <Form.Control
-                type="email"
-                autoComplete="off"
-                className="form-control"
-                name="email"
-                value={newUser.email}
-                onChange={handleStepTwoChange}
-                required
-              />
-          </FloatingLabel>
-          <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-              controlId="floatingPassword"
-              label="Password"
-            >
-              <Form.Control
-                type="password"
-                name="password"
-                className="form-control"
-                value={newUser.password}
-                onChange={handleStepTwoChange}
-                required
-              />
-          </FloatingLabel>
-          <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-              controlId="floatingPassword"
-              label="Bekräfta lösenord"
-            >
-            <Form.Control
-                type="password"
-                className="form-control"
-                name="passwordConfirm"
-                value={newUser.passwordConfirm}
-                onChange={handleStepTwoChange}
-                required
-            />
-          </FloatingLabel>
-          <Form.Text>
-              {(!passwordError.confirmPass && newUser.passwordConfirm.length > 0) && (
-                <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">Lösenord matchar inte!</div>
-              )}
-          </Form.Text>
-            
-            {/*Disable funktionen bör göra så att knappen inte är klickbar, fungerar inte. Vet inte varför */}
-            <div className="text-center">
-              <Button variant="primary" type="submit" className="col-md-5 mx-auto col-lg-5 mb-3" disable={Object.values(passwordError).includes(false)}> 
-                Registrera
-              </Button>
-              <p >Har du redan ett konto? <a href="/login">Logga in</a></p>
-            </div>
-           
-            <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
-          <Form.Group
-              className="col-md-5 mx-auto col-lg-5 mb-3"
-              controlId="formControll"
-            >
-            <Form.Text>
-            <ul>
-              <li className={passwordError.isLenthy ? "text-success" : "text-danger"}> Minst 8 karaktärer </li>
-              <li className={passwordError.hasUpper ? "text-success" : "text-danger"}>Minst en storbokstav</li>
-              <li className={passwordError.hasLower ? "text-success" : "text-danger"}>Minst en liten bokstav</li>
-              <li className={passwordError.hasNumber ? "text-success" : "text-danger"}>Minst en siffra</li>
-              <li className={passwordError.hasSpclChr ? "text-success" : "text-danger"}>Minst en av specialtecken e.x ! ? @ #</li>
-            </ul>
-            </Form.Text>
-          </Form.Group>
-            
-          </Form>
-        </Container>
-      )}
-    </>
-  );
-}
+        {success ? (
+          navigate("/home")
+        ) : (
+          <Container className="test">
+            <Form onSubmit={handleStepTwoSubmit} id="form">
+              <Col>
+                {" "}
+                <h1
+                  className="text-center text-info text-black"
+                  id="reg-text-1"
+                >
+                  {" "}
+                  Registrera dig!
+                </h1>{" "}
+              </Col>
+              <Image
+                src={Lotus}
+                alt="..."
+                width="100"
+                length="100"
+                className="rounded mx-auto d-block"
+              ></Image>
+              <FloatingLabel
+                className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                controlId="floatingInput"
+                label="Namn"
+              >
+                <Form.Control
+                  type="name"
+                  name="name"
+                  autoComplete="off"
+                  className="form-control"
+                  value={newUser.name}
+                  onChange={handleStepTwoChange}
+                  required
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                controlId="floatingInput"
+                label="Email address"
+              >
+                <Form.Control
+                  type="email"
+                  autoComplete="off"
+                  className="form-control"
+                  name="email"
+                  value={newUser.email}
+                  onChange={handleStepTwoChange}
+                  required
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                controlId="floatingPassword"
+                label="Password"
+              >
+                <Form.Control
+                  type="password"
+                  name="password"
+                  className="form-control"
+                  value={newUser.password}
+                  onChange={handleStepTwoChange}
+                  required
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                controlId="floatingPassword"
+                label="Bekräfta lösenord"
+              >
+                <Form.Control
+                  type="password"
+                  className="form-control"
+                  name="passwordConfirm"
+                  value={newUser.passwordConfirm}
+                  onChange={handleStepTwoChange}
+                  required
+                />
+              </FloatingLabel>
+              <Form.Text>
+                {!passwordError.confirmPass &&
+                  newUser.passwordConfirm.length > 0 && (
+                    <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">
+                      Lösenord matchar inte!
+                    </div>
+                  )}
+              </Form.Text>
+
+              {/*Disable funktionen bör göra så att knappen inte är klickbar, fungerar inte. Vet inte varför */}
+              <div className="text-center">
+                <Button
+                  className="btn btn-success btn-lg mb-4 gap-3"
+                  style={{ width: "18rem" }}
+                  variant="primary"
+                  type="submit"
+                  disable={Object.values(passwordError).includes(false)}
+                >
+                  Registrera
+                </Button>
+                <p>
+                  Har du redan ett konto? <a href="/login">Logga in</a>
+                </p>
+              </div>
+
+              <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
+              <Form.Group
+                className="col-md-5 mx-auto col-lg-5 mb-3"
+                controlId="formControll"
+              >
+                <Form.Text>
+                  <ul>
+                    <li
+                      className={
+                        passwordError.isLenthy ? "text-success" : "text-danger"
+                      }
+                    >
+                      {" "}
+                      Minst 8 karaktärer{" "}
+                    </li>
+                    <li
+                      className={
+                        passwordError.hasUpper ? "text-success" : "text-danger"
+                      }
+                    >
+                      Minst en storbokstav
+                    </li>
+                    <li
+                      className={
+                        passwordError.hasLower ? "text-success" : "text-danger"
+                      }
+                    >
+                      Minst en liten bokstav
+                    </li>
+                    <li
+                      className={
+                        passwordError.hasNumber ? "text-success" : "text-danger"
+                      }
+                    >
+                      Minst en siffra
+                    </li>
+                    <li
+                      className={
+                        passwordError.hasSpclChr
+                          ? "text-success"
+                          : "text-danger"
+                      }
+                    >
+                      Minst en av specialtecken e.x ! ? @ #
+                    </li>
+                  </ul>
+                </Form.Text>
+              </Form.Group>
+            </Form>
+          </Container>
+        )}
+      </>
+    );
+  }
 
   return (
     <Container>
       <Col>
         {" "}
-        <h1 className="text-center text-info text-black" id="reg-text-2"> Registrera dig!</h1>{" "}
+        <h1 className="text-center text-info text-black" id="reg-text-2">
+          {" "}
+          Registrera dig!
+        </h1>{" "}
       </Col>
       <Form>
         <h3 className="text-center">Steg 1</h3>
         <FloatingLabel
-                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                    controlId="floatingInput"
-                    label="Registeringskod"
-                  >
+          className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+          controlId="floatingInput"
+          label="Registeringskod"
+        >
           <Form.Control
             as="input"
             placeholder="Skriv registreringskoden här.."
@@ -286,10 +353,22 @@ function Register() {
           ></Form.Control>
         </FloatingLabel>
         <div className="text-center mx-auto mt-3 ">
-          <Button variant="primary" type="submit" onClick={handleStepOneClick}>
-            Nästa 
-          </Button>{' '}
-          <Button href="/" variant="secondary"  type="submit">
+          <Button
+            className="btn btn-success btn-lg mb-4 gap-3"
+            style={{ width: "18rem" }}
+            variant="primary"
+            type="submit"
+            onClick={handleStepOneClick}
+          >
+            Nästa
+          </Button>{" "}
+          <Button
+            className="btn btn-success btn-lg mb-4 gap-3"
+            style={{ width: "18rem" }}
+            href="/"
+            variant="secondary"
+            type="submit"
+          >
             Tillbaka
           </Button>
         </div>

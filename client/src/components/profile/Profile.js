@@ -44,8 +44,8 @@ function Profile() {
           <Container style={{ width: "20rem" }}>
             <Button
               variant="primary"
-              size="lg"
-              style={{ width: "15rem", marginTop: "1rem" }}
+              className="btn btn-success btn-lg mb-4 gap-3"
+              style={{ width: "18rem", marginTop: "2rem" }}
               onClick={() => navigate("/change-password")}
             >
               Ändra lösenord
@@ -58,8 +58,8 @@ function Profile() {
               <Button
                 type="button"
                 variant="secondary"
-                size="lg"
-                style={{ width: "15rem", marginTop: "1rem" }}
+                className="btn btn-success btn-lg mb-4 gap-3"
+                style={{ width: "18rem", marginTop: "0.5rem" }}
                 onClick={() => {
                   navigate("/delete-account");
                 }}
