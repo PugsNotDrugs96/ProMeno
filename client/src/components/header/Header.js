@@ -14,9 +14,11 @@ function Header() {
     <>
       <Navbar>
         <Container>
-          <Navbar.Brand href="/" className="d-inline-block align-top">
-            <Image alt="" src={Lotus} width="50px" height="50px" /> ProMeno
-          </Navbar.Brand>
+          <Link to="/home" className="d-inline-block align-top">
+            <Navbar.Brand className="d-inline-block align-top">
+              <Image alt="" src={Lotus} width="50px" height="50px" /> ProMeno
+            </Navbar.Brand>
+          </Link>
 
           {user && (
             <div className="text-end">
