@@ -17,8 +17,18 @@ html {
 
 .contentContainer {
   background-color: rgba(255, 255, 255, 0.681);
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
   height: 100%;
   padding: 0;
+}
+
+/* Responsivness */
+@media screen and (max-width) {
+  .contentContainer{
+    width: 100%;
+  }
 }
 
 /* Global button styling */
