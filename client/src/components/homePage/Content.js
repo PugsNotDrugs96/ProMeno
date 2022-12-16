@@ -18,7 +18,7 @@ function Content() {
   if (!startPost) return null;
 
   return (
-    <Container className="container pt-5 pb-5 ">
+    <Container>
       <Card className="border-10 bg-transparent">
         <Card.Title
           dangerouslySetInnerHTML={{ __html: startPost.title.rendered }}

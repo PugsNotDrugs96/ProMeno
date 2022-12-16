@@ -17,10 +17,7 @@ function Profile() {
   );
 
   return (
-    <Container
-      style={{ padding: "3rem", minHeight: "600px", background: "transparent" }}
-    >
-      <div style={{ textAlign: "center" }}>
+    <Container style={{ textAlign: "center" }}>
         <h1 style={{ marginBottom: "2rem" }}>Mina sidor</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +66,6 @@ function Profile() {
             </OverlayTrigger>
           </Container>
         </Row>
-      </div>
     </Container>
   );
 }
