@@ -25,11 +25,18 @@ html {
 }
 
 /* Responsivness */
-@media screen and (max-width) {
+@media only screen and (max-width: 900px) { /* Tablets */
+  .contentContainer{
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) { /* Phones */
   .contentContainer{
     width: 100%;
   }
 }
+
 
 /* Global button styling */
 .btn {
