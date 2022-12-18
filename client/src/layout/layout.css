@@ -37,11 +37,6 @@
   border-color: #6db2a6;
 }
 
-@media screen and (min-width: 1300px) {
-  .container {
-    width: 900px;
-  }}
-
 body,
 html {
   font-family: Roboto, Helvetica, sans-serif;
