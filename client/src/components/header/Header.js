@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <>
-      <Navbar>
+      <Navbar id="headnav">
         <Container>
           <Link to="/home" className="d-inline-block align-top">
             <Navbar.Brand className="d-inline-block align-top">
