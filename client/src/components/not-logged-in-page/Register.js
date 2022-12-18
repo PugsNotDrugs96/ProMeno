@@ -81,15 +81,6 @@ function Register() {
       const hasNumber = /[0-9]/.test(value);
       const hasSpclChr = /[!,?,@,#,$,%,&]/.test(value);
 
-/*       setPasswordError({
-        ...passwordError,
-        isLenthy,
-        hasUpper,
-        hasLower,
-        hasNumber,
-        hasSpclChr,
-      }); */
-
       setPasswordError((prevState) => {
         return {
           ...prevState,
@@ -103,11 +94,6 @@ function Register() {
     }
     ///If-sats som kontrollerar att password och passwordconfirm är det samma. (funkar inte)?
     if(name === "passwordConfirm"){ 
-      /*setPasswordError({
-        ...passwordError,
-        confirmPass: newUser.password === value
-      }) */
-
       if(e.target.value === newUser.password){
         setPasswordError((prevState) => {
           return {
