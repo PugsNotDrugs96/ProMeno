@@ -10,7 +10,6 @@ import {
 } from "react-bootstrap";
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
-import "./Login.css";
 
 function Login() {
   const { setUser } = useContext(UserContext);
@@ -74,7 +73,7 @@ function Login() {
                 <FloatingLabel
                   className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                   controlId="floatingInput"
-                  label="Email address"
+                  label="Mailadress"
                 >
                   <Form.Control
                     type="email"
@@ -90,7 +89,7 @@ function Login() {
                 <FloatingLabel
                   className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                   controlId="floatingPassword"
-                  label="Password"
+                  label="Lösenord"
                 >
                   <Form.Control
                     type="password"
