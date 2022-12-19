@@ -7,11 +7,15 @@ import {
   Col,
   FloatingLabel,
   Image,
+  Modal
 } from "react-bootstrap";
 import { registerUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import Lotus from "../../assets/lotus.svg";
+import { Link } from "react-router-dom";
+import ConsentForm from "../register/ConsentForm";
+
 
 const initialState = {
   name: "",
@@ -36,6 +40,12 @@ function Register() {
     confirmPass: false,
   };
   const [passwordError, setPasswordError] = useState(passVerification);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => setShow(true);
 
   const handleStepOneClick = (event) => {
     event.preventDefault();
@@ -271,6 +281,22 @@ function Register() {
                 <p>
                   Har du redan ett konto? <a href="/login">Logga in</a>
                 </p>
+                <p>
+                  Genom att registrera dig så godkänner du våra{" "}
+                  <Link
+                    onClick={handleShow}
+                    variant="link"
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "none",
+                      margin: 0,
+
+                      marginBottom: "5px",
+                    }}
+                  >
+                    villkor
+                  </Link>
+                </p>
               </div>
 
               <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
@@ -322,6 +348,16 @@ function Register() {
                 </Form.Text>
               </Form.Group>
             </Form>
+            <Modal show={show} onHide={handleClose} animation={false} size="lg">
+              <Modal.Body>
+                <ConsentForm />
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Stäng
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </Container>
         )}
       </>
