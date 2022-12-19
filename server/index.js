@@ -381,6 +381,24 @@ app.post("/reset-password", async function (req, res) {
   }
 });
 
+app.post("/profile", async function(req, res) {
+  const { email } = req.body;
+
+  if(!email){
+    res.status(400);
+  }
+  
+  const user = await usersFilters.getNameByEmail(email);
+
+  if (!user){
+    res.status(500);
+  } else if(user){
+    res.status(200).json(user);
+  } else {
+    res.status(520);
+  }
+})
+
 app.listen(PORT, function () {
   console.log("Server is now running on port " + PORT);
 });

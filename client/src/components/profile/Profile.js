@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -6,15 +6,32 @@ import Tooltip from "react-bootstrap/Tooltip";
 import UserContext from "../../UserContext";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
+import { getNameByEmail } from "../../api/api";
 
 function Profile() {
   const { user } = useContext(UserContext);
+  const [name, setName] = useState(null);
   let navigate = useNavigate();
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Avregistrera dig från allt deltagande i vår forskningsstudie.
     </Tooltip>
   );
+
+  useEffect(() => {
+    async function fetchData() {
+      const name = await getNameByEmail(user);
+      const str = name.data;
+      const arr = str.split(" ");
+
+      for (var i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+      }
+      const str2 = arr.join(" ");
+      setName(str2);
+    }
+    fetchData();
+  }, []);
 
   return (
     <Container
@@ -38,7 +55,7 @@ function Profile() {
         </svg>
         <h4 style={{ paddingTop: "2rem" }}>Du är inloggad som:</h4>
         <p style={{ color: "#436662", fontWeight: "bold", fontSize: "25px" }}>
-          {user}
+          {name}
         </p>
         <Row xs={1} md={1} className="g-3 mt-2">
           <Container style={{ width: "20rem" }}>
