@@ -35,6 +35,7 @@ function ConsentForm() {
         <Spinner animation="border" />
       ) : (
         <Card
+          className='className="text-center"'
           style={{
             background: "transparent",
             border: "none",
