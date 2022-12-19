@@ -1,11 +1,8 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import {Button, Container, Form, Row, Col, FloatingLabel} from "react-bootstrap"
 import { changePassword } from "../../api/api";
 import UserContext from "../../UserContext";
+import "./Profile.css";
 
 const ChangePassword = () => {
   const { user } = useContext(UserContext);
@@ -59,54 +56,54 @@ const ChangePassword = () => {
 
   return (
     <Container>
-      <Col>
-        <h1 className="text-center text-info text-black"> Ändra lösenord</h1>{" "}
-      </Col>
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>
-            <Form.Group
+            <Col>
+              <h1 className="text-center text-info text-black" id="pwd-change-1"> Ändra lösenord</h1>{" "}
+            </Col>
+            <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
               controlId="formBasicEmail"
+              label="Nuvarande lösenord"
             >
               <Form.Control
                 type="password"
                 ref={userRef}
                 autoComplete="off"
                 className="form-control"
-                placeholder="Nuvarande lösenord"
                 name="current-password"
                 onChange={(e) => setCurrentPassword(e.target.value)}
                 value={currentPassword}
                 required
               />
-            </Form.Group>
-            <Form.Group
+            </FloatingLabel>
+            <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
               controlId="formBasicPassword"
+              label="Nytt lösenord"
             >
               <Form.Control
                 type="password"
                 className="form-control"
-                placeholder="Nytt lösenord"
                 onChange={(e) => setPassword1(e.target.value)}
                 value={password1}
                 required
               />
-            </Form.Group>
-            <Form.Group
+            </FloatingLabel>
+            <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
               controlId="formBasicPassword"
+              label="Upprepa lösenord"
             >
               <Form.Control
                 type="password"
                 className="form-control"
-                placeholder="Upprepa lösenord"
                 onChange={(e) => setPassword2(e.target.value)}
                 value={password2}
                 required
               />
-            </Form.Group>
+            </FloatingLabel>
             <div className="text-center">
               <Button
                 variant="primary"

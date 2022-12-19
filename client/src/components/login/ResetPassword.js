@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Button, Container, Form, Row, Col, FloatingLabel} from "react-bootstrap";
 import { resetPassword, validateLink } from "../../api/api";
 import EmptyPage from "../EmptyPage";
 import UserContext from "../../UserContext";
@@ -70,13 +66,13 @@ function ResetPassword() {
                   </h1>
                 </Col>
 
-                <Form.Group
+                <FloatingLabel
                   className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                   controlId="formPassword1"
+                  label="Nytt lösenord"
                 >
                   <Form.Control
                     type="password"
-                    placeholder="Nytt lösenord"
                     ref={userRef}
                     autoComplete="off"
                     className="form-control"
@@ -85,14 +81,14 @@ function ResetPassword() {
                     value={password1}
                     required
                   />
-                </Form.Group>
-                <Form.Group
+                </FloatingLabel>
+                <FloatingLabel
                   className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                   controlId="formPassword2"
+                  label="Upprepa lösenord"
                 >
                   <Form.Control
                     type="password"
-                    placeholder="Upprepa lösenord"
                     ref={userRef}
                     autoComplete="off"
                     className="form-control"
@@ -101,7 +97,7 @@ function ResetPassword() {
                     value={password2}
                     required
                   />
-                </Form.Group>
+                </FloatingLabel>
                 <div className="text-center">
                   <Button
                     className="btn btn-success btn-lg mb-4 gap-3"

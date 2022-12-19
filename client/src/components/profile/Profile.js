@@ -6,6 +6,7 @@ import Tooltip from "react-bootstrap/Tooltip";
 import UserContext from "../../UserContext";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
+import "./Profile.css";
 
 function Profile() {
   const { user } = useContext(UserContext);
