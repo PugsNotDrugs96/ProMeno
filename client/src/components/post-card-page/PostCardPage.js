@@ -31,14 +31,13 @@ function PostCardPage() {
   return (
     <Container>
       <Breadcrumbs />
-      <Row>
-        <Col className="subColBody">
+      <Col className="subColBody">
           <div className="text-center">
             <h1 className="display-8 fw-bold">{subCategory.name}</h1>
-            <p>{subCategory.description}</p>
+            <h5>{subCategory.description}</h5>
           </div>
         </Col>
-        <Col className="subColBody" lg={5}>
+        <Col className="subColBody">
           <Row align="center">
             {posts.map((post, index) => (
               <Col>
@@ -51,10 +50,10 @@ function PostCardPage() {
               </Col>
             ))}
             <Col><div className="fillerCol"></div></Col>
+            <Col><div className="fillerCol"></div></Col>
           </Row>
         </Col>
-      </Row>
-    </Container>
+      </Container>
   );
 }
 

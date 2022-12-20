@@ -41,14 +41,14 @@ function Hero() {
         </div>
       ) : (
         <div className="mainCatBody">
-          <p>
+          <h5>
             ProMeno är ett digitalt stöd i form av en applikation som är tänkt
             att hjälpa kvinnor i klimakteriet att hitta relevant information om
             symtom kopplade till klimakteriebesvär samt ge förslag på
             behandling. Information kommer att samlas in genom formulär som
             skickas ut med regelbunden intervall för att så småningom kunna
             utvärdera effekten av användning.
-          </p>
+          </h5>
         </div>
       )}
     </Container>
