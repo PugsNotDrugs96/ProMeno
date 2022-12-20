@@ -20,7 +20,6 @@ function Footer() {
           </small>
         </Container>
       </Container>
-    </Container>
   );
 }
 
