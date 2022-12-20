@@ -10,7 +10,7 @@ function PostCard(props) {
 
   return (
     <Card 
-      className="my-4 subSubCat"
+      className="my-4 subCatCard"
       key={index}
       onClick={() => {
         navigate(`/${mainCategorySlug}/${subCategorySlug}/${slug}`);

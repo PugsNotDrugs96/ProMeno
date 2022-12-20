@@ -20,7 +20,7 @@ function PostPage() {
   if (!post) return null;
 
   return (
-    <Container className="postContainer py-4">
+    <Container className="postContainer">
       <h1
         className="postTitle py-3 text-center"
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}

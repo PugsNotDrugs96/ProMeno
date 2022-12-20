@@ -38,10 +38,10 @@ function SubCategoryPage() {
     <Container>
       <Row>
         <Col>
-          <Container className="text-center">
+          <div className="text-center">
             <h1 className="display-8 fw-bold">{category[0].name}</h1>
             <p>{category[0].description}</p>
-          </Container>
+          </div>
         </Col>
         <Col md={5}>
           <div className="d-grid gap-2">
