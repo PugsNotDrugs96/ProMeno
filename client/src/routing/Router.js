@@ -14,6 +14,7 @@ import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
 import SubCategoryPage from "../components/navigation/SubCategoryPage";
 import Page from "../components/Page";
+import AboutUs from "../components/footer/AboutUs"
 
 function Router() {
   return (
@@ -31,6 +32,7 @@ function Router() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/about-us" element={<AboutUs />} />
           <Route
             path="/profile"
             element={
