@@ -26,7 +26,8 @@ html {
 }
 
 .content { /* 4:th layer */
-  background-color: darksalmon;
+  padding-top: 100px;
+  min-height: 630px;
 }
 
 /* Responsivness containers */

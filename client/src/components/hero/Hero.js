@@ -11,7 +11,7 @@ function Hero() {
     : "Forskningsstudie om klimakteriet";
 
   return (
-    <Container className="content text-center">
+    <Container className="text-center">
       <h1 className="display-8 fw-bold">{title}</h1>
       <h2>{subtitle}</h2>
       {!user ? (
