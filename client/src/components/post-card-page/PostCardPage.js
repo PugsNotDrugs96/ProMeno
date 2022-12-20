@@ -5,6 +5,7 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/esm/Col";
 import PostCard from "./PostCard";
+import Breadcrumbs from "../navigation/Breadcrumbs.js";
 
 function PostCardPage() {
   const params = useParams();
@@ -29,6 +30,7 @@ function PostCardPage() {
 
   return (
     <Container>
+      <Breadcrumbs />
       <Row>
         <Col className="subColBody">
           <div className="text-center">

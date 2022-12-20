@@ -5,6 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/esm/Col";
+import Breadcrumbs from "./Breadcrumbs.js";
 
 function SubCategoryPage() {
   const navigate = useNavigate();
@@ -36,6 +37,7 @@ function SubCategoryPage() {
 
   return (
     <Container>
+      <Breadcrumbs />
       <Row>
         <Col>
           <div className="text-center">

@@ -1,0 +1,13 @@
+#back-button {
+    position: absolute;
+    width: 40px;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 12px;
+}
+
+#back-button:hover, #back-button:active {
+    cursor: pointer;
+    opacity: 0.6;
+}
+

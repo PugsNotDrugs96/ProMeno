@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getPostBySlug } from "../../api/api";
 import Container from "react-bootstrap/esm/Container";
+import Breadcrumbs from "../navigation/Breadcrumbs.js";
 
 function PostPage() {
   const params = useParams();
@@ -20,7 +21,8 @@ function PostPage() {
   if (!post) return null;
 
   return (
-    <Container className="postContainer">
+    <Container className="postContainer py-4">
+      <Breadcrumbs />
       <h1
         className="postTitle py-3 text-center"
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
