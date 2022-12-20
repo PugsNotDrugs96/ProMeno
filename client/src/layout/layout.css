@@ -27,6 +27,7 @@ html {
 
 .content { /* 4:th layer */
   padding-top: 100px;
+  padding-bottom: 50px;
   min-height: 630px;
 }
 
