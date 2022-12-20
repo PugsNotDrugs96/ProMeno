@@ -43,7 +43,7 @@ function ForgotPassword() {
   };
 
   return (
-    <Container>
+    <Container className="content">
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>

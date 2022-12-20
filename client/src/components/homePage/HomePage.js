@@ -7,7 +7,7 @@ import MainCategory from "../navigation/MainCategory";
 
 const HomePage = () => {
   return (
-    <Container>
+    <Container className="content">
       <Row>
         <Col>
           <Hero />

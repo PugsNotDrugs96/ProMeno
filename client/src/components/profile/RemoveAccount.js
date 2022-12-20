@@ -46,7 +46,7 @@ function RemoveAccount() {
   };
 
   return (
-    <Container>
+    <Container className="content">
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>

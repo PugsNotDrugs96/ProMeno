@@ -26,7 +26,7 @@ function MainCategory() {
   };
 
   return (
-    <Container>
+    <Container className="content">
       <div className="d-grid gap-2">
         {mainCategories.map((item, index) => (
           <Button
