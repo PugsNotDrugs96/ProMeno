@@ -62,7 +62,7 @@ function ForgotPassword() {
             <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
               controlId="floatingInput"
-              label="Email address"
+              label="Email"
             >
               <Form.Control
                 type="email"
