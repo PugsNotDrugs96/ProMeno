@@ -18,7 +18,7 @@ function Profile() {
 
   return (
     <Container
-      style={{ padding: "3rem", minHeight: "600px", background: "transparent" }}
+      style={{ minHeight: "600px", background: "transparent" }}
     >
       <div style={{ textAlign: "center" }}>
         <h1 style={{ marginBottom: "2rem" }}>Mina sidor</h1>

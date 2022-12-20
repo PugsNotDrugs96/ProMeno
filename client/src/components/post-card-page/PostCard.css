@@ -1,0 +1,22 @@
+.catColBody {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subSubCat {
+    border: none;
+    width: 12rem;
+    height: auto;
+    background-color: #ce94ad;
+    color: white;
+    cursor: pointer;
+}
+
+.subSubCat:hover, .subSubCat:active {
+    opacity: 0.5;
+}
+
+.fillerCol {
+    width: 12rem;
+}

@@ -23,38 +23,34 @@ function PostCardPage() {
     fetchData();
   }, [subCategorySlug]);
 
+  console.log(posts);
+
   if (!posts || !subCategory) return null;
 
   return (
-    <Container
-      style={{ padding: "3rem", minHeight: "600px", background: "transparent" }}
-    >
-      <h1 style={{ paddingBottom: "1rem", textAlign: "center" }}>
-        {subCategory.name}
-      </h1>
-      {subCategory.description && (
-        <Container
-          style={{
-            maxWidth: "500px",
-            background: "transparent",
-            fontSize: "20px",
-            marginBottom: "2rem",
-          }}
-        >
-          <p>{subCategory.description}</p>
-        </Container>
-      )}
-      <Row xs={1} md={2} className="g-3">
-        {posts.map((post, index) => (
-          <Col key={index} className="d-flex">
-            <PostCard
-              index={index}
-              post={post}
-              mainCategorySlug={params.mainCategorySlug}
-              subCategorySlug={params.subCategorySlug}
-            />
-          </Col>
-        ))}
+    <Container>
+      <Row>
+        <Col className="catColBody">
+          <Container className="text-center">
+            <h1 className="display-8 fw-bold">{subCategory.name}</h1>
+            <p>{subCategory.description}</p>
+          </Container>
+        </Col>
+        <Col className="catColBody" lg={5}>
+          <Row align="center">
+            {posts.map((post, index) => (
+              <Col>
+                <PostCard
+                  index={index}
+                  post={post}
+                  mainCategorySlug={params.mainCategorySlug}
+                  subCategorySlug={params.subCategorySlug}
+                />
+              </Col>
+            ))}
+            <Col><div className="fillerCol"></div></Col>
+          </Row>
+        </Col>
       </Row>
     </Container>
   );

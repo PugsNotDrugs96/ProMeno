@@ -8,7 +8,6 @@ import Col from "react-bootstrap/Col";
 import { resetPassword, validateLink } from "../../api/api";
 import EmptyPage from "../EmptyPage";
 import UserContext from "../../UserContext";
-import "./Login.css";
 
 function ResetPassword() {
   const { email, token } = useParams();
