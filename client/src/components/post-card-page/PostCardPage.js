@@ -30,7 +30,6 @@ function PostCardPage() {
 
   return (
     <Container className="content">
-      <Breadcrumbs />
       <Row>
         <Col className="subColBody">
           <div className="text-center">

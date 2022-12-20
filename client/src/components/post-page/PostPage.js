@@ -22,7 +22,6 @@ function PostPage() {
 
   return (
     <Container className="postContainer py-4">
-      <Breadcrumbs />
       <h1
         className="postTitle py-3 text-center"
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
