@@ -68,15 +68,6 @@ h6 {
   color: #38736f;
 }
 
-/* Links */
-.postBody a {
-  font-family: "PT Sans Narrow", sans-serif;
-  font-size: 14.5px;
-  font-weight: bolder;
-  color: #38736f;
-  text-decoration: none;
-  cursor: pointer;
-}
 .postBody a:hover,
 a:active {
   color: #6bb3a3;

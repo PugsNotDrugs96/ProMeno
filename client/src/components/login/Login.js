@@ -1,9 +1,15 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import {Button, Container, Form, Row, Col, FloatingLabel} from 'react-bootstrap';
+import {
+  Button,
+  Container,
+  Form,
+  Row,
+  Col,
+  FloatingLabel,
+} from "react-bootstrap";
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
-import "./Login.css";
 
 function Login() {
   const { setUser } = useContext(UserContext);
@@ -54,15 +60,21 @@ function Login() {
           <Row>
             <Col>
               <Form onSubmit={handleSubmit} id="form">
-            <Col>
-            {" "}
-            <h1 className="text-center text-info text-black" id="login-text"> Logga in</h1>{" "}
-            </Col>
-              <FloatingLabel
-                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                    controlId="floatingInput"
-                    label="Email address"
+                <Col>
+                  {" "}
+                  <h1
+                    className="text-center text-info text-black"
+                    id="login-text"
                   >
+                    {" "}
+                    Logga in
+                  </h1>{" "}
+                </Col>
+                <FloatingLabel
+                  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                  controlId="floatingInput"
+                  label="Email"
+                >
                   <Form.Control
                     type="email"
                     ref={userRef}
@@ -75,10 +87,10 @@ function Login() {
                   />
                 </FloatingLabel>
                 <FloatingLabel
-                    className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                    controlId="floatingPassword"
-                    label="Password"
-                  >
+                  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                  controlId="floatingPassword"
+                  label="Lösenord"
+                >
                   <Form.Control
                     type="password"
                     className="form-control"
@@ -88,17 +100,26 @@ function Login() {
                   />
                 </FloatingLabel>
                 <div className="text-center">
-                  <Button variant="primary" type="submit"  className="col-md-5 mx-auto col-lg-5 mb-3">
+                  <Button
+                    className="btn btn-success btn-lg mb-4 gap-3"
+                    style={{ width: "18rem" }}
+                    variant="primary"
+                    type="submit"
+                  >
                     Logga in
                   </Button>
-                  <p>
+                  
+                  <p id="pwd-text">
                     Glömt <a href="/forgot-password">lösenordet?</a>
                   </p>
                 </div>
                 <br></br>
                 <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
-                <Form.Text>
-                  <p className= "col-md-5 mx-auto col-lg-5 mt-3 mb-3">Inte registrerad ännu? <a href="/register">Registrera här!</a></p>
+                <Form.Text className="text-center">
+                  <p className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
+                    Inte registrerad ännu?{" "}
+                    <a href="/register">Registrera här!</a>
+                  </p>
                 </Form.Text>
                 <p
                   ref={errRef}

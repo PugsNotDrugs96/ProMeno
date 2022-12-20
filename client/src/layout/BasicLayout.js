@@ -12,7 +12,7 @@ function BasicLayout({ children }) {
     <>
       <Header />
       <div className="background">
-        <Container className="contentContainer shadow">{children}</Container>
+        <Container className="contentContainer pt-5 shadow">{children}</Container>
       </div>
       <Footer />
     </>

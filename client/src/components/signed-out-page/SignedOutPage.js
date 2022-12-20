@@ -17,7 +17,7 @@ function SignedOutPage() {
 
   return (
     <div
-      className="pt-5 text-center"
+      className="text-center"
       style={{ marginLeft: "2rem", marginRight: "1rem" }}
     >
       <h1 className="display-8 fw-normal">{title}</h1>

@@ -1,8 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
 import UserContext from "../../UserContext";
-import { Button, Container, Form, Col, FloatingLabel } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Form,
+  Col,
+  FloatingLabel,
+  Image,
+  Modal
+} from "react-bootstrap";
 import { registerUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import "./Register.css";
+import Lotus from "../../assets/lotus.svg";
+import { Link } from "react-router-dom";
+import ConsentForm from "../register/ConsentForm";
+
 
 const initialState = {
   name: "",
@@ -27,6 +40,12 @@ function Register() {
     confirmPass: false,
   };
   const [passwordError, setPasswordError] = useState(passVerification);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => setShow(true);
 
   const handleStepOneClick = (event) => {
     event.preventDefault();
@@ -146,6 +165,8 @@ function Register() {
     return (
       <Button
         variant="primary"
+        className="btn btn-success btn-lg mb-4 gap-3"
+        style={{ width: "18rem" }}
         disabled={isLoading}
         onClick={!isLoading ? handleClick : null}
       >
@@ -160,15 +181,25 @@ function Register() {
         {success ? (
           navigate("/home")
         ) : (
-          <Container>
-            <Col>
-              {" "}
-              <h1 className="text-center text-info text-black">
+          <Container className="test">
+            <Form onSubmit={handleStepTwoSubmit} id="form">
+              <Col>
                 {" "}
-                Registrera dig!
-              </h1>{" "}
-            </Col>
-            <Form onSubmit={handleStepTwoSubmit}>
+                <h1
+                  className="text-center text-info text-black"
+                  id="reg-text-1"
+                >
+                  {" "}
+                  Registrera dig
+                </h1>{" "}
+              </Col>
+              <Image
+                src={Lotus}
+                alt="..."
+                width="100"
+                length="100"
+                className="rounded mx-auto d-block"
+              ></Image>
               <FloatingLabel
                 className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                 controlId="floatingInput"
@@ -187,7 +218,7 @@ function Register() {
               <FloatingLabel
                 className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                 controlId="floatingInput"
-                label="Email address"
+                label="Email"
               >
                 <Form.Control
                   type="email"
@@ -202,7 +233,7 @@ function Register() {
               <FloatingLabel
                 className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
                 controlId="floatingPassword"
-                label="Password"
+                label="Lösenord"
               >
                 <Form.Control
                   type="password"
@@ -231,7 +262,7 @@ function Register() {
                 {!passwordError.confirmPass &&
                   newUser.passwordConfirm.length > 0 && (
                     <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">
-                      Lösenord matchar inte!
+                      Lösenorden matchar inte
                     </div>
                   )}
               </Form.Text>
@@ -239,15 +270,32 @@ function Register() {
               {/*Disable funktionen bör göra så att knappen inte är klickbar, fungerar inte. Vet inte varför */}
               <div className="text-center">
                 <Button
+                  className="btn btn-success btn-lg mb-4 gap-3"
+                  style={{ width: "18rem" }}
                   variant="primary"
                   type="submit"
-                  className="col-md-5 mx-auto col-lg-5 mb-3"
                   disable={Object.values(passwordError).includes(false)}
                 >
                   Registrera
                 </Button>
                 <p>
                   Har du redan ett konto? <a href="/login">Logga in</a>
+                </p>
+                <p>
+                  Genom att registrera dig så godkänner du våra{" "}
+                  <Link
+                    onClick={handleShow}
+                    variant="link"
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "none",
+                      margin: 0,
+
+                      marginBottom: "5px",
+                    }}
+                  >
+                    villkor
+                  </Link>
                 </p>
               </div>
 
@@ -260,7 +308,7 @@ function Register() {
                   <ul>
                     <li
                       className={
-                        passwordError.isLenthy ? "text-success" : "text-danger"
+                        passwordError.isLenthy ? "text-success" : "text-secondary"
                       }
                     >
                       {" "}
@@ -268,21 +316,21 @@ function Register() {
                     </li>
                     <li
                       className={
-                        passwordError.hasUpper ? "text-success" : "text-danger"
+                        passwordError.hasUpper ? "text-success" : "text-secondary"
                       }
                     >
                       Minst en storbokstav
                     </li>
                     <li
                       className={
-                        passwordError.hasLower ? "text-success" : "text-danger"
+                        passwordError.hasLower ? "text-success" : "text-secondary"
                       }
                     >
                       Minst en liten bokstav
                     </li>
                     <li
                       className={
-                        passwordError.hasNumber ? "text-success" : "text-danger"
+                        passwordError.hasNumber ? "text-success" : "text-secondary"
                       }
                     >
                       Minst en siffra
@@ -291,7 +339,7 @@ function Register() {
                       className={
                         passwordError.hasSpclChr
                           ? "text-success"
-                          : "text-danger"
+                          : "text-secondary"
                       }
                     >
                       Minst en av specialtecken e.x ! ? @ #
@@ -300,6 +348,16 @@ function Register() {
                 </Form.Text>
               </Form.Group>
             </Form>
+            <Modal show={show} onHide={handleClose} animation={false} size="lg">
+              <Modal.Body>
+                <ConsentForm />
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                  Stäng
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </Container>
         )}
       </>
@@ -310,9 +368,9 @@ function Register() {
     <Container>
       <Col>
         {" "}
-        <h1 className="text-center text-info text-black">
+        <h1 className="text-center text-info text-black" id="reg-text-2">
           {" "}
-          Registrera dig!
+          Registrera dig
         </h1>{" "}
       </Col>
       <Form>
@@ -331,11 +389,23 @@ function Register() {
           ></Form.Control>
         </FloatingLabel>
         <div className="text-center mx-auto mt-3 ">
-          <Button variant="primary" type="submit" onClick={handleStepOneClick}>
-            Nästa
-          </Button>{" "}
-          <Button href="/" variant="secondary" type="submit">
+          <Button
+            className="btn btn-success btn-lg mb-4 gap-3"
+            style={{ width: "18rem" }}
+            href="/"
+            variant="secondary"
+            type="submit"
+          >
             Tillbaka
+          </Button>{" "}
+          <Button
+            className="btn btn-success btn-lg mb-4 gap-3"
+            style={{ width: "18rem" }}
+            variant="primary"
+            type="submit"
+            onClick={handleStepOneClick}
+          >
+            Nästa
           </Button>
         </div>
       </Form>

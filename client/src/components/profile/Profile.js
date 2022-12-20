@@ -7,6 +7,7 @@ import UserContext from "../../UserContext";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import { getNameByEmail } from "../../api/api";
+import "./Profile.css";
 
 function Profile() {
   const { user } = useContext(UserContext);
@@ -35,7 +36,7 @@ function Profile() {
 
   return (
     <Container
-      style={{ padding: "3rem", minHeight: "600px", background: "transparent" }}
+      style={{ minHeight: "600px", background: "transparent" }}
     >
       <div style={{ textAlign: "center" }}>
         <h1 style={{ marginBottom: "2rem" }}>Mina sidor</h1>
@@ -61,8 +62,8 @@ function Profile() {
           <Container style={{ width: "20rem" }}>
             <Button
               variant="primary"
-              size="lg"
-              style={{ width: "15rem", marginTop: "1rem" }}
+              className="btn btn-success btn-lg mb-4 gap-3"
+              style={{ width: "18rem", marginTop: "2rem" }}
               onClick={() => navigate("/change-password")}
             >
               Ändra lösenord
@@ -75,8 +76,8 @@ function Profile() {
               <Button
                 type="button"
                 variant="secondary"
-                size="lg"
-                style={{ width: "15rem", marginTop: "1rem" }}
+                className="btn btn-success btn-lg mb-4 gap-3"
+                style={{ width: "18rem", marginTop: "0.5rem" }}
                 onClick={() => {
                   navigate("/delete-account");
                 }}
