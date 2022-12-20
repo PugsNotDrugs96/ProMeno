@@ -93,7 +93,6 @@ app.post("/auth", async function (req, res) {
 app.post("/register", async function (req, res) {
   const { name, email, password } = req.body;
   if (!name || !email || !password) {
-    console.log("1");
     return res
       .status(400)
       .send({ message: "name, email and password are required" });
@@ -105,7 +104,7 @@ app.post("/register", async function (req, res) {
       if (result === "500") {
         res.status(500).send("Unable to register user to database");
       } else if (result === "406") {
-        res.status(406).send("Email already registered");
+        res.status(409).send("Email already registered");
       } else {
         res.status(200).send("User registered");
       }
@@ -227,7 +226,7 @@ app.post("/change-password", async function (req, res) {
   } else if (isValidLogin === "Email does not exist") {
     return res.status(406).json("Email does not exist");
   } else if (isValidLogin === "Invalid password") {
-    return res.status(406).json("Invalid current password")
+    return res.status(401).json("Invalid current password")
   } else if (isValidLogin === "Database error") {
     return res.status(500).json("Database error")
   }
