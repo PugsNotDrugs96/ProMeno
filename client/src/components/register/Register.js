@@ -181,7 +181,7 @@ function Register() {
         {success ? (
           navigate("/home")
         ) : (
-          <Container className="test">
+          <Container className="content">
             <Form onSubmit={handleStepTwoSubmit} id="form">
               <Col>
                 {" "}
@@ -365,7 +365,7 @@ function Register() {
   }
 
   return (
-    <Container>
+    <Container className="content">
       <Col>
         {" "}
         <h1 className="text-center text-info text-black" id="reg-text-2">

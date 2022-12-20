@@ -56,7 +56,7 @@ function Login() {
       {success ? (
         navigate("/home")
       ) : (
-        <Container>
+        <Container className="content">
           <Row>
             <Col>
               <Form onSubmit={handleSubmit} id="form">

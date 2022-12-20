@@ -35,7 +35,7 @@ function Profile() {
   }, []);
 
   return (
-    <Container style={{ textAlign: "center" }}>
+    <Container className="content" style={{ textAlign: "center" }}>
         <h1 style={{ marginBottom: "2rem" }}>Mina sidor</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"

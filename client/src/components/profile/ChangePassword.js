@@ -94,7 +94,7 @@ const ChangePassword = () => {
   }, [password1, password2, currentPassword]);
 
   return (
-    <Container>
+    <Container className="content">
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>
