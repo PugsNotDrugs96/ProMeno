@@ -57,8 +57,6 @@ const ChangePassword = () => {
           setErrMsg("Inget svar från servern");
         } else if (err.response?.status === 401) {
           setErrMsg("Det nuvarande lösenordet som du angav är felaktigt");
-        } else {
-          setErrMsg("Något gick fel, försök igen eller kontakta vår support");
         }
         errRef.current.focus();
       }

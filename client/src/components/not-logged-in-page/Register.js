@@ -22,6 +22,8 @@ function Register() {
   const [authStep, setAuthMode] = useState(1);
   const [newUser, setNewUser] = useState(initialState)
   const [success, setSuccess] = useState(false);
+  const [email, setEmail] = useState(true);
+  const [errMsg, setErrMsg] = useState(null);
   const passVerification = {
     isLenthy: false,
     hasUpper: false,
@@ -48,17 +50,22 @@ function Register() {
 
   const handleStepTwoSubmit = async (e) => {
     e.preventDefault();
-    console.log(1111111111);
     if(Object.values(passwordError).every(item => item === true)){
-      console.log(22222222);
-      const response = await registerUser(newUser.name, newUser.email, newUser.password)
-      console.log("test");
-      if(response.status === 200) {
-        console.log(response);
-        setUser(newUser.email, newUser.password, newUser.passwordConfirm);
-        setSuccess(true);
-      } else {
-        console.log(response.data);
+      try {
+        const response = await registerUser(newUser.name, newUser.email, newUser.password);
+        if(response.status === 200) {
+          setUser(newUser.email, newUser.password, newUser.passwordConfirm);
+          setSuccess(true);
+        }
+      } catch(err){
+        if (!err?.response) {
+          setErrMsg("Inget svar från servern");
+        } else if (err.response?.status === 409){
+          setEmail(false);
+          setErrMsg("E-post redan registrerad")
+        } else {
+          setErrMsg("Något gick fel, försök igen eller kontakta vår support");
+        }
       }
     }
   }
@@ -216,6 +223,11 @@ function Register() {
           <Form.Text>
               {(!passwordError.confirmPass && newUser.passwordConfirm.length > 0) && (
                 <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">Lösenord matchar inte!</div>
+              )}
+          </Form.Text>
+          <Form.Text>
+              {(!email) && (
+                <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">{errMsg}</div>
               )}
           </Form.Text>
             
