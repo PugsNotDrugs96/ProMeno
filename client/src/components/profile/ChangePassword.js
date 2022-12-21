@@ -181,11 +181,11 @@ const ChangePassword = () => {
             >
             <Form.Text>
             <ul>
-              <li className={passwordError.isLenthy ? "text-success" : "text-danger"}> Minst 8 karaktärer </li>
-              <li className={passwordError.hasUpper ? "text-success" : "text-danger"}>Minst en storbokstav</li>
-              <li className={passwordError.hasLower ? "text-success" : "text-danger"}>Minst en liten bokstav</li>
-              <li className={passwordError.hasNumber ? "text-success" : "text-danger"}>Minst en siffra</li>
-              <li className={passwordError.hasSpclChr ? "text-success" : "text-danger"}>Minst en av specialtecken e.x ! ? @ #</li>
+              <li className={passwordError.isLenthy ? "text-success" : "text-secondary"}> Minst 8 karaktärer </li>
+              <li className={passwordError.hasUpper ? "text-success" : "text-secondary"}>Minst en storbokstav</li>
+              <li className={passwordError.hasLower ? "text-success" : "text-secondary"}>Minst en liten bokstav</li>
+              <li className={passwordError.hasNumber ? "text-success" : "text-secondary"}>Minst en siffra</li>
+              <li className={passwordError.hasSpclChr ? "text-success" : "text-secondary"}>Minst en av specialtecken e.x ! ? @ #</li>
             </ul>
             </Form.Text>
           </Form.Group>
