@@ -7,12 +7,11 @@ import Button from "react-bootstrap/esm/Button";
 
 function SignedOutPage() {
   const navigate = useNavigate();
-  const slug = "om-studien";
   const title = "ProMeno";
   const subtitle = "Vår forskningsstudie om klimakteriet";
 
   const handleClick = () => {
-    navigate(`/page/${slug}`);
+    navigate(`/about-us`);
   };
 
   return (

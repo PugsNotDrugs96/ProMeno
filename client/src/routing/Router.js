@@ -13,8 +13,7 @@ import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
 import SubCategoryPage from "../components/navigation/SubCategoryPage";
-import Page from "../components/Page";
-import AboutUs from "../components/footer/AboutUs"
+import AboutUsPage from "../components/signed-out-page/AboutUsPage";
 
 function Router() {
   return (
@@ -32,7 +31,6 @@ function Router() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/about-us" element={<AboutUs />} />
           <Route
             path="/profile"
             element={
@@ -86,7 +84,7 @@ function Router() {
               </ProtectedRoute>
             }
           />
-          <Route exact path="/page/:slug" element={<Page />} />
+          <Route exact path="/about-us" element={<AboutUsPage />} />
         </Routes>
       </BasicLayout>
     </BrowserRouter>
