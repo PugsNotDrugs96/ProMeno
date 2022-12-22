@@ -349,11 +349,9 @@ app.post("/reset-password", async function (req, res) {
   }
 
   if (!schema.validate(newPassword)) {
-    return res
-      .status(403)
-      .send({
-        message: "New password did not meet the specified requirements",
-      });
+    return res.status(403).send({
+      message: "New password did not meet the specified requirements",
+    });
   }
 
   const userExists = usersDB.findUser(email);
