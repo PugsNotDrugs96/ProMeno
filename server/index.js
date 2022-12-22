@@ -125,7 +125,6 @@ app.get("/get-user-by-email-db", async function (req, res) {
 
 app.post("/update-email-db", async function (req, res) {
   const { oldEmail, newEmail } = req.body;
-  console.log("test");
   const status = await usersFilters.updateEmailDB(oldEmail, newEmail);
 
   if (status === "Email does not exist") {
@@ -150,10 +149,8 @@ app.post("/delete-account", async function (req, res) {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    console.log(email + "     " + password);
     return res.status(400).json({ message: "Email and password are required" });
   }
-  console.log(5);
   const isValidLogin = await usersFilters.validateLogin(email, password);
 
   if (isValidLogin === "Email does not exist") {

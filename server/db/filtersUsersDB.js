@@ -88,10 +88,8 @@ export async function deleteUserDB(email) {
   return new Promise(async (resolve, reject) => {
     const user = await UserModel.findOneAndDelete({ email: email });
     if (!user) {
-      console.log(1);
       resolve("400");
     } else {
-      console.log(2);
       resolve("200");
     }
   });

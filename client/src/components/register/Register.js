@@ -70,13 +70,11 @@ function Register() {
           newUser.password
         );
         if (response.status === 200) {
-          console.log(response);
           setUser(newUser.email, newUser.password, newUser.passwordConfirm);
           setSuccess(true);
         }
       } catch (err) {
         setRegConf(false);
-        console.log(err);
         if (!err?.response) {
           setErrMsg("Inget svar från servern");
         } else if (err?.response.status === 409) {
@@ -91,11 +89,8 @@ function Register() {
         newUser.password
       );
       if (response.status === 200) {
-        console.log(response);
         setUser(newUser.email, newUser.password, newUser.passwordConfirm);
         setSuccess(true);
-      } else {
-        console.log(response.data);
       }
     }
   };

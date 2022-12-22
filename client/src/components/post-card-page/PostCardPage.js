@@ -24,8 +24,6 @@ function PostCardPage() {
     fetchData();
   }, [subCategorySlug]);
 
-  console.log(posts);
-
   if (!posts || !subCategory) return null;
 
   return (

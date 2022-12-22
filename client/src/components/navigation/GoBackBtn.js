@@ -6,11 +6,9 @@ function GoBack() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location.pathname);
-
   return (
     <>
-      {location.pathname != "/" && (
+      {location.pathname !== "/" && (
         <img
           id="back-button"
           src="../images/arrow-left.svg"
