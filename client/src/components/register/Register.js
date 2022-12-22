@@ -31,6 +31,8 @@ function Register() {
   const [authStep, setAuthMode] = useState(1);
   const [newUser, setNewUser] = useState(initialState);
   const [success, setSuccess] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+  const [regConf, setRegConf] = useState(true)
   const passVerification = {
     isLenthy: false,
     hasUpper: false,
@@ -61,15 +63,26 @@ function Register() {
 
   const handleStepTwoSubmit = async (e) => {
     e.preventDefault();
-    console.log(1111111111);
     if (Object.values(passwordError).every((item) => item === true)) {
-      console.log(22222222);
-      const response = await registerUser(
-        newUser.name,
-        newUser.email,
-        newUser.password
-      );
-      console.log("test");
+      try {
+        const response = await registerUser(newUser.name, newUser.email, newUser.password);
+        if (response.status === 200) {
+          console.log(response);
+          setUser(newUser.email, newUser.password, newUser.passwordConfirm);
+          setSuccess(true);
+        } 
+      } catch (err) {
+        setRegConf(false);
+        console.log(err);
+        if (!err?.response) {
+          setErrMsg("Inget svar från servern");
+        } else if (err?.response.status === 409) {
+          setErrMsg("E-post redan registrerad")
+        } else {
+          setErrMsg("Något gick fel, försök igen eller kontakta vår support");
+        }
+      }
+      const response = await registerUser(newUser.name, newUser.email, newUser.password);
       if (response.status === 200) {
         console.log(response);
         setUser(newUser.email, newUser.password, newUser.passwordConfirm);
@@ -263,6 +276,13 @@ function Register() {
                   newUser.passwordConfirm.length > 0 && (
                     <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">
                       Lösenorden matchar inte
+                    </div>
+                  )}
+              </Form.Text>
+              <Form.Text>
+                {!regConf && (
+                    <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">
+                      {errMsg}
                     </div>
                   )}
               </Form.Text>

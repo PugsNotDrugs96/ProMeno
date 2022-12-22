@@ -56,20 +56,6 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const TTL = 3600;
 
 const cache = new NodeCache({ stdTTL: TTL, checkperiod: TTL });
-/*
-app.post("/auth", async function (req, res) {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    return res.status(400).json({ message: "Email and password are required" });
-  }
-
-  const isValidLogin = usersDB.validateLogin(email, password);
-
-  if (!isValidLogin) {
-    return res.status(401).json("Not a valid login");
-  }
-  res.status(200).json({ success: `User ${email} is logged in` });
-}); */
 
 app.post("/auth", async function (req, res) {
   const { email, password } = req.body;
@@ -103,7 +89,7 @@ app.post("/register", async function (req, res) {
     .then((result) => {
       if (result === "500") {
         res.status(500).send("Unable to register user to database");
-      } else if (result === "406") {
+      } else if (result === "409") {
         res.status(409).send("Email already registered");
       } else {
         res.status(200).send("User registered");

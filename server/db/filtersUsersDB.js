@@ -35,7 +35,7 @@ export async function getUserDB(email) {
 export async function registerUserDB(name, email, password) {
   return new Promise(async (resolve, reject) => {
     if (await checkIfEmailExist(email)) {
-      resolve("406");
+      resolve("409");
       return;
     }
     var userModel = new UserModel();
