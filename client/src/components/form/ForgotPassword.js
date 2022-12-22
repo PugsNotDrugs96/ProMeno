@@ -11,12 +11,13 @@ import {
 import { getResetPasswordLink } from "../../api/api";
 
 function ForgotPassword() {
-  const responseRef = useRef();
-  const userRef = useRef();
-  const errRef = useRef();
   const [email, setEmail] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [responseMsg, setResponseMsg] = useState("");
+
+  const responseRef = useRef();
+  const userRef = useRef();
+  const errRef = useRef();
 
   useEffect(() => {
     userRef.current.focus();

@@ -1,7 +1,6 @@
 import * as dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
-
 import {
   fetchCategories,
   fetchPost,
@@ -12,9 +11,11 @@ import {
 import * as usersFilters from "./db/filtersUsersDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import { usersDB, UserModel } from "./db/usersDB.js";
+import { usersDB } from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
 import NodeCache from "node-cache";
+import schema from "./passwordValidator.js";
+
 //import nodemailer from "nodemailer";
 
 dotenv.config();
@@ -81,7 +82,13 @@ app.post("/register", async function (req, res) {
   if (!name || !email || !password) {
     return res
       .status(400)
-      .send({ message: "name, email and password are required" });
+      .send({ message: "Name, email and password are required" });
+  }
+
+  if (!schema.validate(password)) {
+    return res
+      .status(403)
+      .send({ message: "Password did not meet the specified requirements" });
   }
 
   await usersFilters
@@ -136,6 +143,13 @@ app.post("/update-email-db", async function (req, res) {
 
 app.post("/update-password-db", async function (req, res) {
   const { email, password } = req.body;
+
+  if (!schema.validate(password)) {
+    return res
+      .status(403)
+      .send({ message: "Password did not meet the specified requirements" });
+  }
+
   const status = await usersFilters.updatePasswordDB(email, password);
 
   if (status === "Email does not exist") {
@@ -169,33 +183,18 @@ app.post("/delete-account", async function (req, res) {
   }
 });
 
-/*app.post("/delete-account", async function (req, res) {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    return res.status(400).json({ message: "Email and password are required" });
-  }
-
-  const isValidLogin = usersDB.validateLogin(email, password);
-
-  if (!isValidLogin) {
-    return res.status(400).json({ message: "Not valid email or password" });
-  }
-
-  if (usersDB.deleteUser(email)) {
-    return res
-      .status(200)
-      .json({ success: `Account for user ${email} is deleted!` });
-  } else {
-    return res.status(400).json({ message: "Something went wrong" });
-  }
-}); */
-
 app.post("/change-password", async function (req, res) {
   const { email, currentPassword, newPassword } = req.body;
   if (!email || !currentPassword || !newPassword) {
     return res
       .status(400)
       .json({ message: "Email and passwords are required" });
+  }
+
+  if (!schema.validate(newPassword)) {
+    return res.status(403).send({
+      message: "New password did not meet the specified requirements",
+    });
   }
 
   const isValidLogin = await usersFilters.validateLogin(email, currentPassword);
@@ -347,6 +346,12 @@ app.post("/reset-password", async function (req, res) {
   const { email, newPassword } = req.body;
   if (!email || !newPassword) {
     return res.status(400).json({ message: "Email and password are required" });
+  }
+
+  if (!schema.validate(newPassword)) {
+    return res.status(403).send({
+      message: "New password did not meet the specified requirements",
+    });
   }
 
   const userExists = usersDB.findUser(email);

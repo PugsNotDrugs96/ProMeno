@@ -18,7 +18,9 @@ function AboutUsPage() {
     fetchData();
   }, []);
 
-  if (!post)
+  if (!post) return null;
+
+  if (!post.title) {
     return (
       <Alert
         severity="error"
@@ -33,6 +35,7 @@ function AboutUsPage() {
         </AlertTitle>
       </Alert>
     );
+  }
 
   return (
     <Container className="postContainer py-4">
