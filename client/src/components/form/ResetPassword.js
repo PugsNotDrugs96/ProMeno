@@ -10,44 +10,43 @@ import {
 } from "react-bootstrap";
 import { resetPassword, validateLink } from "../../api/api";
 import EmptyPage from "../EmptyPage";
+import PasswordReqList from "./PasswordReqList";
 
 function ResetPassword() {
   const { email, token } = useParams();
+
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const [responseMsg, setResponseMsg] = useState("");
+  const [isValidLink, setIsValidLink] = useState(false);
+
   const userRef = useRef();
   const errRef = useRef();
   const responseRef = useRef();
-  const [password1, setPassword1] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [errMsg, setErrMsg] = useState("");
-  const [responseMsg, setResponseMsg] = useState("");
-  const [isValidLink, setisValidLink] = useState(false);
 
   useEffect(() => {
     setErrMsg("");
     setResponseMsg("");
-  }, [password1, password2]);
+  }, [password, confirmPassword]);
 
   useEffect(() => {
     (async () => {
       const response = await validateLink(email, token);
       if (response.status === 200) {
-        setisValidLink(true);
+        setIsValidLink(true);
       }
     })();
   }, [email, token]);
 
-  useEffect(() => {
-    setErrMsg("");
-  }, [password1, password2]);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password1 !== password2) {
+    if (password !== confirmPassword) {
       setErrMsg("Lösenorden matchar inte");
       errRef.current.focus();
     } else {
       try {
-        const response = await resetPassword(email, password1);
+        const response = await resetPassword(email, password);
         if (response.status === 200) {
           setResponseMsg("Ditt lösenord har återställts");
         }
@@ -55,6 +54,8 @@ function ResetPassword() {
       } catch (err) {
         if (!err?.response) {
           setErrMsg("Inget svar från servern");
+        } else if (err?.response.status === 403) {
+          setErrMsg("Lösenordets krav är ej uppfyllda");
         } else {
           setErrMsg("Något gick fel, försök igen eller kontakta vår support");
         }
@@ -87,8 +88,8 @@ function ResetPassword() {
                     autoComplete="off"
                     className="form-control"
                     name="password1"
-                    onChange={(e) => setPassword1(e.target.value)}
-                    value={password1}
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
                     required
                   />
                 </FloatingLabel>
@@ -103,8 +104,8 @@ function ResetPassword() {
                     autoComplete="off"
                     className="form-control"
                     name="password2"
-                    onChange={(e) => setPassword2(e.target.value)}
-                    value={password2}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    value={confirmPassword}
                     required
                   />
                 </FloatingLabel>
@@ -138,6 +139,7 @@ function ResetPassword() {
                 >
                   {responseMsg}
                 </p>
+                <PasswordReqList />
                 <div className="text-center">
                   <Link to="/login">Tillbaka till inloggningen</Link>
                 </div>

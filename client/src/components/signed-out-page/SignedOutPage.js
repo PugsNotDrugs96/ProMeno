@@ -1,5 +1,4 @@
 import React from "react";
-import "./signedOutPage.css";
 import Image from "react-bootstrap/esm/Image";
 import { useNavigate } from "react-router-dom";
 import heroImg from "../../assets/front-img.jpeg";
@@ -56,7 +55,7 @@ function SignedOutPage() {
             Logga in
           </Button>
           <Button
-            href="/register"
+            href="/code"
             className="btn btn-success btn-lg gap-3"
             style={{ width: "18rem", marginTop: "1rem" }}
           >

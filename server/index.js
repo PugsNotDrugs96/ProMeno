@@ -1,7 +1,6 @@
 import * as dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
-
 import {
   fetchCategories,
   fetchPost,
@@ -12,9 +11,11 @@ import {
 import * as usersFilters from "./db/filtersUsersDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import { usersDB, UserModel } from "./db/usersDB.js";
+import { usersDB } from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
 import NodeCache from "node-cache";
+import schema from "./passwordValidator.js";
+
 //import nodemailer from "nodemailer";
 
 dotenv.config();
@@ -81,7 +82,13 @@ app.post("/register", async function (req, res) {
   if (!name || !email || !password) {
     return res
       .status(400)
-      .send({ message: "name, email and password are required" });
+      .send({ message: "Name, email and password are required" });
+  }
+
+  if (!schema.validate(password)) {
+    return res
+      .status(403)
+      .send({ message: "Password did not meet the specified requirements" });
   }
 
   await usersFilters
@@ -125,7 +132,6 @@ app.get("/get-user-by-email-db", async function (req, res) {
 
 app.post("/update-email-db", async function (req, res) {
   const { oldEmail, newEmail } = req.body;
-  console.log("test");
   const status = await usersFilters.updateEmailDB(oldEmail, newEmail);
 
   if (status === "Email does not exist") {
@@ -137,6 +143,13 @@ app.post("/update-email-db", async function (req, res) {
 
 app.post("/update-password-db", async function (req, res) {
   const { email, password } = req.body;
+
+  if (!schema.validate(password)) {
+    return res
+      .status(403)
+      .send({ message: "Password did not meet the specified requirements" });
+  }
+
   const status = await usersFilters.updatePasswordDB(email, password);
 
   if (status === "Email does not exist") {
@@ -150,19 +163,17 @@ app.post("/delete-account", async function (req, res) {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    console.log(email + "     " + password);
     return res.status(400).json({ message: "Email and password are required" });
   }
-  console.log(5);
   const isValidLogin = await usersFilters.validateLogin(email, password);
-  
+
   if (isValidLogin === "Email does not exist") {
     res.status(401).send("Email not found");
   } else if (isValidLogin === "Invalid password") {
     res.status(401).send("Invalid password");
   } else if (isValidLogin === "Database error") {
     res.status(500).send("Database connection failed");
-  } else if (isValidLogin === "Valid password"){
+  } else if (isValidLogin === "Valid password") {
     const status = await usersFilters.deleteUserDB(email);
     if (status === "400") {
       res.status(406).send("Email does not exist");
@@ -172,27 +183,6 @@ app.post("/delete-account", async function (req, res) {
   }
 });
 
-/*app.post("/delete-account", async function (req, res) {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    return res.status(400).json({ message: "Email and password are required" });
-  }
-
-  const isValidLogin = usersDB.validateLogin(email, password);
-
-  if (!isValidLogin) {
-    return res.status(400).json({ message: "Not valid email or password" });
-  }
-
-  if (usersDB.deleteUser(email)) {
-    return res
-      .status(200)
-      .json({ success: `Account for user ${email} is deleted!` });
-  } else {
-    return res.status(400).json({ message: "Something went wrong" });
-  }
-}); */
-
 app.post("/change-password", async function (req, res) {
   const { email, currentPassword, newPassword } = req.body;
   if (!email || !currentPassword || !newPassword) {
@@ -201,20 +191,29 @@ app.post("/change-password", async function (req, res) {
       .json({ message: "Email and passwords are required" });
   }
 
+  if (!schema.validate(newPassword)) {
+    return res.status(403).send({
+      message: "New password did not meet the specified requirements",
+    });
+  }
+
   const isValidLogin = await usersFilters.validateLogin(email, currentPassword);
   if (isValidLogin === "Valid password") {
-    const changePasswordStatus = await usersFilters.updatePasswordDB(email, newPassword);
-    if(changePasswordStatus === "200"){
-      return res.status(200).json("Password updated")
+    const changePasswordStatus = await usersFilters.updatePasswordDB(
+      email,
+      newPassword
+    );
+    if (changePasswordStatus === "200") {
+      return res.status(200).json("Password updated");
     } else {
-      return res.status(500).json("Database error")
+      return res.status(500).json("Database error");
     }
   } else if (isValidLogin === "Email does not exist") {
     return res.status(406).json("Email does not exist");
   } else if (isValidLogin === "Invalid password") {
-    return res.status(401).json("Invalid current password")
+    return res.status(401).json("Invalid current password");
   } else if (isValidLogin === "Database error") {
-    return res.status(500).json("Database error")
+    return res.status(500).json("Database error");
   }
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
   if (isPasswordChanged) {
@@ -349,6 +348,12 @@ app.post("/reset-password", async function (req, res) {
     return res.status(400).json({ message: "Email and password are required" });
   }
 
+  if (!schema.validate(newPassword)) {
+    return res.status(403).send({
+      message: "New password did not meet the specified requirements",
+    });
+  }
+
   const userExists = usersDB.findUser(email);
 
   if (!userExists) {
@@ -366,23 +371,23 @@ app.post("/reset-password", async function (req, res) {
   }
 });
 
-app.post("/profile", async function(req, res) {
+app.post("/profile", async function (req, res) {
   const { email } = req.body;
 
-  if(!email){
+  if (!email) {
     res.status(400);
   }
-  
+
   const user = await usersFilters.getNameByEmail(email);
 
-  if (!user){
+  if (!user) {
     res.status(500);
-  } else if(user){
+  } else if (user) {
     res.status(200).json(user);
   } else {
     res.status(520);
   }
-})
+});
 
 app.listen(PORT, function () {
   console.log("Server is now running on port " + PORT);

@@ -7,7 +7,6 @@ import Button from "react-bootstrap/esm/Button";
 function MainCategory() {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
-  var pixels = window.innerWidth;
 
   useEffect(() => {
     async function fetchData() {
@@ -30,9 +29,11 @@ function MainCategory() {
       <div className="d-grid gap-2">
         {mainCategories.map((item, index) => (
           <Button
-          onClick={() => handleClick(item)}
-          size="lg"
-          className="my-2 py-3">
+            key={index}
+            onClick={() => handleClick(item)}
+            size="lg"
+            className="my-2 py-3"
+          >
             {item.name}
           </Button>
         ))}
