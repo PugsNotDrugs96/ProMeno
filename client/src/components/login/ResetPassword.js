@@ -1,20 +1,31 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
-import { useNavigate, Link, useParams } from "react-router-dom";
-import { Button, Container, Form, Row, Col, FloatingLabel} from "react-bootstrap";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useParams } from "react-router-dom";
+import {
+  Button,
+  Container,
+  Form,
+  Row,
+  Col,
+  FloatingLabel,
+} from "react-bootstrap";
 import { resetPassword, validateLink } from "../../api/api";
 import EmptyPage from "../EmptyPage";
-import UserContext from "../../UserContext";
 
 function ResetPassword() {
   const { email, token } = useParams();
-  const { setUser } = useContext(UserContext);
-  const navigate = useNavigate();
   const userRef = useRef();
   const errRef = useRef();
+  const responseRef = useRef();
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [responseMsg, setResponseMsg] = useState("");
   const [isValidLink, setisValidLink] = useState(false);
+
+  useEffect(() => {
+    setErrMsg("");
+    setResponseMsg("");
+  }, [password1, password2]);
 
   useEffect(() => {
     (async () => {
@@ -38,9 +49,9 @@ function ResetPassword() {
       try {
         const response = await resetPassword(email, password1);
         if (response.status === 200) {
-          setUser(email);
-          navigate("/home");
+          setResponseMsg("Ditt lösenord har återställts");
         }
+        responseRef.current.focus();
       } catch (err) {
         if (!err?.response) {
           setErrMsg("Inget svar från servern");
@@ -115,6 +126,17 @@ function ResetPassword() {
                   aria-live="assertive"
                 >
                   {errMsg}
+                </p>
+                <p
+                  ref={responseRef}
+                  className={
+                    responseMsg
+                      ? "responseMsg text-success text-center mt-2"
+                      : "offscreen"
+                  }
+                  aria-live="assertive"
+                >
+                  {responseMsg}
                 </p>
                 <div className="text-center">
                   <Link to="/login">Tillbaka till inloggningen</Link>
