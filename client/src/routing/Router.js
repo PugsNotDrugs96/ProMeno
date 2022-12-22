@@ -14,6 +14,7 @@ import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
 import SubCategoryPage from "../components/navigation/SubCategoryPage";
 import AboutUsPage from "../components/signed-out-page/AboutUsPage";
+import CodeValidatorForm from "../components/register/CodeValidatorForm";
 
 function Router() {
   return (
@@ -31,6 +32,7 @@ function Router() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/code" element={<CodeValidatorForm />} />
           <Route
             path="/profile"
             element={

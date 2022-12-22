@@ -108,7 +108,7 @@ function Login() {
                   >
                     Logga in
                   </Button>
-                  
+
                   <p id="pwd-text">
                     Glömt <a href="/forgot-password">lösenordet?</a>
                   </p>
@@ -117,8 +117,7 @@ function Login() {
                 <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
                 <Form.Text className="text-center">
                   <p className="col-md-5 mx-auto col-lg-5 mt-3 mb-3">
-                    Inte registrerad ännu?{" "}
-                    <a href="/register">Registrera här!</a>
+                    Inte registrerad ännu? <a href="/code">Registrera här!</a>
                   </p>
                 </Form.Text>
                 <p
