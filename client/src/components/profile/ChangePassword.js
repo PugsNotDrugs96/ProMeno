@@ -39,12 +39,10 @@ const ChangePassword = () => {
       errRef.current.focus();
     } else if (!Object.values(passwordError).every(item => item === true)) {
       setErrMsg("Lösenord krav ej uppfyllda");
-      console.log(passwordError);
       errRef.current.focus();
     } else {
       try {
         const response = await changePassword(user, currentPassword, password1);
-        console.log(response.status);
         if (response.status === 200) {
           setResponseMsg("Ditt lösenord har ändrats");
           responseRef.current.focus();
@@ -82,10 +80,6 @@ const ChangePassword = () => {
           hasSpclChr,
         }
       })
-    }
-
-    if(name === "password2"){
-
     }
   }
 
@@ -126,7 +120,7 @@ const ChangePassword = () => {
                 type="password"
                 name="password1"
                 className="form-control"
-                onChange={(e) => setPassword1(e.target.value)}
+                onChange={handleOnChange}
                 value={password1}
                 required
               />
