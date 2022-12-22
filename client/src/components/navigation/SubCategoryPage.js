@@ -41,7 +41,7 @@ function SubCategoryPage() {
         <Col>
           <div className="text-center">
             <h1 className="display-8 fw-bold">{category[0].name}</h1>
-            <p>{category[0].description}</p>
+            <h5>{category[0].description}</h5>
           </div>
         </Col>
         <Col md={5}>
