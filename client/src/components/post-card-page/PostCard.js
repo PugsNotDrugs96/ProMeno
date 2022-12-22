@@ -9,16 +9,16 @@ function PostCard(props) {
   const slug = post.slug;
 
   return (
-    <Card 
+    <Card
       className="my-4 subCatCard"
       key={index}
       onClick={() => {
         navigate(`/${mainCategorySlug}/${subCategorySlug}/${slug}`);
       }}
     >
-      <Card.Img 
-        variant="top" 
-        src={post.better_featured_image?.source_url ?? cardImg} 
+      <Card.Img
+        variant="top"
+        src={post.better_featured_image?.source_url ?? cardImg}
       />
       <Card.Body>
         <Card.Title className="text-center">{post.title.rendered}</Card.Title>

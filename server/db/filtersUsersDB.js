@@ -17,8 +17,8 @@ export async function getAllUsersDB() {
 
 export async function getUserDB(email) {
   return new Promise((resolve, reject) => {
-    const user = UserModel.findOne({ email: email.toLowerCase() })
-  
+    const user = UserModel.findOne({ email: email.toLowerCase() });
+
     if (!user) {
       resolve("Email does not exist");
       return;
@@ -29,7 +29,7 @@ export async function getUserDB(email) {
       resolve("Database error 500");
       return;
     }
-  })
+  });
 }
 
 export async function registerUserDB(name, email, password) {
@@ -88,10 +88,8 @@ export async function deleteUserDB(email) {
   return new Promise(async (resolve, reject) => {
     const user = await UserModel.findOneAndDelete({ email: email });
     if (!user) {
-      console.log(1);
       resolve("400");
     } else {
-      console.log(2);
       resolve("200");
     }
   });
@@ -126,9 +124,9 @@ async function checkIfSelected(email) {
 
 export async function getNameByEmail(email) {
   const usersData = await getAllUsersDB();
-  
-  const user = usersData.find((element) => element.email === email)
+
+  const user = usersData.find((element) => element.email === email);
   if (user) {
-    return user.name
+    return user.name;
   }
 }

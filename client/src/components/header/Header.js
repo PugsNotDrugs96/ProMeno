@@ -12,57 +12,55 @@ function Header() {
   const logoLink = user ? "./home" : "/";
 
   return (
-    <>
-      <Navbar id="headnav">
-        <Container>
-          <Link to={logoLink} className="d-inline-block align-top">
-            <Navbar.Brand className="d-inline-block align-top">
-              <Image alt="" src={Lotus} width="50px" height="50px" /> ProMeno
-            </Navbar.Brand>
-          </Link>
+    <Navbar id="headnav">
+      <Container>
+        <Link to={logoLink} className="d-inline-block align-top">
+          <Navbar.Brand className="d-inline-block align-top">
+            <Image alt="" src={Lotus} width="50px" height="50px" /> ProMeno
+          </Navbar.Brand>
+        </Link>
 
-          {user && (
-            <div className="text-end">
-              <div className="btn-group">
-                <button
-                  type="button"
-                  className="btn login-button dropdown-toggle"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img
-                    id="profile-logo"
-                    src="../images/person.svg"
-                    alt="profile-logo"
-                  ></img>
-                </button>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to="/Profile">
-                      Mina sidor
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link
-                      className="dropdown-item"
-                      onClick={() => {
-                        setUser(null);
-                      }}
-                      to="/"
-                    >
-                      Logga ut
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+        {user && (
+          <div className="text-end">
+            <div className="btn-group">
+              <button
+                type="button"
+                className="btn login-button dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  id="profile-logo"
+                  src="../images/person.svg"
+                  alt="profile-logo"
+                ></img>
+              </button>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link className="dropdown-item" to="/Profile">
+                    Mina sidor
+                  </Link>
+                </li>
+                <li>
+                  <hr className="dropdown-divider" />
+                </li>
+                <li>
+                  <Link
+                    className="dropdown-item"
+                    onClick={() => {
+                      setUser(null);
+                    }}
+                    to="/"
+                  >
+                    Logga ut
+                  </Link>
+                </li>
+              </ul>
             </div>
-          )}
-        </Container>
-      </Navbar>
-    </>
+          </div>
+        )}
+      </Container>
+    </Navbar>
   );
 }
 
