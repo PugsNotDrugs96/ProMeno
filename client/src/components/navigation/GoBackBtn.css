@@ -1,9 +1,8 @@
 #back-button {
     position: absolute;
-    width: 40px;
+    top: 80px;
+    width: 30px;
     height: auto;
-    margin-top: 40px;
-    margin-left: 12px;
 }
 
 #back-button:hover, #back-button:active {

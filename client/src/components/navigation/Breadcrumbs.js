@@ -7,6 +7,7 @@ import "./Breadcrumbs.css";
 function Breadcrumbs() {
     const location = useLocation().pathname;
     const pathnames = location.split("/").filter(x => x);
+    const forbiddenPaths = ["/", "/home", "/login", "/forgot-password", "/register", "/Profile", "/change-password", "/delete-account", "/about-us"];
 
     function handleTitle(path) {
         let words = path.split("-");
@@ -20,16 +21,28 @@ function Breadcrumbs() {
 
     return(
         <Container>
-            <Breadcrumb>
-                <Breadcrumb.Item active>Startsida</Breadcrumb.Item>
-                {pathnames.map((path) => (
-                    <Breadcrumb.Item active>
-                        {handleTitle(path)}
-                    </Breadcrumb.Item>
-                ))}
-            </Breadcrumb>
+            {!forbiddenPaths.includes(location) &&
+                <Breadcrumb>
+                 <Breadcrumb.Item active>Startsida</Breadcrumb.Item>
+                 {pathnames.map((path) => (
+                     <Breadcrumb.Item active>
+                         {handleTitle(path)}
+                     </Breadcrumb.Item>
+                  ))}
+             </Breadcrumb>           
+            }
         </Container>
     )
 }
 
 export default Breadcrumbs;
+
+/* 
+location != "/login" ||
+              location != "/forgot-password" ||
+              location != "/register" ||
+              location != "/Profile" ||
+              location != "/change-password" ||
+              location != "/delete-account" ||
+              location != "/about-us"
+*/
