@@ -7,17 +7,15 @@ function GoBack() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location.pathname);
-
   return (
     <>
-      {location.pathname != "/" && (
+      {location.pathname !== "/" && (
         <img
           id="back-button"
           src={Icon}
           alt="go-back-button"
           onClick={() => navigate(-1)}
-        ></img>
+        />
       )}
     </>
   );

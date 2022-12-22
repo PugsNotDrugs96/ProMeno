@@ -1,6 +1,6 @@
 /* Fonts */
 :root {
-  font-family: 'Vazir', sans-serif !important;
+  font-family: "Vazir", sans-serif !important;
 }
 
 body,
@@ -9,7 +9,8 @@ html {
 }
 
 /* Containers */
-.background { /* 2:nd layer */
+.background {
+  /* 2:nd layer */
   background-image: url("../assets/hero-background-blurred.jpg");
   background-size: cover;
   background-position: center;
@@ -17,7 +18,8 @@ html {
   height: 100%;
 }
 
-.contentContainer { /* 3:d layer */
+.contentContainer {
+  /* 3:d layer */
   background-color: rgba(255, 255, 255, 0.681);
   height: 100%;
   width: 60%;
@@ -25,21 +27,24 @@ html {
   margin-right: auto;
 }
 
-.content { /* 4:th layer */
+.content {
+  /* 4:th layer */
   padding-top: 100px;
   padding-bottom: 50px;
   min-height: 630px;
 }
 
 /* Responsivness containers */
-@media only screen and (max-width: 900px) { /* Tablets */
-  .contentContainer{
+@media only screen and (max-width: 900px) {
+  /* Tablets */
+  .contentContainer {
     width: 80%;
   }
 }
 
-@media only screen and (max-width: 600px) { /* Phones */
-  .contentContainer{
+@media only screen and (max-width: 600px) {
+  /* Phones */
+  .contentContainer {
     width: 100%;
   }
 }

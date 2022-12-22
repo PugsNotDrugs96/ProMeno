@@ -1,5 +1,4 @@
 import React from "react";
-import "./signedOutPage.css";
 import Image from "react-bootstrap/esm/Image";
 import { useNavigate } from "react-router-dom";
 import heroImg from "../../assets/front-img.jpeg";

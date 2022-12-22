@@ -111,10 +111,10 @@ export async function deleteAccount(email, password) {
   return response;
 }
 
-export async function getNameByEmail(email){
+export async function getNameByEmail(email) {
   const response = await axios.post(
     "/profile",
-    {email},
+    { email },
     {
       headers: {
         withCredentials: true,
