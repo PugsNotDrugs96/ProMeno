@@ -3,6 +3,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Contact from "./Contact";
 import "./Footer.css";
+
 function Footer() {
   return (
     <div className="continer">

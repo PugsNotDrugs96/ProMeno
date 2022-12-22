@@ -15,14 +15,14 @@ function Contact() {
         <Figure.Image
           className="rounded-circle img-thumbnail"
           width={145}
-          height={164}
+          height="auto"
           alt="img"
           src={EvaImg}
         />
         <Card.Body>
           <Card.Title className="text-center">Eva Elmerstig</Card.Title>
           <Card.Text>
-            <small>
+            <medium>
               &#x2022; Medicine doktor och docent i hälsa och samhälle
               inriktning sexologi vid Malmö universitet.
               <br />
@@ -30,7 +30,7 @@ function Contact() {
               reproduktiv hälsa med kliniskt arbete som sexolog.
               <br />
               &#x2022; Barnmorska och sexolog i grunden.
-            </small>
+            </medium>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -42,14 +42,14 @@ function Contact() {
         <Figure.Image
           className="rounded-circle img-thumbnail"
           width={140}
-          height={164}
+          height="auto"
           alt="171x180"
           src={MarieImg}
         />
         <Card.Body>
           <Card.Title className="text-center">Marie Karlsson</Card.Title>
           <Card.Text>
-            <small>
+            <medium>
               &#x2022; Disputerat i klinisk psykologi och är legitimerad
               psykolog och psykoterapeut.
               <br />
@@ -58,7 +58,7 @@ function Contact() {
               terapi (KBT)
               <br />
               &#x2022; Jobbar som lektor på Malmö universitet.
-            </small>
+            </medium>
           </Card.Text>
         </Card.Body>
       </Card>
