@@ -32,7 +32,7 @@ function Profile() {
       setName(str2);
     }
     fetchData();
-  }, []);
+  }, [user]);
 
   return (
     <Container className="content" style={{ textAlign: "center" }}>

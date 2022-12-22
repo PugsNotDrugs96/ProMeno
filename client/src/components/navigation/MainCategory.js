@@ -7,7 +7,6 @@ import Button from "react-bootstrap/esm/Button";
 function MainCategory() {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
-  var pixels = window.innerWidth;
 
   useEffect(() => {
     async function fetchData() {

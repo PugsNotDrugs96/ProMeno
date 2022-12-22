@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Contact from "./Contact";
 import Card from "react-bootstrap/Card";
 import "./Footer.css";
+
 function Footer() {
   return (
     <div className="continer">

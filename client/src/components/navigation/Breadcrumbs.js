@@ -46,13 +46,3 @@ function Breadcrumbs() {
 }
 
 export default Breadcrumbs;
-
-/* 
-location != "/login" ||
-              location != "/forgot-password" ||
-              location != "/register" ||
-              location != "/Profile" ||
-              location != "/change-password" ||
-              location != "/delete-account" ||
-              location != "/about-us"
-*/
