@@ -14,7 +14,7 @@ function GoBack() {
           src="../images/arrow-left.svg"
           alt="go-back-button"
           onClick={() => navigate(-1)}
-        ></img>
+        />
       )}
     </>
   );

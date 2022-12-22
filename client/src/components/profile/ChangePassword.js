@@ -143,7 +143,7 @@ const ChangePassword = () => {
             </FloatingLabel>
             <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
-              controlId="formBasicPassword"
+              controlId="formBasicConfirmPassword"
               label="Upprepa lösenord"
             >
               <Form.Control

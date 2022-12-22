@@ -38,9 +38,8 @@ function PostCardPage() {
       <Col className="subColBody">
         <Row align="center">
           {posts.map((post, index) => (
-            <Col>
+            <Col key={index}>
               <PostCard
-                index={index}
                 post={post}
                 mainCategorySlug={params.mainCategorySlug}
                 subCategorySlug={params.subCategorySlug}

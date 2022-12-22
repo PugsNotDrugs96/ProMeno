@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/role-supports-aria-props */
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Contact from "./Contact";

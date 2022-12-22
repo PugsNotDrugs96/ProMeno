@@ -182,7 +182,6 @@ function Register() {
         variant="primary"
         className="btn btn-success btn-lg mb-4 gap-3"
         style={{ width: "18rem" }}
-        disabled={isLoading}
         onClick={!isLoading ? handleClick : null}
       >
         {isLoading ? "Skickar vidare..." : " Registrera"}
@@ -217,7 +216,7 @@ function Register() {
               ></Image>
               <FloatingLabel
                 className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                controlId="floatingInput"
+                controlId="floatingInputName"
                 label="Namn"
               >
                 <Form.Control
@@ -232,7 +231,7 @@ function Register() {
               </FloatingLabel>
               <FloatingLabel
                 className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                controlId="floatingInput"
+                controlId="floatingInputEmail"
                 label="Email"
               >
                 <Form.Control
@@ -261,7 +260,7 @@ function Register() {
               </FloatingLabel>
               <FloatingLabel
                 className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
-                controlId="floatingPassword"
+                controlId="floatingPasswordConfirm"
                 label="Bekräfta lösenord"
               >
                 <Form.Control
@@ -296,7 +295,6 @@ function Register() {
                   style={{ width: "18rem" }}
                   variant="primary"
                   type="submit"
-                  disable={Object.values(passwordError).includes(false)}
                 >
                   Registrera
                 </Button>

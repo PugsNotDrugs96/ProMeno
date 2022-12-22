@@ -48,6 +48,7 @@ function SubCategoryPage() {
           <div className="d-grid gap-2">
             {childCategories.map((item, index) => (
               <Button
+                key={index}
                 onClick={() => handleClick(item.slug)}
                 size="lg"
                 className="my-2 py-3"
