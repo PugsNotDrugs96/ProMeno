@@ -36,8 +36,7 @@ function SubCategoryPage() {
   };
 
   return (
-    <Container>
-      <Breadcrumbs />
+    <Container className="content">
       <Row>
         <Col>
           <div className="text-center">

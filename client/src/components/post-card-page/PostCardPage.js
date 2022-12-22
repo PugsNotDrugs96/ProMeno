@@ -29,8 +29,7 @@ function PostCardPage() {
   if (!posts || !subCategory) return null;
 
   return (
-    <Container>
-      <Breadcrumbs />
+    <Container className="content">
       <Row>
         <Col className="subColBody">
           <div className="text-center">

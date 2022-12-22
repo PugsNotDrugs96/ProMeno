@@ -66,7 +66,7 @@ function ResetPassword() {
   return (
     <>
       {isValidLink ? (
-        <Container>
+        <Container className="content">
           <Row>
             <Col>
               <Form onSubmit={handleSubmit}>

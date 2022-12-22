@@ -1,3 +1,4 @@
+/* Fonts */
 :root {
   font-family: 'Vazir', sans-serif !important;
 }
@@ -7,24 +8,30 @@ html {
   font-family: Roboto, Helvetica, sans-serif;
 }
 
-.background {
+/* Containers */
+.background { /* 2:nd layer */
   background-image: url("../assets/hero-background-blurred.jpg");
-  background-position: center;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   height: 100%;
 }
 
-.contentContainer {
+.contentContainer { /* 3:d layer */
   background-color: rgba(255, 255, 255, 0.681);
+  height: 100%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
-  height: 100%;
-  padding: 0;
 }
 
-/* Responsivness */
+.content { /* 4:th layer */
+  padding-top: 100px;
+  padding-bottom: 50px;
+  min-height: 630px;
+}
+
+/* Responsivness containers */
 @media only screen and (max-width: 900px) { /* Tablets */
   .contentContainer{
     width: 80%;
@@ -37,8 +44,7 @@ html {
   }
 }
 
-
-/* Global button styling */
+/* Buttons */
 .btn {
   background-color: #6db2a6;
   border-color: #6db2a6;
