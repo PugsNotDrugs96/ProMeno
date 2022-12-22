@@ -1,93 +1,92 @@
-  /* Headings */
-  .title {
-    font-weight: bolder;
-    font-size: 30px;
-    margin-left: 1.3rem
-  }
-  
-  /* Subheadings */
-  .body h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    padding-top: 10px;
-  }
-  
-  /* Body */
-  .body {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    max-width: 600px;
-  }
-  
-  /* Images & videos */
-  .body figure {
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
-  
-  .body figure > img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 100%;
-  }
-  .wp-element-caption {
-    text-align: center;
-  }
-  
-  .body figure > video {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 100%;
-  }
-  .wp-block-media-text__content {
-    text-align: center;
-  }
-  
-  /* Lists */
-  .body ul {
-    padding-left: 14px;
-    margin-top: 20px;
-    margin-bottom: 15px;
-  }
-  .body li {
-    padding-bottom: 5px;
-  }
-  ::marker {
-    color: #38736f;
-  }
-  
-  /* Links */
-  .body a {
-    font-weight: bolder;
-    color: #38736f;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .body a:hover,
-  a:active {
-    color: #6bb3a3;
-  }
-  
-  /* Quotes */
-  .body blockquote > p {
-    padding: 20px 50px 0px 50px;
-    font-style: italic;
-    text-align: center;
-  }
-  .body blockquote > cite {
-    font-style: normal;
-  }
-  
-  /* Tables */
-  .body table {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+/* Headings */
+.title {
+  font-weight: bolder;
+  font-size: 30px;
+  margin-left: 1.3rem;
+}
+
+/* Subheadings */
+.body h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding-top: 10px;
+}
+
+/* Body */
+.body {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  max-width: 600px;
+}
+
+/* Images & videos */
+.body figure {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.body figure > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 100%;
+}
+.wp-element-caption {
+  text-align: center;
+}
+
+.body figure > video {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 100%;
+}
+.wp-block-media-text__content {
+  text-align: center;
+}
+
+/* Lists */
+.body ul {
+  padding-left: 14px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.body li {
+  padding-bottom: 5px;
+}
+::marker {
+  color: #38736f;
+}
+
+/* Links */
+.body a {
+  font-weight: bolder;
+  color: #38736f;
+  text-decoration: none;
+  cursor: pointer;
+}
+.body a:hover,
+a:active {
+  color: #6bb3a3;
+}
+
+/* Quotes */
+.body blockquote > p {
+  padding: 20px 50px 0px 50px;
+  font-style: italic;
+  text-align: center;
+}
+.body blockquote > cite {
+  font-style: normal;
+}
+
+/* Tables */
+.body table {
+  margin-left: auto;
+  margin-right: auto;
+}

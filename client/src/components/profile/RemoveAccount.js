@@ -1,6 +1,14 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
 import UserContext from "../../UserContext";
-import {Container, Col, Row, Form, Button, Modal, FloatingLabel} from "react-bootstrap"
+import {
+  Container,
+  Col,
+  Row,
+  Form,
+  Button,
+  Modal,
+  FloatingLabel,
+} from "react-bootstrap";
 import { deleteAccount } from "../../api/api";
 import "./Profile.css";
 
@@ -51,13 +59,18 @@ function RemoveAccount() {
         <Col>
           <Form onSubmit={handleSubmit}>
             <Col>
-                <h1 className="text-center text-info text-black" id="acc-remove-text">Avregistrera dig</h1>
-                <div className="text-center col-md-5 mx-auto col-lg-5 mb-3">
-                  <p>
-                    Ta bort ditt konto hos ProMeno och avregistrera dig från allt
-                    deltagande i vår forskningsstudie. Det här går inte att ångra.
-                  </p>
-                </div>
+              <h1
+                className="text-center text-info text-black"
+                id="acc-remove-text"
+              >
+                Avregistrera dig
+              </h1>
+              <div className="text-center col-md-5 mx-auto col-lg-5 mb-3">
+                <p>
+                  Ta bort ditt konto hos ProMeno och avregistrera dig från allt
+                  deltagande i vår forskningsstudie. Det här går inte att ångra.
+                </p>
+              </div>
             </Col>
             <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"

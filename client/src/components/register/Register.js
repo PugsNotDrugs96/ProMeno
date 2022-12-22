@@ -7,7 +7,7 @@ import {
   Col,
   FloatingLabel,
   Image,
-  Modal
+  Modal,
 } from "react-bootstrap";
 import { registerUser } from "../../api/api";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,6 @@ import "./Register.css";
 import Lotus from "../../assets/lotus.svg";
 import { Link } from "react-router-dom";
 import ConsentForm from "../register/ConsentForm";
-
 
 const initialState = {
   name: "",
@@ -32,7 +31,7 @@ function Register() {
   const [newUser, setNewUser] = useState(initialState);
   const [success, setSuccess] = useState(false);
   const [errMsg, setErrMsg] = useState("");
-  const [regConf, setRegConf] = useState(true)
+  const [regConf, setRegConf] = useState(true);
   const passVerification = {
     isLenthy: false,
     hasUpper: false,
@@ -65,24 +64,32 @@ function Register() {
     e.preventDefault();
     if (Object.values(passwordError).every((item) => item === true)) {
       try {
-        const response = await registerUser(newUser.name, newUser.email, newUser.password);
+        const response = await registerUser(
+          newUser.name,
+          newUser.email,
+          newUser.password
+        );
         if (response.status === 200) {
           console.log(response);
           setUser(newUser.email, newUser.password, newUser.passwordConfirm);
           setSuccess(true);
-        } 
+        }
       } catch (err) {
         setRegConf(false);
         console.log(err);
         if (!err?.response) {
           setErrMsg("Inget svar från servern");
         } else if (err?.response.status === 409) {
-          setErrMsg("E-post redan registrerad")
+          setErrMsg("E-post redan registrerad");
         } else {
           setErrMsg("Något gick fel, försök igen eller kontakta vår support");
         }
       }
-      const response = await registerUser(newUser.name, newUser.email, newUser.password);
+      const response = await registerUser(
+        newUser.name,
+        newUser.email,
+        newUser.password
+      );
       if (response.status === 200) {
         console.log(response);
         setUser(newUser.email, newUser.password, newUser.passwordConfirm);
@@ -281,10 +288,10 @@ function Register() {
               </Form.Text>
               <Form.Text>
                 {!regConf && (
-                    <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">
-                      {errMsg}
-                    </div>
-                  )}
+                  <div className="text-danger col-md-5 mx-auto col-lg-5 mt-3 mb-3">
+                    {errMsg}
+                  </div>
+                )}
               </Form.Text>
 
               {/*Disable funktionen bör göra så att knappen inte är klickbar, fungerar inte. Vet inte varför */}
@@ -328,7 +335,9 @@ function Register() {
                   <ul>
                     <li
                       className={
-                        passwordError.isLenthy ? "text-success" : "text-secondary"
+                        passwordError.isLenthy
+                          ? "text-success"
+                          : "text-secondary"
                       }
                     >
                       {" "}
@@ -336,21 +345,27 @@ function Register() {
                     </li>
                     <li
                       className={
-                        passwordError.hasUpper ? "text-success" : "text-secondary"
+                        passwordError.hasUpper
+                          ? "text-success"
+                          : "text-secondary"
                       }
                     >
                       Minst en storbokstav
                     </li>
                     <li
                       className={
-                        passwordError.hasLower ? "text-success" : "text-secondary"
+                        passwordError.hasLower
+                          ? "text-success"
+                          : "text-secondary"
                       }
                     >
                       Minst en liten bokstav
                     </li>
                     <li
                       className={
-                        passwordError.hasNumber ? "text-success" : "text-secondary"
+                        passwordError.hasNumber
+                          ? "text-success"
+                          : "text-secondary"
                       }
                     >
                       Minst en siffra

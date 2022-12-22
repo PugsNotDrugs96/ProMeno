@@ -1,5 +1,12 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
-import {Button, Container, Form, Row, Col, FloatingLabel} from "react-bootstrap"
+import {
+  Button,
+  Container,
+  Form,
+  Row,
+  Col,
+  FloatingLabel,
+} from "react-bootstrap";
 import { changePassword } from "../../api/api";
 import UserContext from "../../UserContext";
 import "./Profile.css";
@@ -21,7 +28,7 @@ const ChangePassword = () => {
     hasNumber: false,
     hasSpclChr: false,
   };
-  const [passwordError, setPasswordError] = useState(passVerification)
+  const [passwordError, setPasswordError] = useState(passVerification);
 
   useEffect(() => {
     userRef.current.focus();
@@ -37,7 +44,7 @@ const ChangePassword = () => {
     if (password1 !== password2) {
       setErrMsg("Lösenorden matchar inte");
       errRef.current.focus();
-    } else if (!Object.values(passwordError).every(item => item === true)) {
+    } else if (!Object.values(passwordError).every((item) => item === true)) {
       setErrMsg("Lösenord krav ej uppfyllda");
       console.log(passwordError);
       errRef.current.focus();
@@ -63,7 +70,7 @@ const ChangePassword = () => {
   const handleOnChange = (e) => {
     const { name, value } = e.target;
 
-    if(name === "password1"){
+    if (name === "password1") {
       setPassword1(value);
 
       const isLenthy = value.length >= 8;
@@ -80,14 +87,13 @@ const ChangePassword = () => {
           hasLower,
           hasNumber,
           hasSpclChr,
-        }
-      })
+        };
+      });
     }
 
-    if(name === "password2"){
-
+    if (name === "password2") {
     }
-  }
+  };
 
   useEffect(() => {
     setErrMsg("");
@@ -99,7 +105,13 @@ const ChangePassword = () => {
         <Col>
           <Form onSubmit={handleSubmit}>
             <Col>
-              <h1 className="text-center text-info text-black" id="pwd-change-1"> Ändra lösenord</h1>{" "}
+              <h1
+                className="text-center text-info text-black"
+                id="pwd-change-1"
+              >
+                {" "}
+                Ändra lösenord
+              </h1>{" "}
             </Col>
             <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
@@ -179,16 +191,51 @@ const ChangePassword = () => {
               className="col-md-5 mx-auto col-lg-5 mb-3"
               controlId="formControll"
             >
-            <Form.Text>
-            <ul>
-              <li className={passwordError.isLenthy ? "text-success" : "text-secondary"}> Minst 8 karaktärer </li>
-              <li className={passwordError.hasUpper ? "text-success" : "text-secondary"}>Minst en storbokstav</li>
-              <li className={passwordError.hasLower ? "text-success" : "text-secondary"}>Minst en liten bokstav</li>
-              <li className={passwordError.hasNumber ? "text-success" : "text-secondary"}>Minst en siffra</li>
-              <li className={passwordError.hasSpclChr ? "text-success" : "text-secondary"}>Minst en av specialtecken e.x ! ? @ #</li>
-            </ul>
-            </Form.Text>
-          </Form.Group>
+              <Form.Text>
+                <ul>
+                  <li
+                    className={
+                      passwordError.isLenthy ? "text-success" : "text-secondary"
+                    }
+                  >
+                    {" "}
+                    Minst 8 karaktärer{" "}
+                  </li>
+                  <li
+                    className={
+                      passwordError.hasUpper ? "text-success" : "text-secondary"
+                    }
+                  >
+                    Minst en storbokstav
+                  </li>
+                  <li
+                    className={
+                      passwordError.hasLower ? "text-success" : "text-secondary"
+                    }
+                  >
+                    Minst en liten bokstav
+                  </li>
+                  <li
+                    className={
+                      passwordError.hasNumber
+                        ? "text-success"
+                        : "text-secondary"
+                    }
+                  >
+                    Minst en siffra
+                  </li>
+                  <li
+                    className={
+                      passwordError.hasSpclChr
+                        ? "text-success"
+                        : "text-secondary"
+                    }
+                  >
+                    Minst en av specialtecken e.x ! ? @ #
+                  </li>
+                </ul>
+              </Form.Text>
+            </Form.Group>
           </Form>
         </Col>
       </Row>

@@ -155,14 +155,14 @@ app.post("/delete-account", async function (req, res) {
   }
   console.log(5);
   const isValidLogin = await usersFilters.validateLogin(email, password);
-  
+
   if (isValidLogin === "Email does not exist") {
     res.status(401).send("Email not found");
   } else if (isValidLogin === "Invalid password") {
     res.status(401).send("Invalid password");
   } else if (isValidLogin === "Database error") {
     res.status(500).send("Database connection failed");
-  } else if (isValidLogin === "Valid password"){
+  } else if (isValidLogin === "Valid password") {
     const status = await usersFilters.deleteUserDB(email);
     if (status === "400") {
       res.status(406).send("Email does not exist");
@@ -203,18 +203,21 @@ app.post("/change-password", async function (req, res) {
 
   const isValidLogin = await usersFilters.validateLogin(email, currentPassword);
   if (isValidLogin === "Valid password") {
-    const changePasswordStatus = await usersFilters.updatePasswordDB(email, newPassword);
-    if(changePasswordStatus === "200"){
-      return res.status(200).json("Password updated")
+    const changePasswordStatus = await usersFilters.updatePasswordDB(
+      email,
+      newPassword
+    );
+    if (changePasswordStatus === "200") {
+      return res.status(200).json("Password updated");
     } else {
-      return res.status(500).json("Database error")
+      return res.status(500).json("Database error");
     }
   } else if (isValidLogin === "Email does not exist") {
     return res.status(406).json("Email does not exist");
   } else if (isValidLogin === "Invalid password") {
-    return res.status(401).json("Invalid current password")
+    return res.status(401).json("Invalid current password");
   } else if (isValidLogin === "Database error") {
-    return res.status(500).json("Database error")
+    return res.status(500).json("Database error");
   }
   const isPasswordChanged = usersDB.changePassword(email, newPassword);
   if (isPasswordChanged) {
@@ -366,23 +369,23 @@ app.post("/reset-password", async function (req, res) {
   }
 });
 
-app.post("/profile", async function(req, res) {
+app.post("/profile", async function (req, res) {
   const { email } = req.body;
 
-  if(!email){
+  if (!email) {
     res.status(400);
   }
-  
+
   const user = await usersFilters.getNameByEmail(email);
 
-  if (!user){
+  if (!user) {
     res.status(500);
-  } else if(user){
+  } else if (user) {
     res.status(200).json(user);
   } else {
     res.status(520);
   }
-})
+});
 
 app.listen(PORT, function () {
   console.log("Server is now running on port " + PORT);

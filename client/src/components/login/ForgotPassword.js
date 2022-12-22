@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import {Button, Container, Form, Row, Col, FloatingLabel} from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Form,
+  Row,
+  Col,
+  FloatingLabel,
+} from "react-bootstrap";
 import { getResetPasswordLink } from "../../api/api";
 
 function ForgotPassword() {

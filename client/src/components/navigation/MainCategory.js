@@ -30,9 +30,10 @@ function MainCategory() {
       <div className="d-grid gap-2">
         {mainCategories.map((item, index) => (
           <Button
-          onClick={() => handleClick(item)}
-          size="lg"
-          className="my-2 py-3">
+            onClick={() => handleClick(item)}
+            size="lg"
+            className="my-2 py-3"
+          >
             {item.name}
           </Button>
         ))}

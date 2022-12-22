@@ -50,7 +50,8 @@ function SubCategoryPage() {
               <Button
                 onClick={() => handleClick(item.slug)}
                 size="lg"
-                className="my-2 py-3">
+                className="my-2 py-3"
+              >
                 {item.name}
               </Button>
             ))}

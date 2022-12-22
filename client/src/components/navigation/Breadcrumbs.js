@@ -5,34 +5,42 @@ import { useLocation } from "react-router-dom";
 import "./Breadcrumbs.css";
 
 function Breadcrumbs() {
-    const location = useLocation().pathname;
-    const pathnames = location.split("/").filter(x => x);
-    const forbiddenPaths = ["/", "/home", "/login", "/forgot-password", "/register", "/Profile", "/change-password", "/delete-account", "/about-us"];
+  const location = useLocation().pathname;
+  const pathnames = location.split("/").filter((x) => x);
+  const forbiddenPaths = [
+    "/",
+    "/home",
+    "/login",
+    "/forgot-password",
+    "/register",
+    "/Profile",
+    "/change-password",
+    "/delete-account",
+    "/about-us",
+  ];
 
-    function handleTitle(path) {
-        let words = path.split("-");
+  function handleTitle(path) {
+    let words = path.split("-");
 
-        for (let i = 0; i < words.length; i++) {
-            let word = words[i];
-            words[i] = word.charAt(0).toUpperCase() + word.slice(1);
-        }
-        return words.join(" ");
+    for (let i = 0; i < words.length; i++) {
+      let word = words[i];
+      words[i] = word.charAt(0).toUpperCase() + word.slice(1);
     }
+    return words.join(" ");
+  }
 
-    return(
-        <Container>
-            {!forbiddenPaths.includes(location) &&
-                <Breadcrumb>
-                 <Breadcrumb.Item active>Startsida</Breadcrumb.Item>
-                 {pathnames.map((path) => (
-                     <Breadcrumb.Item active>
-                         {handleTitle(path)}
-                     </Breadcrumb.Item>
-                  ))}
-             </Breadcrumb>           
-            }
-        </Container>
-    )
+  return (
+    <Container>
+      {!forbiddenPaths.includes(location) && (
+        <Breadcrumb>
+          <Breadcrumb.Item active>Startsida</Breadcrumb.Item>
+          {pathnames.map((path) => (
+            <Breadcrumb.Item active>{handleTitle(path)}</Breadcrumb.Item>
+          ))}
+        </Breadcrumb>
+      )}
+    </Container>
+  );
 }
 
 export default Breadcrumbs;
