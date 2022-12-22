@@ -59,6 +59,8 @@ function Register() {
         setErrMsg("Inget svar från servern");
       } else if (err?.response.status === 409) {
         setErrMsg("E-post redan registrerad");
+      } else if (err?.response.status === 403) {
+        setErrMsg("Lösenordets krav är ej uppfyllda");
       } else {
         setErrMsg("Något gick fel, försök igen eller kontakta vår support");
       }
@@ -92,6 +94,7 @@ function Register() {
             >
               <Form.Control
                 type="name"
+                autoFocus
                 ref={userRef}
                 name="name"
                 autoComplete="off"
@@ -108,7 +111,6 @@ function Register() {
             >
               <Form.Control
                 type="email"
-                ref={userRef}
                 autoComplete="off"
                 className="form-control"
                 name="email"
@@ -124,7 +126,6 @@ function Register() {
             >
               <Form.Control
                 type="password"
-                ref={userRef}
                 name="password"
                 className="form-control"
                 value={password}
@@ -139,7 +140,6 @@ function Register() {
             >
               <Form.Control
                 type="password"
-                ref={userRef}
                 className="form-control"
                 name="passwordConfirm"
                 value={confirmPassword}
@@ -188,15 +188,8 @@ function Register() {
               </p>
             </div>
 
-            <hr className="col-md-5 mx-auto col-lg-5 mb-3"></hr>
-            <Form.Group
-              className="col-md-5 mx-auto col-lg-5 mb-3"
-              controlId="formControll"
-            >
-              <Form.Text>
-                <PasswordReqList />
-              </Form.Text>
-            </Form.Group>
+            <hr className="col-md-5 mx-auto col-lg-5 mb-3" />
+            <PasswordReqList />
           </Form>
           <ConsentFormModal
             showConsentForm={showConsentForm}
