@@ -7,7 +7,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <div className="continer">
-      <Container>
+      <Container className="footer">
         <h3>Kontakt</h3>
         <Contact />
         <Container className="text-center">

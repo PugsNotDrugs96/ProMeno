@@ -34,17 +34,23 @@ html {
   min-height: 630px;
 }
 
+.navbar, .footer {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Responsivness containers */
 @media only screen and (max-width: 900px) {
   /* Tablets */
-  .contentContainer {
+  .contentContainer, .navbar, .footer {
     width: 80%;
   }
 }
 
 @media only screen and (max-width: 600px) {
   /* Phones */
-  .contentContainer {
+  .contentContainer, .navbar, .footer {
     width: 100%;
   }
 }
