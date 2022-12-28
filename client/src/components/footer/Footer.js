@@ -2,18 +2,21 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Contact from "./Contact";
+import "./Footer.css";
 
 function Footer() {
   return (
-    <Container className="pt-1 pb-1">
-      <h3 className="pb-3">Kontakt</h3>
-      <Contact />
-      <Container className="pt-1 text-center">
-        <small className="text-muted">
-          © ProMeno, 2022. All rights reserved.
-        </small>
+    <div className="continer">
+      <Container className="footer">
+        <h3>Kontakt</h3>
+        <Contact />
+        <Container className="text-center">
+          <small className="text-muted">
+            © ProMeno, 2022. All rights reserved.
+          </small>
+        </Container>
       </Container>
-    </Container>
+    </div>
   );
 }
 

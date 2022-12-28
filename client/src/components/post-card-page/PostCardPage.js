@@ -5,6 +5,7 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/esm/Col";
 import PostCard from "./PostCard";
+import Breadcrumbs from "../navigation/Breadcrumbs.js";
 
 function PostCardPage() {
   const params = useParams();
@@ -23,35 +24,36 @@ function PostCardPage() {
     fetchData();
   }, [subCategorySlug]);
 
-  console.log(posts);
-
   if (!posts || !subCategory) return null;
 
   return (
-    <Container>
-      <Row>
-        <Col className="catColBody">
-          <Container className="text-center">
-            <h1 className="display-8 fw-bold">{subCategory.name}</h1>
-            <p>{subCategory.description}</p>
-          </Container>
-        </Col>
-        <Col className="catColBody" lg={5}>
-          <Row align="center">
-            {posts.map((post, index) => (
-              <Col>
-                <PostCard
-                  index={index}
-                  post={post}
-                  mainCategorySlug={params.mainCategorySlug}
-                  subCategorySlug={params.subCategorySlug}
-                />
-              </Col>
-            ))}
-            <Col><div className="fillerCol"></div></Col>
-          </Row>
-        </Col>
-      </Row>
+    <Container className="content">
+      <Breadcrumbs />
+      <Col className="subColBody">
+        <div className="text-center">
+          <h1 className="display-8 fw-bold">{subCategory.name}</h1>
+          <h5>{subCategory.description}</h5>
+        </div>
+      </Col>
+      <Col className="subColBody">
+        <Row align="center">
+          {posts.map((post, index) => (
+            <Col key={index}>
+              <PostCard
+                post={post}
+                mainCategorySlug={params.mainCategorySlug}
+                subCategorySlug={params.subCategorySlug}
+              />
+            </Col>
+          ))}
+          <Col>
+            <div className="fillerCol"></div>
+          </Col>
+          <Col>
+            <div className="fillerCol"></div>
+          </Col>
+        </Row>
+      </Col>
     </Container>
   );
 }

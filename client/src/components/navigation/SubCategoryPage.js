@@ -11,7 +11,6 @@ function SubCategoryPage() {
   const params = useParams();
   const { mainCategorySlug } = params;
   const [categories, setCategories] = useState(null);
-  var pixels = window.innerWidth;
 
   useEffect(() => {
     async function fetchData() {
@@ -35,21 +34,23 @@ function SubCategoryPage() {
   };
 
   return (
-    <Container>
+    <Container className="content">
       <Row>
         <Col>
-          <Container className="text-center">
+          <div className="text-center">
             <h1 className="display-8 fw-bold">{category[0].name}</h1>
-            <p>{category[0].description}</p>
-          </Container>
+            <h5>{category[0].description}</h5>
+          </div>
         </Col>
         <Col md={5}>
           <div className="d-grid gap-2">
             {childCategories.map((item, index) => (
               <Button
+                key={index}
                 onClick={() => handleClick(item.slug)}
                 size="lg"
-                className="my-2 py-3">
+                className="my-2 py-3"
+              >
                 {item.name}
               </Button>
             ))}

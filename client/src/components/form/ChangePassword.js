@@ -1,22 +1,33 @@
 import React, { useContext, useRef, useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import {
+  Button,
+  Container,
+  Form,
+  Row,
+  Col,
+  FloatingLabel,
+} from "react-bootstrap";
 import { changePassword } from "../../api/api";
 import UserContext from "../../UserContext";
+import "./ChangePassword.css";
+import PasswordReqList from "./PasswordReqList";
 
 const ChangePassword = () => {
   const { user } = useContext(UserContext);
+
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errMsg, setErrMsg] = useState("");
+  const [responseMsg, setResponseMsg] = useState("");
+
   const responseRef = useRef();
   const userRef = useRef();
   const errRef = useRef();
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [password1, setPassword1] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [errMsg, setErrMsg] = useState("");
-  const [responseMsg, setResponseMsg] = useState("");
+
+  useEffect(() => {
+    setErrMsg("");
+  }, [password1, confirmPassword, currentPassword]);
 
   useEffect(() => {
     userRef.current.focus();
@@ -25,17 +36,16 @@ const ChangePassword = () => {
   useEffect(() => {
     setErrMsg("");
     setResponseMsg("");
-  }, [currentPassword, password1, password2]);
+  }, [currentPassword, password1, confirmPassword]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password1 !== password2) {
+    if (password1 !== confirmPassword) {
       setErrMsg("Lösenorden matchar inte");
       errRef.current.focus();
     } else {
       try {
         const response = await changePassword(user, currentPassword, password1);
-        console.log(response.status);
         if (response.status === 200) {
           setResponseMsg("Ditt lösenord har ändrats");
           responseRef.current.focus();
@@ -45,70 +55,79 @@ const ChangePassword = () => {
           setErrMsg("Inget svar från servern");
         } else if (err.response?.status === 401) {
           setErrMsg("Det nuvarande lösenordet som du angav är felaktigt");
-        } else {
-          setErrMsg("Något gick fel, försök igen eller kontakta vår support");
+        } else if (err?.response.status === 403) {
+          setErrMsg("Lösenordets krav är ej uppfyllda");
         }
         errRef.current.focus();
       }
     }
   };
 
-  useEffect(() => {
-    setErrMsg("");
-  }, [password1, password2, currentPassword]);
-
   return (
-    <Container>
-      <Col>
-        <h1 className="text-center text-info text-black"> Ändra lösenord</h1>{" "}
-      </Col>
+    <Container className="content">
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>
-            <Form.Group
+            <Col>
+              <h1
+                className="text-center text-info text-black"
+                id="pwd-change-1"
+              >
+                {" "}
+                Ändra lösenord
+              </h1>{" "}
+            </Col>
+            <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
               controlId="formBasicEmail"
+              label="Nuvarande lösenord"
             >
               <Form.Control
                 type="password"
                 ref={userRef}
                 autoComplete="off"
                 className="form-control"
-                placeholder="Nuvarande lösenord"
                 name="current-password"
                 onChange={(e) => setCurrentPassword(e.target.value)}
                 value={currentPassword}
                 required
               />
-            </Form.Group>
-            <Form.Group
+            </FloatingLabel>
+            <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
               controlId="formBasicPassword"
+              label="Nytt lösenord"
             >
               <Form.Control
                 type="password"
+                name="password1"
                 className="form-control"
-                placeholder="Nytt lösenord"
                 onChange={(e) => setPassword1(e.target.value)}
                 value={password1}
                 required
               />
-            </Form.Group>
-            <Form.Group
+            </FloatingLabel>
+            <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
-              controlId="formBasicPassword"
+              controlId="formBasicConfirmPassword"
+              label="Upprepa lösenord"
             >
               <Form.Control
                 type="password"
+                name="password2"
                 className="form-control"
-                placeholder="Upprepa lösenord"
-                onChange={(e) => setPassword2(e.target.value)}
-                value={password2}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirmPassword}
                 required
               />
-            </Form.Group>
+            </FloatingLabel>
             <div className="text-center">
-              <Button variant="primary" type="submit">
+              <Button
+                variant="primary"
+                type="submit"
+                className="btn btn-success btn-lg mb-4 gap-3"
+                style={{ width: "18rem" }}
+              >
                 Ändra lösenord
               </Button>
             </div>
@@ -132,6 +151,7 @@ const ChangePassword = () => {
             >
               {responseMsg}
             </p>
+            <PasswordReqList />
           </Form>
         </Col>
       </Row>

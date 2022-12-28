@@ -1,62 +1,65 @@
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
-import ListGroup from "react-bootstrap/ListGroup";
 import Figure from "react-bootstrap/Figure";
-import EvaImg from "../../assets/logo.jpeg";
-import MarieImg from "../../assets/logo.jpeg";
+import EvaImg from "../../assets/eva.jpg";
+import MarieImg from "../../assets/marie.jpg";
 
 function Contact() {
   return (
-    <CardGroup>
-      <Card style={{ alignItems: "center", justifyContent: "center" }}>
+    <CardGroup style={{}}>
+      <Card
+        border="secondary"
+        style={{ alignItems: "center", justifyContent: "center" }}
+      >
         <Card.Header as="h5">Ansvarig forskare </Card.Header>
         <Figure.Image
           className="rounded-circle img-thumbnail"
-          width={171}
-          height={180}
+          width={145}
+          height="auto"
           alt="img"
           src={EvaImg}
         />
-        <Card.Body className="text-center">
-          <Card.Title>Eva</Card.Title>
+        <Card.Body>
+          <Card.Title className="text-center">Eva Elmerstig</Card.Title>
           <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            <medium>
+              &#x2022; Medicine doktor och docent i hälsa och samhälle
+              inriktning sexologi vid Malmö universitet.
+              <br />
+              &#x2022; Kombinerar forskning och undervisning kring sexuell och
+              reproduktiv hälsa med kliniskt arbete som sexolog.
+              <br />
+              &#x2022; Barnmorska och sexolog i grunden.
+            </medium>
           </Card.Text>
         </Card.Body>
-        <ListGroup className="list-group-flush">
-          <ListGroup.Item>Cras justo odio</ListGroup.Item>
-          <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-        </ListGroup>
-        <Card.Body>
-          <Card.Link href="#">Card Link</Card.Link>
-        </Card.Body>
       </Card>
-
-      <Card style={{ alignItems: "center", justifyContent: "center" }}>
+      <Card
+        border="secondary"
+        style={{ alignItems: "center", justifyContent: "center" }}
+      >
         <Card.Header as="h5">Ansvarig forskare </Card.Header>
         <Figure.Image
           className="rounded-circle img-thumbnail"
-          width={171}
-          height={180}
+          width={140}
+          height="auto"
           alt="171x180"
           src={MarieImg}
         />
-        <Card.Body className="text-center">
-          <Card.Title>Marie</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-        </Card.Body>
-        <ListGroup className="list-group-flush">
-          <ListGroup.Item>Cras justo odio</ListGroup.Item>
-          <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-        </ListGroup>
         <Card.Body>
-          <Card.Link href="#">Card Link</Card.Link>
+          <Card.Title className="text-center">Marie Karlsson</Card.Title>
+          <Card.Text>
+            <medium>
+              &#x2022; Disputerat i klinisk psykologi och är legitimerad
+              psykolog och psykoterapeut.
+              <br />
+              &#x2022; Har framförallt jobbat med evidensbaserade psykologiska
+              behandlingsmodeller, vilket mestadels innebär kognitivbeteende
+              terapi (KBT)
+              <br />
+              &#x2022; Jobbar som lektor på Malmö universitet.
+            </medium>
+          </Card.Text>
         </Card.Body>
       </Card>
     </CardGroup>

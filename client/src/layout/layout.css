@@ -1,22 +1,61 @@
-.background {
-  background-image: url("../assets/hero-background-blurred.jpg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 600px;
+/* Fonts */
+:root {
+  font-family: "Vazir", sans-serif !important;
 }
 
-:root {
-  font-family: 'Vazir', sans-serif !important;
+body,
+html {
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+/* Containers */
+.background {
+  /* 2:nd layer */
+  background-image: url("../assets/hero-background-blurred.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
 }
 
 .contentContainer {
+  /* 3:d layer */
   background-color: rgba(255, 255, 255, 0.681);
-  min-height: 600px;
-  padding: 0;
-  padding-bottom: 3rem;
+  height: 100%;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.content {
+  /* 4:th layer */
+  padding-top: 100px;
+  padding-bottom: 50px;
+  min-height: 630px;
+}
+
+.navbar, .footer {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsivness containers */
+@media only screen and (max-width: 900px) {
+  /* Tablets */
+  .contentContainer, .navbar, .footer {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Phones */
+  .contentContainer, .navbar, .footer {
+    width: 100%;
+  }
+}
+
+/* Buttons */
 .btn {
   background-color: #6db2a6;
   border-color: #6db2a6;
@@ -37,7 +76,6 @@
   border-color: #6db2a6;
 }
 
-body,
-html {
-  font-family: Roboto, Helvetica, sans-serif;
+a {
+  color: #436662;
 }

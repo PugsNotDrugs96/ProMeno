@@ -20,7 +20,13 @@ function EmptyPage() {
         Länken kan vara trasig eller så är den inte längre giltig
       </div>
       <div className="text-center mt-5">
-        <Button href="/" variant="primary" type="submit">
+        <Button
+          className="btn btn-success btn-lg mb-4 gap-3"
+          style={{ width: "18rem" }}
+          href="/"
+          variant="primary"
+          type="submit"
+        >
           Tillbaka till startsidan
         </Button>
       </div>

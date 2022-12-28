@@ -16,21 +16,26 @@ export async function getAllUsersDB() {
 }
 
 export async function getUserDB(email) {
-  const user = await UserModel.findOne({ email: email.toLowerCase() });
+  return new Promise((resolve, reject) => {
+    const user = UserModel.findOne({ email: email.toLowerCase() });
 
-  if (!user) {
-    return "Email does not exist";
-  } else if (user.email === email.toLowerCase()) {
-    return user;
-  } else {
-    return "Database error 500";
-  }
+    if (!user) {
+      resolve("Email does not exist");
+      return;
+    } else if (user.email === email.toLowerCase()) {
+      resolve(user);
+      return;
+    } else {
+      resolve("Database error 500");
+      return;
+    }
+  });
 }
 
 export async function registerUserDB(name, email, password) {
   return new Promise(async (resolve, reject) => {
     if (await checkIfEmailExist(email)) {
-      resolve("406");
+      resolve("409");
       return;
     }
     var userModel = new UserModel();
@@ -83,10 +88,8 @@ export async function deleteUserDB(email) {
   return new Promise(async (resolve, reject) => {
     const user = await UserModel.findOneAndDelete({ email: email });
     if (!user) {
-      console.log(1);
       resolve("400");
     } else {
-      console.log(2);
       resolve("200");
     }
   });
@@ -116,5 +119,14 @@ async function checkIfSelected(email) {
   const user = await getUserDB(email);
   if (user.isSelected === true) {
     return true;
+  }
+}
+
+export async function getNameByEmail(email) {
+  const usersData = await getAllUsersDB();
+
+  const user = usersData.find((element) => element.email === email);
+  if (user) {
+    return user.name;
   }
 }

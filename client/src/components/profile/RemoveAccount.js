@@ -1,12 +1,16 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
 import UserContext from "../../UserContext";
-import Container from "react-bootstrap/esm/Container";
-import Col from "react-bootstrap/esm/Col";
-import Row from "react-bootstrap/esm/Row";
-import Form from "react-bootstrap/esm/Form";
-import Button from "react-bootstrap/esm/Button";
-import Modal from "react-bootstrap/Modal";
+import {
+  Container,
+  Col,
+  Row,
+  Form,
+  Button,
+  Modal,
+  FloatingLabel,
+} from "react-bootstrap";
 import { deleteAccount } from "../../api/api";
+import "./Profile.css";
 
 function RemoveAccount() {
   const { user, setUser } = useContext(UserContext);
@@ -50,26 +54,31 @@ function RemoveAccount() {
   };
 
   return (
-    <Container>
-      <Col>
-        <h1 className="text-center text-info text-black">Avregistrera dig</h1>
-        <div className="text-center m-10">
-          <p>
-            Ta bort ditt konto hos ProMeno och avregistrera dig från allt
-            deltagande i vår forskningsstudie. Det här går inte att ångra.
-          </p>
-        </div>
-      </Col>
+    <Container className="content">
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>
-            <Form.Group
+            <Col>
+              <h1
+                className="text-center text-info text-black"
+                id="acc-remove-text"
+              >
+                Avregistrera dig
+              </h1>
+              <div className="text-center col-md-5 mx-auto col-lg-5 mb-3">
+                <p>
+                  Ta bort ditt konto hos ProMeno och avregistrera dig från allt
+                  deltagande i vår forskningsstudie. Det här går inte att ångra.
+                </p>
+              </div>
+            </Col>
+            <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mb-3"
               controlId="formBasicEmail"
+              label="Skriv in ditt lösenord"
             >
               <Form.Control
                 type="password"
-                placeholder="Skriv in ditt lösenord"
                 ref={userRef}
                 autoComplete="off"
                 className="form-control"
@@ -78,10 +87,15 @@ function RemoveAccount() {
                 value={password}
                 required
               />
-            </Form.Group>
+            </FloatingLabel>
 
             <div className="text-center">
-              <Button variant="danger" type="submit">
+              <Button
+                variant="danger"
+                type="submit"
+                className="btn btn-success btn-lg mb-4 gap-3"
+                style={{ width: "20rem" }}
+              >
                 Jag önskar ta bort mitt konto.
               </Button>
             </div>
@@ -100,7 +114,12 @@ function RemoveAccount() {
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Body>Du har inte längre ett konto hos oss på ProMeno</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            variant="primary"
+            onClick={handleClose}
+            className="btn btn-success btn-lg mb-4 gap-3"
+            style={{ width: "18rem" }}
+          >
             OK
           </Button>
         </Modal.Footer>

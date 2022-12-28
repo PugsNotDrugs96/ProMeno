@@ -3,17 +3,18 @@ import SignedOutPage from "../components/signed-out-page/SignedOutPage";
 import ProtectedRoute from "./ProtectedRoute";
 import HomePage from "../components/homePage/HomePage";
 import Login from "../components/login/Login";
-import Register from "../components/not-logged-in-page/Register";
+import Register from "../components/register/Register";
 import Profile from "../components/profile/Profile";
 import PostPage from "../components/post-page/PostPage";
-import ChangePassword from "../components/profile/ChangePassword";
-import ResetPassword from "../components/login/ResetPassword";
-import ForgotPassword from "../components/login/ForgotPassword";
+import ChangePassword from "../components/form/ChangePassword";
+import ResetPassword from "../components/form/ResetPassword";
+import ForgotPassword from "../components/form/ForgotPassword";
 import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
 import SubCategoryPage from "../components/navigation/SubCategoryPage";
-import Page from "../components/Page";
+import AboutUsPage from "../components/signed-out-page/AboutUsPage";
+import CodeValidatorForm from "../components/register/CodeValidatorForm";
 
 function Router() {
   return (
@@ -31,6 +32,7 @@ function Router() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/code" element={<CodeValidatorForm />} />
           <Route
             path="/profile"
             element={
@@ -84,7 +86,7 @@ function Router() {
               </ProtectedRoute>
             }
           />
-          <Route exact path="/page/:slug" element={<Page />} />
+          <Route exact path="/about-us" element={<AboutUsPage />} />
         </Routes>
       </BasicLayout>
     </BrowserRouter>
