@@ -8,6 +8,7 @@ import {
   FloatingLabel,
   Image,
 } from "react-bootstrap";
+import { validateCode } from "../../api/api";
 import Lotus from "../../assets/lotus.svg";
 
 function CodeValidatorForm() {
@@ -26,12 +27,23 @@ function CodeValidatorForm() {
     setErrMsg("");
   }, [code]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (code === "test123") {
-      setSuccess(true);
-    } else {
-      setErrMsg("Felaktig kod");
+    try {
+      const response = await validateCode(code);
+      console.log(response);
+      if (response.status === 200) {
+        setSuccess(true);
+      }
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("Inget svar från servern");
+      } else if (err?.response.status === 401) {
+        setErrMsg("Felaktig kod");
+      } else {
+        setErrMsg("Något gick fel, försök igen eller kontakta vår support");
+      }
+      errRef.current.focus();
     }
   };
 

@@ -85,6 +85,19 @@ export async function validateLink(email, token) {
   return response;
 }
 
+export async function validateCode(code) {
+  const response = await axios.post(
+    "/validate-code",
+    { code },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
+
 export async function resetPassword(email, newPassword) {
   const response = await axios.post(
     "/reset-password",

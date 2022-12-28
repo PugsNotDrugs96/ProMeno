@@ -1,11 +1,21 @@
-import { UserModel } from "./usersDB.js";
-import mongoose from "mongoose";
+import { UserModel, CodeModel } from "./usersDB.js";
 import md5 from "md5";
-import { resolve } from "path";
 
 export async function getAllUsersDB() {
   return new Promise((resolve, reject) => {
     UserModel.find((err, data) => {
+      if (err) {
+        resolve("error");
+      } else {
+        resolve(data);
+      }
+    });
+  });
+}
+
+export async function getCodeDB() {
+  return new Promise((resolve, reject) => {
+    CodeModel.find((err, data) => {
       if (err) {
         resolve("error");
       } else {
@@ -108,7 +118,7 @@ export async function validateLogin(email, password) {
   }
 }
 
-async function checkIfEmailExist(email) {
+export async function checkIfEmailExist(email) {
   const usersData = await getAllUsersDB();
   if (usersData.find((element) => element.email === email)) {
     return true;
@@ -128,5 +138,14 @@ export async function getNameByEmail(email) {
   const user = usersData.find((element) => element.email === email);
   if (user) {
     return user.name;
+  }
+}
+
+export async function validateCode(code) {
+  const codeData = await getCodeDB();
+
+  const codeFound = codeData.find((element) => element.code === code);
+  if (codeFound) {
+    return codeFound;
   }
 }

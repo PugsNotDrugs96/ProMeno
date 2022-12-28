@@ -11,7 +11,6 @@ import {
 import * as usersFilters from "./db/filtersUsersDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
-import { usersDB } from "./db/usersDB.js";
 import jwt from "jsonwebtoken";
 import NodeCache from "node-cache";
 import schema from "./passwordValidator.js";
@@ -276,12 +275,12 @@ app.post("/reset-password-link", async function (req, res) {
   if (!email) {
     return res.status(400).json({ message: "Email is required" });
   }
-  const userExists = usersDB.findUser(email);
+  const userExists = usersFilters.checkIfUserExists(email);
 
   if (!userExists) {
     return res.status(401).json({ message: "User doesn't exist" });
   }
-  const secret = JWT_SECRET + usersDB.getPassword(email);
+  const secret = JWT_SECRET + usersFilters.getPassword(email);
 
   const token = jwt.sign({ email: email }, secret, { expiresIn: "15m" });
   const link = `http://localhost:3000/reset-password/${email}/${token}`;
@@ -328,17 +327,33 @@ app.post("/validate-link", async function (req, res) {
   if (!email | !token) {
     return res.status(401).json({ message: "Invalid link" });
   }
-  const userExists = usersDB.findUser(email);
+  const userExists = usersFilters.checkIfEmailExist(email);
 
   if (!userExists) {
     return res.status(401).json({ message: "Invalid link" });
   }
-  const secret = JWT_SECRET + usersDB.getPassword(email);
+  const secret = JWT_SECRET + usersFilters.getPassword(email);
   try {
     const verify = jwt.verify(token, secret);
     res.status(200).json({ success: `Link is valid` });
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+});
+
+app.post("/validate-code", async function (req, res) {
+  const { code } = req.body;
+  if (!code) {
+    return res.status(401).json({ message: "Invalid code" });
+  }
+
+  const validCode = await usersFilters.validateCode(code);
+  console.log("final result " + validCode);
+
+  if (!validCode) {
+    return res.status(401).json({ message: "Invalid code" });
+  } else {
+    return res.status(200);
   }
 });
 
