@@ -13,7 +13,6 @@ import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
 import SubCategoryPage from "../components/navigation/SubCategoryPage";
-import AboutUsPage from "../components/signed-out-page/AboutUsPage";
 import CodeValidatorForm from "../components/register/CodeValidatorForm";
 
 function Router() {
@@ -86,7 +85,7 @@ function Router() {
               </ProtectedRoute>
             }
           />
-          <Route exact path="/about-us" element={<AboutUsPage />} />
+          <Route exact path="/research/:slug" element={<PostPage />} />
         </Routes>
       </BasicLayout>
     </BrowserRouter>

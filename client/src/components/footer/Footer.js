@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className="continer">
       <Container className="footer">
-        <h3>Kontakt</h3>
+        <h3>Om oss</h3>
         <Contact />
         <Container className="text-center">
           <small className="text-muted">
