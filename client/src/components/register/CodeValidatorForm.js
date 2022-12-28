@@ -1,6 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Container, Form, Col, FloatingLabel } from "react-bootstrap";
+import {
+  Button,
+  Container,
+  Form,
+  Col,
+  FloatingLabel,
+  Image,
+} from "react-bootstrap";
+import Lotus from "../../assets/lotus.svg";
 
 function CodeValidatorForm() {
   const navigate = useNavigate();
@@ -35,11 +43,17 @@ function CodeValidatorForm() {
         <Container className="content">
           <Col>
             <h1 className="text-center text-info text-black" id="reg-text-2">
-              Registrera dig
+              Registrera dig, steg 1
             </h1>
+            <Image
+              src={Lotus}
+              alt="..."
+              width="100"
+              length="100"
+              className="rounded mx-auto d-block"
+            />
           </Col>
           <Form onSubmit={handleSubmit}>
-            <h3 className="text-center">Steg 1</h3>
             <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
               controlId="floatingInput"
@@ -53,7 +67,7 @@ function CodeValidatorForm() {
                 required
               ></Form.Control>
             </FloatingLabel>
-            <div className="text-center mx-auto mt-3 ">
+            <div className="text-center mx-auto mt-4">
               <Button
                 className="btn btn-success btn-lg mb-4 gap-3"
                 style={{ width: "18rem" }}
@@ -71,17 +85,24 @@ function CodeValidatorForm() {
               >
                 Nästa
               </Button>
-              <p
-                ref={errRef}
-                className={
-                  errMsg ? "errmsg text-danger text-center mt-2" : "offscreen"
-                }
-                aria-live="assertive"
-              >
-                {errMsg}
-              </p>
             </div>
           </Form>
+          <div className="text-center col-md-5 mx-auto col-lg-5 mb-3">
+            <p>
+              För att skapa ett konto hos ProMeno så behöver du uppge en kod. Du
+              får den från din vårdcentral eller annan mottagning som erbjudit
+              dig att delta i studien.
+            </p>
+          </div>
+          <p
+            ref={errRef}
+            className={
+              errMsg ? "errmsg text-danger text-center mt-2" : "offscreen"
+            }
+            aria-live="assertive"
+          >
+            {errMsg}
+          </p>
         </Container>
       )}
     </>

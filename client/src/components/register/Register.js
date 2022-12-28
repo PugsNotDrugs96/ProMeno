@@ -77,7 +77,7 @@ function Register() {
           <Form onSubmit={handleSubmit} id="form">
             <Col>
               <h1 className="text-center text-info text-black" id="reg-text-1">
-                Registrera dig
+                Registrera dig, steg 2
               </h1>
             </Col>
             <Image
@@ -86,7 +86,7 @@ function Register() {
               width="100"
               length="100"
               className="rounded mx-auto d-block"
-            ></Image>
+            />
             <FloatingLabel
               className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
               controlId="floatingInput"
