@@ -9,6 +9,7 @@ import {
   fetchCategoryBySlug,
 } from "./api/wp-api.js";
 import * as usersFilters from "./db/filtersUsersDB.js";
+import * as codeFilters from "./db/filtersCodeDB.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
@@ -275,12 +276,12 @@ app.post("/reset-password-link", async function (req, res) {
   if (!email) {
     return res.status(400).json({ message: "Email is required" });
   }
-  const userExists = usersFilters.checkIfUserExists(email);
+  const userExists = await usersFilters.checkIfEmailExist(email);
 
   if (!userExists) {
     return res.status(401).json({ message: "User doesn't exist" });
   }
-  const secret = JWT_SECRET + usersFilters.getPassword(email);
+  const secret = JWT_SECRET + (await usersFilters.getPasswordByEmail(email));
 
   const token = jwt.sign({ email: email }, secret, { expiresIn: "15m" });
   const link = `http://localhost:3000/reset-password/${email}/${token}`;
@@ -327,14 +328,14 @@ app.post("/validate-link", async function (req, res) {
   if (!email | !token) {
     return res.status(401).json({ message: "Invalid link" });
   }
-  const userExists = usersFilters.checkIfEmailExist(email);
+  const userExists = await usersFilters.checkIfEmailExist(email);
 
   if (!userExists) {
     return res.status(401).json({ message: "Invalid link" });
   }
-  const secret = JWT_SECRET + usersFilters.getPassword(email);
+  const secret = JWT_SECRET + (await usersFilters.getPasswordByEmail(email));
   try {
-    const verify = jwt.verify(token, secret);
+    jwt.verify(token, secret);
     res.status(200).json({ success: `Link is valid` });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -347,13 +348,12 @@ app.post("/validate-code", async function (req, res) {
     return res.status(401).json({ message: "Invalid code" });
   }
 
-  const validCode = await usersFilters.validateCode(code);
-  console.log("final result " + validCode);
+  const validCode = await codeFilters.validateCode(code);
 
   if (!validCode) {
     return res.status(401).json({ message: "Invalid code" });
   } else {
-    return res.status(200);
+    return res.status(200).json({ success: `Code is valid!` });
   }
 });
 
@@ -369,15 +369,18 @@ app.post("/reset-password", async function (req, res) {
     });
   }
 
-  const userExists = usersDB.findUser(email);
+  const userExists = await usersFilters.checkIfEmailExist(email);
 
   if (!userExists) {
     return res.status(401).json({ message: "User doesn't exist" });
   }
 
-  const isPasswordChanged = usersDB.changePassword(email, newPassword);
+  const isPasswordChanged = await usersFilters.updatePasswordDB(
+    email,
+    newPassword
+  );
 
-  if (isPasswordChanged) {
+  if (isPasswordChanged == "200") {
     res
       .status(200)
       .json({ success: `Password for user ${email} has changed!` });

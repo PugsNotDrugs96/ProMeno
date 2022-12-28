@@ -31,7 +31,6 @@ function CodeValidatorForm() {
     event.preventDefault();
     try {
       const response = await validateCode(code);
-      console.log(response);
       if (response.status === 200) {
         setSuccess(true);
       }

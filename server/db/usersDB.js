@@ -24,14 +24,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const codeSchema = new mongoose.Schema({
-  code: {
-    type: String,
-    required: [true, "Code is required"],
-  },
-});
-
 const UserModel = mongoose.model("Users", userSchema);
-const CodeModel = mongoose.model("Code", codeSchema);
 
-export { UserModel, CodeModel };
+export { UserModel };
