@@ -2,23 +2,34 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCategories } from "../../api/api";
 import { Button, Container, Row, Col, Spinner } from "react-bootstrap";
+import ErrorAlert from "../ErrorAlert";
 
 function SubCategoryPage() {
   const navigate = useNavigate();
   const params = useParams();
   const { mainCategorySlug } = params;
   const [categories, setCategories] = useState(null);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       setLoading(true);
-      const categories = await getCategories();
-      setCategories(categories);
-      setLoading(false);
+      try {
+        const categories = await getCategories();
+        setCategories(categories);
+        setLoading(false);
+      } catch (err) {
+        console.warn(err);
+        setError(true);
+      }
     }
     fetchData();
   }, []);
+
+  if (error) {
+    return <ErrorAlert type="categories" />;
+  }
 
   if (loading) {
     return (

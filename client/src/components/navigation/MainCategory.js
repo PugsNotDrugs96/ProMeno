@@ -2,21 +2,32 @@ import React, { useEffect, useState } from "react";
 import { getCategories } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { Container, Button, Spinner } from "react-bootstrap";
+import ErrorAlert from "../ErrorAlert";
 
 function MainCategory() {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      setLoading(true);
-      const categories = await getCategories();
-      setCategories(categories);
-      setLoading(false);
+      try {
+        setLoading(true);
+        const categories = await getCategories();
+        setCategories(categories);
+        setLoading(false);
+      } catch (err) {
+        console.warn(err);
+        setError(true);
+      }
     }
     fetchData();
   }, []);
+
+  if (error) {
+    return <ErrorAlert type="categories" />;
+  }
 
   if (loading) {
     return (
