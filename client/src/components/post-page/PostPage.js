@@ -2,7 +2,8 @@ import "./PostPage.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getPostBySlug } from "../../api/api";
-import { Container, Alert, Spinner } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
+import ErrorAlert from "../ErrorAlert";
 
 function PostPage() {
   const params = useParams();
@@ -28,21 +29,7 @@ function PostPage() {
   }, [slug]);
 
   if (error) {
-    return (
-      <Container className="postContainer py-4">
-        <Alert
-          variant="light"
-          style={{
-            background: "transparent",
-            border: "none",
-            padding: "5rem",
-            fontSize: "26pt",
-          }}
-        >
-          Sidan kunde inte hittas
-        </Alert>
-      </Container>
-    );
+    return <ErrorAlert type="article" />;
   }
 
   if (loading) {

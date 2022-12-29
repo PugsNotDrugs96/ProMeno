@@ -23,12 +23,16 @@ export async function getPostBySlug(slug) {
 }
 
 export async function getCategories() {
-  const response = await axios.get("/categories");
+  const response = await axios.get("/categories").catch((err) => {
+    throw new Error(err);
+  });
   return response.data;
 }
 
 export async function getCategoryBySlug(slug) {
-  const response = await axios.get(`/categories/${slug}`);
+  const response = await axios.get(`/categories/${slug}`).catch((err) => {
+    throw new Error(err);
+  });
   return response.data;
 }
 
