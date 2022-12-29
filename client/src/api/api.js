@@ -10,11 +10,15 @@ export async function getPostsByCategory(slug) {
 }
 
 export async function getPostBySlug(slug) {
-  const response = await axios.get(`/posts/${slug}`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await axios
+    .get(`/posts/${slug}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
   return response.data;
 }
 
