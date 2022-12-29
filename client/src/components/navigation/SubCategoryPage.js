@@ -1,24 +1,38 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCategories } from "../../api/api";
-import Button from "react-bootstrap/esm/Button";
-import Container from "react-bootstrap/esm/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/esm/Col";
+import { Button, Container, Row, Col, Spinner } from "react-bootstrap";
 
 function SubCategoryPage() {
   const navigate = useNavigate();
   const params = useParams();
   const { mainCategorySlug } = params;
   const [categories, setCategories] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true);
       const categories = await getCategories();
       setCategories(categories);
+      setLoading(false);
     }
     fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <Spinner
+        style={{
+          margin: "5rem",
+        }}
+        animation="border"
+        role="status"
+      >
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
+  }
 
   if (!categories) return null;
 

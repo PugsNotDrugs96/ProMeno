@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { getCategories } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import Container from "react-bootstrap/esm/Container";
-import Button from "react-bootstrap/esm/Button";
+import { Container, Button, Spinner } from "react-bootstrap";
 
 function MainCategory() {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true);
       const categories = await getCategories();
       setCategories(categories);
+      setLoading(false);
     }
     fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <Spinner
+        style={{
+          margin: "5rem",
+        }}
+        animation="border"
+        role="status"
+      >
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
+  }
 
   if (!categories) return null;
 
