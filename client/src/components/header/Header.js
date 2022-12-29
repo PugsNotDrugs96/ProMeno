@@ -1,11 +1,9 @@
-import { Link } from "react-router-dom";
-import UserContext from "../../UserContext";
-import { useContext } from "react";
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Image from "react-bootstrap/Image";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Container, Navbar, Image } from "react-bootstrap";
 import Lotus from "../../assets/lotus.svg";
+import UserContext from "../../UserContext";
 
 function Header() {
   const { user, setUser } = useContext(UserContext);
@@ -35,7 +33,7 @@ function Header() {
                   alt="profile-logo"
                 ></img>
               </button>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu dropdown-menu-end">
                 <li>
                   <Link className="dropdown-item" to="/Profile">
                     Mina sidor
