@@ -35,6 +35,7 @@ function ResetPassword() {
       const response = await validateLink(email, token);
       if (response.status === 200) {
         setIsValidLink(true);
+        setErrMsg("");
       }
     })();
   }, [email, token]);

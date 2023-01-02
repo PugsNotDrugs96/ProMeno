@@ -11,7 +11,7 @@ function SignedOutPage() {
   const subtitle = "Vår forskningsstudie om klimakteriet";
 
   const handleClick = () => {
-    navigate(`/about-us`);
+    navigate(`/research/:om-studien`);
   };
 
   return (
