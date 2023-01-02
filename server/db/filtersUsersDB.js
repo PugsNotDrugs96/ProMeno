@@ -1,7 +1,5 @@
 import { UserModel } from "./usersDB.js";
-import mongoose from "mongoose";
 import md5 from "md5";
-import { resolve } from "path";
 
 export async function getAllUsersDB() {
   return new Promise((resolve, reject) => {
@@ -108,7 +106,7 @@ export async function validateLogin(email, password) {
   }
 }
 
-async function checkIfEmailExist(email) {
+export async function checkIfEmailExist(email) {
   const usersData = await getAllUsersDB();
   if (usersData.find((element) => element.email === email)) {
     return true;
@@ -128,5 +126,14 @@ export async function getNameByEmail(email) {
   const user = usersData.find((element) => element.email === email);
   if (user) {
     return user.name;
+  }
+}
+
+export async function getPasswordByEmail(email) {
+  const usersData = await getAllUsersDB();
+
+  const user = usersData.find((element) => element.email === email);
+  if (user) {
+    return user.password;
   }
 }
