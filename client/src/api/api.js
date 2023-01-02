@@ -10,21 +10,29 @@ export async function getPostsByCategory(slug) {
 }
 
 export async function getPostBySlug(slug) {
-  const response = await axios.get(`/posts/${slug}`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await axios
+    .get(`/posts/${slug}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
   return response.data;
 }
 
 export async function getCategories() {
-  const response = await axios.get("/categories");
+  const response = await axios.get("/categories").catch((err) => {
+    throw new Error(err);
+  });
   return response.data;
 }
 
 export async function getCategoryBySlug(slug) {
-  const response = await axios.get(`/categories/${slug}`);
+  const response = await axios.get(`/categories/${slug}`).catch((err) => {
+    throw new Error(err);
+  });
   return response.data;
 }
 

@@ -101,8 +101,8 @@ function CodeValidatorForm() {
           <div className="text-center col-md-5 mx-auto col-lg-5 mb-3">
             <p>
               För att skapa ett konto hos ProMeno så behöver du uppge en kod. Du
-              får den från din vårdcentral eller annan mottagning som erbjudit
-              dig att delta i studien.
+              får den från din vårdcentral eller annan mottagning som har
+              erbjudit dig att delta i studien.
             </p>
           </div>
           <p
