@@ -1,8 +1,8 @@
-<img width="325" alt="logo" src="https://user-images.githubusercontent.com/76013501/207142059-ca9493f7-a070-4ac7-b2bb-675c327ed164.png">
-
 # [ProMeno](https://promeno.se)
 
 [![](https://img.shields.io/github/v/release/PugsNotDrugs96/ProMenu)](https://github.com/PugsNotDrugs96/ProMenu/releases)
+
+<img width="291" alt="Skärmavbild_2023-01-02_kl _14 41 24-removebg-preview" src="https://user-images.githubusercontent.com/76013501/210239218-b5b53268-8c03-4cb3-8229-7258dd23739b.png">
 
 ## What is ProMeno?
 
