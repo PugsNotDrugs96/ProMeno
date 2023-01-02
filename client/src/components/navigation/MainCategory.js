@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCategories } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import { Container, Button, Spinner, Alert } from "react-bootstrap";
+import { Container, Button, Spinner } from "react-bootstrap";
 import ErrorAlert from "../ErrorAlert";
 
 function MainCategory() {
