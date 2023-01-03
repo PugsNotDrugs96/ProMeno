@@ -1,12 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Button,
-  Container,
-  Form,
-  FloatingLabel,
-  Image,
-} from "react-bootstrap";
+import { Button, Container, Form, FloatingLabel, Image } from "react-bootstrap";
 import { validateCode } from "../../api/api";
 import Lotus from "../../assets/lotus.svg";
 
@@ -52,16 +46,16 @@ function CodeValidatorForm() {
       ) : (
         <Container className="content">
           <Image
-              src={Lotus}
-              alt="..."
-              width="100"
-              length="100"
-              className="mx-auto d-block"
-            />
-            <h1 className="text-center" id="reg-text-2">
-              Registrera dig
-            </h1>
-            <h3 className="text-center">Steg 1</h3>
+            src={Lotus}
+            alt="..."
+            width="100"
+            length="100"
+            className="mx-auto d-block"
+          />
+          <h1 className="text-center" id="reg-text-2">
+            Registrera dig
+          </h1>
+          <h3 className="text-center">Steg 1</h3>
           <Form onSubmit={handleSubmit}>
             <FloatingLabel
               className="col-sm-7 col-10 mx-auto mt-3 mb-3"
@@ -83,7 +77,7 @@ function CodeValidatorForm() {
               >
                 Nästa
               </Button>
-              </div>
+            </div>
           </Form>
           <div className="text-center col-sm-7 col-10 mx-auto mb-3">
             <p>

@@ -14,7 +14,13 @@ function Header() {
       <Container>
         <Link to={logoLink}>
           <Navbar.Brand className="d-inline-block align-top">
-            <Image className="mb-2" alt="" src={Lotus} width="50px" height="50px" />
+            <Image
+              className="mb-2"
+              alt=""
+              src={Lotus}
+              width="50px"
+              height="50px"
+            />
             <span className="fs-5">ProMeno</span>
           </Navbar.Brand>
         </Link>

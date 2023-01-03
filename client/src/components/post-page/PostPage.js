@@ -17,7 +17,6 @@ function PostPage() {
       setLoading(true);
       try {
         const post = await getPostBySlug(slug);
-        console.log(post);
         setPost(post);
         setLoading(false);
       } catch (err) {
@@ -51,11 +50,11 @@ function PostPage() {
   return (
     <Container className="postContainer py-4">
       <h1
-        className="postTitle py-3 text-center"
+        className="postTitle py-3 text-center mt-5"
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
       />
       <p
-        className="postBody px-5"
+        className="postBody px-3 lead mb-4"
         dangerouslySetInnerHTML={{ __html: post.content.rendered }}
       />
     </Container>

@@ -12,6 +12,7 @@ function PostCard(props) {
     <Card
       className="my-4 subCatCard"
       key={index}
+      style={{ height: "13.5rem" }}
       onClick={() => {
         navigate(`/${mainCategorySlug}/${subCategorySlug}/${slug}`);
       }}

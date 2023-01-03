@@ -22,7 +22,7 @@ function RemoveAccount() {
 
   const handleClose = () => {
     setShow(false);
-    setUser("");
+    setUser(null);
   };
   const handleShow = () => setShow(true);
 

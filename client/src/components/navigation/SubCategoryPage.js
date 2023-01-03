@@ -64,11 +64,11 @@ function SubCategoryPage() {
         <Col>
           <div className="text-center">
             <h1 className="display-8 fw-bold">{category[0].name}</h1>
-            <h5>{category[0].description}</h5>
+            <p className="lead my-4 m-4">{category[0].description}</p>
           </div>
         </Col>
         <Col md={5}>
-          <div className="d-grid gap-2">
+          <div className="d-grid gap-2 ">
             {childCategories.map((item, index) => (
               <Button
                 key={index}

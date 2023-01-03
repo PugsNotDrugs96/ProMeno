@@ -34,7 +34,7 @@ function Login() {
     try {
       const response = await loginUser(email, password);
       if (response.status === 200) {
-        setUser(email, password);
+        setUser(email);
         setEmail("");
         setPassword("");
         setSuccess(true);

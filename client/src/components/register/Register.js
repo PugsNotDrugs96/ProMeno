@@ -51,7 +51,7 @@ function Register() {
     try {
       const response = await registerUser(name, email, password);
       if (response.status === 200) {
-        setUser(email, password);
+        setUser(email);
         setSuccess(true);
       }
     } catch (err) {
