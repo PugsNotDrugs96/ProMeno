@@ -74,21 +74,22 @@ function Register() {
         navigate("/home")
       ) : (
         <Container className="content">
-          <Form onSubmit={handleSubmit} id="form">
-            <Col>
-              <h1 className="text-center text-info text-black" id="reg-text-1">
-                Registrera dig, steg 2
-              </h1>
-            </Col>
-            <Image
+          <Image
               src={Lotus}
               alt="..."
               width="100"
               length="100"
               className="rounded mx-auto d-block"
             />
+          <Form onSubmit={handleSubmit} id="form">
+            <Col>
+              <h1 className="text-center text-info text-black" id="reg-text-1">
+                Registrera dig
+              </h1>
+              <h3 className="text-center">Steg 2</h3>
+            </Col>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingInput"
               label="Namn"
             >
@@ -105,7 +106,7 @@ function Register() {
               />
             </FloatingLabel>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingInput"
               label="Email"
             >
@@ -120,7 +121,7 @@ function Register() {
               />
             </FloatingLabel>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingPassword"
               label="Lösenord"
             >
@@ -134,7 +135,7 @@ function Register() {
               />
             </FloatingLabel>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingPassword"
               label="Bekräfta lösenord"
             >
@@ -150,9 +151,7 @@ function Register() {
 
             <div className="text-center">
               <Button
-                className="btn btn-success btn-lg mb-4 gap-3"
-                style={{ width: "18rem" }}
-                variant="primary"
+                className="btn-success btn-lg col-10 col-sm-7 col-10 mb-3 mx-auto"
                 type="submit"
               >
                 Registrera

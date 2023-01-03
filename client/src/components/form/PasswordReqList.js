@@ -4,17 +4,11 @@ import { Form } from "react-bootstrap";
 function PasswordReqList() {
   return (
     <Form.Group
-      className="col-md-5 mx-auto col-lg-5 mb-3"
+      className="col-sm-7 col-10 mx-auto mt-3 mb-3"
       controlId="formControll"
     >
       <Form.Text>
-        <ul>
-          <li>Minst 8 karaktärer</li>
-          <li>Minst en storbokstav</li>
-          <li>Minst en liten bokstav</li>
-          <li>Minst en siffra</li>
-          <li>Minst en av specialtecken e.x ! ? @ #</li>
-        </ul>
+        <p><i>Minst 8 karaktärer, minst en stor bokstav, minst en liten bokstav, minst en siffra och minst ett specialtecken</i></p>
       </Form.Text>
     </Form.Group>
   );

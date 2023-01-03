@@ -72,7 +72,7 @@ function CodeValidatorForm() {
             </FloatingLabel>
             <div class="d-flex justify-content-center gap-2 mb-4">
               <Button
-                className="btn btn-success btn-lg col-10 col-sm-7 col-10 mx-auto"
+                className="btn-success btn-lg col-10 col-sm-7 col-10 mx-auto"
                 type="submit"
               >
                 Nästa
