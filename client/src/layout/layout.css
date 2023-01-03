@@ -8,6 +8,15 @@ html {
   font-family: Roboto, Helvetica, sans-serif;
 }
 
+/* Navbar */
+img.mb-2 {
+  margin-right: 10px;
+}
+
+#headnav {
+  padding: 0px;
+}
+
 /* Containers */
 .background {
   /* 2:nd layer */
