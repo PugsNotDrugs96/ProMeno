@@ -1,18 +1,18 @@
 [
   {
-    "id": 22,
-    "count": 0,
-    "description": "",
-    "link": "https://data.promeno.se/category/om-klimakteriet/vad-hander-i-kroppen/",
-    "name": "Vad händer i kroppen?",
-    "slug": "vad-hander-i-kroppen",
+    "id": 30,
+    "count": 2,
+    "description": "Klimakteriet präglas hos många kvinnor av kroppsliga och psykologiska besvär som kan leda till sömnsvårigheter, depressiva känslor och nedsatt arbetsförmåga. Hormonpreparat kan lindra besvären men sunda levnadsvanor har stor betydelse för att obehagen ska minska.",
+    "link": "https://data.promeno.se/category/om-klimakteriet/allman-information/",
+    "name": "Allmän information",
+    "slug": "allman-information",
     "taxonomy": "category",
     "parent": 21,
     "meta": [],
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/22"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/30"
         }
       ],
       "collection": [
@@ -33,7 +33,7 @@
       ],
       "wp:post_type": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=22"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=30"
         }
       ],
       "curies": [
@@ -46,19 +46,65 @@
     }
   },
   {
-    "id": 3,
+    "id": 31,
+    "count": 1,
+    "description": "Här hittar du forskning som är gjord på området klimakteriet. Läs mer om vad som fortfarande är okänt när det kommer till kroppens reaktioner, och ny forskning på området. ",
+    "link": "https://data.promeno.se/category/om-klimakteriet/forskning/",
+    "name": "Forskning",
+    "slug": "forskning",
+    "taxonomy": "category",
+    "parent": 21,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/31"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/21"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=31"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
     "count": 0,
-    "description": "",
-    "link": "https://data.promeno.se/category/behandling/",
-    "name": "Behandling",
-    "slug": "behandling",
+    "description": "Klimakteriet är en naturlig del av åldrandet. Det skiljer sig mycket mellan personer vilka symtom man får och hur det upplevs. En del känner knappt av det, andra påverkas mycket.",
+    "link": "https://data.promeno.se/category/om-klimakteriet/",
+    "name": "Om klimakteriet",
+    "slug": "om-klimakteriet",
     "taxonomy": "category",
     "parent": 0,
     "meta": [],
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/21"
         }
       ],
       "collection": [
@@ -73,7 +119,53 @@
       ],
       "wp:post_type": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=3"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=21"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "count": 2,
+    "description": "Terapi eller behandling är sjukvårdens åtgärder riktade till en patient med hälsoproblem. Om du mår psykiskt dåligt kan det hjälpa att gå i psykoterapi. En behandling kan pågå under en kortare eller längre tid.\r\n\r\nHär kan du läsa mer om olika terapiformer som finns.",
+    "link": "https://data.promeno.se/category/behandling/terapi/",
+    "name": "Terapi",
+    "slug": "terapi",
+    "taxonomy": "category",
+    "parent": 3,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/29"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=29"
         }
       ],
       "curies": [
@@ -87,8 +179,8 @@
   },
   {
     "id": 11,
-    "count": 2,
-    "description": "",
+    "count": 6,
+    "description": "Klimakteriet upplevs på olika sätt från person till person. De flesta känner någon sorts obehag i samband med klimakteriet. Det kan vara lätta eller svårare besvär. Det finns många olika fysiska besvär som påverkar kroppen på olika sätt. De hänger ihop med de psykiska och sociala.\r\n\r\nLäs mer om olika symptom du kan uppleva här.",
     "link": "https://data.promeno.se/category/symptom/fysiska-symptom/",
     "name": "Fysiska symptom",
     "slug": "fysiska-symptom",
@@ -132,187 +224,9 @@
     }
   },
   {
-    "id": 15,
-    "count": 0,
-    "description": "",
-    "link": "https://data.promeno.se/category/behandling/cbt/",
-    "name": "Cognitive Behavioral Therapy (CBT)",
-    "slug": "cbt",
-    "taxonomy": "category",
-    "parent": 3,
-    "meta": [],
-    "_links": {
-      "self": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/15"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
-        }
-      ],
-      "about": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
-        }
-      ],
-      "up": [
-        {
-          "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
-        }
-      ],
-      "wp:post_type": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=15"
-        }
-      ],
-      "curies": [
-        {
-          "name": "wp",
-          "href": "https://api.w.org/{rel}",
-          "templated": true
-        }
-      ]
-    }
-  },
-  {
-    "id": 23,
-    "count": 0,
-    "description": "",
-    "link": "https://data.promeno.se/category/om-klimakteriet/nar-ska-jag-soka-hjalp/",
-    "name": "När ska jag söka hjälp?",
-    "slug": "nar-ska-jag-soka-hjalp",
-    "taxonomy": "category",
-    "parent": 21,
-    "meta": [],
-    "_links": {
-      "self": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/23"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
-        }
-      ],
-      "about": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
-        }
-      ],
-      "up": [
-        {
-          "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/21"
-        }
-      ],
-      "wp:post_type": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=23"
-        }
-      ],
-      "curies": [
-        {
-          "name": "wp",
-          "href": "https://api.w.org/{rel}",
-          "templated": true
-        }
-      ]
-    }
-  },
-  {
-    "id": 1,
-    "count": 2,
-    "description": "",
-    "link": "https://data.promeno.se/category/symptom/",
-    "name": "Symptom",
-    "slug": "symptom",
-    "taxonomy": "category",
-    "parent": 0,
-    "meta": [],
-    "_links": {
-      "self": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/1"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
-        }
-      ],
-      "about": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
-        }
-      ],
-      "wp:post_type": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=1"
-        }
-      ],
-      "curies": [
-        {
-          "name": "wp",
-          "href": "https://api.w.org/{rel}",
-          "templated": true
-        }
-      ]
-    }
-  },
-  {
-    "id": 16,
-    "count": 0,
-    "description": "",
-    "link": "https://data.promeno.se/category/behandling/act/",
-    "name": "Acceptance and Commitment Therapy (ACT)",
-    "slug": "act",
-    "taxonomy": "category",
-    "parent": 3,
-    "meta": [],
-    "_links": {
-      "self": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/16"
-        }
-      ],
-      "collection": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
-        }
-      ],
-      "about": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
-        }
-      ],
-      "up": [
-        {
-          "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
-        }
-      ],
-      "wp:post_type": [
-        {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=16"
-        }
-      ],
-      "curies": [
-        {
-          "name": "wp",
-          "href": "https://api.w.org/{rel}",
-          "templated": true
-        }
-      ]
-    }
-  },
-  {
     "id": 19,
-    "count": 2,
-    "description": "",
+    "count": 5,
+    "description": "Psykisk ohälsa under förklimakteriet och klimakteriet är faktiskt ett så pass utbrett problem att vissa forskare har börjat kalla det för ”klimakterieångest”. Symptomen beskrivs som betydande och bestående och skiljer sig så pass mycket från andra diagnoser av depression att de förtjänar en egen benämning.",
     "link": "https://data.promeno.se/category/symptom/psykiska-symptom/",
     "name": "Psykiska symptom",
     "slug": "psykiska-symptom",
@@ -356,9 +270,95 @@
     }
   },
   {
+    "id": 28,
+    "count": 1,
+    "description": "Det finns många sätt att må bättre. Här listar vi andra behandlingar som finns att välja på, allt för att du ska hitta till just ditt välmående. ",
+    "link": "https://data.promeno.se/category/behandling/andra-behandlingar/",
+    "name": "Andra behandlingar",
+    "slug": "andra-behandlingar",
+    "taxonomy": "category",
+    "parent": 3,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/28"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "up": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=28"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "count": 0,
+    "description": "Det finns olika behandlingar mot klimakteriebesvär, bland annat kan östrogen ges som tabletter, gel eller plåster. Under klimakteriet kan man använda olika typer av preventivmedel. \r\n\r\nHär kan du läsa mer om olika behandlingar som finns och hur de eventuellt kan hjälpa dig.",
+    "link": "https://data.promeno.se/category/behandling/",
+    "name": "Behandling",
+    "slug": "behandling",
+    "taxonomy": "category",
+    "parent": 0,
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/3"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+        }
+      ],
+      "wp:post_type": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=3"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
     "id": 20,
     "count": 1,
-    "description": "",
+    "description": "Ibland kommer lusten långsammare och det kan behövas mer tid, fler smekningar och nya spännande sätt att beröra och/eller beröras. Klimakteriet kan innebära att man får torra och sköra slemhinnor i underlivet.\r\n\r\nHär kan du läsa mer om olika sexuella symptom som är kopplade till klimakteriet. Du hittar även metoder och hjälpmedel gällande ditt sexuella liv.",
     "link": "https://data.promeno.se/category/symptom/sexuella-symptom/",
     "name": "Sexuella symptom",
     "slug": "sexuella-symptom",
@@ -402,19 +402,19 @@
     }
   },
   {
-    "id": 21,
-    "count": 0,
-    "description": "",
-    "link": "https://data.promeno.se/category/om-klimakteriet/",
-    "name": "Om klimakteriet",
-    "slug": "om-klimakteriet",
+    "id": 1,
+    "count": 5,
+    "description": "Besvären är framför allt kopplade till svängningar i hormonnivåer, när östrogennivåer är stabila mår vi oftast bra men svängningar påverkar oss med olika typer av symtom som besvär. Vid en viss ålder blir hormonproduktionen oregelbunden för att sedan sjunka- då kan vi få besvär som vallningar, psykiska symtom och sömnsvårigheter.\r\n\r\nHär kan du lära dig mer om olika besvär som personer i klimakteriet kan uppleva och vad som egentligen händer i kroppen.",
+    "link": "https://data.promeno.se/category/symptom/",
+    "name": "Symptom",
+    "slug": "symptom",
     "taxonomy": "category",
     "parent": 0,
     "meta": [],
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories/21"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories/1"
         }
       ],
       "collection": [
@@ -429,7 +429,7 @@
       ],
       "wp:post_type": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=21"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=1"
         }
       ],
       "curies": [
