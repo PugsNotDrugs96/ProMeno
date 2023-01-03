@@ -57,7 +57,7 @@ function PostCardPage() {
       <Col className="subColBody">
         <div className="text-center">
           <h1 className="display-8 fw-bold">{subCategory.name}</h1>
-          <h5>{subCategory.description}</h5>
+          <p className="lead my-4">{subCategory.description}</p>
         </div>
       </Col>
       <Col className="subColBody">
