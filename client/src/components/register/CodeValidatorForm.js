@@ -4,7 +4,6 @@ import {
   Button,
   Container,
   Form,
-  Col,
   FloatingLabel,
   Image,
 } from "react-bootstrap";
@@ -52,21 +51,20 @@ function CodeValidatorForm() {
         navigate("/register")
       ) : (
         <Container className="content">
-          <Col>
-            <h1 className="text-center text-info text-black" id="reg-text-2">
-              Registrera dig, steg 1
-            </h1>
-            <Image
+          <Image
               src={Lotus}
               alt="..."
               width="100"
               length="100"
-              className="rounded mx-auto d-block"
+              className="mx-auto d-block"
             />
-          </Col>
+            <h1 className="text-center" id="reg-text-2">
+              Registrera dig
+            </h1>
+            <h3 className="text-center">Steg 1</h3>
           <Form onSubmit={handleSubmit}>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingInput"
               label="Registeringskod"
             >
@@ -78,27 +76,16 @@ function CodeValidatorForm() {
                 required
               ></Form.Control>
             </FloatingLabel>
-            <div className="text-center mx-auto mt-4">
+            <div class="d-flex justify-content-center gap-2 mb-4">
               <Button
-                className="btn btn-success btn-lg mb-4 gap-3"
-                style={{ width: "18rem" }}
-                href="/"
-                variant="secondary"
-                type="submit"
-              >
-                Tillbaka
-              </Button>
-              <Button
-                className="btn btn-success btn-lg mb-4 gap-3"
-                style={{ width: "18rem" }}
-                variant="primary"
+                className="btn btn-success btn-lg col-10 col-sm-7 col-10 mx-auto"
                 type="submit"
               >
                 Nästa
               </Button>
-            </div>
+              </div>
           </Form>
-          <div className="text-center col-md-5 mx-auto col-lg-5 mb-3">
+          <div className="text-center col-sm-7 col-10 mx-auto mb-3">
             <p>
               För att skapa ett konto hos ProMeno så behöver du uppge en kod. Du
               får den från din vårdcentral eller annan mottagning som har
