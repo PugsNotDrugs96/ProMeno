@@ -7,6 +7,7 @@ import {
   FloatingLabel,
   Image,
 } from "react-bootstrap";
+import { validateCode } from "../../api/api";
 import Lotus from "../../assets/lotus.svg";
 
 function CodeValidatorForm() {
@@ -25,12 +26,22 @@ function CodeValidatorForm() {
     setErrMsg("");
   }, [code]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    if (code === "test123") {
-      setSuccess(true);
-    } else {
-      setErrMsg("Felaktig kod");
+    try {
+      const response = await validateCode(code);
+      if (response.status === 200) {
+        setSuccess(true);
+      }
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("Inget svar från servern");
+      } else if (err?.response.status === 401) {
+        setErrMsg("Felaktig kod");
+      } else {
+        setErrMsg("Något gick fel, försök igen eller kontakta vår support");
+      }
+      errRef.current.focus();
     }
   };
 
@@ -77,8 +88,8 @@ function CodeValidatorForm() {
           <div className="text-center col-sm-7 col-10 mx-auto mb-3">
             <p>
               För att skapa ett konto hos ProMeno så behöver du uppge en kod. Du
-              får den från din vårdcentral eller annan mottagning som erbjudit
-              dig att delta i studien.
+              får den från din vårdcentral eller annan mottagning som har
+              erbjudit dig att delta i studien.
             </p>
           </div>
           <p
