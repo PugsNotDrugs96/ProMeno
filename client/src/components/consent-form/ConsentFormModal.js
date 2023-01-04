@@ -1,4 +1,4 @@
-import "./ConsentForm.css";
+import "./consentForm.css";
 import React from "react";
 import ConsentForm from "./ConsentForm";
 import { Button, Modal } from "react-bootstrap";

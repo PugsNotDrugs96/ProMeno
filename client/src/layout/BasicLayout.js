@@ -3,7 +3,7 @@ import "./layout.css";
 import Container from "react-bootstrap/esm/Container";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
-import GoBackBtn from "../components/navigation/GoBackBtn";
+import GoBackBtn from "../components/navigation/go-back-btn/GoBackBtn";
 import { useLocation } from "react-router-dom";
 
 /**

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import "./Register.css";
+import "./register.css";
 import { Button, Container, Form, Col, FloatingLabel } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../UserContext";
 import { Link } from "react-router-dom";
 import { registerUser } from "../../api/api";
-import PasswordReqList from "../form/PasswordReqList";
-import ConsentFormModal from "../consentForm/ConsentFormModal";
+import PasswordReqInfo from "../form/PasswordReqInfo";
+import ConsentFormModal from "../consent-form/ConsentFormModal";
 
 function Register() {
   const navigate = useNavigate();
@@ -136,7 +136,7 @@ function Register() {
                 required
               />
             </FloatingLabel>
-            <PasswordReqList />
+            <PasswordReqInfo />
 
             <div className="text-center">
               <Button

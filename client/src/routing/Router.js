@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignedOutPage from "../components/signed-out-page/SignedOutPage";
+import StartPage from "../components/start-page/StartPage";
 import ProtectedRoute from "./ProtectedRoute";
-import HomePage from "../components/homePage/HomePage";
+import HomePage from "../components/home-page/HomePage";
 import Login from "../components/login/Login";
 import Register from "../components/register/Register";
 import Profile from "../components/profile/Profile";
@@ -12,15 +12,15 @@ import ForgotPassword from "../components/form/ForgotPassword";
 import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
-import SubCategoryPage from "../components/navigation/SubCategoryPage";
-import CodeValidatorForm from "../components/register/CodeValidatorForm";
+import SubCategoryPage from "../components/categories/SubCategoryPage";
+import RegisterCode from "../components/register/RegisterCode";
 
 function Router() {
   return (
     <BrowserRouter>
       <BasicLayout>
         <Routes>
-          <Route path="/" element={<SignedOutPage />} />
+          <Route path="/" element={<StartPage />} />
           <Route
             path="/home"
             element={
@@ -31,7 +31,7 @@ function Router() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/code" element={<CodeValidatorForm />} />
+          <Route path="/code" element={<RegisterCode />} />
           <Route
             path="/profile"
             element={

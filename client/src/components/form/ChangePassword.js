@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap";
 import { changePassword } from "../../api/api";
 import UserContext from "../../UserContext";
-import PasswordReqList from "./PasswordReqList";
+import PasswordReqInfo from "./PasswordReqInfo";
 
 const ChangePassword = () => {
   const { user } = useContext(UserContext);
@@ -147,7 +147,7 @@ const ChangePassword = () => {
             >
               {responseMsg}
             </p>
-            <PasswordReqList />
+            <PasswordReqInfo />
           </Form>
         </Col>
       </Row>

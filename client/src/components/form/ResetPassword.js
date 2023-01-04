@@ -9,8 +9,8 @@ import {
   FloatingLabel,
 } from "react-bootstrap";
 import { resetPassword, validateLink } from "../../api/api";
-import EmptyPage from "../EmptyPage";
-import PasswordReqList from "./PasswordReqList";
+import EmptyPage from "../empty-page/EmptyPage";
+import PasswordReqInfo from "./PasswordReqInfo";
 
 function ResetPassword() {
   const { email, token } = useParams();
@@ -143,7 +143,7 @@ function ResetPassword() {
                 >
                   {responseMsg}
                 </p>
-                <PasswordReqList />
+                <PasswordReqInfo />
                 <div className="text-center">
                   <Link to="/login">Tillbaka till inloggningen</Link>
                 </div>

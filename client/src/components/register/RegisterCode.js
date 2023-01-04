@@ -4,7 +4,7 @@ import { Button, Container, Form, FloatingLabel, Image } from "react-bootstrap";
 import { validateCode } from "../../api/api";
 import Lotus from "../../assets/lotus.svg";
 
-function CodeValidatorForm() {
+function RegisterCode() {
   const navigate = useNavigate();
   const [code, setCode] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -100,4 +100,4 @@ function CodeValidatorForm() {
     </>
   );
 }
-export default CodeValidatorForm;
+export default RegisterCode;

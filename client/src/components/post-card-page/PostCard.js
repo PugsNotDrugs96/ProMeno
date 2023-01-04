@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import cardImg from "../../assets/card-image.png";
 import { useNavigate } from "react-router-dom";
-import "./PostCard.css";
+import "./postCard.css";
 
 function PostCard(props) {
   const { index, post, mainCategorySlug, subCategorySlug } = props;

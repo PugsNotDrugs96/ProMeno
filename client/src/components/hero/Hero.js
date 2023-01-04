@@ -1,8 +1,8 @@
 import React from "react";
 import Container from "react-bootstrap/esm/Container";
-import "./Hero.css";
+import "./hero.css";
 import Image from "react-bootstrap/esm/Image";
-import heroImg from "../../assets/heroImg.jpeg";
+import heroImg from "../../assets/hero-img.jpeg";
 
 function Hero() {
   return (

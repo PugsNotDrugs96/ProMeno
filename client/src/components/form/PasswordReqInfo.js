@@ -1,7 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 
-function PasswordReqList() {
+function PasswordReqInfo() {
   return (
     <Form.Group
       className="col-sm-7 col-10 mx-auto mt-3 mb-3"
@@ -19,4 +19,4 @@ function PasswordReqList() {
     </Form.Group>
   );
 }
-export default PasswordReqList;
+export default PasswordReqInfo;
