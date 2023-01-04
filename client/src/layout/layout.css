@@ -63,23 +63,23 @@ html {
 
 /* Buttons */
 .btn {
-  background-color: #6db2a6;
-  border-color: #6db2a6;
+  background-color: #6db2a6 !important;
+  border-color: #6db2a6 !important;
 }
 
 .btn:hover {
-  background-color: #669990;
-  border-color: #6db2a6;
+  background-color: #669990 !important;
+  border-color: #6db2a6 !important;
 }
 
 .btn.login-button {
-  background-color: transparent;
-  border-color: transparent;
+  background-color: transparent !important;
+  border-color: transparent !important;
 }
 
 .btn.login-button:hover {
-  background-color: #6db2a6;
-  border-color: #6db2a6;
+  background-color: #6db2a6 !important;
+  border-color: #6db2a6 !important;
 }
 
 a {
