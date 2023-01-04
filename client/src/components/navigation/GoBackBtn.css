@@ -1,6 +1,7 @@
 #back-button {
   position: absolute;
-  top: 80px;
+  margin-top: 25px;
+  margin-left: 15px;
   width: 30px;
   height: auto;
 }
