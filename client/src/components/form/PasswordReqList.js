@@ -8,7 +8,13 @@ function PasswordReqList() {
       controlId="formControll"
     >
       <Form.Text>
-        <p><i>Lösenordet måste innehålla minst 8 karaktärer, minst en stor bokstav, minst en liten bokstav, minst en siffra och minst ett specialtecken</i></p>
+        <p>
+          <i>
+            Lösenordet måste innehålla minst 8 karaktärer, minst en stor
+            bokstav, minst en liten bokstav, minst en siffra och minst ett
+            specialtecken
+          </i>
+        </p>
       </Form.Text>
     </Form.Group>
   );
