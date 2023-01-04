@@ -15,6 +15,7 @@ img.mb-2 {
 
 #headnav {
   padding: 0px;
+  height: 80px;
 }
 
 /* Containers */
@@ -24,22 +25,20 @@ img.mb-2 {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100%;
 }
 
 .contentContainer {
   /* 3:d layer */
   background-color: rgba(255, 255, 255, 0.681);
-  height: 100%;
-  min-height: 630px;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  height: calc(100vh - 80px);
 }
 
 .content {
   /* 4:th layer */
-  padding-top: 100px;
+  padding-top: 75px;
   padding-bottom: 50px;
   min-height: 630px;
 }
@@ -58,6 +57,7 @@ img.mb-2 {
   .navbar,
   .footer {
     width: 80%;
+    height: 100vh;
   }
 }
 
@@ -68,6 +68,10 @@ img.mb-2 {
   .footer {
     width: 100%;
   }
+}
+
+.contentContainer {
+  height: 100vh;
 }
 
 /* Buttons */

@@ -6,13 +6,11 @@ import {
   Form,
   Col,
   FloatingLabel,
-  Image,
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../UserContext";
 import { Link } from "react-router-dom";
 import { registerUser } from "../../api/api";
-import Lotus from "../../assets/lotus.svg";
 import PasswordReqList from "../form/PasswordReqList";
 import ConsentFormModal from "../consentForm/ConsentFormModal";
 
@@ -74,13 +72,6 @@ function Register() {
         navigate("/home")
       ) : (
         <Container className="content">
-          <Image
-              src={Lotus}
-              alt="..."
-              width="100"
-              length="100"
-              className="rounded mx-auto d-block"
-            />
           <Form onSubmit={handleSubmit} id="form">
             <Col>
               <h1 className="text-center text-info text-black" id="reg-text-1">
@@ -148,6 +139,7 @@ function Register() {
                 required
               />
             </FloatingLabel>
+            <PasswordReqList />
 
             <div className="text-center">
               <Button
@@ -156,8 +148,7 @@ function Register() {
               >
                 Registrera
               </Button>
-
-              <p>
+              <p className="mt-3 mb-1">
                 Har du redan ett konto? <a href="/login">Logga in</a>
               </p>
               <p>
@@ -186,9 +177,6 @@ function Register() {
                 {errMsg}
               </p>
             </div>
-
-            <hr className="col-md-5 mx-auto col-lg-5 mb-3" />
-            <PasswordReqList />
           </Form>
           <ConsentFormModal
             showConsentForm={showConsentForm}
