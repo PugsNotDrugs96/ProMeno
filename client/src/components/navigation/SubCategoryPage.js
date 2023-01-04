@@ -35,7 +35,9 @@ function SubCategoryPage() {
     return (
       <Spinner
         style={{
-          margin: "5rem",
+          position: "fixed",
+          top: "50%",
+          left: "50%",
         }}
         animation="border"
         role="status"
