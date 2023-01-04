@@ -11,16 +11,15 @@ function Hero() {
       <div className="welcomeBody">
         <p className="lead my-4">
           Här kan du utforska olika symptom och behandlingar kopplade till
-          klimakteriet. Du kan även hitta forskning och lära dig mer om vad vad
+          klimakteriet. Du kan även hitta forskning och lära dig mer om vad som
           händer i kroppen.
         </p>
         <Image
           src={heroImg}
-          className="d-block mx-auto mb-4 shadow-md rounded"
+          className="d-block mx-auto mb-4 rounded"
           style={{
-            width: "300px",
+            width: "100%",
             height: "auto",
-            boxShadow: "1px 1px grey",
           }}
         />
       </div>
