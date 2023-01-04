@@ -74,10 +74,18 @@ img.mb-2 {
   height: 100vh;
 }
 
+.form-header {
+  font-weight: bold;
+}
+
 /* Buttons */
 .btn {
   background-color: #6db2a6;
   border-color: #6db2a6;
+}
+
+.btn:disabled {
+  background-color: rgb(117, 116, 116);
 }
 
 .btn:hover {

@@ -14,6 +14,7 @@ function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [responseMsg, setResponseMsg] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const responseRef = useRef();
   const userRef = useRef();
@@ -37,6 +38,7 @@ function ForgotPassword() {
           "En återställningslänk har skickats till din mailadress"
         );
         responseRef.current.focus();
+        setIsDisabled(true);
       }
     } catch (err) {
       if (!err?.response) {
@@ -57,7 +59,7 @@ function ForgotPassword() {
           <Form onSubmit={handleSubmit}>
             <Col>
               <h1
-                className="text-center text-info text-black"
+                className="form-header text-center text-info text-black"
                 id="forgot-pwd-text"
               >
                 Återställ ditt lösenord
@@ -88,6 +90,7 @@ function ForgotPassword() {
               <Button
                 type="submit"
                 className="btn-success btn-lg col-10 col-sm-7 col-10 mb-3 mx-auto"
+                disabled={isDisabled ? true : false}
               >
                 Återställ ditt lösenord
               </Button>

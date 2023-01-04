@@ -1,12 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import "./Register.css";
-import {
-  Button,
-  Container,
-  Form,
-  Col,
-  FloatingLabel,
-} from "react-bootstrap";
+import { Button, Container, Form, Col, FloatingLabel } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../UserContext";
 import { Link } from "react-router-dom";
@@ -74,7 +68,10 @@ function Register() {
         <Container className="content">
           <Form onSubmit={handleSubmit} id="form">
             <Col>
-              <h1 className="text-center text-info text-black" id="reg-text-1">
+              <h1
+                className="form-header text-center text-info text-black"
+                id="reg-text-1"
+              >
                 Registrera dig
               </h1>
               <h3 className="text-center">Steg 2</h3>

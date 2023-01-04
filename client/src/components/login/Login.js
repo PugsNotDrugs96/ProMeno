@@ -61,14 +61,12 @@ function Login() {
             <Col>
               <Form onSubmit={handleSubmit} id="form">
                 <Col>
-                  {" "}
                   <h1
-                    className="text-center text-info text-black"
+                    className="form-header text-center text-info text-black"
                     id="login-text"
                   >
-                    {" "}
                     Logga in
-                  </h1>{" "}
+                  </h1>
                 </Col>
                 <FloatingLabel
                   className="col-sm-7 col-10 mx-auto mt-3 mb-3"
