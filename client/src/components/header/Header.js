@@ -10,8 +10,8 @@ function Header() {
   const logoLink = user ? "./home" : "/";
 
   return (
-    <Navbar id="headnav">
-      <Container>
+    <Navbar id="headnav" className="shadow">
+      <Container id="headContainer">
         <Link to={logoLink} className="d-inline-block align-top">
           <Navbar.Brand className="d-inline-block align-top">
             <Image alt="" src={Lotus} width="50px" height="50px" /> ProMeno

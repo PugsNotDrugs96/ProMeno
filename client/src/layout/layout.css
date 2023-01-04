@@ -8,6 +8,12 @@ html {
   font-family: Roboto, Helvetica, sans-serif;
 }
 
+/* Header */
+#headnav {
+  width: 100%;
+}
+
+
 /* Containers */
 .background {
   /* 2:nd layer */
@@ -35,7 +41,7 @@ html {
   min-height: 630px;
 }
 
-.navbar,
+#headContainer,
 .footer {
   width: 60%;
   margin-left: auto;
@@ -46,8 +52,8 @@ html {
 @media only screen and (max-width: 900px) {
   /* Tablets */
   .contentContainer,
-  .navbar,
-  .footer {
+  .footer,
+  #headContainer {
     width: 80%;
   }
 }
@@ -55,8 +61,8 @@ html {
 @media only screen and (max-width: 600px) {
   /* Phones */
   .contentContainer,
-  .navbar,
-  .footer {
+  .footer,
+  #headContainer {
     width: 100%;
   }
 }
