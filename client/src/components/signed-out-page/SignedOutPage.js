@@ -12,7 +12,7 @@ function SignedOutPage() {
 
   return (
     <Container className="content">
-      <div class="px-4 text-center">
+      <div className="px-4 text-center">
         <Image
           src={heroImg}
           className="d-block mx-auto mb-4 shadow-md rounded"
@@ -27,7 +27,7 @@ function SignedOutPage() {
           <p className="lead mb-4" style={{ fontSize: "1.30rem" }}>
             {subtitle}
           </p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-center">
+          <div className="d-grid gap-2 d-sm-flex justify-content-center">
             <Button
               type="button"
               className="btn btn-primary btn-lg px-4 gap-3"

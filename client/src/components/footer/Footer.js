@@ -20,8 +20,9 @@ function Footer() {
         Ansvariga forskare
       </h3>
       <CardGroup>
-        {researchers.map((researcher) => (
+        {researchers.map((researcher, index) => (
           <Card
+            key={index}
             style={{
               alignItems: "center",
               justifyContent: "center",
@@ -46,14 +47,17 @@ function Footer() {
               >
                 {researcher.name}
               </Card.Title>
-              <Card.Text
-                className="text-center"
-                style={{ marginTop: "1rem", color: "grey" }}
-              >
-                {researcher.descriptions.map((description) => (
-                  <p>{description}</p>
+              <>
+                {researcher.descriptions.map((description, index) => (
+                  <Card.Text
+                    className="text-center"
+                    style={{ marginTop: "1rem", color: "grey" }}
+                    key={index}
+                  >
+                    {description}
+                  </Card.Text>
                 ))}
-              </Card.Text>
+              </>
             </Card.Body>
           </Card>
         ))}
