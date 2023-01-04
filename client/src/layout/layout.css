@@ -78,10 +78,14 @@ html {
 }
 
 .btn.login-button:hover {
-  background-color: #6db2a6 !important;
-  border-color: #6db2a6 !important;
+  opacity: 0.6;
 }
 
+.dropdown-item:active {
+  background-color: white !important;
+}
+
+/* Links */
 a {
   color: #436662;
 }

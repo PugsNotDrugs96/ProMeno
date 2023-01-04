@@ -31,6 +31,7 @@ function Header() {
                   id="profile-logo"
                   src="../images/person.svg"
                   alt="profile-logo"
+                  width="30px"
                 ></img>
               </button>
               <ul className="dropdown-menu dropdown-menu-end">
