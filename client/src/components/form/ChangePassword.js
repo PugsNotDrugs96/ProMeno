@@ -19,6 +19,7 @@ const ChangePassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [responseMsg, setResponseMsg] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const responseRef = useRef();
   const userRef = useRef();
@@ -48,6 +49,7 @@ const ChangePassword = () => {
         if (response.status === 200) {
           setResponseMsg("Ditt lösenord har ändrats");
           responseRef.current.focus();
+          setIsDisabled(true);
         }
       } catch (err) {
         if (!err?.response) {
@@ -68,13 +70,9 @@ const ChangePassword = () => {
         <Col>
           <Form onSubmit={handleSubmit}>
             <Col>
-              <h1
-                className="text-center"
-                id="pwd-change-1"
-              >
-                {" "}
+              <h1 className="form-header  text-center" id="pwd-change-1">
                 Ändra lösenord
-              </h1>{" "}
+              </h1>
             </Col>
             <FloatingLabel
               className="col-sm-7 col-10 mx-auto mt-3 mb-3"
@@ -124,6 +122,7 @@ const ChangePassword = () => {
               <Button
                 type="submit"
                 className="btn-success btn-lg col-10 col-sm-7 col-10 mb-3 mx-auto"
+                disabled={isDisabled ? true : false}
               >
                 Ändra lösenord
               </Button>

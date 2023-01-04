@@ -52,7 +52,7 @@ function CodeValidatorForm() {
             length="100"
             className="mx-auto d-block"
           />
-          <h1 className="text-center" id="reg-text-2">
+          <h1 className="form-header text-center" id="reg-text-2">
             Registrera dig
           </h1>
           <h3 className="text-center">Steg 1</h3>
