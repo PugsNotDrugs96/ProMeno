@@ -10,9 +10,9 @@ function Header() {
   const logoLink = user ? "./home" : "/";
 
   return (
-    <Navbar id="headnav">
-      <Container>
-        <Link to={logoLink}>
+    <Navbar id="headnav" className="shadow">
+      <Container id="headContainer">
+        <Link to={logoLink} className="d-inline-block align-top">
           <Navbar.Brand className="d-inline-block align-top">
             <Image
               className="mb-2"
@@ -38,6 +38,7 @@ function Header() {
                   id="profile-logo"
                   src="../images/person.svg"
                   alt="profile-logo"
+                  width="30px"
                 ></img>
               </button>
               <ul className="dropdown-menu dropdown-menu-end">
