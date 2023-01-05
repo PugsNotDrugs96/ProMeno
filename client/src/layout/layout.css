@@ -12,12 +12,6 @@ img.mb-2 {
   margin-right: 10px;
 }
 
-#headnav {
-  padding: 0px;
-  height: 80px;
-  width: 100%;
-}
-
 /* Containers */
 .background {
   /* 2:nd layer */
@@ -43,11 +37,18 @@ img.mb-2 {
   min-height: 630px;
 }
 
-.footer {
-  width: 100% !important;
+#headnav {
+  padding: 0px;
+  height: 80px;
+  width: 100%;
 }
 
-.navbar,
+.footer {
+  width: 100% !important;
+  background-color: aquamarine;
+}
+
+#headContainer,
 .footerContainer {
   width: 60%;
   margin-left: auto;
@@ -58,7 +59,7 @@ img.mb-2 {
 @media only screen and (max-width: 900px) {
   /* Tablets */
   .contentContainer,
-  .navbar,
+  #headContainer,
   .footerContainer {
     width: 80%;
     height: 100vh;
@@ -68,7 +69,7 @@ img.mb-2 {
 @media only screen and (max-width: 600px) {
   /* Phones */
   .contentContainer,
-  .navbar,
+  #headContainer,
   .footerContainer {
     width: 100%;
   }
