@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Container, Navbar, Image } from "react-bootstrap";
 import Lotus from "../../assets/lotus.svg";
 import UserContext from "../../UserContext";
+import { removeToken } from "../../tokenStorage";
 
 function Header() {
   const { user, setUser } = useContext(UserContext);
@@ -54,7 +55,7 @@ function Header() {
                   <Link
                     className="dropdown-item"
                     onClick={() => {
-                      localStorage.removeItem("key");
+                      removeToken();
                       setUser(null);
                     }}
                     to="/"

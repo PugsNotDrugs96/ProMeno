@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import React from "react";
 import { validateToken } from "./api/api";
+import { getToken } from "./tokenStorage";
 
 const UserContext = createContext({
   user: null,
@@ -8,7 +9,7 @@ const UserContext = createContext({
 });
 
 export const UserProvider = ({ children }) => {
-  const token = localStorage.getItem("key");
+  const token = getToken();
   const [user, setUser] = useState(token);
 
   useEffect(() => {

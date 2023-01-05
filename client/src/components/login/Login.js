@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
+import { setToken } from "../../tokenStorage";
 
 function Login() {
   const { setUser } = useContext(UserContext);
@@ -35,7 +36,7 @@ function Login() {
       const response = await loginUser(email, password);
       if (response.status === 200) {
         const token = response.data;
-        localStorage.setItem("key", token);
+        setToken(token);
         setUser(token);
         setEmail("");
         setPassword("");
