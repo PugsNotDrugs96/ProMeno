@@ -28,6 +28,7 @@ img.mb-2 {
   margin-left: auto;
   margin-right: auto;
   min-height: calc(100vh - 80px);
+  box-shadow: 12px 0 15px -4px rgba(66, 66, 66, 0.105), -12px 0 8px -4px rgba(66, 66, 66, 0.105);
 }
 
 .content {
@@ -41,11 +42,16 @@ img.mb-2 {
   padding: 0px;
   height: 80px;
   width: 100%;
+  box-shadow: -1px 12px 16px 0px rgba(0,0,0,0.13);
+  -webkit-box-shadow: -1px 12px 16px 0px rgba(0,0,0,0.13);
+  -moz-box-shadow: -1px 12px 16px 0px rgba(0,0,0,0.13);
 }
 
 .footer {
   width: 100% !important;
-  background-color: aquamarine;
+  box-shadow: -1px -7px 16px 0px rgba(0,0,0,0.13);
+  -webkit-box-shadow: -1px -7px 16px 0px rgba(0,0,0,0.13);
+  -moz-box-shadow: -1px -7px 16px 0px rgba(0,0,0,0.13);
 }
 
 #headContainer,
