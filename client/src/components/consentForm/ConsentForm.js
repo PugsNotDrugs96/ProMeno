@@ -2,28 +2,48 @@ import "./ConsentForm.css";
 import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { getPostBySlug } from "../../api/api";
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
+import { Spinner } from "react-bootstrap";
+import ErrorAlert from "../ErrorAlert";
 
 function ConsentForm() {
   const [form, setForm] = useState(null);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const form = await getPostBySlug("villkor-for-studien");
-      setForm(form);
+      try {
+        setLoading(true);
+        const form = await getPostBySlug("villkor-for-studien");
+        setForm(form);
+        setLoading(false);
+      } catch (err) {
+        console.warn(err);
+        setError(err);
+      }
     }
     fetchData();
   }, []);
 
-  if (!form) return null;
-
-  if (!form.title) {
-    <Alert severity="error">
-      <AlertTitle>Sidan kunde inte hittas</AlertTitle>
-      Något gick fel, försök igen
-    </Alert>;
+  if (error) {
+    return <ErrorAlert type="article" />;
   }
+
+  if (loading) {
+    return (
+      <Spinner
+        style={{
+          margin: "5rem",
+        }}
+        animation="border"
+        role="status"
+      >
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
+  }
+
+  if (!form) return null;
 
   return (
     <Card

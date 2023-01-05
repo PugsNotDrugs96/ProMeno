@@ -1,29 +1,29 @@
 {
-  "id": 1,
-  "date": "2022-10-28T08:49:22",
-  "date_gmt": "2022-10-28T06:49:22",
+  "id": 132,
+  "date": "2022-12-15T11:40:09",
+  "date_gmt": "2022-12-15T10:40:09",
   "guid": {
-    "rendered": "https://data.promeno.se/?p=1"
+    "rendered": "https://data.promeno.se/?p=132"
   },
-  "modified": "2022-11-09T23:25:34",
-  "modified_gmt": "2022-11-09T22:25:34",
-  "slug": "hej-varlden",
+  "modified": "2022-12-31T11:10:56",
+  "modified_gmt": "2022-12-31T10:10:56",
+  "slug": "minskad-motivation",
   "status": "publish",
   "type": "post",
-  "link": "https://data.promeno.se/2022/10/28/hej-varlden/",
+  "link": "https://data.promeno.se/2022/12/15/minskad-motivation/",
   "title": {
-    "rendered": "Nyheter"
+    "rendered": "Minskad motivation"
   },
   "content": {
-    "rendered": "\n<p>Efter 20 år har Läkemedelsverket uppdaterat sin behandlingsrekommendation om hormonbehandling i klimakteriet. Den riktas framför allt till allmänläkare.</p>\n\n\n\n<p>Vid dagens mammografiundersökningar går runt 25 procent av tumörerna under radarn, och många upptäcks i ett sent stadium då de är svårare att bota.</p>\n\n\n\n<p>Mycket vore därför vunnet om det gick att förutspå vilka kvinnor som kommer att insjukna närmsta tiden efter att de har varit på mammografi, så att de kan följas mer noggrant av vården.</p>\n\n\n\n<p>Kanske är det möjligt genom att analysera mammografibilderna med artificiell intelligens? Den möjligheten har undersökts av forskare vid bland annat Karolinska institutet (KI).</p>\n\n\n\n<p>De har utvecklat en AI-metod för att upptäcka tidiga tecken på cancer som läkaren inte ser med blotta ögat – och kombinerat den med 3D-mammografi som ger en mer detaljerad bild av bröstet än den vanliga 2D-varianten.</p>\n\n\n\n<p>Tanken är att metoden ska kunna användas vid mammografiundersökningarna så att dessa både kan upptäcka tumörer – och förutspå framtida risk.</p>\n\n\n\n<p>– Kan man göra de två sakerna samtidigt så är mycket vunnet, säger Mikael Eriksson, en av forskarna vid KI.</p>\n",
+    "rendered": "\n<p>Bristande motivation kan ha flera orsaker.&nbsp;Dels kan det ske saker i livet som riktar om vår uppmärksamhet, exempel på detta är konflikter, sjukdom, dödsfall samt separationer. I perioder i livet kan vi ha extra mycket att göra där tid för återhämtning går förlorad.</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"600\" height=\"394\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879.jpeg\" alt=\"\" class=\"wp-image-170\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879.jpeg 600w, https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879-300x197.jpeg 300w\" sizes=\"(max-width: 600px) 100vw, 600px\" /></figure>\n\n\n\n<p>–&nbsp;<a href=\"https://www.kry.se/fakta/klimakteriet/\">Klimakteriet</a>&nbsp;har alltid varit en omvälvande tid, men forskningen har historiskt sett varit mycket begränsad. Nu är klimakteriet och dess fysiska och psykiska påverkan ett erkänt fenomen, säger Elisabeth.</p>\n\n\n\n<p>Psykisk ohälsa under förklimakteriet och klimakteriet är faktiskt ett så pass utbrett problem att vissa forskare har börjat kalla det för ”klimakterieångest”. Symptomen beskrivs som betydande och bestående och skiljer sig så pass mycket från andra diagnoser av&nbsp;<a href=\"https://www.kry.se/fakta/depression-och-nedstamdhet/\">depression</a>&nbsp;att de förtjänar en egen benämning.</p>\n\n\n\n<p>– Cirka 70 procent upplever någon form av psykisk påverkan under klimakteriet, säger Elisabeth. Men den goda nyheten är att symptomen tenderar att försvinna när kroppen vant sig vid de nya hormonnivåerna. Det finns också mycket du kan göra för att ta hand om dig själv och få professionell hjälp.</p>\n\n\n\n<h3>Varför händer det?</h3>\n\n\n\n<p>Klimakteriet, eller övergångsåldern som det också kallas, avser tiden då äggstockarnas produktion av östrogen och progesteron minskar, ägglossningen upphör och menstruationerna blir tilltagande oregelbundna för att sedan upphöra helt.</p>\n\n\n\n<p>Någon gång under denna process inträffar menopausen, den sista menstruationen. Medelåldern för menopausen är 51 år. De fysiska och psykiska förändringarna i samband med klimakteriet brukar dock börja flera år innan dess, och även pågå ett tag efter menopausen.</p>\n\n\n\n<p></p>\n",
     "protected": false
   },
   "excerpt": {
-    "rendered": "<p>Efter 20 år har Läkemedelsverket uppdaterat sin behandlingsrekommendation om hormonbehandling i klimakteriet. Den riktas framför allt till allmänläkare. Vid dagens mammografiundersökningar går runt 25 procent av tumörerna under radarn, och många upptäcks i ett sent stadium då de är svårare att bota. Mycket vore därför vunnet om det gick att förutspå vilka kvinnor som kommer [&hellip;]</p>\n",
+    "rendered": "<p>Bristande motivation kan ha flera orsaker.&nbsp;Dels kan det ske saker i livet som riktar om vår uppmärksamhet, exempel på detta är konflikter, sjukdom, dödsfall samt separationer. I perioder i livet kan vi ha extra mycket att göra där tid för återhämtning går förlorad. –&nbsp;Klimakteriet&nbsp;har alltid varit en omvälvande tid, men forskningen har historiskt sett varit [&hellip;]</p>\n",
     "protected": false
   },
   "author": 1,
-  "featured_media": 0,
+  "featured_media": 170,
   "comment_status": "open",
   "ping_status": "open",
   "sticky": false,
@@ -32,12 +32,59 @@
   "meta": {
     "_oct_exclude_from_cache": false
   },
-  "categories": [1],
+  "categories": [19],
   "tags": [],
+  "better_featured_image": {
+    "id": 170,
+    "alt_text": "",
+    "caption": "",
+    "description": "",
+    "media_type": "image",
+    "media_details": {
+      "width": 600,
+      "height": 394,
+      "file": "2022/12/crop-close-little-girl-child-600w-1926869879.jpeg",
+      "filesize": 32488,
+      "sizes": {
+        "medium": {
+          "file": "crop-close-little-girl-child-600w-1926869879-300x197.jpeg",
+          "width": 300,
+          "height": 197,
+          "mime-type": "image/jpeg",
+          "filesize": 8040,
+          "source_url": "https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879-300x197.jpeg"
+        },
+        "thumbnail": {
+          "file": "crop-close-little-girl-child-600w-1926869879-150x150.jpeg",
+          "width": 150,
+          "height": 150,
+          "mime-type": "image/jpeg",
+          "filesize": 4482,
+          "source_url": "https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879-150x150.jpeg"
+        }
+      },
+      "image_meta": {
+        "aperture": "0",
+        "credit": "",
+        "camera": "",
+        "caption": "",
+        "created_timestamp": "1672342661",
+        "copyright": "",
+        "focal_length": "0",
+        "iso": "0",
+        "shutter_speed": "0",
+        "title": "",
+        "orientation": "0",
+        "keywords": []
+      }
+    },
+    "post": 132,
+    "source_url": "https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879.jpeg"
+  },
   "_links": {
     "self": [
       {
-        "href": "https://data.promeno.se/wp-json/wp/v2/posts/1"
+        "href": "https://data.promeno.se/wp-json/wp/v2/posts/132"
       }
     ],
     "collection": [
@@ -59,36 +106,42 @@
     "replies": [
       {
         "embeddable": true,
-        "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=1"
+        "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=132"
       }
     ],
     "version-history": [
       {
-        "count": 8,
-        "href": "https://data.promeno.se/wp-json/wp/v2/posts/1/revisions"
+        "count": 3,
+        "href": "https://data.promeno.se/wp-json/wp/v2/posts/132/revisions"
       }
     ],
     "predecessor-version": [
       {
-        "id": 49,
-        "href": "https://data.promeno.se/wp-json/wp/v2/posts/1/revisions/49"
+        "id": 171,
+        "href": "https://data.promeno.se/wp-json/wp/v2/posts/132/revisions/171"
+      }
+    ],
+    "wp:featuredmedia": [
+      {
+        "embeddable": true,
+        "href": "https://data.promeno.se/wp-json/wp/v2/media/170"
       }
     ],
     "wp:attachment": [
       {
-        "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=1"
+        "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=132"
       }
     ],
     "wp:term": [
       {
         "taxonomy": "category",
         "embeddable": true,
-        "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=1"
+        "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=132"
       },
       {
         "taxonomy": "post_tag",
         "embeddable": true,
-        "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=1"
+        "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=132"
       }
     ],
     "curies": [

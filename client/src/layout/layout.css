@@ -8,6 +8,16 @@ html {
   font-family: Roboto, Helvetica, sans-serif;
 }
 
+/* Navbar */
+img.mb-2 {
+  margin-right: 10px;
+}
+
+#headnav {
+  padding: 0px;
+  height: 80px;
+}
+
 /* Containers */
 .background {
   /* 2:nd layer */
@@ -15,22 +25,20 @@ html {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100%;
 }
 
 .contentContainer {
   /* 3:d layer */
   background-color: rgba(255, 255, 255, 0.681);
-  height: 100%;
-  min-height: 630px;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  height: calc(100vh - 80px);
 }
 
 .content {
   /* 4:th layer */
-  padding-top: 100px;
+  padding-top: 75px;
   padding-bottom: 50px;
   min-height: 630px;
 }
@@ -49,6 +57,7 @@ html {
   .navbar,
   .footer {
     width: 80%;
+    height: 100vh;
   }
 }
 
@@ -61,10 +70,22 @@ html {
   }
 }
 
+.contentContainer {
+  height: 100vh;
+}
+
+.form-header {
+  font-weight: bold;
+}
+
 /* Buttons */
 .btn {
   background-color: #6db2a6 !important;
   border-color: #6db2a6 !important;
+}
+
+.btn:disabled {
+  background-color: rgb(117, 116, 116);
 }
 
 .btn:hover {

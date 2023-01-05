@@ -22,7 +22,7 @@ function RemoveAccount() {
 
   const handleClose = () => {
     setShow(false);
-    setUser("");
+    setUser(null);
   };
   const handleShow = () => setShow(true);
 
@@ -60,7 +60,7 @@ function RemoveAccount() {
           <Form onSubmit={handleSubmit}>
             <Col>
               <h1
-                className="text-center text-info text-black"
+                className="form-header text-center text-info text-black"
                 id="acc-remove-text"
               >
                 Avregistrera dig

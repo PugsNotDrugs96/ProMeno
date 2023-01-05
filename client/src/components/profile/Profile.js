@@ -36,7 +36,9 @@ function Profile() {
 
   return (
     <Container className="content" style={{ textAlign: "center" }}>
-      <h1 className="fw-bold" style={{ marginBottom: "2rem" }}>Mina sidor</h1>
+      <h1 className="fw-bold" style={{ marginBottom: "2rem" }}>
+        Mina sidor
+      </h1>
       <img
         id="person-circle"
         src="../images/person-circle.svg"
