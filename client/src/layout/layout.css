@@ -8,7 +8,6 @@ html {
   font-family: Roboto, Helvetica, sans-serif;
 }
 
-/* Navbar */
 img.mb-2 {
   margin-right: 10px;
 }
@@ -16,6 +15,7 @@ img.mb-2 {
 #headnav {
   padding: 0px;
   height: 80px;
+  width: 100%;
 }
 
 /* Containers */
@@ -43,7 +43,7 @@ img.mb-2 {
   min-height: 630px;
 }
 
-.navbar,
+#headContainer,
 .footer {
   width: 60%;
   margin-left: auto;
@@ -54,8 +54,8 @@ img.mb-2 {
 @media only screen and (max-width: 900px) {
   /* Tablets */
   .contentContainer,
-  .navbar,
-  .footer {
+  .footer,
+  #headContainer {
     width: 80%;
     height: 100vh;
   }
@@ -64,8 +64,8 @@ img.mb-2 {
 @media only screen and (max-width: 600px) {
   /* Phones */
   .contentContainer,
-  .navbar,
-  .footer {
+  .footer,
+  #headContainer {
     width: 100%;
   }
 }
