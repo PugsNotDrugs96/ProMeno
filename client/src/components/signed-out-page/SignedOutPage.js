@@ -17,7 +17,7 @@ function SignedOutPage() {
           src={heroImg}
           className="d-block mx-auto mb-4 shadow-md rounded"
           style={{
-            width: "300px",
+            width: "50%",
             height: "auto",
             boxShadow: "1px 1px grey",
           }}
