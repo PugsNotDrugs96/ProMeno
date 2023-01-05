@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Alert, Button } from "react-bootstrap";
+import { Container, Alert } from "react-bootstrap";
 import SentimentVeryDissatisfiedIcon from "@mui/icons-material/SentimentVeryDissatisfied";
 
 function ErrorAlert(props) {
@@ -21,22 +20,8 @@ function ErrorAlert(props) {
         >
           <SentimentVeryDissatisfiedIcon fontSize="large" />
           <h2>{emptyType} kunde inte hittas</h2>
-          <p>
-            {emptyType} som du letar efter kan tyvärr inte hittas. Testa att
-            ladda om sidan eller kontakta vår support
-          </p>
-          {type !== "categories" && (
-            <Link to="/home">
-              <Button
-                className="btn btn-success btn-lg mb-4 gap-3"
-                style={{ width: "18rem" }}
-                variant="primary"
-                type="submit"
-              >
-                Tillbaka till startsidan
-              </Button>
-            </Link>
-          )}
+          <p>{emptyType} som du letar efter kan tyvärr inte hittas.</p>
+          <p>Testa att ladda om sidan eller kontakta vår support</p>
         </Alert>
       </div>
     </Container>
