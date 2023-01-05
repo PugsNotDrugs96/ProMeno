@@ -3,6 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import "./Hero.css";
 import Image from "react-bootstrap/esm/Image";
 import heroImg from "../../assets/heroImg.jpeg";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -14,6 +15,17 @@ function Hero() {
           klimakteriet. Du kan även hitta forskning och lära dig mer om vad som
           händer i kroppen.
         </p>
+        <div style={{ marginBottom: "2rem" }}>
+          <Link
+            to="/research/:om-studien"
+            style={{
+              textDecoration: "none",
+              fontSize: "1.30rem",
+            }}
+          >
+            Läs mer om studien
+          </Link>
+        </div>
         <Image
           src={heroImg}
           className="d-block mx-auto mb-4 rounded"
