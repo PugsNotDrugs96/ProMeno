@@ -54,6 +54,7 @@ function Header() {
                   <Link
                     className="dropdown-item"
                     onClick={() => {
+                      localStorage.removeItem("key");
                       setUser(null);
                     }}
                     to="/"

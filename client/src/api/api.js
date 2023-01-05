@@ -36,6 +36,19 @@ export async function getCategoryBySlug(slug) {
   return response.data;
 }
 
+export async function validateToken(token) {
+  const response = await axios.post(
+    "/auth-token",
+    { token },
+    {
+      headers: {
+        withCredentials: true,
+      },
+    }
+  );
+  return response;
+}
+
 export async function loginUser(email, password) {
   const response = await axios.post(
     "/auth",

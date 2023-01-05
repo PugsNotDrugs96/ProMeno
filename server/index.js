@@ -73,7 +73,21 @@ app.post("/auth", async function (req, res) {
   } else if (isValidLogin === "Database error") {
     res.status(500).send("Database connection failed");
   } else {
-    res.status(200).send(`User ${email} is logged in`);
+    const token = jwt.sign({ email: email }, JWT_SECRET, { expiresIn: "1h" });
+    res.status(200).send(token);
+  }
+});
+
+app.post("/auth-token", async function (req, res) {
+  const { token } = req.body;
+  if (!token) {
+    return res.status(400).json({ message: "Token is required" });
+  }
+  try {
+    jwt.verify(token, JWT_SECRET);
+    res.status(200).json({ success: `Token is valid` });
+  } catch (error) {
+    res.status(401).json({ message: "Token not valid" });
   }
 });
 

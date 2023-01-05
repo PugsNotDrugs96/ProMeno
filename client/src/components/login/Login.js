@@ -34,7 +34,9 @@ function Login() {
     try {
       const response = await loginUser(email, password);
       if (response.status === 200) {
-        setUser(email);
+        const token = response.data;
+        localStorage.setItem("key", token);
+        setUser(token);
         setEmail("");
         setPassword("");
         setSuccess(true);
