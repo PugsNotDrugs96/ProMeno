@@ -14,11 +14,13 @@ import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
 import SubCategoryPage from "../components/navigation/SubCategoryPage";
 import CodeValidatorForm from "../components/register/CodeValidatorForm";
+import ScrollToTop from "../components/helpers/ScrollToTop";
 
 function Router() {
   return (
     <BrowserRouter>
       <BasicLayout>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<SignedOutPage />} />
           <Route
