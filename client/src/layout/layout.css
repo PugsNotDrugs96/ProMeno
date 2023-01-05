@@ -43,8 +43,12 @@ img.mb-2 {
   min-height: 630px;
 }
 
-#headContainer,
 .footer {
+  width: 100% !important;
+}
+
+.navbar,
+.footerContainer {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
@@ -54,8 +58,8 @@ img.mb-2 {
 @media only screen and (max-width: 900px) {
   /* Tablets */
   .contentContainer,
-  .footer,
-  #headContainer {
+  .navbar,
+  .footerContainer {
     width: 80%;
     height: 100vh;
   }
@@ -64,8 +68,8 @@ img.mb-2 {
 @media only screen and (max-width: 600px) {
   /* Phones */
   .contentContainer,
-  .footer,
-  #headContainer {
+  .navbar,
+  .footerContainer {
     width: 100%;
   }
 }
