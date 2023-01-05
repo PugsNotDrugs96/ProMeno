@@ -80,8 +80,8 @@ img.mb-2 {
 
 /* Buttons */
 .btn {
-  background-color: #6db2a6;
-  border-color: #6db2a6;
+  background-color: #6db2a6 !important;
+  border-color: #6db2a6 !important;
 }
 
 .btn:disabled {
@@ -89,20 +89,24 @@ img.mb-2 {
 }
 
 .btn:hover {
-  background-color: #669990;
-  border-color: #6db2a6;
+  background-color: #669990 !important;
+  border-color: #6db2a6 !important;
 }
 
 .btn.login-button {
-  background-color: transparent;
-  border-color: transparent;
+  background-color: transparent !important;
+  border-color: transparent !important;
 }
 
 .btn.login-button:hover {
-  background-color: #6db2a6;
-  border-color: #6db2a6;
+  opacity: 0.6;
 }
 
+.dropdown-item:active {
+  background-color: white !important;
+}
+
+/* Links */
 a {
   color: #436662;
 }
