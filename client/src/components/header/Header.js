@@ -14,7 +14,14 @@ function Header() {
       <Container id="headContainer">
         <Link to={logoLink} className="d-inline-block align-top">
           <Navbar.Brand className="d-inline-block align-top">
-            <Image alt="" src={Lotus} width="50px" height="50px" /> ProMeno
+            <Image
+              className="mb-2"
+              alt=""
+              src={Lotus}
+              width="50px"
+              height="50px"
+            />
+            <span className="fs-5">ProMeno</span>
           </Navbar.Brand>
         </Link>
 
@@ -31,6 +38,7 @@ function Header() {
                   id="profile-logo"
                   src="../images/person.svg"
                   alt="profile-logo"
+                  width="30px"
                 ></img>
               </button>
               <ul className="dropdown-menu dropdown-menu-end">

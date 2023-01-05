@@ -14,6 +14,7 @@ function ForgotPassword() {
   const [email, setEmail] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [responseMsg, setResponseMsg] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const responseRef = useRef();
   const userRef = useRef();
@@ -37,6 +38,7 @@ function ForgotPassword() {
           "En återställningslänk har skickats till din mailadress"
         );
         responseRef.current.focus();
+        setIsDisabled(true);
       }
     } catch (err) {
       if (!err?.response) {
@@ -57,7 +59,7 @@ function ForgotPassword() {
           <Form onSubmit={handleSubmit}>
             <Col>
               <h1
-                className="text-center text-info text-black"
+                className="form-header text-center text-info text-black"
                 id="forgot-pwd-text"
               >
                 Återställ ditt lösenord
@@ -68,7 +70,7 @@ function ForgotPassword() {
               </p>
             </Col>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingInput"
               label="Email"
             >
@@ -86,10 +88,9 @@ function ForgotPassword() {
             </FloatingLabel>
             <div className="text-center">
               <Button
-                variant="primary"
                 type="submit"
-                className="btn btn-success btn-lg mb-4 gap-3"
-                style={{ width: "18rem" }}
+                className="btn-success btn-lg col-10 col-sm-7 col-10 mb-3 mx-auto"
+                disabled={isDisabled ? true : false}
               >
                 Återställ ditt lösenord
               </Button>

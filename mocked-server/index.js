@@ -16,29 +16,85 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.post("/auth", async function (req, res) {
-  res.json({ success: `User test is logged in!` });
+  res.status(200).send(`Test user is logged in`);
+});
+
+app.post("/register", async function (req, res) {
+  res.status(200).send("Test user registered");
+});
+
+app.get("/get-all-users-db", async function (req, res) {
+  const users = [{ email: "test user" }];
+  res.status(200).send(users);
+});
+
+app.get("/get-user-by-email-db", async function (req, res) {
+  const user = { email: "test user" };
+  res.status(200).send(user);
+});
+
+app.post("/update-email-db", async function (req, res) {
+  res.status(200).send(status);
+});
+
+app.post("/update-password-db", async function (req, res) {
+  res.status(200).send(status);
+});
+
+app.post("/delete-account", async function (req, res) {
+  res.status(200).send(status);
 });
 
 app.post("/change-password", async function (req, res) {
-  res.json({ success: `Password for user test is changed!` });
+  return res.status(200).json("Password updated");
 });
 
-app.get("/posts-by-category/:id", async function (req, res) {
-  let rawdata = fs.readFileSync("posts.json");
+app.get("/posts-by-category/:slug", async function (req, res) {
+  let rawdata = fs.readFileSync("postsByCategory.json");
   let posts = JSON.parse(rawdata);
-  res.status(201).json(posts);
+  res.status(200).json(posts);
 });
 
-app.get("/posts/:id", async function (req, res) {
+app.get("/posts/:slug", async function (req, res) {
   let rawdata = fs.readFileSync("post.json");
   let post = JSON.parse(rawdata);
-  res.status(201).json(post);
+  res.status(200).json(post);
 });
 
 app.get("/categories", async function (_, res) {
   let rawdata = fs.readFileSync("categories.json");
   let categories = JSON.parse(rawdata);
-  res.status(201).json(categories);
+  res.status(200).json(categories);
+});
+
+app.get("/categories/:slug", async function (req, res) {
+  let rawdata = fs.readFileSync("category.json");
+  let categories = JSON.parse(rawdata);
+  res.status(200).json(categories);
+});
+
+app.post("/reset-password-link", async function (req, res) {
+  console.log("Link should be sent");
+  res
+    .status(201)
+    .json({ success: `Password reset link has been sent to email` });
+});
+
+app.post("/validate-link", async function (req, res) {
+  res.status(200).json({ success: `Link is valid` });
+});
+
+app.post("/validate-code", async function (req, res) {
+  return res.status(200).json({ success: `Code is valid!` });
+});
+
+app.post("/reset-password", async function (req, res) {
+  res.status(200).json({ success: `Password for user test has changed!` });
+});
+
+app.post("/profile", async function (req, res) {
+  const user = { email: "test user" };
+  res.status(200).json(user);
 });
 
 app.listen(PORT, function () {

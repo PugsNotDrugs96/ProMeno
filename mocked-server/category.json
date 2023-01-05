@@ -1,0 +1,46 @@
+{
+  "id": 30,
+  "count": 2,
+  "description": "Klimakteriet präglas hos många kvinnor av kroppsliga och psykologiska besvär som kan leda till sömnsvårigheter, depressiva känslor och nedsatt arbetsförmåga. Hormonpreparat kan lindra besvären men sunda levnadsvanor har stor betydelse för att obehagen ska minska.",
+  "link": "https://data.promeno.se/category/om-klimakteriet/allman-information/",
+  "name": "Allmän information",
+  "slug": "allman-information",
+  "taxonomy": "category",
+  "parent": 21,
+  "meta": [],
+  "_links": {
+    "self": [
+      {
+        "href": "https://data.promeno.se/wp-json/wp/v2/categories/30"
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://data.promeno.se/wp-json/wp/v2/categories"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://data.promeno.se/wp-json/wp/v2/taxonomies/category"
+      }
+    ],
+    "up": [
+      {
+        "embeddable": true,
+        "href": "https://data.promeno.se/wp-json/wp/v2/categories/21"
+      }
+    ],
+    "wp:post_type": [
+      {
+        "href": "https://data.promeno.se/wp-json/wp/v2/posts?categories=30"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

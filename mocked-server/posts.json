@@ -1,30 +1,30 @@
 [
   {
-    "id": 34,
-    "date": "2022-11-08T11:45:25",
-    "date_gmt": "2022-11-08T10:45:25",
+    "id": 209,
+    "date": "2022-12-31T11:13:55",
+    "date_gmt": "2022-12-31T10:13:55",
     "guid": {
-      "rendered": "https://data.promeno.se/?p=34"
+      "rendered": "https://data.promeno.se/?p=209"
     },
-    "modified": "2022-11-09T23:20:50",
-    "modified_gmt": "2022-11-09T22:20:50",
-    "slug": "om-forskningsstudien",
+    "modified": "2022-12-31T11:14:39",
+    "modified_gmt": "2022-12-31T10:14:39",
+    "slug": "ny-forskning",
     "status": "publish",
     "type": "post",
-    "link": "https://data.promeno.se/2022/11/08/om-forskningsstudien/",
+    "link": "https://data.promeno.se/2022/12/31/ny-forskning/",
     "title": {
-      "rendered": "Om forskningsstudien"
+      "rendered": "Ny forskning"
     },
     "content": {
-      "rendered": "\n<p>This is a collaborative interdisciplinary project using biopsychosocial perspective studying the effects of interactive mobile technology for health and wellbeing of women during menopause. </p>\n\n\n\n<p>The aim of the research project is to improve accessibility and treatment of menopausal health problems among women by developing a mobile application (mHealth) with evidence-based psychological treatment components including educational material about how menopause affect the mind and the body. Treatment components includes Cognitive Behavioral Therapy (CBT), Acceptance and Commitment Therapy (ACT), Mindfulness, and Psychoeducation.</p>\n\n\n\n<p>The aim is also to evaluate the effectiveness of the mHealth intervention using a randomized controlled trial (RCT) among women attending menopause- gynaecology- and midwifery clinics in Region Skåne.</p>\n",
+      "rendered": "\n<p>Många kvinnor upplever försämrad livskvalitet under klimakteriet. Hormonbehandling har visat god effekt. Ändå används det sällan. Varför?</p>\n\n\n\n<p><a href=\"https://www.forskning.se/2022/03/10/hormoner-klimakteriet/#klimakteriebesvar\">Läkemedelsverkets nya råd för behandling av klimakteriebesvär (hoppa direkt till råden)</a></p>\n\n\n\n<p>Omkring 25 procent av alla kvinnor i västvärlden kan gå igenom klimakteriet utan besvär. Resten, omkring 75 procent, får besvär som kan vara så kraftiga att livskvaliteten försämras – ibland rejält.</p>\n\n\n\n<p>Hormonbehandling kan lindra, eller rentav bota, besvären. Hormonbehandling minskar dessutom risken att drabbas av benskörhet och typ 2-diabetes. Om behandlingen påbörjas inom 10 år efter sista mensen och före 60 års ålder minskar även risken för hjärtinfarkt samt den totala dödligheten.&nbsp;I Sverige är det, trots detta, färre än 10 procent som använder hormonbehandling under någon period i samband med klimakteriet, enligt uppskattningar.</p>\n\n\n\n<h2>Rädsla för hormoner</h2>\n\n\n\n<p>Enligt en gammal studie skulle hälften av alla kvinnor tacka ja till hormonbehandling om de bara kunde garanteras att behandlingen är ofarlig, berättar Mats Hammar, professor emeritus i gynekologi och obstetrik vid Linköpings universitet, som i sin forskning har intresserat sig särskilt för klimakteriet och behandling av klimakteriebesvär.</p>\n\n\n\n<p>Själv är han tveksam till om den siffran stämmer idag.</p>\n\n\n\n<p>– Jag tror att det är för mycket, men vi vet att var tredje kvinna som rapporterar om vallningar och svettningar skulle vilja ha hjälp att bli av med sina besvär.</p>\n",
       "protected": false
     },
     "excerpt": {
-      "rendered": "<p>This is a collaborative interdisciplinary project using biopsychosocial perspective studying the effects of interactive mobile technology for health and wellbeing of women during menopause. The aim of the research project is to improve accessibility and treatment of menopausal health problems among women by developing a mobile application (mHealth) with evidence-based psychological treatment components including educational [&hellip;]</p>\n",
+      "rendered": "<p>Många kvinnor upplever försämrad livskvalitet under klimakteriet. Hormonbehandling har visat god effekt. Ändå används det sällan. Varför? Läkemedelsverkets nya råd för behandling av klimakteriebesvär (hoppa direkt till råden) Omkring 25 procent av alla kvinnor i västvärlden kan gå igenom klimakteriet utan besvär. Resten, omkring 75 procent, får besvär som kan vara så kraftiga att livskvaliteten [&hellip;]</p>\n",
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 93,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -33,12 +33,59 @@
     "meta": {
       "_oct_exclude_from_cache": false
     },
-    "categories": [1],
+    "categories": [31, 1],
     "tags": [],
+    "better_featured_image": {
+      "id": 93,
+      "alt_text": "",
+      "caption": "Scientist in lab doing research and using lab machines, test tubes, microscope and every laboratory equipment",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 612,
+        "height": 408,
+        "file": "2022/11/medicin.jpeg",
+        "filesize": 33979,
+        "sizes": {
+          "medium": {
+            "file": "medicin-300x200.jpeg",
+            "width": 300,
+            "height": 200,
+            "mime-type": "image/jpeg",
+            "filesize": 14380,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/medicin-300x200.jpeg"
+          },
+          "thumbnail": {
+            "file": "medicin-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 7008,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/medicin-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "Getty Images/iStockphoto",
+          "camera": "",
+          "caption": "Scientist in lab doing research and using lab machines, test tubes, microscope and every laboratory equipment",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 78,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/medicin.jpeg"
+    },
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/34"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/209"
         }
       ],
       "collection": [
@@ -60,36 +107,42 @@
       "replies": [
         {
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=34"
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=209"
         }
       ],
       "version-history": [
         {
           "count": 2,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/34/revisions"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/209/revisions"
         }
       ],
       "predecessor-version": [
         {
-          "id": 47,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/34/revisions/47"
+          "id": 211,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/209/revisions/211"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/93"
         }
       ],
       "wp:attachment": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=34"
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=209"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=34"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=209"
         },
         {
           "taxonomy": "post_tag",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=34"
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=209"
         }
       ],
       "curies": [
@@ -102,31 +155,31 @@
     }
   },
   {
-    "id": 32,
-    "date": "2022-11-08T11:43:02",
-    "date_gmt": "2022-11-08T10:43:02",
+    "id": 132,
+    "date": "2022-12-15T11:40:09",
+    "date_gmt": "2022-12-15T10:40:09",
     "guid": {
-      "rendered": "https://data.promeno.se/?p=32"
+      "rendered": "https://data.promeno.se/?p=132"
     },
-    "modified": "2022-11-10T08:42:35",
-    "modified_gmt": "2022-11-10T07:42:35",
-    "slug": "minskad-sexlust",
+    "modified": "2022-12-31T11:10:56",
+    "modified_gmt": "2022-12-31T10:10:56",
+    "slug": "minskad-motivation",
     "status": "publish",
     "type": "post",
-    "link": "https://data.promeno.se/2022/11/08/minskad-sexlust/",
+    "link": "https://data.promeno.se/2022/12/15/minskad-motivation/",
     "title": {
-      "rendered": "Minskad sexlust"
+      "rendered": "Minskad motivation"
     },
     "content": {
-      "rendered": "\n<p>Lust till sex kan variera från person till person, och vara olika stark i olika perioder av livet. Sexuell upphetsning kan starta i hjärnan av olika upplevelser och tankar. Upphetsningen kan också starta i kroppen genom beröring och smekningar, av dig själv eller någon annan.</p>\n",
+      "rendered": "\n<p>Bristande motivation kan ha flera orsaker.&nbsp;Dels kan det ske saker i livet som riktar om vår uppmärksamhet, exempel på detta är konflikter, sjukdom, dödsfall samt separationer. I perioder i livet kan vi ha extra mycket att göra där tid för återhämtning går förlorad.</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"600\" height=\"394\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879.jpeg\" alt=\"\" class=\"wp-image-170\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879.jpeg 600w, https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879-300x197.jpeg 300w\" sizes=\"(max-width: 600px) 100vw, 600px\" /></figure>\n\n\n\n<p>–&nbsp;<a href=\"https://www.kry.se/fakta/klimakteriet/\">Klimakteriet</a>&nbsp;har alltid varit en omvälvande tid, men forskningen har historiskt sett varit mycket begränsad. Nu är klimakteriet och dess fysiska och psykiska påverkan ett erkänt fenomen, säger Elisabeth.</p>\n\n\n\n<p>Psykisk ohälsa under förklimakteriet och klimakteriet är faktiskt ett så pass utbrett problem att vissa forskare har börjat kalla det för ”klimakterieångest”. Symptomen beskrivs som betydande och bestående och skiljer sig så pass mycket från andra diagnoser av&nbsp;<a href=\"https://www.kry.se/fakta/depression-och-nedstamdhet/\">depression</a>&nbsp;att de förtjänar en egen benämning.</p>\n\n\n\n<p>– Cirka 70 procent upplever någon form av psykisk påverkan under klimakteriet, säger Elisabeth. Men den goda nyheten är att symptomen tenderar att försvinna när kroppen vant sig vid de nya hormonnivåerna. Det finns också mycket du kan göra för att ta hand om dig själv och få professionell hjälp.</p>\n\n\n\n<h3>Varför händer det?</h3>\n\n\n\n<p>Klimakteriet, eller övergångsåldern som det också kallas, avser tiden då äggstockarnas produktion av östrogen och progesteron minskar, ägglossningen upphör och menstruationerna blir tilltagande oregelbundna för att sedan upphöra helt.</p>\n\n\n\n<p>Någon gång under denna process inträffar menopausen, den sista menstruationen. Medelåldern för menopausen är 51 år. De fysiska och psykiska förändringarna i samband med klimakteriet brukar dock börja flera år innan dess, och även pågå ett tag efter menopausen.</p>\n\n\n\n<p></p>\n",
       "protected": false
     },
     "excerpt": {
-      "rendered": "<p>Lust till sex kan variera från person till person, och vara olika stark i olika perioder av livet. Sexuell upphetsning kan starta i hjärnan av olika upplevelser och tankar. Upphetsningen kan också starta i kroppen genom beröring och smekningar, av dig själv eller någon annan.</p>\n",
+      "rendered": "<p>Bristande motivation kan ha flera orsaker.&nbsp;Dels kan det ske saker i livet som riktar om vår uppmärksamhet, exempel på detta är konflikter, sjukdom, dödsfall samt separationer. I perioder i livet kan vi ha extra mycket att göra där tid för återhämtning går förlorad. –&nbsp;Klimakteriet&nbsp;har alltid varit en omvälvande tid, men forskningen har historiskt sett varit [&hellip;]</p>\n",
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 170,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -135,12 +188,59 @@
     "meta": {
       "_oct_exclude_from_cache": false
     },
-    "categories": [20],
+    "categories": [19],
     "tags": [],
+    "better_featured_image": {
+      "id": 170,
+      "alt_text": "",
+      "caption": "",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 600,
+        "height": 394,
+        "file": "2022/12/crop-close-little-girl-child-600w-1926869879.jpeg",
+        "filesize": 32488,
+        "sizes": {
+          "medium": {
+            "file": "crop-close-little-girl-child-600w-1926869879-300x197.jpeg",
+            "width": 300,
+            "height": 197,
+            "mime-type": "image/jpeg",
+            "filesize": 8040,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879-300x197.jpeg"
+          },
+          "thumbnail": {
+            "file": "crop-close-little-girl-child-600w-1926869879-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 4482,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "",
+          "camera": "",
+          "caption": "",
+          "created_timestamp": "1672342661",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 132,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/12/crop-close-little-girl-child-600w-1926869879.jpeg"
+    },
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/32"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/132"
         }
       ],
       "collection": [
@@ -162,36 +262,42 @@
       "replies": [
         {
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=32"
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=132"
         }
       ],
       "version-history": [
         {
           "count": 3,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/32/revisions"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/132/revisions"
         }
       ],
       "predecessor-version": [
         {
-          "id": 52,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/32/revisions/52"
+          "id": 171,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/132/revisions/171"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/170"
         }
       ],
       "wp:attachment": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=32"
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=132"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=32"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=132"
         },
         {
           "taxonomy": "post_tag",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=32"
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=132"
         }
       ],
       "curies": [
@@ -204,31 +310,31 @@
     }
   },
   {
-    "id": 30,
-    "date": "2022-11-08T11:42:51",
-    "date_gmt": "2022-11-08T10:42:51",
+    "id": 130,
+    "date": "2022-12-15T11:39:26",
+    "date_gmt": "2022-12-15T10:39:26",
     "guid": {
-      "rendered": "https://data.promeno.se/?p=30"
+      "rendered": "https://data.promeno.se/?p=130"
     },
-    "modified": "2022-11-10T08:42:51",
-    "modified_gmt": "2022-11-10T07:42:51",
-    "slug": "nedstamdhet",
+    "modified": "2022-12-31T11:11:21",
+    "modified_gmt": "2022-12-31T10:11:21",
+    "slug": "katastroftankar",
     "status": "publish",
     "type": "post",
-    "link": "https://data.promeno.se/2022/11/08/nedstamdhet/",
+    "link": "https://data.promeno.se/2022/12/15/katastroftankar/",
     "title": {
-      "rendered": "Nedstämdhet"
+      "rendered": "Katastroftankar"
     },
     "content": {
-      "rendered": "\n<p>Att känna sig nedstämd, håglös eller ledsen är en naturlig del av livet. Ibland förstår man varför man är nedstämd, ibland inte. Nedstämdhet går nästan alltid över av sig själv, men det kan ta tid. Det finns ofta saker du kan göra själv för att må bättre. Ibland kan du behöva hjälp.</p>\n\n\n\n<p>Den här artikeln handlar om nedstämdhet hos vuxna. Gäller&nbsp;det&nbsp;<a href=\"https://www.1177.se/Skane/barn--gravid/nar-familjelivet-ar-svart/nar-barn-mar-daligt/nar-barn-mar-psykiskt-daligt/\">barn som mår psykiskt dåligt</a>&nbsp;kan du läsa mer här. Du som är 13 till 25 år kan läsa mer om&nbsp;<a href=\"https://www.umo.se/att-ma-daligt/nedstamdhet-och-angest/nedstamdhet/\">nedstämdhet på UMO.se</a>.&nbsp;</p>\n",
+      "rendered": "\n<p>Katastroftankar börjar ofta med en relativt harmlös negativ tanke. Denna tanke växer i en negativ spiral sig större på grund av att kroppens rädsla-system aktiveras i kombination med att tankeinnehållet gradvis blir mer negativt. Processen kulminerar ofta med att vi föreställer oss att värsta tänkbara alternativ kommer bli verklighet tillsammans med att kamp-flykt reaktionen aktiveras. Att katastroftankar uppstår kan förklaras med att vår hjärna fungerar annorlunda då rädsla-systemet är påslaget. Vi förlorar förmågan att tänka klart och att se komplexitet, många pratar om att de hamnar i ett slags tunnelseende.</p>\n\n\n\n<p></p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"600\" height=\"395\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/top-above-view-head-shot-600w-1536165917.jpeg\" alt=\"\" class=\"wp-image-165\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/top-above-view-head-shot-600w-1536165917.jpeg 600w, https://data.promeno.se/wp-content/uploads/2022/12/top-above-view-head-shot-600w-1536165917-300x198.jpeg 300w\" sizes=\"(max-width: 600px) 100vw, 600px\" /></figure>\n\n\n\n<p>Många av oss drabbas oftare av ångest kaos och katastroftankar under klimakteriet.&nbsp; Samtidigt som vi är stressade. Men man kan lära sig att hantera tankarna och kontrollera gasen så inte varvtalet går upp vid fel tillfällen. Vi kan välja att se på stress som en tillgång som gör det möjligt att ta sig an utmaningar och som vår inre motor som ökar energi och fokus när det behövs. Du kan bli tåligare genom att förstå hur dina tankar påverkar energin och få den att räcka längre och till det som är värt att lägga den på.</p>\n\n\n\n<p></p>\n\n\n\n<div class=\"is-layout-constrained wp-container-4 wp-block-group alignfull\" style=\"padding-top:10rem;padding-bottom:10rem\">\n<figure class=\"wp-block-image aligncenter size-full is-resized is-style-rounded\"><img decoding=\"async\" loading=\"lazy\" src=\"https://data.promeno.se/wp-content/themes/twentytwentytwo/assets/images/icon-bird.jpg\" alt=\"Logga med en flygande fågel\" width=\"100\" height=\"100\"/></figure>\n\n\n\n<div class=\"is-layout-flow wp-block-group\">\n<h2 class=\"has-text-align-center\" style=\"font-size:var(--wp--custom--typography--font-size--huge, clamp(2.25rem, 4vw, 2.75rem))\">Susa</h2>\n\n\n\n<p class=\"has-text-align-center\">En podcast om fåglar</p>\n\n\n\n<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n\n\n<div class=\"is-horizontal is-content-justification-left is-layout-flex wp-container-1 wp-block-buttons\">\n<div class=\"wp-block-button has-custom-width wp-block-button__width-100 is-style-fill\"><a class=\"wp-block-button__link wp-element-button\" style=\"border-radius:6px\">Titta på våra videoklipp</a></div>\n\n\n\n<div class=\"wp-block-button has-custom-width wp-block-button__width-100 is-style-fill\"><a class=\"wp-block-button__link wp-element-button\" style=\"border-radius:6px\">Lyssna på iTunes Podcasts</a></div>\n\n\n\n<div class=\"wp-block-button has-custom-width wp-block-button__width-100 is-style-fill\"><a class=\"wp-block-button__link wp-element-button\" style=\"border-radius:6px\">Lyssna på Spotify</a></div>\n\n\n\n<div class=\"wp-block-button has-custom-width wp-block-button__width-100 is-style-fill\"><a class=\"wp-block-button__link wp-element-button\" style=\"border-radius:6px\">Stöd showen</a></div>\n\n\n\n<div class=\"wp-block-button has-custom-width wp-block-button__width-100 is-style-fill\"><a class=\"wp-block-button__link wp-element-button\" style=\"border-radius:6px\">Om värdarna</a></div>\n</div>\n</div>\n\n\n\n<div style=\"height:40px\" aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n\n\n\n<ul class=\"is-content-justification-center is-layout-flex wp-container-3 wp-block-social-links has-icon-color is-style-logos-only\"><li style=\"color: var(--wp--preset--color--primary); \" class=\"wp-social-link wp-social-link-wordpress wp-block-social-link\"><a href=\"https://#\"  class=\"wp-block-social-link-anchor\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12.158,12.786L9.46,20.625c0.806,0.237,1.657,0.366,2.54,0.366c1.047,0,2.051-0.181,2.986-0.51 c-0.024-0.038-0.046-0.079-0.065-0.124L12.158,12.786z M3.009,12c0,3.559,2.068,6.634,5.067,8.092L3.788,8.341 C3.289,9.459,3.009,10.696,3.009,12z M18.069,11.546c0-1.112-0.399-1.881-0.741-2.48c-0.456-0.741-0.883-1.368-0.883-2.109 c0-0.826,0.627-1.596,1.51-1.596c0.04,0,0.078,0.005,0.116,0.007C16.472,3.904,14.34,3.009,12,3.009 c-3.141,0-5.904,1.612-7.512,4.052c0.211,0.007,0.41,0.011,0.579,0.011c0.94,0,2.396-0.114,2.396-0.114 C7.947,6.93,8.004,7.642,7.52,7.699c0,0-0.487,0.057-1.029,0.085l3.274,9.739l1.968-5.901l-1.401-3.838 C9.848,7.756,9.389,7.699,9.389,7.699C8.904,7.67,8.961,6.93,9.446,6.958c0,0,1.484,0.114,2.368,0.114 c0.94,0,2.397-0.114,2.397-0.114c0.485-0.028,0.542,0.684,0.057,0.741c0,0-0.488,0.057-1.029,0.085l3.249,9.665l0.897-2.996 C17.841,13.284,18.069,12.316,18.069,11.546z M19.889,7.686c0.039,0.286,0.06,0.593,0.06,0.924c0,0.912-0.171,1.938-0.684,3.22 l-2.746,7.94c2.673-1.558,4.47-4.454,4.47-7.771C20.991,10.436,20.591,8.967,19.889,7.686z M12,22C6.486,22,2,17.514,2,12 C2,6.486,6.486,2,12,2c5.514,0,10,4.486,10,10C22,17.514,17.514,22,12,22z\"></path></svg><span class=\"wp-block-social-link-label screen-reader-text\">WordPress</span></a></li>\n\n<li style=\"color: var(--wp--preset--color--primary); \" class=\"wp-social-link wp-social-link-facebook wp-block-social-link\"><a href=\"https://#\"  class=\"wp-block-social-link-anchor\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z\"></path></svg><span class=\"wp-block-social-link-label screen-reader-text\">Facebook</span></a></li>\n\n<li style=\"color: var(--wp--preset--color--primary); \" class=\"wp-social-link wp-social-link-twitter wp-block-social-link\"><a href=\"https://#\"  class=\"wp-block-social-link-anchor\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M22.23,5.924c-0.736,0.326-1.527,0.547-2.357,0.646c0.847-0.508,1.498-1.312,1.804-2.27 c-0.793,0.47-1.671,0.812-2.606,0.996C18.324,4.498,17.257,4,16.077,4c-2.266,0-4.103,1.837-4.103,4.103 c0,0.322,0.036,0.635,0.106,0.935C8.67,8.867,5.647,7.234,3.623,4.751C3.27,5.357,3.067,6.062,3.067,6.814 c0,1.424,0.724,2.679,1.825,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.034,0,0.052c0,1.988,1.414,3.647,3.292,4.023 c-0.344,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.521-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85 c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843 c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C20.985,7.47,21.68,6.747,22.23,5.924z\"></path></svg><span class=\"wp-block-social-link-label screen-reader-text\">Twitter</span></a></li>\n\n<li style=\"color: var(--wp--preset--color--primary); \" class=\"wp-social-link wp-social-link-instagram wp-block-social-link\"><a href=\"https://#\"  class=\"wp-block-social-link-anchor\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M12,4.622c2.403,0,2.688,0.009,3.637,0.052c0.877,0.04,1.354,0.187,1.671,0.31c0.42,0.163,0.72,0.358,1.035,0.673 c0.315,0.315,0.51,0.615,0.673,1.035c0.123,0.317,0.27,0.794,0.31,1.671c0.043,0.949,0.052,1.234,0.052,3.637 s-0.009,2.688-0.052,3.637c-0.04,0.877-0.187,1.354-0.31,1.671c-0.163,0.42-0.358,0.72-0.673,1.035 c-0.315,0.315-0.615,0.51-1.035,0.673c-0.317,0.123-0.794,0.27-1.671,0.31c-0.949,0.043-1.233,0.052-3.637,0.052 s-2.688-0.009-3.637-0.052c-0.877-0.04-1.354-0.187-1.671-0.31c-0.42-0.163-0.72-0.358-1.035-0.673 c-0.315-0.315-0.51-0.615-0.673-1.035c-0.123-0.317-0.27-0.794-0.31-1.671C4.631,14.688,4.622,14.403,4.622,12 s0.009-2.688,0.052-3.637c0.04-0.877,0.187-1.354,0.31-1.671c0.163-0.42,0.358-0.72,0.673-1.035 c0.315-0.315,0.615-0.51,1.035-0.673c0.317-0.123,0.794-0.27,1.671-0.31C9.312,4.631,9.597,4.622,12,4.622 M12,3 C9.556,3,9.249,3.01,8.289,3.054C7.331,3.098,6.677,3.25,6.105,3.472C5.513,3.702,5.011,4.01,4.511,4.511 c-0.5,0.5-0.808,1.002-1.038,1.594C3.25,6.677,3.098,7.331,3.054,8.289C3.01,9.249,3,9.556,3,12c0,2.444,0.01,2.751,0.054,3.711 c0.044,0.958,0.196,1.612,0.418,2.185c0.23,0.592,0.538,1.094,1.038,1.594c0.5,0.5,1.002,0.808,1.594,1.038 c0.572,0.222,1.227,0.375,2.185,0.418C9.249,20.99,9.556,21,12,21s2.751-0.01,3.711-0.054c0.958-0.044,1.612-0.196,2.185-0.418 c0.592-0.23,1.094-0.538,1.594-1.038c0.5-0.5,0.808-1.002,1.038-1.594c0.222-0.572,0.375-1.227,0.418-2.185 C20.99,14.751,21,14.444,21,12s-0.01-2.751-0.054-3.711c-0.044-0.958-0.196-1.612-0.418-2.185c-0.23-0.592-0.538-1.094-1.038-1.594 c-0.5-0.5-1.002-0.808-1.594-1.038c-0.572-0.222-1.227-0.375-2.185-0.418C14.751,3.01,14.444,3,12,3L12,3z M12,7.378 c-2.552,0-4.622,2.069-4.622,4.622S9.448,16.622,12,16.622s4.622-2.069,4.622-4.622S14.552,7.378,12,7.378z M12,15 c-1.657,0-3-1.343-3-3s1.343-3,3-3s3,1.343,3,3S13.657,15,12,15z M16.804,6.116c-0.596,0-1.08,0.484-1.08,1.08 s0.484,1.08,1.08,1.08c0.596,0,1.08-0.484,1.08-1.08S17.401,6.116,16.804,6.116z\"></path></svg><span class=\"wp-block-social-link-label screen-reader-text\">Instagram</span></a></li></ul>\n</div>\n",
       "protected": false
     },
     "excerpt": {
-      "rendered": "<p>Att känna sig nedstämd, håglös eller ledsen är en naturlig del av livet. Ibland förstår man varför man är nedstämd, ibland inte. Nedstämdhet går nästan alltid över av sig själv, men det kan ta tid. Det finns ofta saker du kan göra själv för att må bättre. Ibland kan du behöva hjälp. Den här artikeln [&hellip;]</p>\n",
+      "rendered": "<p>Katastroftankar börjar ofta med en relativt harmlös negativ tanke. Denna tanke växer i en negativ spiral sig större på grund av att kroppens rädsla-system aktiveras i kombination med att tankeinnehållet gradvis blir mer negativt. Processen kulminerar ofta med att vi föreställer oss att värsta tänkbara alternativ kommer bli verklighet tillsammans med att kamp-flykt reaktionen aktiveras. [&hellip;]</p>\n",
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 103,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -239,10 +345,57 @@
     },
     "categories": [19],
     "tags": [],
+    "better_featured_image": {
+      "id": 103,
+      "alt_text": "",
+      "caption": "Adult woman online learning at home",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 612,
+        "height": 408,
+        "file": "2022/11/somn.jpeg",
+        "filesize": 31020,
+        "sizes": {
+          "medium": {
+            "file": "somn-300x200.jpeg",
+            "width": 300,
+            "height": 200,
+            "mime-type": "image/jpeg",
+            "filesize": 13426,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/somn-300x200.jpeg"
+          },
+          "thumbnail": {
+            "file": "somn-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 6786,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/somn-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "Getty Images",
+          "camera": "",
+          "caption": "Adult woman online learning at home",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "Adult woman online learning at home",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 75,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/somn.jpeg"
+    },
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/30"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/130"
         }
       ],
       "collection": [
@@ -264,36 +417,42 @@
       "replies": [
         {
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=30"
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=130"
         }
       ],
       "version-history": [
         {
-          "count": 2,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/30/revisions"
+          "count": 4,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/130/revisions"
         }
       ],
       "predecessor-version": [
         {
-          "id": 53,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/30/revisions/53"
+          "id": 172,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/130/revisions/172"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/103"
         }
       ],
       "wp:attachment": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=30"
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=130"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=30"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=130"
         },
         {
           "taxonomy": "post_tag",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=30"
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=130"
         }
       ],
       "curies": [
@@ -306,31 +465,31 @@
     }
   },
   {
-    "id": 28,
-    "date": "2022-11-08T11:42:20",
-    "date_gmt": "2022-11-08T10:42:20",
+    "id": 128,
+    "date": "2022-12-15T11:38:08",
+    "date_gmt": "2022-12-15T10:38:08",
     "guid": {
-      "rendered": "https://data.promeno.se/?p=28"
+      "rendered": "https://data.promeno.se/?p=128"
     },
-    "modified": "2022-11-10T08:43:10",
-    "modified_gmt": "2022-11-10T07:43:10",
-    "slug": "angest",
+    "modified": "2022-12-31T10:38:54",
+    "modified_gmt": "2022-12-31T09:38:54",
+    "slug": "humorsvangningar",
     "status": "publish",
     "type": "post",
-    "link": "https://data.promeno.se/2022/11/08/angest/",
+    "link": "https://data.promeno.se/2022/12/15/humorsvangningar/",
     "title": {
-      "rendered": "Ångest"
+      "rendered": "Humörsvängningar"
     },
     "content": {
-      "rendered": "\n<p>Ångest är rädsla eller oro som känns i kroppen. Det är obehagligt men inte farligt att ha ångest. Det finns olika sätt att hantera ångest, och saker du kan göra själv för att må bättre. Det finns även behandling som hjälper.</p>\n\n\n\n<p>Du som är förälder eller annan viktig vuxen till ett barn eller tonåring som har ångest kan&nbsp;<a href=\"https://www.1177.se/Skane/sjukdomar--besvar/psykiska-sjukdomar-och-besvar/angest/angest-och-fobier-hos-barn-och-tonaringar/\">läsa mer här</a>. Du som själv är ung kan läsa mer om&nbsp;<a href=\"https://www.1177.se/Skane/lankbiblioteket/nationella-lankar/umo--startsida/umo---angest/\">ångest på UMO.se</a></p>\n",
+      "rendered": "\n<p>Humörsvängningar är inte en diagnos, utan ett psykiskt symtom som uppkommer i samband med andra tillstånd, sjukdomar och personlighetsstörningar. Det kännetecknas av ett instabilt humör, vilket betyder att du snabbt kan växla från exempelvis glad till ledsen eller tvärtom. Ibland kan humörsvängningarna även ske utan någon särskild anledning.</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"600\" height=\"396\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/serious-sad-middle-aged-mature-600w-1881359899.jpeg\" alt=\"\" class=\"wp-image-167\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/serious-sad-middle-aged-mature-600w-1881359899.jpeg 600w, https://data.promeno.se/wp-content/uploads/2022/12/serious-sad-middle-aged-mature-600w-1881359899-300x198.jpeg 300w\" sizes=\"(max-width: 600px) 100vw, 600px\" /></figure>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://pxl.host/lc9fh2gcxspsgsmypoc.png\" alt=\"\"/></figure>\n\n\n\n<p>Det finns tider i livet då humöret är lite svårare att behärska. Det vet alla som har en trotsig 3-åring, en stormig 15-åring – eller är en 50-åring i klimakteriet.</p>\n\n\n\n<p>Plötsligt kan minsta lilla irritationsmoment utlösa ett utbrott eller åtminstone massiv surhet. Ibland varvat med extrem gråtmildhet. Aldrig har väl storögda kattungar varit så sorgliga på något sätt.</p>\n\n\n\n<p>Det är hormonförändringar och vallningar som påverkar humöret, men också livet i sig. Kring 50 sker ofta en rad livsomställningar, och det är inte alltid lätt att hantera: kroppen åldras, barnen flyttar hemifrån, föräldrarna blir gamla.</p>\n",
       "protected": false
     },
     "excerpt": {
-      "rendered": "<p>Ångest är rädsla eller oro som känns i kroppen. Det är obehagligt men inte farligt att ha ångest. Det finns olika sätt att hantera ångest, och saker du kan göra själv för att må bättre. Det finns även behandling som hjälper. Du som är förälder eller annan viktig vuxen till ett barn eller tonåring som [&hellip;]</p>\n",
+      "rendered": "<p>Humörsvängningar är inte en diagnos, utan ett psykiskt symtom som uppkommer i samband med andra tillstånd, sjukdomar och personlighetsstörningar. Det kännetecknas av ett instabilt humör, vilket betyder att du snabbt kan växla från exempelvis glad till ledsen eller tvärtom. Ibland kan humörsvängningarna även ske utan någon särskild anledning. Det finns tider i livet då humöret [&hellip;]</p>\n",
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 105,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -341,10 +500,57 @@
     },
     "categories": [19],
     "tags": [],
+    "better_featured_image": {
+      "id": 105,
+      "alt_text": "",
+      "caption": "Young thinking unhappy brunette woman plus size working at laptop on table with house plant in bright modern office",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 612,
+        "height": 408,
+        "file": "2022/11/trotthet.jpeg",
+        "filesize": 31899,
+        "sizes": {
+          "medium": {
+            "file": "trotthet-300x200.jpeg",
+            "width": 300,
+            "height": 200,
+            "mime-type": "image/jpeg",
+            "filesize": 13284,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/trotthet-300x200.jpeg"
+          },
+          "thumbnail": {
+            "file": "trotthet-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 6076,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/trotthet-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "Getty Images/iStockphoto",
+          "camera": "",
+          "caption": "Young thinking unhappy brunette woman plus size working at laptop on table with house plant in bright modern office",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 75,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/trotthet.jpeg"
+    },
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/28"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/128"
         }
       ],
       "collection": [
@@ -366,36 +572,42 @@
       "replies": [
         {
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=28"
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=128"
         }
       ],
       "version-history": [
         {
-          "count": 2,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/28/revisions"
+          "count": 3,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/128/revisions"
         }
       ],
       "predecessor-version": [
         {
-          "id": 54,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/28/revisions/54"
+          "id": 173,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/128/revisions/173"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/105"
         }
       ],
       "wp:attachment": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=28"
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=128"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=28"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=128"
         },
         {
           "taxonomy": "post_tag",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=28"
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=128"
         }
       ],
       "curies": [
@@ -408,31 +620,31 @@
     }
   },
   {
-    "id": 26,
-    "date": "2022-11-08T11:42:11",
-    "date_gmt": "2022-11-08T10:42:11",
+    "id": 126,
+    "date": "2022-12-15T11:37:31",
+    "date_gmt": "2022-12-15T10:37:31",
     "guid": {
-      "rendered": "https://data.promeno.se/?p=26"
+      "rendered": "https://data.promeno.se/?p=126"
     },
-    "modified": "2022-11-09T23:21:06",
-    "modified_gmt": "2022-11-09T22:21:06",
-    "slug": "varmevallningar",
+    "modified": "2022-12-31T11:10:07",
+    "modified_gmt": "2022-12-31T10:10:07",
+    "slug": "haravfall",
     "status": "publish",
     "type": "post",
-    "link": "https://data.promeno.se/2022/11/08/varmevallningar/",
+    "link": "https://data.promeno.se/2022/12/15/haravfall/",
     "title": {
-      "rendered": "Värmevallningar"
+      "rendered": "Håravfall"
     },
     "content": {
-      "rendered": "\n<p>Klimakteriet upplevs på olika sätt från person till person. De flesta känner någon sorts obehag i samband med klimakteriet. Det kan vara lätta eller svårare besvär. Kontakta vården om du mår dåligt på grund av besvären. Det finns lindrande behandling att få.</p>\n\n\n\n<p>Klimakteriet är en naturlig del av åldrandet. I klimakteriet förändras kroppens hormonbalans, som gör att du kan få olika symtom. Läs mer om&nbsp;<a href=\"https://www.1177.se/Skane/liv--halsa/sa-fungerar-kroppen/klimakteriet/\">klimakteriet här.</a></p>\n\n\n\n<p>Klimakteriebesvär kallas också övergångsbesvär.</p>\n",
+      "rendered": "\n<p>Att få tunt hår eller vikar som kryper längre och längre upp på huvudet kan bidra till stress eller dåligt självförtroende. Det är dock onödigt att gå runt med den klumpen i magen eftersom det idag finns hjälp att få. Den vanligaste typen av håravfall är ärftlig och drabbar främst män. Det är dock inte ovanligt med håravfall hos kvinnor och även denna kan vara ärftlig eller orsakad av exempelvis hormonrubbningar eller stress. Det ärftliga håravfallet kan behandlas med receptfria läkemedel med gott resultat. Misstänker du att håravfallet beror på något läkemedel du tar eller på hormonrubbningar bör du kontakta en läkare för att få bästa möjliga behandling.</p>\n\n\n\n<p>Tyvärr är tunt hår allt för vanligt för kvinnor som går igenom ”förändringen”. Men varför tappar man hår i klimakteriet? Och hur kan man behandla håravfall i klimakteriet? Oavsett om du upplever håravfall i förklimakteriet eller att du tappar hår i klimakteriet så bör du fortsätta att läsa för att få svaren på dina frågor om håravfall i klimakteriet med mera.</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"612\" height=\"408\" src=\"https://data.promeno.se/wp-content/uploads/2022/11/psycoeducation-1.jpeg\" alt=\"\" class=\"wp-image-108\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/11/psycoeducation-1.jpeg 612w, https://data.promeno.se/wp-content/uploads/2022/11/psycoeducation-1-300x200.jpeg 300w\" sizes=\"(max-width: 612px) 100vw, 612px\" /></figure>\n",
       "protected": false
     },
     "excerpt": {
-      "rendered": "<p>Klimakteriet upplevs på olika sätt från person till person. De flesta känner någon sorts obehag i samband med klimakteriet. Det kan vara lätta eller svårare besvär. Kontakta vården om du mår dåligt på grund av besvären. Det finns lindrande behandling att få. Klimakteriet är en naturlig del av åldrandet. I klimakteriet förändras kroppens hormonbalans, som [&hellip;]</p>\n",
+      "rendered": "<p>Att få tunt hår eller vikar som kryper längre och längre upp på huvudet kan bidra till stress eller dåligt självförtroende. Det är dock onödigt att gå runt med den klumpen i magen eftersom det idag finns hjälp att få. Den vanligaste typen av håravfall är ärftlig och drabbar främst män. Det är dock inte [&hellip;]</p>\n",
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 99,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -443,10 +655,57 @@
     },
     "categories": [11],
     "tags": [],
+    "better_featured_image": {
+      "id": 99,
+      "alt_text": "",
+      "caption": "Shot of a senior woman looking thoughtful in a retirement home",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 612,
+        "height": 408,
+        "file": "2022/11/minskad-sexlust.jpeg",
+        "filesize": 34995,
+        "sizes": {
+          "medium": {
+            "file": "minskad-sexlust-300x200.jpeg",
+            "width": 300,
+            "height": 200,
+            "mime-type": "image/jpeg",
+            "filesize": 14098,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/minskad-sexlust-300x200.jpeg"
+          },
+          "thumbnail": {
+            "file": "minskad-sexlust-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 6923,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/minskad-sexlust-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "Getty Images",
+          "camera": "",
+          "caption": "Shot of a senior woman looking thoughtful in a retirement home",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "Shot of a senior woman looking thoughtful in a retirement home",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 75,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/minskad-sexlust.jpeg"
+    },
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/26"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/126"
         }
       ],
       "collection": [
@@ -468,36 +727,42 @@
       "replies": [
         {
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=26"
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=126"
         }
       ],
       "version-history": [
         {
-          "count": 2,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/26/revisions"
+          "count": 4,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/126/revisions"
         }
       ],
       "predecessor-version": [
         {
-          "id": 48,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/26/revisions/48"
+          "id": 208,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/126/revisions/208"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/99"
         }
       ],
       "wp:attachment": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=26"
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=126"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=26"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=126"
         },
         {
           "taxonomy": "post_tag",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=26"
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=126"
         }
       ],
       "curies": [
@@ -510,31 +775,31 @@
     }
   },
   {
-    "id": 24,
-    "date": "2022-11-08T11:41:44",
-    "date_gmt": "2022-11-08T10:41:44",
+    "id": 124,
+    "date": "2022-12-15T11:36:36",
+    "date_gmt": "2022-12-15T10:36:36",
     "guid": {
-      "rendered": "https://data.promeno.se/?p=24"
+      "rendered": "https://data.promeno.se/?p=124"
     },
-    "modified": "2022-11-10T08:43:28",
-    "modified_gmt": "2022-11-10T07:43:28",
-    "slug": "somnsvarigheter",
+    "modified": "2022-12-31T10:39:43",
+    "modified_gmt": "2022-12-31T09:39:43",
+    "slug": "ont-i-kroppen",
     "status": "publish",
     "type": "post",
-    "link": "https://data.promeno.se/2022/11/08/somnsvarigheter/",
+    "link": "https://data.promeno.se/2022/12/15/ont-i-kroppen/",
     "title": {
-      "rendered": "Sömnsvårigheter"
+      "rendered": "Ont i kroppen"
     },
     "content": {
-      "rendered": "\n<p>Det är vanligt med sömnsvårigheter. Oftast är det inget du behöver oroa dig för. Det är inte farligt att då och då ha en natt när du får för lite sömn. Men om du sover för lite natt efter natt, blir trött, mår dåligt och fungerar sämre i vardagen, kan du behöva hjälp med att få bättre sömn.</p>\n",
+      "rendered": "\n<p>Värk i kroppen, trötthet och orkeslöshet är vanliga symptom i samband med bakterie- och virusinfektioner. Har du ont i kroppen i kombination med snuva, hosta och ibland&nbsp;<a href=\"https://www.kry.se/fakta/feber/\">feber</a>&nbsp;brukar&nbsp;<a href=\"https://www.kry.se/fakta/influensa/\">influensa</a>&nbsp;eller&nbsp;<a href=\"https://www.kry.se/fakta/forkylning/\">förkylning</a>&nbsp;vara vanliga förklaringar. Då kan du känna dig riktigt sjuk och kanske även har ont i huvudet och halsen.</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"600\" height=\"395\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/tired-stressed-old-mature-business-600w-1818577436.jpeg\" alt=\"\" class=\"wp-image-169\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/tired-stressed-old-mature-business-600w-1818577436.jpeg 600w, https://data.promeno.se/wp-content/uploads/2022/12/tired-stressed-old-mature-business-600w-1818577436-300x198.jpeg 300w\" sizes=\"(max-width: 600px) 100vw, 600px\" /></figure>\n\n\n\n<p>Oregelbunden mens, utebliven mens och värmevallningar är kända symtom i samband med klimakteriet. Men det finns många andra besvär som också hänger samman med den stora hormonomställning som sker under den här perioden. Det kan till exempel röra sig om nedstämdhet och humörsvängningar, som tycks komma från ingenstans. Många kvinnor upplever att de psykiska symtomen under klimakteriet är tuffare att leva med än de fysiska.</p>\n\n\n\n<h4>Klimakteriet kan visa sig på många olika sätt</h4>\n\n\n\n<p>Här är exempel på fler symtom i samband med klimakteriet:</p>\n\n\n\n<ul>\n<li><strong>Nedstämdhet.</strong>&nbsp;I takt med att östrogennivåerna sjunker så minskar också nivåerna av serotonin, ett hormon som är viktigt för vårt välmående. Det kan leda till nedstämdhet och depression.</li>\n\n\n\n<li><strong>Trötthet, håglöshet och lägre energi.</strong>&nbsp;Stora hormonomställningar är tröttande. Det vet alla som känner en tonåring. Många får lägre energinivå och en känsla av håglöshet i samband med klimakteriet.</li>\n\n\n\n<li><strong>Sömnproblem.</strong>&nbsp;Det är vanligt att börja vakna vid fyratiden på morgonen och ha svårt att somna om.</li>\n\n\n\n<li><strong>Irritabilitet, aggression.</strong>&nbsp;Humöret kan svänga och du kan bli mer lättirriterad än annars.</li>\n\n\n\n<li><strong>Glömska och svårigheter att koncentrera sig.</strong>&nbsp;Tankeförmågan påverkas under klimakteriet, och det kan bli svårare att komma ihåg saker och att koncentrera sig. En del beskriver det som hjärndimma.</li>\n\n\n\n<li><strong>Nedsatt sexlust</strong>. När östrogennivåerna sjunker så påverkar det även sexlusten.</li>\n\n\n\n<li><strong>Viktuppgång.</strong>&nbsp;Ökad mängd kroppsfett, särskilt runt magen, är vanligt.</li>\n\n\n\n<li><strong>Svårighet att reglera kroppsvärmen.</strong>&nbsp;Att klimakteriet kan ge svettningar och värmevallningar är känt. Men du kan också få lättare att frysa, och generellt sett ha svårt att reglera kroppsvärmen.</li>\n\n\n\n<li><strong>Värk i kroppen.</strong>&nbsp;Under klimakteriet är det vanligt att få ökade ledbesvär, ryggvärk och att kroppen känns stelare.</li>\n\n\n\n<li><strong>Torra slemhinnor</strong>. Slemhinnorna i underlivet blir torrare, vilket kan göra samlivet svårare.</li>\n\n\n\n<li><strong>Ökad hårväxt i ansiktet.</strong>&nbsp;Det är vanligt att du märker av fler och grövre hårstrån i ansiktet, framför allt på hakan, halsen och på läppen. Det hänger samman med den ändrade hormonbalansen.</li>\n</ul>\n",
       "protected": false
     },
     "excerpt": {
-      "rendered": "<p>Det är vanligt med sömnsvårigheter. Oftast är det inget du behöver oroa dig för. Det är inte farligt att då och då ha en natt när du får för lite sömn. Men om du sover för lite natt efter natt, blir trött, mår dåligt och fungerar sämre i vardagen, kan du behöva hjälp med att [&hellip;]</p>\n",
+      "rendered": "<p>Värk i kroppen, trötthet och orkeslöshet är vanliga symptom i samband med bakterie- och virusinfektioner. Har du ont i kroppen i kombination med snuva, hosta och ibland&nbsp;feber&nbsp;brukar&nbsp;influensa&nbsp;eller&nbsp;förkylning&nbsp;vara vanliga förklaringar. Då kan du känna dig riktigt sjuk och kanske även har ont i huvudet och halsen. Oregelbunden mens, utebliven mens och värmevallningar är kända symtom i [&hellip;]</p>\n",
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 104,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -545,10 +810,57 @@
     },
     "categories": [11],
     "tags": [],
+    "better_featured_image": {
+      "id": 104,
+      "alt_text": "",
+      "caption": "The mid adult woman uses her smart phone as she sits in the hospital waiting room.",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 612,
+        "height": 408,
+        "file": "2022/11/warm.jpeg",
+        "filesize": 28915,
+        "sizes": {
+          "medium": {
+            "file": "warm-300x200.jpeg",
+            "width": 300,
+            "height": 200,
+            "mime-type": "image/jpeg",
+            "filesize": 12094,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/warm-300x200.jpeg"
+          },
+          "thumbnail": {
+            "file": "warm-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 6300,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/warm-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "Getty Images",
+          "camera": "",
+          "caption": "The mid adult woman uses her smart phone as she sits in the hospital waiting room.",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 75,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/warm.jpeg"
+    },
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/24"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/124"
         }
       ],
       "collection": [
@@ -570,36 +882,42 @@
       "replies": [
         {
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=24"
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=124"
         }
       ],
       "version-history": [
         {
-          "count": 2,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/24/revisions"
+          "count": 3,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/124/revisions"
         }
       ],
       "predecessor-version": [
         {
-          "id": 55,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/24/revisions/55"
+          "id": 175,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/124/revisions/175"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/104"
         }
       ],
       "wp:attachment": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=24"
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=124"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=24"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=124"
         },
         {
           "taxonomy": "post_tag",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=24"
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=124"
         }
       ],
       "curies": [
@@ -612,31 +930,31 @@
     }
   },
   {
-    "id": 9,
-    "date": "2022-10-30T21:32:15",
-    "date_gmt": "2022-10-30T20:32:15",
+    "id": 122,
+    "date": "2022-12-15T11:36:04",
+    "date_gmt": "2022-12-15T10:36:04",
     "guid": {
-      "rendered": "https://data.promeno.se/?p=9"
+      "rendered": "https://data.promeno.se/?p=122"
     },
-    "modified": "2022-10-30T21:32:15",
-    "modified_gmt": "2022-10-30T20:32:15",
-    "slug": "lakemedel",
+    "modified": "2022-12-31T10:39:54",
+    "modified_gmt": "2022-12-31T09:39:54",
+    "slug": "hjarndimma",
     "status": "publish",
     "type": "post",
-    "link": "https://data.promeno.se/2022/10/30/lakemedel/",
+    "link": "https://data.promeno.se/2022/12/15/hjarndimma/",
     "title": {
-      "rendered": "Läkemedel"
+      "rendered": "Hjärndimma"
     },
     "content": {
-      "rendered": "\n<p>Läkemedel med östrogen lindrar om du har mycket besvär. De verkar i hela kroppen. Läkemedlen finns i olika former som tabletter, plåster eller gel.</p>\n\n\n\n<p>Du kan också behandlas med läkemedel i slidan om du endast har underlivsbesvär. Dessa läkemedel verkar bara i underlivet och inte i hela kroppen.</p>\n",
+      "rendered": "\n<p>Ett klart sinne är ett kraftfullt sinne. Faktum är att det finns oändligt många fördelar för hälsa och välbefinnande som du kan få med ett klarare, mer fokuserat och centrerat sinne. Här är bara några av de fördelar du kan se fram emot:</p>\n\n\n\n<ul>\n<li>Ökar kreativiteten och flödet</li>\n\n\n\n<li>Förbättrad&nbsp;<a href=\"https://www.anahana.com/sv/mindfulness/mindfulness?hsLang=sv\">mindfulness</a></li>\n\n\n\n<li>En lättsam attityd som andra kommer att attraheras av.</li>\n\n\n\n<li>Mer energi</li>\n\n\n\n<li>Klarhet under&nbsp;<a href=\"https://www.anahana.com/sv/stress-management/stress-management-activities?hsLang=sv\">stressiga</a>&nbsp;perioder</li>\n\n\n\n<li>Bättre inlärning</li>\n\n\n\n<li>Ett förbättrat minne</li>\n\n\n\n<li>Bättre kontroll över negativa tankar och känslor</li>\n\n\n\n<li>Det är lättare att hantera svåra situationer och känslor.</li>\n\n\n\n<li>Mer närvaro i viktiga ögonblick</li>\n\n\n\n<li>Ett roligare och mer givande liv överlag</li>\n</ul>\n\n\n\n<p>Ingen har sagt att livet är lätt. Det är oftast mycket att stå i och man kan lätt känna sig trött och utarmad. Klimakteriet bidrar även en hel del till detta med dess hormonella svängningar, förhöjda stressnivåer och för många sämre sömn på kuppen vilket ofta kan orsaka ytterligare energibrist. Men känslan av ökad trötthet behöver inte vara ett livslångt faktum. Lite extra fokus på sömn, vila, stresshantering och träning är de bästa sätten att fylla på energinivån.&nbsp;</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"600\" height=\"407\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/pretty-woman-waking-yawning-600w-324269153.jpeg\" alt=\"\" class=\"wp-image-166\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/pretty-woman-waking-yawning-600w-324269153.jpeg 600w, https://data.promeno.se/wp-content/uploads/2022/12/pretty-woman-waking-yawning-600w-324269153-300x204.jpeg 300w\" sizes=\"(max-width: 600px) 100vw, 600px\" /></figure>\n\n\n\n<p></p>\n",
       "protected": false
     },
     "excerpt": {
-      "rendered": "<p>Läkemedel med östrogen lindrar om du har mycket besvär. De verkar i hela kroppen. Läkemedlen finns i olika former som tabletter, plåster eller gel. Du kan också behandlas med läkemedel i slidan om du endast har underlivsbesvär. Dessa läkemedel verkar bara i underlivet och inte i hela kroppen.</p>\n",
+      "rendered": "<p>Ett klart sinne är ett kraftfullt sinne. Faktum är att det finns oändligt många fördelar för hälsa och välbefinnande som du kan få med ett klarare, mer fokuserat och centrerat sinne. Här är bara några av de fördelar du kan se fram emot: Ingen har sagt att livet är lätt. Det är oftast mycket att [&hellip;]</p>\n",
       "protected": false
     },
     "author": 1,
-    "featured_media": 0,
+    "featured_media": 101,
     "comment_status": "open",
     "ping_status": "open",
     "sticky": false,
@@ -645,12 +963,59 @@
     "meta": {
       "_oct_exclude_from_cache": false
     },
-    "categories": [5],
+    "categories": [11],
     "tags": [],
+    "better_featured_image": {
+      "id": 101,
+      "alt_text": "",
+      "caption": "Rear view of son and elderly father sitting together at home. Son caring for his father, putting hand on his shoulder, comforting and consoling him. Family love, bonding, care and confidence",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 612,
+        "height": 408,
+        "file": "2022/11/angest.jpeg",
+        "filesize": 28498,
+        "sizes": {
+          "medium": {
+            "file": "angest-300x200.jpeg",
+            "width": 300,
+            "height": 200,
+            "mime-type": "image/jpeg",
+            "filesize": 12174,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/angest-300x200.jpeg"
+          },
+          "thumbnail": {
+            "file": "angest-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 5854,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/angest-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "Getty Images",
+          "camera": "",
+          "caption": "Rear view of son and elderly father sitting together at home. Son caring for his father, putting hand on his shoulder, comforting and consoling him. Family love, bonding, care and confidence",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 75,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/angest.jpeg"
+    },
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/9"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/122"
         }
       ],
       "collection": [
@@ -672,36 +1037,42 @@
       "replies": [
         {
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=9"
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=122"
         }
       ],
       "version-history": [
         {
-          "count": 1,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/9/revisions"
+          "count": 3,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/122/revisions"
         }
       ],
       "predecessor-version": [
         {
-          "id": 10,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/9/revisions/10"
+          "id": 176,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/122/revisions/176"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/101"
         }
       ],
       "wp:attachment": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=9"
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=122"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=9"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=122"
         },
         {
           "taxonomy": "post_tag",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=9"
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=122"
         }
       ],
       "curies": [
@@ -714,27 +1085,337 @@
     }
   },
   {
-    "id": 1,
-    "date": "2022-10-28T08:49:22",
-    "date_gmt": "2022-10-28T06:49:22",
+    "id": 84,
+    "date": "2022-11-17T16:15:44",
+    "date_gmt": "2022-11-17T15:15:44",
     "guid": {
-      "rendered": "https://data.promeno.se/?p=1"
+      "rendered": "https://data.promeno.se/?p=84"
     },
-    "modified": "2022-11-09T23:25:34",
-    "modified_gmt": "2022-11-09T22:25:34",
-    "slug": "hej-varlden",
+    "modified": "2022-12-31T10:41:37",
+    "modified_gmt": "2022-12-31T09:41:37",
+    "slug": "vad-hander-i-kroppen",
     "status": "publish",
     "type": "post",
-    "link": "https://data.promeno.se/2022/10/28/hej-varlden/",
+    "link": "https://data.promeno.se/2022/11/17/vad-hander-i-kroppen/",
     "title": {
-      "rendered": "Nyheter"
+      "rendered": "Vad händer i kroppen?"
     },
     "content": {
-      "rendered": "\n<p>Efter 20 år har Läkemedelsverket uppdaterat sin behandlingsrekommendation om hormonbehandling i klimakteriet. Den riktas framför allt till allmänläkare.</p>\n\n\n\n<p>Vid dagens mammografiundersökningar går runt 25 procent av tumörerna under radarn, och många upptäcks i ett sent stadium då de är svårare att bota.</p>\n\n\n\n<p>Mycket vore därför vunnet om det gick att förutspå vilka kvinnor som kommer att insjukna närmsta tiden efter att de har varit på mammografi, så att de kan följas mer noggrant av vården.</p>\n\n\n\n<p>Kanske är det möjligt genom att analysera mammografibilderna med artificiell intelligens? Den möjligheten har undersökts av forskare vid bland annat Karolinska institutet (KI).</p>\n\n\n\n<p>De har utvecklat en AI-metod för att upptäcka tidiga tecken på cancer som läkaren inte ser med blotta ögat – och kombinerat den med 3D-mammografi som ger en mer detaljerad bild av bröstet än den vanliga 2D-varianten.</p>\n\n\n\n<p>Tanken är att metoden ska kunna användas vid mammografiundersökningarna så att dessa både kan upptäcka tumörer – och förutspå framtida risk.</p>\n\n\n\n<p>– Kan man göra de två sakerna samtidigt så är mycket vunnet, säger Mikael Eriksson, en av forskarna vid KI.</p>\n",
+      "rendered": "\n<p>Klimakteriet inträffar vanligtvis någon gång runt 50 års ålder men det finns stora individuella variationer och man kan ha besvär innan man når själva klimakteriet. Besvären är framför allt kopplade till svängningar i hormonnivåer, när östrogennivåer är stabila mår vi oftast bra men svängningar påverkar oss med olika typer av symtom som besvär. Vid en viss ålder blir hormonproduktionen oregelbunden för att sedan sjunka- då kan vi få besvär som vallningar, psykiska symtom och sömnsvårigheter.</p>\n\n\n\n<p>Klimakteriet är den tid i livet då äggstockarnas funktion minskar, mensen upphör och hormonbalansen i kroppen förändras. Det kan pågå olika länge, från något år upp till mer än tio år. Klimakteriet kallas också för övergångsåldern.</p>\n\n\n\n<p>Klimakteriet är en naturlig del av åldrandet. Det skiljer sig mycket mellan personer vilka symtom man får och hur det upplevs. En del känner knappt av det, andra påverkas mycket.</p>\n\n\n\n<p>I texten&nbsp;<a href=\"https://www.1177.se/Skane/sjukdomar--besvar/hormoner/klimakteriebesvar/\">Klimakteriebesvär</a>&nbsp;kan du läsa om vad du kan göra för att lindra symtomen. Du kan också läsa om behandling med läkemedel i texten&nbsp;<a href=\"https://www.1177.se/Skane/behandling--hjalpmedel/behandling-med-lakemedel/lakemedel-utifran-diagnos/lakemedel-vid-klimakteriebesvar/\">Läkemedel vid klimakteriebesvär</a>.</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"600\" height=\"398\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/tired-overheated-middle-aged-lady-600w-1536338273.jpeg\" alt=\"\" class=\"wp-image-168\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/tired-overheated-middle-aged-lady-600w-1536338273.jpeg 600w, https://data.promeno.se/wp-content/uploads/2022/12/tired-overheated-middle-aged-lady-600w-1536338273-300x199.jpeg 300w\" sizes=\"(max-width: 600px) 100vw, 600px\" /></figure>\n\n\n\n<p>Östrogen påverkar många organ i kroppen, till exempel livmodern, slidan, skelettet och hjärnan. Det gör att du kan få olika symtom när mängden östrogen minskar:</p>\n\n\n\n<ul>\n<li>Värmevallningar, det innebär att du plötsligt blir mycket varm.</li>\n\n\n\n<li>Plötsliga svettningar, ofta i samband med en värmevallning.</li>\n\n\n\n<li>Sömnproblem.</li>\n\n\n\n<li>Humöret kan ändras snabbt.</li>\n\n\n\n<li>Nedstämdhet.</li>\n\n\n\n<li>Torra slemhinnor, framför allt i slidan men även i ögonen, näsan och i halsen. Torra slemhinnor kan göra att det kliar och svider.</li>\n\n\n\n<li>Urinvägsbesvär, till exempel att du ofta känner dig kissnödig eller att det svider när du kissar.</li>\n</ul>\n\n\n\n<p>Dessa symtom kan bli besvärliga, de kallas då&nbsp;<a href=\"https://www.1177.se/Skane/sjukdomar--besvar/hormoner/klimakteriebesvar/\">klimakteriebesvär eller övergångsbesvär</a>. Du kan göra en del själv för att lindra dem. Du kan också få&nbsp;<a href=\"https://www.1177.se/Skane/behandling--hjalpmedel/behandling-med-lakemedel/lakemedel-utifran-diagnos/lakemedel-vid-klimakteriebesvar/\">behandling med läkemedel</a>.</p>\n\n\n\n<p>Den minskade mängden östrogen gör att fettfördelningen i kroppen förändras. Du kan till exempel få mer fett runt midjan och inne i magen bland organen. Mindre mängd östrogen kan så småningom också öka risken för att skelettet blir svagare, så kallad&nbsp;<a href=\"https://www.1177.se/Skane/sjukdomar--besvar/skelett-leder-och-muskler/benskorhet/benskorhet---osteoporos/\">benskörhet</a>.</p>\n",
       "protected": false
     },
     "excerpt": {
-      "rendered": "<p>Efter 20 år har Läkemedelsverket uppdaterat sin behandlingsrekommendation om hormonbehandling i klimakteriet. Den riktas framför allt till allmänläkare. Vid dagens mammografiundersökningar går runt 25 procent av tumörerna under radarn, och många upptäcks i ett sent stadium då de är svårare att bota. Mycket vore därför vunnet om det gick att förutspå vilka kvinnor som kommer [&hellip;]</p>\n",
+      "rendered": "<p>Klimakteriet inträffar vanligtvis någon gång runt 50 års ålder men det finns stora individuella variationer och man kan ha besvär innan man når själva klimakteriet. Besvären är framför allt kopplade till svängningar i hormonnivåer, när östrogennivåer är stabila mår vi oftast bra men svängningar påverkar oss med olika typer av symtom som besvär. Vid en [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 93,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [30],
+    "tags": [],
+    "better_featured_image": {
+      "id": 93,
+      "alt_text": "",
+      "caption": "Scientist in lab doing research and using lab machines, test tubes, microscope and every laboratory equipment",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 612,
+        "height": 408,
+        "file": "2022/11/medicin.jpeg",
+        "filesize": 33979,
+        "sizes": {
+          "medium": {
+            "file": "medicin-300x200.jpeg",
+            "width": 300,
+            "height": 200,
+            "mime-type": "image/jpeg",
+            "filesize": 14380,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/medicin-300x200.jpeg"
+          },
+          "thumbnail": {
+            "file": "medicin-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 7008,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/medicin-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "Getty Images/iStockphoto",
+          "camera": "",
+          "caption": "Scientist in lab doing research and using lab machines, test tubes, microscope and every laboratory equipment",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 78,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/medicin.jpeg"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/84"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=84"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 4,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/84/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 177,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/84/revisions/177"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/93"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=84"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=84"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=84"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 82,
+    "date": "2022-11-17T16:15:15",
+    "date_gmt": "2022-11-17T15:15:15",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=82"
+    },
+    "modified": "2022-12-31T10:40:15",
+    "modified_gmt": "2022-12-31T09:40:15",
+    "slug": "nar-ska-jag-soka-hjalp",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/11/17/nar-ska-jag-soka-hjalp/",
+    "title": {
+      "rendered": "När ska jag söka hjälp?"
+    },
+    "content": {
+      "rendered": "\n<p>Ingen har sagt att livet är lätt. Det är oftast mycket att stå i och man kan lätt känna sig trött och utarmad. Klimakteriet bidrar även en hel del till detta med dess hormonella svängningar, förhöjda stressnivåer och för många sämre sömn på kuppen vilket ofta kan orsaka ytterligare energibrist. Men känslan av ökad trötthet behöver inte vara ett livslångt faktum. Lite extra fokus på sömn, vila, stresshantering och träning är de bästa sätten att fylla på energinivån.&nbsp;</p>\n\n\n\n<p>Klimakterieappen Olivia ger sina 6 bästa tips:&nbsp;</p>\n\n\n\n<p><strong>Undvik alkohol och koffein</strong></p>\n\n\n\n<p>Vi vet, vi vet. Hatar du oss? Men den här är så viktig att den måste få komma först i listan. Det där glaset vin vid 21.00 kan tyckas hjälpa dig att somna in snabbare, men alkohol metaboliseras i kroppen när du sover och producerar en förening som kallas aldehyd. Aldehyd blockerar REM-sömn, så även om du får dina 8 timmar kommer du eventuellt inte att känna dig utvilad trots allt.&nbsp;</p>\n\n\n\n<p>Hur fungerar det när det kommer till koffein? Med en livslängd på i snitt tio timmar kommer eventuellt kaffet efter lunchen med största sannolikhet att finnas kvar i ditt system sen när du går och lägger dig, beroende på hur just din kropp metaboliserar koffein. Håll dessa te- och kaffepauser till en strikt morgonvana, eller undvik koffein helt om du vet att du är känslig.&nbsp;</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"600\" height=\"396\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/serious-sad-middle-aged-mature-600w-1881359899.jpeg\" alt=\"\" class=\"wp-image-167\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/serious-sad-middle-aged-mature-600w-1881359899.jpeg 600w, https://data.promeno.se/wp-content/uploads/2022/12/serious-sad-middle-aged-mature-600w-1881359899-300x198.jpeg 300w\" sizes=\"(max-width: 600px) 100vw, 600px\" /></figure>\n\n\n\n<p></p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Ingen har sagt att livet är lätt. Det är oftast mycket att stå i och man kan lätt känna sig trött och utarmad. Klimakteriet bidrar även en hel del till detta med dess hormonella svängningar, förhöjda stressnivåer och för många sämre sömn på kuppen vilket ofta kan orsaka ytterligare energibrist. Men känslan av ökad trötthet [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 107,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": {
+      "_oct_exclude_from_cache": false
+    },
+    "categories": [30],
+    "tags": [],
+    "better_featured_image": {
+      "id": 107,
+      "alt_text": "",
+      "caption": "You have nothing to worry about anymore",
+      "description": "",
+      "media_type": "image",
+      "media_details": {
+        "width": 612,
+        "height": 408,
+        "file": "2022/11/gel-1.jpeg",
+        "filesize": 28938,
+        "sizes": {
+          "medium": {
+            "file": "gel-1-300x200.jpeg",
+            "width": 300,
+            "height": 200,
+            "mime-type": "image/jpeg",
+            "filesize": 12082,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/gel-1-300x200.jpeg"
+          },
+          "thumbnail": {
+            "file": "gel-1-150x150.jpeg",
+            "width": 150,
+            "height": 150,
+            "mime-type": "image/jpeg",
+            "filesize": 6305,
+            "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/gel-1-150x150.jpeg"
+          }
+        },
+        "image_meta": {
+          "aperture": "0",
+          "credit": "Getty Images",
+          "camera": "",
+          "caption": "You have nothing to worry about anymore",
+          "created_timestamp": "0",
+          "copyright": "",
+          "focal_length": "0",
+          "iso": "0",
+          "shutter_speed": "0",
+          "title": "You have nothing to worry about anymore",
+          "orientation": "0",
+          "keywords": []
+        }
+      },
+      "post": 75,
+      "source_url": "https://data.promeno.se/wp-content/uploads/2022/11/gel-1.jpeg"
+    },
+    "_links": {
+      "self": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/82"
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts"
+        }
+      ],
+      "about": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/types/post"
+        }
+      ],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=82"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 3,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/82/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 178,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/82/revisions/178"
+        }
+      ],
+      "wp:featuredmedia": [
+        {
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/media/107"
+        }
+      ],
+      "wp:attachment": [
+        {
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=82"
+        }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=82"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=82"
+        }
+      ],
+      "curies": [
+        {
+          "name": "wp",
+          "href": "https://api.w.org/{rel}",
+          "templated": true
+        }
+      ]
+    }
+  },
+  {
+    "id": 80,
+    "date": "2022-11-17T16:13:51",
+    "date_gmt": "2022-11-17T15:13:51",
+    "guid": {
+      "rendered": "https://data.promeno.se/?p=80"
+    },
+    "modified": "2022-12-29T19:45:26",
+    "modified_gmt": "2022-12-29T18:45:26",
+    "slug": "estradot-plaster",
+    "status": "publish",
+    "type": "post",
+    "link": "https://data.promeno.se/2022/11/17/estradot-plaster/",
+    "title": {
+      "rendered": "Estradot-plåster"
+    },
+    "content": {
+      "rendered": "\n<p>Estradot är ett preparat som används för hormonell substitutionsbehandling (Hormone Replacement Therapy, HRT). Det innehåller det kvinnliga könshormonet östrogen. Estradot används till kvinnor vars menstruation har upphört (menopaus), minst 12 månader efter deras sista naturliga menstruation. Estradot är ett plåster som appliceras på huden.</p>\n\n\n\n<p>Användningen av&nbsp;HRT&nbsp;innebär risker som ska beaktas vid beslutet att påbörja behandling eller fortsätta en pågående behandling.</p>\n\n\n\n<p>Erfarenheten är begränsad för behandling av kvinnor där menstruationen upphört i förtid (då äggstockarna slutat fungera eller livmodern opererats bort). Om du tillhör den gruppen kan riskerna med&nbsp;HRT&nbsp;vara annorlunda. Tala med din läkare.</p>\n\n\n\n<p>Innan du påbörjar behandling (eller återupptar behandling) kommer din läkare att fråga om din egen, och din familjs, medicinska bakgrund. Läkaren kommer kanske att göra en allmän medicinsk och gynekologisk undersökning, som också omfattar undersökning av brösten.</p>\n\n\n\n<p>När du påbörjat behandling ska du gå på regelbundna läkarkontroller, minst en gång per år. Vid dessa kontroller ska du diskutera med läkaren om fördelar och risker med fortsatt behandling.</p>\n\n\n\n<figure class=\"wp-block-image size-full\"><img decoding=\"async\" loading=\"lazy\" width=\"800\" height=\"800\" src=\"https://data.promeno.se/wp-content/uploads/2022/12/Estradot-individual-patch.webp\" alt=\"\" class=\"wp-image-161\" srcset=\"https://data.promeno.se/wp-content/uploads/2022/12/Estradot-individual-patch.webp 800w, https://data.promeno.se/wp-content/uploads/2022/12/Estradot-individual-patch-300x300.webp 300w, https://data.promeno.se/wp-content/uploads/2022/12/Estradot-individual-patch-150x150.webp 150w, https://data.promeno.se/wp-content/uploads/2022/12/Estradot-individual-patch-768x768.webp 768w\" sizes=\"(max-width: 800px) 100vw, 800px\" /></figure>\n\n\n\n<p></p>\n\n\n\n<p>Tala med läkare om du har eller har haft något av följande problem innan du påbörjar behandlingen. De kan återkomma eller förvärras under behandling med Estradot. Om det skulle inträffa ska du göra tätare kontroller hos läkare.</p>\n\n\n\n<p></p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Estradot är ett preparat som används för hormonell substitutionsbehandling (Hormone Replacement Therapy, HRT). Det innehåller det kvinnliga könshormonet östrogen. Estradot används till kvinnor vars menstruation har upphört (menopaus), minst 12 månader efter deras sista naturliga menstruation. Estradot är ett plåster som appliceras på huden. Användningen av&nbsp;HRT&nbsp;innebär risker som ska beaktas vid beslutet att påbörja behandling eller fortsätta en pågående behandling. Erfarenheten är begränsad [&hellip;]</p>\n",
       "protected": false
     },
     "author": 1,
@@ -749,10 +1430,11 @@
     },
     "categories": [1],
     "tags": [],
+    "better_featured_image": null,
     "_links": {
       "self": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/1"
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/80"
         }
       ],
       "collection": [
@@ -774,36 +1456,36 @@
       "replies": [
         {
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=1"
+          "href": "https://data.promeno.se/wp-json/wp/v2/comments?post=80"
         }
       ],
       "version-history": [
         {
-          "count": 8,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/1/revisions"
+          "count": 2,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/80/revisions"
         }
       ],
       "predecessor-version": [
         {
-          "id": 49,
-          "href": "https://data.promeno.se/wp-json/wp/v2/posts/1/revisions/49"
+          "id": 162,
+          "href": "https://data.promeno.se/wp-json/wp/v2/posts/80/revisions/162"
         }
       ],
       "wp:attachment": [
         {
-          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=1"
+          "href": "https://data.promeno.se/wp-json/wp/v2/media?parent=80"
         }
       ],
       "wp:term": [
         {
           "taxonomy": "category",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=1"
+          "href": "https://data.promeno.se/wp-json/wp/v2/categories?post=80"
         },
         {
           "taxonomy": "post_tag",
           "embeddable": true,
-          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=1"
+          "href": "https://data.promeno.se/wp-json/wp/v2/tags?post=80"
         }
       ],
       "curies": [

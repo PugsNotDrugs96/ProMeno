@@ -34,7 +34,7 @@ function Login() {
     try {
       const response = await loginUser(email, password);
       if (response.status === 200) {
-        setUser(email, password);
+        setUser(email);
         setEmail("");
         setPassword("");
         setSuccess(true);
@@ -61,17 +61,15 @@ function Login() {
             <Col>
               <Form onSubmit={handleSubmit} id="form">
                 <Col>
-                  {" "}
                   <h1
-                    className="text-center text-info text-black"
+                    className="form-header text-center text-info text-black"
                     id="login-text"
                   >
-                    {" "}
                     Logga in
-                  </h1>{" "}
+                  </h1>
                 </Col>
                 <FloatingLabel
-                  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                  className="col-sm-7 col-10 mx-auto mt-3 mb-3"
                   controlId="floatingInput"
                   label="Email"
                 >
@@ -87,7 +85,7 @@ function Login() {
                   />
                 </FloatingLabel>
                 <FloatingLabel
-                  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                  className="col-sm-7 col-10 mx-auto mt-3 mb-3"
                   controlId="floatingPassword"
                   label="Lösenord"
                 >
@@ -101,9 +99,7 @@ function Login() {
                 </FloatingLabel>
                 <div className="text-center">
                   <Button
-                    className="btn btn-success btn-lg mb-4 gap-3"
-                    style={{ width: "18rem" }}
-                    variant="primary"
+                    className="btn-success btn-lg col-10 col-sm-7 col-10 mb-3 mx-auto"
                     type="submit"
                   >
                     Logga in

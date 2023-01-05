@@ -1,18 +1,10 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import "./Register.css";
-import {
-  Button,
-  Container,
-  Form,
-  Col,
-  FloatingLabel,
-  Image,
-} from "react-bootstrap";
+import { Button, Container, Form, Col, FloatingLabel } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../UserContext";
 import { Link } from "react-router-dom";
 import { registerUser } from "../../api/api";
-import Lotus from "../../assets/lotus.svg";
 import PasswordReqList from "../form/PasswordReqList";
 import ConsentFormModal from "../consentForm/ConsentFormModal";
 
@@ -51,7 +43,7 @@ function Register() {
     try {
       const response = await registerUser(name, email, password);
       if (response.status === 200) {
-        setUser(email, password);
+        setUser(email);
         setSuccess(true);
       }
     } catch (err) {
@@ -76,19 +68,16 @@ function Register() {
         <Container className="content">
           <Form onSubmit={handleSubmit} id="form">
             <Col>
-              <h1 className="text-center text-info text-black" id="reg-text-1">
-                Registrera dig, steg 2
+              <h1
+                className="form-header text-center text-info text-black"
+                id="reg-text-1"
+              >
+                Registrera dig
               </h1>
+              <h3 className="text-center">Steg 2</h3>
             </Col>
-            <Image
-              src={Lotus}
-              alt="..."
-              width="100"
-              length="100"
-              className="rounded mx-auto d-block"
-            />
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingInput"
               label="Namn"
             >
@@ -105,7 +94,7 @@ function Register() {
               />
             </FloatingLabel>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingInput"
               label="Email"
             >
@@ -120,7 +109,7 @@ function Register() {
               />
             </FloatingLabel>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingPassword"
               label="Lösenord"
             >
@@ -134,7 +123,7 @@ function Register() {
               />
             </FloatingLabel>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="floatingPassword"
               label="Bekräfta lösenord"
             >
@@ -147,18 +136,16 @@ function Register() {
                 required
               />
             </FloatingLabel>
+            <PasswordReqList />
 
             <div className="text-center">
               <Button
-                className="btn btn-success btn-lg mb-4 gap-3"
-                style={{ width: "18rem" }}
-                variant="primary"
+                className="btn-success btn-lg col-10 col-sm-7 col-10 mb-3 mx-auto"
                 type="submit"
               >
                 Registrera
               </Button>
-
-              <p>
+              <p className="mt-3 mb-1">
                 Har du redan ett konto? <a href="/login">Logga in</a>
               </p>
               <p>
@@ -187,9 +174,6 @@ function Register() {
                 {errMsg}
               </p>
             </div>
-
-            <hr className="col-md-5 mx-auto col-lg-5 mb-3" />
-            <PasswordReqList />
           </Form>
           <ConsentFormModal
             showConsentForm={showConsentForm}
