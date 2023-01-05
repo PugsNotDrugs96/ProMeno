@@ -59,6 +59,7 @@ function MainCategory() {
             key={index}
             onClick={() => handleClick(item)}
             size="lg"
+            style={{ width: "100%" }}
             className="my-2 py-3"
           >
             {item.name}

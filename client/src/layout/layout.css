@@ -33,7 +33,7 @@ img.mb-2 {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
 }
 
 .content {
