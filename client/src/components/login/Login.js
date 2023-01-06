@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {
   Button,
   Container,
+  Image,
   Form,
   Row,
   Col,
@@ -10,6 +11,7 @@ import {
 } from "react-bootstrap";
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
+import Lotus from "../../assets/lotus.svg";
 
 function Login() {
   const { setUser } = useContext(UserContext);
@@ -57,6 +59,13 @@ function Login() {
         navigate("/home")
       ) : (
         <Container className="content">
+          <Image
+            src={Lotus}
+            alt="..."
+            width="100"
+            length="100"
+            className="mx-auto d-block mb-3"
+          />
           <Row>
             <Col>
               <Form onSubmit={handleSubmit} id="form">

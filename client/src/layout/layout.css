@@ -27,7 +27,6 @@ img.mb-2 {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
-  min-height: calc(100vh - 80px);
   box-shadow: 12px 0 15px -4px rgba(66, 66, 66, 0.105), -12px 0 8px -4px rgba(66, 66, 66, 0.105);
 }
 
@@ -35,7 +34,7 @@ img.mb-2 {
   /* 4:th layer */
   padding-top: 75px;
   padding-bottom: 50px;
-  min-height: 630px;
+  min-height: calc(100vh - 80px);
 }
 
 #headnav {
@@ -68,7 +67,10 @@ img.mb-2 {
   #headContainer,
   .footerContainer {
     width: 80%;
-    height: 100vh;
+  }
+
+  .contentContainer {
+    min-height: 100vh;
   }
 }
 
@@ -82,7 +84,7 @@ img.mb-2 {
 }
 
 .contentContainer {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .form-header {
