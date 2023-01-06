@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { registerUser } from "../../api/api";
 import PasswordReqList from "../form/PasswordReqList";
 import ConsentFormModal from "../consentForm/ConsentFormModal";
+import { setToken } from "../../tokenStorage";
 
 function Register() {
   const navigate = useNavigate();
@@ -43,7 +44,9 @@ function Register() {
     try {
       const response = await registerUser(name, email, password);
       if (response.status === 200) {
-        setUser(email);
+        const token = response.data;
+        setToken(token);
+        setUser(token);
         setSuccess(true);
       }
     } catch (err) {

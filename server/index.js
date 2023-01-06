@@ -107,7 +107,8 @@ app.post("/register", async function (req, res) {
       } else if (result === "409") {
         res.status(409).send("Email already registered");
       } else {
-        res.status(200).send("User registered");
+        const token = jwt.sign({ email: email }, JWT_SECRET);
+        res.status(200).send(token);
       }
     })
     .catch((err) => {
@@ -417,7 +418,6 @@ app.post("/reset-password", async function (req, res) {
 });
 
 app.get("/profile", async function (req, res) {
-  console.log(req.headers.auth);
   const token = req.headers.auth;
   const isTokenValid = validateToken(token);
   if (!isTokenValid) return res.status(401).json("Unauthorized");
