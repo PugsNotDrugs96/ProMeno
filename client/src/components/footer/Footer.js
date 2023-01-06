@@ -9,11 +9,11 @@ import EvaImg from "../../assets/eva.jpg";
 
 function Footer() {
   return (
-    <div className="footer shadow">
+    <div className="footer">
       <Container className="footerContainer" style={{ alignItems: "center", justifyContent: "center" }}>
         <h3
           className="text-center"
-          style={{ marginTop: "1rem", marginBottom: "2rem" }}
+          style={{ paddingTop: "1rem", paddingBottom: "2rem" }}
         >
           Ansvariga forskare
         </h3>

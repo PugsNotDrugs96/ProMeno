@@ -12,12 +12,6 @@ img.mb-2 {
   margin-right: 10px;
 }
 
-#headnav {
-  padding: 0px;
-  height: 80px;
-  width: 100%;
-}
-
 /* Containers */
 .background {
   /* 2:nd layer */
@@ -34,6 +28,7 @@ img.mb-2 {
   margin-left: auto;
   margin-right: auto;
   min-height: calc(100vh - 80px);
+  box-shadow: 12px 0 15px -4px rgba(66, 66, 66, 0.105), -12px 0 8px -4px rgba(66, 66, 66, 0.105);
 }
 
 .content {
@@ -43,11 +38,23 @@ img.mb-2 {
   min-height: 630px;
 }
 
-.footer {
-  width: 100% !important;
+#headnav {
+  padding: 0px;
+  height: 80px;
+  width: 100%;
+  box-shadow: -1px 12px 16px 0px rgba(0,0,0,0.13);
+  -webkit-box-shadow: -1px 12px 16px 0px rgba(0,0,0,0.13);
+  -moz-box-shadow: -1px 12px 16px 0px rgba(0,0,0,0.13);
 }
 
-.navbar,
+.footer {
+  width: 100% !important;
+  box-shadow: -1px -7px 16px 0px rgba(0,0,0,0.13);
+  -webkit-box-shadow: -1px -7px 16px 0px rgba(0,0,0,0.13);
+  -moz-box-shadow: -1px -7px 16px 0px rgba(0,0,0,0.13);
+}
+
+#headContainer,
 .footerContainer {
   width: 60%;
   margin-left: auto;
@@ -58,7 +65,7 @@ img.mb-2 {
 @media only screen and (max-width: 900px) {
   /* Tablets */
   .contentContainer,
-  .navbar,
+  #headContainer,
   .footerContainer {
     width: 80%;
     height: 100vh;
@@ -68,7 +75,7 @@ img.mb-2 {
 @media only screen and (max-width: 600px) {
   /* Phones */
   .contentContainer,
-  .navbar,
+  #headContainer,
   .footerContainer {
     width: 100%;
   }
