@@ -16,7 +16,6 @@ export async function getPostBySlug(slug) {
     .get(`/posts/${slug}`, {
       headers: {
         "Content-Type": "application/json",
-        auth: getToken(),
       },
     })
     .catch((err) => {

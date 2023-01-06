@@ -257,9 +257,6 @@ app.get("/posts-by-category/:slug", async function (req, res) {
 });
 
 app.get("/posts/:slug", async function (req, res) {
-  const isTokenValid = validateToken(req.headers.auth);
-  if (!isTokenValid) return res.status(401).json("Unauthorized");
-
   const slug = req.params.slug;
   let post = cache.get(`posts-${slug}`);
   if (post) return res.status(201).json(post[0]);
