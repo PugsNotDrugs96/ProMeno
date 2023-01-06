@@ -10,7 +10,10 @@ import EvaImg from "../../assets/eva.jpg";
 function Footer() {
   return (
     <div className="footer">
-      <Container className="footerContainer" style={{ alignItems: "center", justifyContent: "center" }}>
+      <Container
+        className="footerContainer"
+        style={{ alignItems: "center", justifyContent: "center" }}
+      >
         <h3
           className="text-center"
           style={{ paddingTop: "1rem", paddingBottom: "2rem" }}
