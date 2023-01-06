@@ -9,7 +9,7 @@ import PostPage from "../components/post-page/PostPage";
 import ChangePassword from "../components/form/ChangePassword";
 import ResetPassword from "../components/form/ResetPassword";
 import ForgotPassword from "../components/form/ForgotPassword";
-import RemoveAccount from "../components/profile/RemoveAccount";
+import RemoveAccount from "../components/removeAccount/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
 import SubCategoryPage from "../components/categories/SubCategoryPage";

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getPostBySlug } from "../../api/api";
 import { Container, Spinner } from "react-bootstrap";
-import ErrorAlert from "../ErrorAlert";
+import ErrorAlert from "../errorAlert/ErrorAlert";
 
 function PostPage() {
   const params = useParams();

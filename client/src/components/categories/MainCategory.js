@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getCategories } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { Container, Button, Spinner } from "react-bootstrap";
-import ErrorAlert from "../ErrorAlert";
+import ErrorAlert from "../errorAlert/ErrorAlert";
 
 function MainCategory() {
   const navigate = useNavigate();

@@ -9,7 +9,7 @@ import {
   FloatingLabel,
 } from "react-bootstrap";
 import { resetPassword, validateLink } from "../../api/api";
-import EmptyPage from "../EmptyPage";
+import EmptyPage from "../emptyPage/EmptyPage";
 import PasswordReqList from "./PasswordReqList";
 
 function ResetPassword() {
