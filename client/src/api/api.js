@@ -1,9 +1,11 @@
 import axios from "./serverConnection";
+import { getToken } from "../tokenStorage";
 
 export async function getPostsByCategory(slug) {
   const response = await axios.get(`/posts-by-category/${slug}`, {
     headers: {
       "Content-Type": "application/json",
+      auth: getToken(),
     },
   });
   return response.data;
@@ -14,6 +16,7 @@ export async function getPostBySlug(slug) {
     .get(`/posts/${slug}`, {
       headers: {
         "Content-Type": "application/json",
+        auth: getToken(),
       },
     })
     .catch((err) => {
@@ -23,29 +26,40 @@ export async function getPostBySlug(slug) {
 }
 
 export async function getCategories() {
-  const response = await axios.get("/categories").catch((err) => {
-    throw new Error(err);
-  });
+  const response = await axios
+    .get("/categories", {
+      headers: {
+        withCredentials: true,
+        auth: getToken(),
+      },
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
   return response.data;
 }
 
 export async function getCategoryBySlug(slug) {
-  const response = await axios.get(`/categories/${slug}`).catch((err) => {
-    throw new Error(err);
-  });
+  const response = await axios
+    .get(`/categories/${slug}`, {
+      headers: {
+        "Content-Type": "application/json",
+        auth: getToken(),
+      },
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
   return response.data;
 }
 
-export async function validateToken(token) {
-  const response = await axios.post(
-    "/auth-token",
-    { token },
-    {
-      headers: {
-        withCredentials: true,
-      },
-    }
-  );
+export async function validateToken() {
+  const response = await axios.post("/auth-token", {
+    headers: {
+      withCredentials: true,
+      auth: getToken(),
+    },
+  });
   return response;
 }
 
@@ -75,13 +89,14 @@ export async function registerUser(name, email, password) {
   return response;
 }
 
-export async function changePassword(email, currentPassword, newPassword) {
+export async function changePassword(user, currentPassword, newPassword) {
   const response = await axios.post(
     "/change-password",
-    { email, currentPassword, newPassword },
+    { user, currentPassword, newPassword },
     {
       headers: {
         withCredentials: true,
+        auth: getToken(),
       },
     }
   );

@@ -8,6 +8,7 @@ import {
   fetchCategoryIdBySlug,
   fetchCategoryBySlug,
 } from "./api/wp-api.js";
+import validateToken from "./tokenValidator.js";
 import * as usersFilters from "./db/filtersUsersDB.js";
 import * as codeFilters from "./db/filtersCodeDB.js";
 import cors from "cors";
@@ -73,22 +74,16 @@ app.post("/auth", async function (req, res) {
   } else if (isValidLogin === "Database error") {
     res.status(500).send("Database connection failed");
   } else {
-    const token = jwt.sign({ email: email }, JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ email: email }, JWT_SECRET);
     res.status(200).send(token);
   }
 });
 
 app.post("/auth-token", async function (req, res) {
-  const { token } = req.body;
-  if (!token) {
-    return res.status(400).json({ message: "Token is required" });
-  }
-  try {
-    jwt.verify(token, JWT_SECRET);
-    res.status(200).json({ success: `Token is valid` });
-  } catch (error) {
-    res.status(401).json({ message: "Token not valid" });
-  }
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
+  res.status(200).json({ success: `Token is valid` });
 });
 
 app.post("/register", async function (req, res) {
@@ -198,11 +193,14 @@ app.post("/delete-account", async function (req, res) {
 });
 
 app.post("/change-password", async function (req, res) {
-  const { email, currentPassword, newPassword } = req.body;
-  if (!email || !currentPassword || !newPassword) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
+  const { user, currentPassword, newPassword } = req.body;
+  if (!user || !currentPassword || !newPassword) {
     return res
       .status(400)
-      .json({ message: "Email and passwords are required" });
+      .json({ message: "User token and passwords are required" });
   }
 
   if (!schema.validate(newPassword)) {
@@ -211,10 +209,11 @@ app.post("/change-password", async function (req, res) {
     });
   }
 
-  const isValidLogin = await usersFilters.validateLogin(email, currentPassword);
+  const isValidLogin = await usersFilters.validateLogin(user, currentPassword);
+
   if (isValidLogin === "Valid password") {
     const changePasswordStatus = await usersFilters.updatePasswordDB(
-      email,
+      user,
       newPassword
     );
     if (changePasswordStatus === "200") {
@@ -229,17 +228,18 @@ app.post("/change-password", async function (req, res) {
   } else if (isValidLogin === "Database error") {
     return res.status(500).json("Database error");
   }
-  const isPasswordChanged = usersDB.changePassword(email, newPassword);
+  const isPasswordChanged = usersDB.changePassword(user, newPassword);
   if (isPasswordChanged) {
-    res
-      .status(200)
-      .json({ success: `Password for user ${email} has changed!` });
+    res.status(200).json({ success: `Password for user ${user} has changed!` });
   } else {
     return res.status(500).json({ message: "Something went wrong" });
   }
 });
 
 app.get("/posts-by-category/:slug", async function (req, res) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
   const slug = req.params.slug;
 
   let id = cache.get(`category-id${slug}`);
@@ -257,6 +257,9 @@ app.get("/posts-by-category/:slug", async function (req, res) {
 });
 
 app.get("/posts/:slug", async function (req, res) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
   const slug = req.params.slug;
   let post = cache.get(`posts-${slug}`);
   if (post) return res.status(201).json(post[0]);
@@ -266,7 +269,10 @@ app.get("/posts/:slug", async function (req, res) {
   res.status(200).json(post[0]);
 });
 
-app.get("/categories", async function (_, res) {
+app.get("/categories", async function (req, res) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
   let categories = cache.get("categories");
   if (categories) return res.status(201).json(categories);
 
@@ -276,6 +282,9 @@ app.get("/categories", async function (_, res) {
 });
 
 app.get("/categories/:slug", async function (req, res) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
   const slug = req.params.slug;
   let category = cache.get(`category-${slug}`);
   if (category) return res.status(201).json(category);

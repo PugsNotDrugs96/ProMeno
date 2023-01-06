@@ -16,7 +16,7 @@ export const UserProvider = ({ children }) => {
     if (!token) return;
     const fetchData = async () => {
       try {
-        const response = await validateToken(token);
+        const response = await validateToken();
         if (response.status === 200) {
           setUser(token);
         }
