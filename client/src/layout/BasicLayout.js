@@ -17,7 +17,7 @@ function BasicLayout({ children }) {
     <>
       <Header />
       <div className="background">
-        <Container className="contentContainer shadow">
+        <Container className="contentContainer">
           {showBackBtn && <GoBackBtn />}
           {children}
         </Container>

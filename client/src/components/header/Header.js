@@ -11,7 +11,7 @@ function Header() {
   const logoLink = user ? "./home" : "/";
 
   return (
-    <Navbar id="headnav" className="shadow">
+    <Navbar id="headnav">
       <Container id="headContainer">
         <Link to={logoLink} className="d-inline-block align-top">
           <Navbar.Brand className="d-inline-block align-top">
