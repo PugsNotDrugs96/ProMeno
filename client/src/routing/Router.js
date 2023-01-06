@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignedOutPage from "../components/signed-out-page/SignedOutPage";
+import StartPage from "../components/start-page/StartPage";
 import ProtectedRoute from "./ProtectedRoute";
 import HomePage from "../components/home-page/HomePage";
 import Login from "../components/login/Login";
@@ -22,7 +22,7 @@ function Router() {
       <BasicLayout>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<SignedOutPage />} />
+          <Route path="/" element={<StartPage />} />
           <Route
             path="/home"
             element={

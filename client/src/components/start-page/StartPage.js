@@ -5,7 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 import { Link } from "react-router-dom";
 
-function SignedOutPage() {
+function StartPage() {
   const title = "ProMeno";
   const subtitle =
     "Forskningsstudien om klimakteriet. Få förslag på behandlingar och lära dig vad som egentligen händer i kroppen. Syftet är att undersöka och förbättra levnadsvanor och hälsa hos personer i klimakteriet.";
@@ -62,4 +62,4 @@ function SignedOutPage() {
   );
 }
 
-export default SignedOutPage;
+export default StartPage;
