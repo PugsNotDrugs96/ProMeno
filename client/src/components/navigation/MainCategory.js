@@ -28,14 +28,13 @@ function MainCategory() {
   if (error) {
     return <ErrorAlert type="categories" />;
   }
-
   if (loading) {
     return (
       <Spinner
         style={{
           position: "fixed",
-          top: "50%",
-          left: "50%",
+          top: "40%",
+          left: "65%",
         }}
         animation="border"
         role="status"

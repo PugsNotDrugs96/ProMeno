@@ -8,6 +8,7 @@ import {
   fetchCategoryIdBySlug,
   fetchCategoryBySlug,
 } from "./api/wp-api.js";
+import { validateToken, getEmailFromToken } from "./tokenHandler.js";
 import * as usersFilters from "./db/filtersUsersDB.js";
 import * as codeFilters from "./db/filtersCodeDB.js";
 import cors from "cors";
@@ -73,8 +74,15 @@ app.post("/auth", async function (req, res) {
   } else if (isValidLogin === "Database error") {
     res.status(500).send("Database connection failed");
   } else {
-    res.status(200).send(`User ${email} is logged in`);
+    const token = jwt.sign({ email: email }, JWT_SECRET);
+    res.status(200).send(token);
   }
+});
+
+app.post("/auth-token", async function (req, res) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+  res.status(200).json({ success: `Token is valid` });
 });
 
 app.post("/register", async function (req, res) {
@@ -99,7 +107,8 @@ app.post("/register", async function (req, res) {
       } else if (result === "409") {
         res.status(409).send("Email already registered");
       } else {
-        res.status(200).send("User registered");
+        const token = jwt.sign({ email: email }, JWT_SECRET);
+        res.status(200).send(token);
       }
     })
     .catch((err) => {
@@ -108,7 +117,7 @@ app.post("/register", async function (req, res) {
     });
 });
 
-app.get("/get-all-users-db", async function (req, res) {
+app.get("/get-all-users-db", async function (_, res) {
   const data = await usersFilters.getAllUsersDB();
   if (data === "error") {
     res.status(500).send("Database error");
@@ -160,15 +169,20 @@ app.post("/update-password-db", async function (req, res) {
 });
 
 app.post("/delete-account", async function (req, res) {
-  const { email, password } = req.body;
+  const token = req.headers.auth;
+  const isTokenValid = validateToken(token);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
 
-  if (!email || !password) {
-    return res.status(400).json({ message: "Email and password are required" });
+  const email = getEmailFromToken(token);
+
+  const { password } = req.body;
+  if (!password) {
+    return res.status(400).json({ message: "Password is required" });
   }
   const isValidLogin = await usersFilters.validateLogin(email, password);
 
   if (isValidLogin === "Email does not exist") {
-    res.status(401).send("Email not found");
+    res.status(404).send("Email not found");
   } else if (isValidLogin === "Invalid password") {
     res.status(401).send("Invalid password");
   } else if (isValidLogin === "Database error") {
@@ -184,11 +198,15 @@ app.post("/delete-account", async function (req, res) {
 });
 
 app.post("/change-password", async function (req, res) {
-  const { email, currentPassword, newPassword } = req.body;
-  if (!email || !currentPassword || !newPassword) {
-    return res
-      .status(400)
-      .json({ message: "Email and passwords are required" });
+  const token = req.headers.auth;
+  const isTokenValid = validateToken(token);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
+  const email = getEmailFromToken(token);
+
+  const { currentPassword, newPassword } = req.body;
+  if (!currentPassword || !newPassword) {
+    return res.status(400).json({ message: "Passwords are required" });
   }
 
   if (!schema.validate(newPassword)) {
@@ -198,6 +216,7 @@ app.post("/change-password", async function (req, res) {
   }
 
   const isValidLogin = await usersFilters.validateLogin(email, currentPassword);
+
   if (isValidLogin === "Valid password") {
     const changePasswordStatus = await usersFilters.updatePasswordDB(
       email,
@@ -226,6 +245,9 @@ app.post("/change-password", async function (req, res) {
 });
 
 app.get("/posts-by-category/:slug", async function (req, res) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
   const slug = req.params.slug;
 
   let id = cache.get(`category-id${slug}`);
@@ -252,7 +274,10 @@ app.get("/posts/:slug", async function (req, res) {
   res.status(200).json(post[0]);
 });
 
-app.get("/categories", async function (_, res) {
+app.get("/categories", async function (req, res) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
   let categories = cache.get("categories");
   if (categories) return res.status(201).json(categories);
 
@@ -262,6 +287,9 @@ app.get("/categories", async function (_, res) {
 });
 
 app.get("/categories/:slug", async function (req, res) {
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
+
   const slug = req.params.slug;
   let category = cache.get(`category-${slug}`);
   if (category) return res.status(201).json(category);
@@ -389,13 +417,12 @@ app.post("/reset-password", async function (req, res) {
   }
 });
 
-app.post("/profile", async function (req, res) {
-  const { email } = req.body;
+app.get("/profile", async function (req, res) {
+  const token = req.headers.auth;
+  const isTokenValid = validateToken(token);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
 
-  if (!email) {
-    res.status(400);
-  }
-
+  const email = getEmailFromToken(token);
   const user = await usersFilters.getNameByEmail(email);
 
   if (!user) {

@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 import { loginUser } from "../../api/api";
 import UserContext from "../../UserContext";
+import { setToken } from "../../tokenStorage";
 import Lotus from "../../assets/lotus.svg";
 
 function Login() {
@@ -36,7 +37,9 @@ function Login() {
     try {
       const response = await loginUser(email, password);
       if (response.status === 200) {
-        setUser(email);
+        const token = response.data;
+        setToken(token);
+        setUser(token);
         setEmail("");
         setPassword("");
         setSuccess(true);
