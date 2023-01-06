@@ -416,8 +416,10 @@ app.post("/reset-password", async function (req, res) {
   }
 });
 
-app.post("/profile", async function (req, res) {
-  const isTokenValid = validateToken(req.headers.auth);
+app.get("/profile", async function (req, res) {
+  console.log(req.headers.auth);
+  const token = req.headers.auth;
+  const isTokenValid = validateToken(token);
   if (!isTokenValid) return res.status(401).json("Unauthorized");
 
   const email = getEmailFromToken(token);

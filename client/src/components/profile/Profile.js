@@ -6,7 +6,7 @@ import Tooltip from "react-bootstrap/Tooltip";
 import UserContext from "../../UserContext";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
-import { getNameByEmail } from "../../api/api";
+import { getUsersName } from "../../api/api";
 import "./Profile.css";
 
 function Profile() {
@@ -21,7 +21,7 @@ function Profile() {
 
   useEffect(() => {
     async function fetchData() {
-      const name = await getNameByEmail();
+      const name = await getUsersName();
       const str = name.data;
       const arr = str.split(" ");
 

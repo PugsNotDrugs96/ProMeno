@@ -17,7 +17,7 @@ function Hero() {
         </p>
         <div style={{ marginBottom: "2rem" }}>
           <Link
-            to="/research/:om-studien"
+            to="/research/om-studien"
             style={{
               textDecoration: "none",
               fontSize: "1.30rem",

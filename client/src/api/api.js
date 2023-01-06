@@ -169,8 +169,8 @@ export async function deleteAccount(password) {
   return response;
 }
 
-export async function getNameByEmail() {
-  const response = await axios.post("/profile", {
+export async function getUsersName() {
+  const response = await axios.get("/profile", {
     headers: {
       withCredentials: true,
       auth: getToken(),
