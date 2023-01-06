@@ -4,7 +4,7 @@ import { getPostsByCategory, getCategoryBySlug } from "../../api/api";
 import { Container, Spinner, Row, Col } from "react-bootstrap";
 import PostCard from "./PostCard";
 import Breadcrumbs from "../navigation/breadcrumbs/Breadcrumbs.js";
-import ErrorAlert from "../errorAlert/ErrorAlert";
+import ErrorAlert from "../error-alert/ErrorAlert";
 
 function PostCardPage() {
   const params = useParams();

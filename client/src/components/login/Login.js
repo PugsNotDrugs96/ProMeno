@@ -10,7 +10,7 @@ import {
   FloatingLabel,
 } from "react-bootstrap";
 import { loginUser } from "../../api/api";
-import UserContext from "../../UserContext";
+import UserContext from "../../context/UserContext";
 import { setToken } from "../../tokenStorage";
 import Lotus from "../../assets/lotus.svg";
 

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Container, Navbar, Image } from "react-bootstrap";
 import Lotus from "../../assets/lotus.svg";
-import UserContext from "../../UserContext";
+import UserContext from "../../context/UserContext";
 import { removeToken } from "../../tokenStorage";
 
 function Header() {

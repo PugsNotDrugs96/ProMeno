@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { getPostBySlug } from "../../api/api";
 import { Spinner } from "react-bootstrap";
-import ErrorAlert from "../errorAlert/ErrorAlert";
+import ErrorAlert from "../error-alert/ErrorAlert";
 
 function ConsentForm() {
   const [form, setForm] = useState(null);

@@ -2,11 +2,11 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import "./register.css";
 import { Button, Container, Form, Col, FloatingLabel } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import UserContext from "../../UserContext";
+import UserContext from "../../context/UserContext";
 import { Link } from "react-router-dom";
 import { registerUser } from "../../api/api";
 import PasswordReqList from "../form/PasswordReqList";
-import ConsentFormModal from "../consentForm/ConsentFormModal";
+import ConsentFormModal from "../consent-form/ConsentFormModal";
 import { setToken } from "../../tokenStorage";
 
 function Register() {

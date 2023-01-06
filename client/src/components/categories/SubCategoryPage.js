@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCategories } from "../../api/api";
 import { Button, Container, Row, Col, Spinner } from "react-bootstrap";
-import ErrorAlert from "../errorAlert/ErrorAlert";
+import ErrorAlert from "../error-alert/ErrorAlert";
 
 function SubCategoryPage() {
   const navigate = useNavigate();
