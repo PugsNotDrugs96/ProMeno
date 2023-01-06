@@ -10,7 +10,7 @@ import {
   FloatingLabel,
 } from "react-bootstrap";
 import { deleteAccount } from "../../api/api";
-import "./Profile.css";
+import "./profile.css";
 
 function RemoveAccount() {
   const { setUser } = useContext(UserContext);

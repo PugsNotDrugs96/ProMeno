@@ -1,4 +1,4 @@
-import "./PostPage.css";
+import "./postPage.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getPostBySlug } from "../../api/api";

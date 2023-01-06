@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
-import "./Register.css";
+import "./register.css";
 import { Button, Container, Form, Col, FloatingLabel } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../UserContext";

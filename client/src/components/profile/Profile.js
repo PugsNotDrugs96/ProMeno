@@ -7,7 +7,7 @@ import UserContext from "../../UserContext";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
 import { getUsersName } from "../../api/api";
-import "./Profile.css";
+import "./profile.css";
 
 function Profile() {
   const { user } = useContext(UserContext);

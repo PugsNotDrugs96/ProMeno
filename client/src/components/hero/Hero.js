@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/esm/Container";
-import "./Hero.css";
+import "./hero.css";
 import Image from "react-bootstrap/esm/Image";
 import heroImg from "../../assets/heroImg.jpeg";
 import { Link } from "react-router-dom";
