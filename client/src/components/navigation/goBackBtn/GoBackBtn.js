@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./goBackBtn.css";
-import Icon from "../../assets/arrow-left.svg";
+import Icon from "../../../assets/arrow-left.svg";
 
 function GoBack() {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getPostsByCategory, getCategoryBySlug } from "../../api/api";
 import { Container, Spinner, Row, Col } from "react-bootstrap";
 import PostCard from "./PostCard";
-import Breadcrumbs from "../navigation/Breadcrumbs.js";
+import Breadcrumbs from "../navigation/breadcrumbs/Breadcrumbs.js";
 import ErrorAlert from "../ErrorAlert";
 
 function PostCardPage() {

@@ -12,7 +12,7 @@ import ForgotPassword from "../components/form/ForgotPassword";
 import RemoveAccount from "../components/profile/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
-import SubCategoryPage from "../components/navigation/SubCategoryPage";
+import SubCategoryPage from "../components/categories/SubCategoryPage";
 import CodeValidatorForm from "../components/register/CodeValidatorForm";
 import ScrollToTop from "../components/helpers/ScrollToTop";
 
