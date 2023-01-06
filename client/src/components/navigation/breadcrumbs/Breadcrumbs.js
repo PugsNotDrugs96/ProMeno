@@ -33,7 +33,6 @@ function Breadcrumbs() {
     <Container>
       {!forbiddenPaths.includes(location) && (
         <Breadcrumb>
-          <Breadcrumb.Item active>Startsida</Breadcrumb.Item>
           {pathnames.map((path, index) => (
             <Breadcrumb.Item key={index} active>
               {handleTitle(path)}

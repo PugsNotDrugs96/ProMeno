@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { getPostBySlug } from "../../api/api";
 import { Container, Spinner } from "react-bootstrap";
 import ErrorAlert from "../error-alert/ErrorAlert";
+import Breadcrumbs from "../navigation/breadcrumbs/Breadcrumbs";
 
 function PostPage() {
   const params = useParams();
@@ -51,6 +52,7 @@ function PostPage() {
 
   return (
     <Container className="postContainer py-4">
+      <Breadcrumbs />
       <h1
         className="postTitle py-3 text-center mt-5"
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
