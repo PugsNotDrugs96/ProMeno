@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState, useEffect } from "react";
-import UserContext from "../../UserContext";
+import UserContext from "../../context/UserContext";
 import {
   Container,
   Col,
@@ -10,10 +10,10 @@ import {
   FloatingLabel,
 } from "react-bootstrap";
 import { deleteAccount } from "../../api/api";
-import "./Profile.css";
+import "./removeAccount.css";
 
 function RemoveAccount() {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const userRef = useRef();
   const errRef = useRef();
   const [password, setPassword] = useState("");
@@ -22,7 +22,7 @@ function RemoveAccount() {
 
   const handleClose = () => {
     setShow(false);
-    setUser("");
+    setUser(null);
   };
   const handleShow = () => setShow(true);
 
@@ -37,15 +37,17 @@ function RemoveAccount() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await deleteAccount(user, password);
+      const response = await deleteAccount(password);
       if (response.status === 200) {
         handleShow();
       }
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Inget svar från servern");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Vi kan inte hitta ditt konto");
       } else if (err.response?.status === 401) {
-        setErrMsg("Lösenordet stämmer inte");
+        setErrMsg("Fel lösenord");
       } else {
         setErrMsg("Något gick fel, försök igen");
       }
@@ -60,7 +62,7 @@ function RemoveAccount() {
           <Form onSubmit={handleSubmit}>
             <Col>
               <h1
-                className="text-center text-info text-black"
+                className="form-header text-center text-info text-black"
                 id="acc-remove-text"
               >
                 Avregistrera dig

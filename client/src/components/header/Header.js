@@ -3,7 +3,8 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Container, Navbar, Image } from "react-bootstrap";
 import Lotus from "../../assets/lotus.svg";
-import UserContext from "../../UserContext";
+import UserContext from "../../context/UserContext";
+import { removeToken } from "../../tokenStorage";
 
 function Header() {
   const { user, setUser } = useContext(UserContext);
@@ -11,10 +12,17 @@ function Header() {
 
   return (
     <Navbar id="headnav">
-      <Container>
+      <Container id="headContainer">
         <Link to={logoLink} className="d-inline-block align-top">
           <Navbar.Brand className="d-inline-block align-top">
-            <Image alt="" src={Lotus} width="50px" height="50px" /> ProMeno
+            <Image
+              className="mb-2"
+              alt=""
+              src={Lotus}
+              width="50px"
+              height="50px"
+            />
+            <span className="fs-5">ProMeno</span>
           </Navbar.Brand>
         </Link>
 
@@ -31,6 +39,7 @@ function Header() {
                   id="profile-logo"
                   src="../images/person.svg"
                   alt="profile-logo"
+                  width="30px"
                 ></img>
               </button>
               <ul className="dropdown-menu dropdown-menu-end">
@@ -46,6 +55,7 @@ function Header() {
                   <Link
                     className="dropdown-item"
                     onClick={() => {
+                      removeToken();
                       setUser(null);
                     }}
                     to="/"

@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getCategories } from "../../api/api";
 import { Button, Container, Row, Col, Spinner } from "react-bootstrap";
-import ErrorAlert from "../ErrorAlert";
+import ErrorAlert from "../error-alert/ErrorAlert";
 
 function SubCategoryPage() {
   const navigate = useNavigate();
@@ -35,7 +35,9 @@ function SubCategoryPage() {
     return (
       <Spinner
         style={{
-          margin: "5rem",
+          position: "fixed",
+          top: "50%",
+          left: "50%",
         }}
         animation="border"
         role="status"
@@ -64,11 +66,11 @@ function SubCategoryPage() {
         <Col>
           <div className="text-center">
             <h1 className="display-8 fw-bold">{category[0].name}</h1>
-            <h5>{category[0].description}</h5>
+            <p className="lead my-4 m-4">{category[0].description}</p>
           </div>
         </Col>
         <Col md={5}>
-          <div className="d-grid gap-2">
+          <div className="d-grid gap-2 ">
             {childCategories.map((item, index) => (
               <Button
                 key={index}

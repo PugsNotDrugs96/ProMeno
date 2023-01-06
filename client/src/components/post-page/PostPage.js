@@ -1,9 +1,10 @@
-import "./PostPage.css";
+import "./postPage.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getPostBySlug } from "../../api/api";
 import { Container, Spinner } from "react-bootstrap";
-import ErrorAlert from "../ErrorAlert";
+import ErrorAlert from "../error-alert/ErrorAlert";
+import Breadcrumbs from "../navigation/breadcrumbs/Breadcrumbs";
 
 function PostPage() {
   const params = useParams();
@@ -17,7 +18,6 @@ function PostPage() {
       setLoading(true);
       try {
         const post = await getPostBySlug(slug);
-        console.log(post);
         setPost(post);
         setLoading(false);
       } catch (err) {
@@ -36,7 +36,9 @@ function PostPage() {
     return (
       <Spinner
         style={{
-          margin: "5rem",
+          position: "fixed",
+          top: "50%",
+          left: "50%",
         }}
         animation="border"
         role="status"
@@ -50,12 +52,13 @@ function PostPage() {
 
   return (
     <Container className="postContainer py-4">
+      <Breadcrumbs />
       <h1
-        className="postTitle py-3 text-center"
+        className="postTitle py-3 text-center mt-5"
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
       />
       <p
-        className="postBody px-5"
+        className="postBody px-3 lead mb-4"
         dangerouslySetInnerHTML={{ __html: post.content.rendered }}
       />
     </Container>

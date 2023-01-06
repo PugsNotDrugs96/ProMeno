@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import UserContext from "../../UserContext";
+import UserContext from "../../context/UserContext";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/Row";
-import { getNameByEmail } from "../../api/api";
-import "./Profile.css";
+import { getUsersName } from "../../api/api";
+import "./profile.css";
 
 function Profile() {
   const { user } = useContext(UserContext);
@@ -21,7 +21,7 @@ function Profile() {
 
   useEffect(() => {
     async function fetchData() {
-      const name = await getNameByEmail(user);
+      const name = await getUsersName();
       const str = name.data;
       const arr = str.split(" ");
 
@@ -36,21 +36,15 @@ function Profile() {
 
   return (
     <Container className="content" style={{ textAlign: "center" }}>
-      <h1 style={{ marginBottom: "2rem" }}>Mina sidor</h1>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="35"
-        height="35"
-        fill="currentColor"
-        className="bi bi-person"
-        viewBox="0 0 16 16"
-      >
-        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-        <path
-          fillRule="evenodd"
-          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-        />
-      </svg>
+      <h1 className="fw-bold" style={{ marginBottom: "2rem" }}>
+        Mina sidor
+      </h1>
+      <img
+        id="person-circle"
+        src="../images/person-circle.svg"
+        alt="profile-logo"
+        width="60px"
+      ></img>
       <h4 style={{ paddingTop: "2rem" }}>Du är inloggad som:</h4>
       <p style={{ color: "#436662", fontWeight: "bold", fontSize: "25px" }}>
         {name}

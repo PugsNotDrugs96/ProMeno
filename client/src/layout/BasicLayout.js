@@ -3,7 +3,7 @@ import "./layout.css";
 import Container from "react-bootstrap/esm/Container";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
-import GoBackBtn from "../components/navigation/GoBackBtn";
+import GoBackBtn from "../components/navigation/go-back-btn/GoBackBtn";
 import { useLocation } from "react-router-dom";
 
 /**
@@ -17,7 +17,7 @@ function BasicLayout({ children }) {
     <>
       <Header />
       <div className="background">
-        <Container className="contentContainer shadow">
+        <Container className="contentContainer">
           {showBackBtn && <GoBackBtn />}
           {children}
         </Container>

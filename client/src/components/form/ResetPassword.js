@@ -9,7 +9,7 @@ import {
   FloatingLabel,
 } from "react-bootstrap";
 import { resetPassword, validateLink } from "../../api/api";
-import EmptyPage from "../EmptyPage";
+import EmptyPage from "../empty-page/EmptyPage";
 import PasswordReqList from "./PasswordReqList";
 
 function ResetPassword() {
@@ -20,6 +20,7 @@ function ResetPassword() {
   const [errMsg, setErrMsg] = useState("");
   const [responseMsg, setResponseMsg] = useState("");
   const [isValidLink, setIsValidLink] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const userRef = useRef();
   const errRef = useRef();
@@ -50,6 +51,7 @@ function ResetPassword() {
         const response = await resetPassword(email, password);
         if (response.status === 200) {
           setResponseMsg("Ditt lösenord har återställts");
+          setIsDisabled(true);
         }
         responseRef.current.focus();
       } catch (err) {
@@ -73,7 +75,7 @@ function ResetPassword() {
             <Col>
               <Form onSubmit={handleSubmit}>
                 <Col>
-                  <h1 className="text-center text-info text-black">
+                  <h1 className="form-header text-center text-info text-black">
                     Skapa ett nytt lösenord
                   </h1>
                 </Col>
@@ -116,6 +118,7 @@ function ResetPassword() {
                     style={{ width: "18rem" }}
                     variant="primary"
                     type="submit"
+                    disabled={isDisabled ? true : false}
                   >
                     Ändra lösenord
                   </Button>

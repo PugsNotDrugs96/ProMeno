@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   Button,
   Container,
@@ -8,18 +8,15 @@ import {
   FloatingLabel,
 } from "react-bootstrap";
 import { changePassword } from "../../api/api";
-import UserContext from "../../UserContext";
-import "./ChangePassword.css";
 import PasswordReqList from "./PasswordReqList";
 
 const ChangePassword = () => {
-  const { user } = useContext(UserContext);
-
   const [currentPassword, setCurrentPassword] = useState("");
-  const [password1, setPassword1] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [responseMsg, setResponseMsg] = useState("");
+  const [isBtnDisabled, setBtnIsDisabled] = useState(false);
 
   const responseRef = useRef();
   const userRef = useRef();
@@ -27,7 +24,7 @@ const ChangePassword = () => {
 
   useEffect(() => {
     setErrMsg("");
-  }, [password1, confirmPassword, currentPassword]);
+  }, [newPassword, confirmPassword, currentPassword]);
 
   useEffect(() => {
     userRef.current.focus();
@@ -36,19 +33,21 @@ const ChangePassword = () => {
   useEffect(() => {
     setErrMsg("");
     setResponseMsg("");
-  }, [currentPassword, password1, confirmPassword]);
+  }, [currentPassword, newPassword, confirmPassword]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password1 !== confirmPassword) {
+    if (newPassword !== confirmPassword) {
       setErrMsg("Lösenorden matchar inte");
       errRef.current.focus();
     } else {
       try {
-        const response = await changePassword(user, currentPassword, password1);
+        const response = await changePassword(currentPassword, newPassword);
         if (response.status === 200) {
           setResponseMsg("Ditt lösenord har ändrats");
+          setErrMsg("");
           responseRef.current.focus();
+          setBtnIsDisabled(true);
         }
       } catch (err) {
         if (!err?.response) {
@@ -69,16 +68,12 @@ const ChangePassword = () => {
         <Col>
           <Form onSubmit={handleSubmit}>
             <Col>
-              <h1
-                className="text-center text-info text-black"
-                id="pwd-change-1"
-              >
-                {" "}
+              <h1 className="form-header  text-center" id="pwd-change-1">
                 Ändra lösenord
-              </h1>{" "}
+              </h1>
             </Col>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="formBasicEmail"
               label="Nuvarande lösenord"
             >
@@ -94,7 +89,7 @@ const ChangePassword = () => {
               />
             </FloatingLabel>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="formBasicPassword"
               label="Nytt lösenord"
             >
@@ -102,13 +97,13 @@ const ChangePassword = () => {
                 type="password"
                 name="password1"
                 className="form-control"
-                onChange={(e) => setPassword1(e.target.value)}
-                value={password1}
+                onChange={(e) => setNewPassword(e.target.value)}
+                value={newPassword}
                 required
               />
             </FloatingLabel>
             <FloatingLabel
-              className="col-md-5 mx-auto col-lg-5 mb-3"
+              className="col-sm-7 col-10 mx-auto mt-3 mb-3"
               controlId="formBasicConfirmPassword"
               label="Upprepa lösenord"
             >
@@ -123,10 +118,9 @@ const ChangePassword = () => {
             </FloatingLabel>
             <div className="text-center">
               <Button
-                variant="primary"
                 type="submit"
-                className="btn btn-success btn-lg mb-4 gap-3"
-                style={{ width: "18rem" }}
+                className="btn-success btn-lg col-10 col-sm-7 col-10 mb-3 mx-auto"
+                disabled={isBtnDisabled ? true : false}
               >
                 Ändra lösenord
               </Button>

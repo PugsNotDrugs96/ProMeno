@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { getPostsByCategory, getCategoryBySlug } from "../../api/api";
 import { Container, Spinner, Row, Col } from "react-bootstrap";
 import PostCard from "./PostCard";
-import Breadcrumbs from "../navigation/Breadcrumbs.js";
-import ErrorAlert from "../ErrorAlert";
+import Breadcrumbs from "../navigation/breadcrumbs/Breadcrumbs.js";
+import ErrorAlert from "../error-alert/ErrorAlert";
 
 function PostCardPage() {
   const params = useParams();
@@ -39,7 +39,9 @@ function PostCardPage() {
     return (
       <Spinner
         style={{
-          margin: "5rem",
+          position: "fixed",
+          top: "50%",
+          left: "50%",
         }}
         animation="border"
         role="status"
@@ -57,7 +59,7 @@ function PostCardPage() {
       <Col className="subColBody">
         <div className="text-center">
           <h1 className="display-8 fw-bold">{subCategory.name}</h1>
-          <h5>{subCategory.description}</h5>
+          <p className="lead my-4">{subCategory.description}</p>
         </div>
       </Col>
       <Col className="subColBody">

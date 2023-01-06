@@ -3,7 +3,7 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Hero from "../hero/Hero";
-import MainCategory from "../navigation/MainCategory";
+import MainCategory from "../categories/MainCategory";
 
 const HomePage = () => {
   return (

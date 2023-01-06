@@ -1,7 +1,7 @@
 .breadcrumb {
   font-size: large;
+  padding-top: 6px; 
   margin-left: 50px;
-  padding-top: 6px;
 }
 
 @media only screen and (max-width: 900px) {

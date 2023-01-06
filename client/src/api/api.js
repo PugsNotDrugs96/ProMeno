@@ -1,9 +1,11 @@
 import axios from "./serverConnection";
+import { getToken } from "../tokenStorage";
 
 export async function getPostsByCategory(slug) {
   const response = await axios.get(`/posts-by-category/${slug}`, {
     headers: {
       "Content-Type": "application/json",
+      auth: getToken(),
     },
   });
   return response.data;
@@ -23,17 +25,41 @@ export async function getPostBySlug(slug) {
 }
 
 export async function getCategories() {
-  const response = await axios.get("/categories").catch((err) => {
-    throw new Error(err);
-  });
+  const response = await axios
+    .get("/categories", {
+      headers: {
+        withCredentials: true,
+        auth: getToken(),
+      },
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
   return response.data;
 }
 
 export async function getCategoryBySlug(slug) {
-  const response = await axios.get(`/categories/${slug}`).catch((err) => {
-    throw new Error(err);
-  });
+  const response = await axios
+    .get(`/categories/${slug}`, {
+      headers: {
+        "Content-Type": "application/json",
+        auth: getToken(),
+      },
+    })
+    .catch((err) => {
+      throw new Error(err);
+    });
   return response.data;
+}
+
+export async function validateToken() {
+  const response = await axios.post("/auth-token", {
+    headers: {
+      withCredentials: true,
+      auth: getToken(),
+    },
+  });
+  return response;
 }
 
 export async function loginUser(email, password) {
@@ -62,13 +88,14 @@ export async function registerUser(name, email, password) {
   return response;
 }
 
-export async function changePassword(email, currentPassword, newPassword) {
+export async function changePassword(currentPassword, newPassword) {
   const response = await axios.post(
     "/change-password",
-    { email, currentPassword, newPassword },
+    { currentPassword, newPassword },
     {
       headers: {
         withCredentials: true,
+        auth: getToken(),
       },
     }
   );
@@ -76,7 +103,16 @@ export async function changePassword(email, currentPassword, newPassword) {
 }
 
 export async function getResetPasswordLink(email) {
-  const response = await axios.post("/reset-password-link", { email });
+  const response = await axios.post(
+    "/reset-password-link",
+    { email },
+    {
+      headers: {
+        withCredentials: true,
+        auth: getToken(),
+      },
+    }
+  );
   return response;
 }
 
@@ -119,28 +155,26 @@ export async function resetPassword(email, newPassword) {
   return response;
 }
 
-export async function deleteAccount(email, password) {
+export async function deleteAccount(password) {
   const response = await axios.post(
     "/delete-account",
-    { email, password },
+    { password },
     {
       headers: {
         withCredentials: true,
+        auth: getToken(),
       },
     }
   );
   return response;
 }
 
-export async function getNameByEmail(email) {
-  const response = await axios.post(
-    "/profile",
-    { email },
-    {
-      headers: {
-        withCredentials: true,
-      },
-    }
-  );
+export async function getUsersName() {
+  const response = await axios.get("/profile", {
+    headers: {
+      withCredentials: true,
+      auth: getToken(),
+    },
+  });
   return response;
 }

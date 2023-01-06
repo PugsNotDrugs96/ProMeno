@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getCategories } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { Container, Button, Spinner } from "react-bootstrap";
-import ErrorAlert from "../ErrorAlert";
+import ErrorAlert from "../error-alert/ErrorAlert";
 
 function MainCategory() {
   const navigate = useNavigate();
@@ -28,12 +28,13 @@ function MainCategory() {
   if (error) {
     return <ErrorAlert type="categories" />;
   }
-
   if (loading) {
     return (
       <Spinner
         style={{
-          margin: "5rem",
+          position: "fixed",
+          top: "40%",
+          left: "65%",
         }}
         animation="border"
         role="status"
@@ -59,6 +60,7 @@ function MainCategory() {
             key={index}
             onClick={() => handleClick(item)}
             size="lg"
+            style={{ width: "100%" }}
             className="my-2 py-3"
           >
             {item.name}

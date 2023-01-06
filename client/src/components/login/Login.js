@@ -3,13 +3,16 @@ import { useNavigate } from "react-router-dom";
 import {
   Button,
   Container,
+  Image,
   Form,
   Row,
   Col,
   FloatingLabel,
 } from "react-bootstrap";
 import { loginUser } from "../../api/api";
-import UserContext from "../../UserContext";
+import UserContext from "../../context/UserContext";
+import { setToken } from "../../tokenStorage";
+import Lotus from "../../assets/lotus.svg";
 
 function Login() {
   const { setUser } = useContext(UserContext);
@@ -34,7 +37,9 @@ function Login() {
     try {
       const response = await loginUser(email, password);
       if (response.status === 200) {
-        setUser(email, password);
+        const token = response.data;
+        setToken(token);
+        setUser(token);
         setEmail("");
         setPassword("");
         setSuccess(true);
@@ -57,21 +62,26 @@ function Login() {
         navigate("/home")
       ) : (
         <Container className="content">
+          <Image
+            src={Lotus}
+            alt="..."
+            width="100"
+            length="100"
+            className="mx-auto d-block mb-3"
+          />
           <Row>
             <Col>
               <Form onSubmit={handleSubmit} id="form">
                 <Col>
-                  {" "}
                   <h1
-                    className="text-center text-info text-black"
+                    className="form-header text-center text-info text-black"
                     id="login-text"
                   >
-                    {" "}
                     Logga in
-                  </h1>{" "}
+                  </h1>
                 </Col>
                 <FloatingLabel
-                  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                  className="col-sm-7 col-10 mx-auto mt-3 mb-3"
                   controlId="floatingInput"
                   label="Email"
                 >
@@ -87,7 +97,7 @@ function Login() {
                   />
                 </FloatingLabel>
                 <FloatingLabel
-                  className="col-md-5 mx-auto col-lg-5 mt-3 mb-3"
+                  className="col-sm-7 col-10 mx-auto mt-3 mb-3"
                   controlId="floatingPassword"
                   label="Lösenord"
                 >
@@ -101,9 +111,7 @@ function Login() {
                 </FloatingLabel>
                 <div className="text-center">
                   <Button
-                    className="btn btn-success btn-lg mb-4 gap-3"
-                    style={{ width: "18rem" }}
-                    variant="primary"
+                    className="btn-success btn-lg col-10 col-sm-7 col-10 mb-3 mx-auto"
                     type="submit"
                   >
                     Logga in

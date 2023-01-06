@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignedOutPage from "../components/signed-out-page/SignedOutPage";
+import StartPage from "../components/start-page/StartPage";
 import ProtectedRoute from "./ProtectedRoute";
-import HomePage from "../components/homePage/HomePage";
+import HomePage from "../components/home-page/HomePage";
 import Login from "../components/login/Login";
 import Register from "../components/register/Register";
 import Profile from "../components/profile/Profile";
@@ -9,18 +9,20 @@ import PostPage from "../components/post-page/PostPage";
 import ChangePassword from "../components/form/ChangePassword";
 import ResetPassword from "../components/form/ResetPassword";
 import ForgotPassword from "../components/form/ForgotPassword";
-import RemoveAccount from "../components/profile/RemoveAccount";
+import RemoveAccount from "../components/remove-account/RemoveAccount";
 import BasicLayout from "../layout/BasicLayout";
 import PostCardPage from "../components/post-card-page/PostCardPage";
-import SubCategoryPage from "../components/navigation/SubCategoryPage";
+import SubCategoryPage from "../components/categories/SubCategoryPage";
 import CodeValidatorForm from "../components/register/CodeValidatorForm";
+import ScrollToTop from "../components/helpers/ScrollToTop";
 
 function Router() {
   return (
     <BrowserRouter>
       <BasicLayout>
+        <ScrollToTop />
         <Routes>
-          <Route path="/" element={<SignedOutPage />} />
+          <Route path="/" element={<StartPage />} />
           <Route
             path="/home"
             element={
