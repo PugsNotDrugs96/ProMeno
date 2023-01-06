@@ -8,7 +8,7 @@ import {
   fetchCategoryIdBySlug,
   fetchCategoryBySlug,
 } from "./api/wp-api.js";
-import validateToken from "./tokenValidator.js";
+import { validateToken, getEmailFromToken } from "./tokenHandler.js";
 import * as usersFilters from "./db/filtersUsersDB.js";
 import * as codeFilters from "./db/filtersCodeDB.js";
 import cors from "cors";
@@ -82,7 +82,6 @@ app.post("/auth", async function (req, res) {
 app.post("/auth-token", async function (req, res) {
   const isTokenValid = validateToken(req.headers.auth);
   if (!isTokenValid) return res.status(401).json("Unauthorized");
-
   res.status(200).json({ success: `Token is valid` });
 });
 
@@ -117,7 +116,7 @@ app.post("/register", async function (req, res) {
     });
 });
 
-app.get("/get-all-users-db", async function (req, res) {
+app.get("/get-all-users-db", async function (_, res) {
   const data = await usersFilters.getAllUsersDB();
   if (data === "error") {
     res.status(500).send("Database error");
@@ -169,15 +168,20 @@ app.post("/update-password-db", async function (req, res) {
 });
 
 app.post("/delete-account", async function (req, res) {
-  const { email, password } = req.body;
+  const token = req.headers.auth;
+  const isTokenValid = validateToken(token);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
 
-  if (!email || !password) {
-    return res.status(400).json({ message: "Email and password are required" });
+  const email = getEmailFromToken(token);
+
+  const { password } = req.body;
+  if (!password) {
+    return res.status(400).json({ message: "Password is required" });
   }
   const isValidLogin = await usersFilters.validateLogin(email, password);
 
   if (isValidLogin === "Email does not exist") {
-    res.status(401).send("Email not found");
+    res.status(404).send("Email not found");
   } else if (isValidLogin === "Invalid password") {
     res.status(401).send("Invalid password");
   } else if (isValidLogin === "Database error") {
@@ -193,14 +197,15 @@ app.post("/delete-account", async function (req, res) {
 });
 
 app.post("/change-password", async function (req, res) {
-  const isTokenValid = validateToken(req.headers.auth);
+  const token = req.headers.auth;
+  const isTokenValid = validateToken(token);
   if (!isTokenValid) return res.status(401).json("Unauthorized");
 
-  const { user, currentPassword, newPassword } = req.body;
-  if (!user || !currentPassword || !newPassword) {
-    return res
-      .status(400)
-      .json({ message: "User token and passwords are required" });
+  const email = getEmailFromToken(token);
+
+  const { currentPassword, newPassword } = req.body;
+  if (!currentPassword || !newPassword) {
+    return res.status(400).json({ message: "Passwords are required" });
   }
 
   if (!schema.validate(newPassword)) {
@@ -209,11 +214,11 @@ app.post("/change-password", async function (req, res) {
     });
   }
 
-  const isValidLogin = await usersFilters.validateLogin(user, currentPassword);
+  const isValidLogin = await usersFilters.validateLogin(email, currentPassword);
 
   if (isValidLogin === "Valid password") {
     const changePasswordStatus = await usersFilters.updatePasswordDB(
-      user,
+      email,
       newPassword
     );
     if (changePasswordStatus === "200") {
@@ -228,9 +233,11 @@ app.post("/change-password", async function (req, res) {
   } else if (isValidLogin === "Database error") {
     return res.status(500).json("Database error");
   }
-  const isPasswordChanged = usersDB.changePassword(user, newPassword);
+  const isPasswordChanged = usersDB.changePassword(email, newPassword);
   if (isPasswordChanged) {
-    res.status(200).json({ success: `Password for user ${user} has changed!` });
+    res
+      .status(200)
+      .json({ success: `Password for user ${email} has changed!` });
   } else {
     return res.status(500).json({ message: "Something went wrong" });
   }
@@ -410,12 +417,10 @@ app.post("/reset-password", async function (req, res) {
 });
 
 app.post("/profile", async function (req, res) {
-  const { email } = req.body;
+  const isTokenValid = validateToken(req.headers.auth);
+  if (!isTokenValid) return res.status(401).json("Unauthorized");
 
-  if (!email) {
-    res.status(400);
-  }
-
+  const email = getEmailFromToken(token);
   const user = await usersFilters.getNameByEmail(email);
 
   if (!user) {

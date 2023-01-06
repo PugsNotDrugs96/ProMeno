@@ -13,7 +13,7 @@ import { deleteAccount } from "../../api/api";
 import "./Profile.css";
 
 function RemoveAccount() {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const userRef = useRef();
   const errRef = useRef();
   const [password, setPassword] = useState("");
@@ -37,15 +37,17 @@ function RemoveAccount() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await deleteAccount(user, password);
+      const response = await deleteAccount(password);
       if (response.status === 200) {
         handleShow();
       }
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Inget svar från servern");
+      } else if (err.response?.status === 400) {
+        setErrMsg("Vi kan inte hitta ditt konto");
       } else if (err.response?.status === 401) {
-        setErrMsg("Lösenordet stämmer inte");
+        setErrMsg("Fel lösenord");
       } else {
         setErrMsg("Något gick fel, försök igen");
       }

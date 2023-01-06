@@ -21,7 +21,7 @@ function Profile() {
 
   useEffect(() => {
     async function fetchData() {
-      const name = await getNameByEmail(user);
+      const name = await getNameByEmail();
       const str = name.data;
       const arr = str.split(" ");
 

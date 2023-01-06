@@ -88,10 +88,10 @@ export async function registerUser(name, email, password) {
   return response;
 }
 
-export async function changePassword(user, currentPassword, newPassword) {
+export async function changePassword(currentPassword, newPassword) {
   const response = await axios.post(
     "/change-password",
-    { user, currentPassword, newPassword },
+    { currentPassword, newPassword },
     {
       headers: {
         withCredentials: true,
@@ -103,7 +103,16 @@ export async function changePassword(user, currentPassword, newPassword) {
 }
 
 export async function getResetPasswordLink(email) {
-  const response = await axios.post("/reset-password-link", { email });
+  const response = await axios.post(
+    "/reset-password-link",
+    { email },
+    {
+      headers: {
+        withCredentials: true,
+        auth: getToken(),
+      },
+    }
+  );
   return response;
 }
 
@@ -146,28 +155,26 @@ export async function resetPassword(email, newPassword) {
   return response;
 }
 
-export async function deleteAccount(email, password) {
+export async function deleteAccount(password) {
   const response = await axios.post(
     "/delete-account",
-    { email, password },
+    { password },
     {
       headers: {
         withCredentials: true,
+        auth: getToken(),
       },
     }
   );
   return response;
 }
 
-export async function getNameByEmail(email) {
-  const response = await axios.post(
-    "/profile",
-    { email },
-    {
-      headers: {
-        withCredentials: true,
-      },
-    }
-  );
+export async function getNameByEmail() {
+  const response = await axios.post("/profile", {
+    headers: {
+      withCredentials: true,
+      auth: getToken(),
+    },
+  });
   return response;
 }
