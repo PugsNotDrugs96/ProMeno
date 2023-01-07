@@ -65,6 +65,7 @@ function CodeValidatorForm() {
               <Form.Control
                 as="input"
                 ref={userRef}
+                autoComplete={"off"}
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
                 required

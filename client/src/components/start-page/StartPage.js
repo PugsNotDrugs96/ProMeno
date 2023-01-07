@@ -48,7 +48,7 @@ function StartPage() {
         </div>
         <div style={{ marginTop: "2rem" }}>
           <Link
-            to="/research/:om-studien"
+            to="/research/om-studien"
             style={{
               textDecoration: "none",
               fontSize: "1.30rem",
