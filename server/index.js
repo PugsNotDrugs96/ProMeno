@@ -22,13 +22,13 @@ import schema from "./passwordValidator.js";
 dotenv.config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT ?? 5000;
 
 app.use(bodyParser.json());
 
 //cors options is to allow our client to make requests
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: process.env.CORS_ORIGIN ?? "http://localhost:3000",
   optionsSuccessStatus: 200,
 };
 app.use(express.json());
